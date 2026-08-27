@@ -15,11 +15,13 @@ Usage:
     python bot_tools.py summary       # print the hourly Telegram message
 """
 
+import json
 import os
 import sqlite3
 import sys
 
 DB = "user_data/live_cloud.sqlite"
+SCAN = "market_scan.json"
 START_BALANCE = 20.0
 
 
@@ -63,7 +65,28 @@ def summary():
     for r in open_[:5]:
         side = "SHORT" if r["is_short"] else "LONG"
         out.append(f"  {side} {r['pair'].split('/')[0]} @ {r['open_rate']}")
-    if not open_ and not closed:
+
+    # ---- closest to entry, so "why has it not traded" is always answered ----
+    scan = []
+    if os.path.exists(SCAN):
+        try:
+            scan = json.load(open(SCAN, encoding="utf-8"))
+        except Exception:
+            scan = []
+
+    if scan:
+        ready = [r for r in scan if r["ready"]]
+        out.append("")
+        out.append(f"Closest to entry  ({len(ready)} ready now):")
+        for r in scan[:4]:
+            if r["ready"]:
+                note = "READY"
+            elif r["blockers"]:
+                note = r["blockers"][0]
+            else:
+                note = ""
+            out.append(f"  {r['coin']} {r['side']} {r['gap']:.2f}% - {note}")
+    elif not open_ and not closed:
         out.append("Nothing has triggered yet - no coin has broken out.")
 
     print("\n".join(out))

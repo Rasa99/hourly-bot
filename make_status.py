@@ -1,22 +1,25 @@
 """
-Turns the bot's database into the repository's front page.
+Turns the bot's database and a live market scan into the repository front page.
 
 The local FreqUI dashboard cannot see this bot - it talks to a bot running on
-your PC, and this one lives for six minutes inside GitHub then disappears.
+your PC, and this one lives for a few minutes inside GitHub then disappears.
 There is no server to point a dashboard at.
 
-So instead the bot writes its own status into README.md every hour. GitHub
-renders README.md automatically, which means the repository front page IS the
-dashboard: open it on any phone or computer, no login, no software, always
-current to the last hour.
+So the bot writes its own status into README.md every hour. GitHub renders
+README.md automatically, which makes the repository front page the dashboard:
+open it on any phone or computer, no login, no software, never more than an
+hour stale.
 """
 
+import json
 import os
 import sqlite3
 import sys
-from datetime import datetime, timezone
+
+import charts
 
 DB = "user_data/live_cloud.sqlite"
+SCAN = "market_scan.json"
 OUT = "README.md"
 START_BALANCE = 20.0
 
@@ -25,128 +28,71 @@ def money(x):
     return f"{x:+.4f}"
 
 
-def equity_svg(closed, start=START_BALANCE, path="equity.svg"):
-    """
-    Draw the balance over time as an SVG.
-
-    Hand-rolled rather than matplotlib: this runs inside GitHub Actions where
-    every extra dependency is another install to wait for and another thing
-    that can break the hourly run. SVG is just text, needs nothing, and GitHub
-    renders it inline in the README.
-    """
-    W, H, PAD = 720, 220, 34
-
-    bal, running = [start], start
-    for r in reversed(closed):                 # closed is newest-first
-        running += (r["close_profit_abs"] or 0)
-        bal.append(running)
-
-    if len(bal) < 2:
-        bal = [start, start]
-
-    lo, hi = min(bal), max(bal)
-    if hi - lo < 1e-9:
-        lo, hi = lo - 0.5, hi + 0.5
-    span = hi - lo
-
-    def x(i):
-        return PAD + i * (W - 2 * PAD) / max(len(bal) - 1, 1)
-
-    def y(v):
-        return H - PAD - (v - lo) * (H - 2 * PAD) / span
-
-    pts = " ".join(f"{x(i):.1f},{y(v):.1f}" for i, v in enumerate(bal))
-    up = bal[-1] >= start
-    line = "#2ea043" if up else "#f85149"
-    fill = "rgba(46,160,67,0.15)" if up else "rgba(248,81,73,0.15)"
-    area = f"{PAD},{y(lo):.1f} " + pts + f" {x(len(bal)-1):.1f},{y(lo):.1f}"
-
-    start_y = y(start)
-    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
-  <rect width="{W}" height="{H}" fill="#0d1117" rx="6"/>
-  <text x="{PAD}" y="22" fill="#8b949e" font-family="system-ui,sans-serif" font-size="12">Balance over time (paper $)</text>
-  <line x1="{PAD}" y1="{start_y:.1f}" x2="{W-PAD}" y2="{start_y:.1f}"
-        stroke="#484f58" stroke-width="1" stroke-dasharray="4 4"/>
-  <text x="{W-PAD+2}" y="{start_y+4:.1f}" fill="#484f58" font-family="system-ui,sans-serif" font-size="10">start</text>
-  <polygon points="{area}" fill="{fill}"/>
-  <polyline points="{pts}" fill="none" stroke="{line}" stroke-width="2"
-            stroke-linejoin="round" stroke-linecap="round"/>
-  <circle cx="{x(len(bal)-1):.1f}" cy="{y(bal[-1]):.1f}" r="3.5" fill="{line}"/>
-  <text x="{PAD}" y="{H-10}" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11">
-    {len(closed)} trades &#183; ${start:.2f} &#8594; ${bal[-1]:.4f}</text>
-  <text x="{W-PAD}" y="{H-10}" fill="#8b949e" font-family="system-ui,sans-serif"
-        font-size="11" text-anchor="end">high ${hi:.4f} &#183; low ${lo:.4f}</text>
-</svg>"""
-    with open(path, "w", encoding="utf-8") as f:
-        f.write(svg)
-    return path
+def load_scan():
+    if not os.path.exists(SCAN):
+        return []
+    try:
+        return json.load(open(SCAN, encoding="utf-8"))
+    except Exception:
+        return []
 
 
 def main() -> int:
+    from datetime import datetime, timezone
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
     L = []
     add = L.append
 
     add("# Hourly Trading Bot")
     add("")
-    add(f"**Last updated:** {now} &nbsp;&nbsp;|&nbsp;&nbsp; updates itself every hour")
+    add(f"**Updated {now}** &nbsp;·&nbsp; refreshes itself every hour")
     add("")
-    add("Paper money only. $20 simulated, real Gate.io prices, no API keys — "
-        "it cannot place a real order.")
+    add("Paper money. $20 simulated, real Gate.io prices, no API keys — it "
+        "cannot place a real order.")
     add("")
 
-    if not os.path.exists(DB):
-        add("> Waiting for the first cycle to finish.")
-        open(OUT, "w", encoding="utf-8").write("\n".join(L) + "\n")
-        print("no database yet")
-        return 0
-
-    c = sqlite3.connect(DB)
-    c.row_factory = sqlite3.Row
-    rows = c.execute(
-        "select id,pair,is_open,is_short,open_date,close_date,open_rate,"
-        "close_rate,close_profit_abs,close_profit,exit_reason,leverage,"
-        "stake_amount from trades order by id desc"
-    ).fetchall()
-    c.close()
+    rows = []
+    if os.path.exists(DB):
+        c = sqlite3.connect(DB)
+        c.row_factory = sqlite3.Row
+        rows = c.execute(
+            "select id,pair,is_open,is_short,open_date,close_date,open_rate,"
+            "close_rate,close_profit_abs,close_profit,exit_reason,leverage,"
+            "stake_amount from trades order by id desc"
+        ).fetchall()
+        c.close()
 
     closed = [r for r in rows if not r["is_open"]]
     open_ = [r for r in rows if r["is_open"]]
     realised = sum((r["close_profit_abs"] or 0) for r in closed)
-    wins = [r for r in closed if (r["close_profit_abs"] or 0) > 0]
     balance = START_BALANCE + realised
+    wins = [r for r in closed if (r["close_profit_abs"] or 0) > 0]
+    scan = load_scan()
 
-    # ---- headline ----
+    # ---------------------------------------------------------- headline
     pct = (balance / START_BALANCE - 1) * 100
-    arrow = "🟢" if pct >= 0 else "🔴"
-    add("## Where the money is")
+    add("## Money")
     add("")
     add("| | |")
     add("|---|---|")
-    add(f"| **Balance now** | **${balance:.4f}** {arrow} |")
+    add(f"| **Balance** | **${balance:.4f}** {'🟢' if pct >= 0 else '🔴'} |")
     add(f"| Started with | $20.0000 |")
     add(f"| Change | {pct:+.2f}% |")
-    add(f"| Trades finished | {len(closed)} |")
-    add(f"| Trades open now | {len(open_)} |")
+    add(f"| Finished trades | {len(closed)} |")
+    add(f"| Open now | {len(open_)} |")
     if closed:
-        wr = len(wins) / len(closed) * 100
-        add(f"| Win rate | {wr:.0f}%  ({len(wins)} of {len(closed)}) |")
-        avg_w = (sum(r["close_profit_abs"] for r in wins) / len(wins)) if wins else 0
-        losses = [r for r in closed if (r["close_profit_abs"] or 0) <= 0]
-        avg_l = (sum(r["close_profit_abs"] for r in losses) / len(losses)) if losses else 0
-        add(f"| Average win | {money(avg_w)} USDT |")
-        add(f"| Average loss | {money(avg_l)} USDT |")
+        add(f"| Win rate | {len(wins)/len(closed)*100:.0f}% ({len(wins)}/{len(closed)}) |")
     add("")
 
-    # ---- chart ----
     try:
-        equity_svg(closed)
-        add("![balance over time](equity.svg)")
+        charts.equity(closed, START_BALANCE)
+        add("![balance](chart-equity.svg)")
         add("")
     except Exception as e:
-        print(f"chart skipped: {e}")
+        print(f"equity chart skipped: {e}")
 
-    # ---- open ----
+    # ---------------------------------------------------------- open now
     add("## Open right now")
     add("")
     if open_:
@@ -157,12 +103,61 @@ def main() -> int:
             add(f"| {r['pair'].split('/')[0]} | {side} | {r['open_rate']} | "
                 f"{r['leverage']:.1f}x | ${r['stake_amount']:.3f} |")
     else:
-        add("Nothing open. The bot only enters when a coin breaks out of its "
-            "3-day range, so quiet stretches are normal.")
+        add("Nothing open.")
     add("")
 
-    # ---- history ----
-    add("## Last 15 finished trades")
+    # ---------------------------------------------------------- closest
+    add("## What it is waiting for")
+    add("")
+    if scan:
+        ready = [r for r in scan if r["ready"]]
+        add(f"**{len(ready)} coin(s) ready to fire right now.** "
+            f"Scanned {len(scan)} coins.")
+        add("")
+        try:
+            charts.closest(scan)
+            add("![closest to entry](chart-closest.svg)")
+            add("")
+            charts.blockers(scan)
+            add("![what is blocking entries](chart-blockers.svg)")
+            add("")
+        except Exception as e:
+            print(f"scan charts skipped: {e}")
+
+        add("| Coin | Would be | Needs | Status |")
+        add("|---|---|---|---|")
+        for r in scan[:10]:
+            status = "**READY**" if r["ready"] else "; ".join(r["blockers"][:2])
+            add(f"| {r['coin']} | {r['side']} | {r['gap']:.2f}% | {status} |")
+        add("")
+        add("A trade needs **all four** of: price breaking its 3-day range, the "
+            "trend filter agreeing, enough momentum (ADX over 20), and "
+            "above-average volume. A coin at 0.00% that still has not traded is "
+            "being held back by one of the other three — the table says which.")
+    else:
+        add("No market scan available this cycle.")
+    add("")
+
+    # ---------------------------------------------------------- market
+    if scan:
+        try:
+            charts.market_mood(scan)
+            add("![market backdrop](chart-mood.svg)")
+            add("")
+        except Exception as e:
+            print(f"mood chart skipped: {e}")
+
+    # ---------------------------------------------------------- results
+    add("## Results")
+    add("")
+    try:
+        charts.winloss(closed)
+        add("![wins vs losses](chart-winloss.svg)")
+        add("")
+    except Exception as e:
+        print(f"winloss chart skipped: {e}")
+
+    add("### Last 15 finished trades")
     add("")
     if closed:
         add("| Coin | Direction | Result | Why it closed | When |")
@@ -170,35 +165,36 @@ def main() -> int:
         for r in closed[:15]:
             side = "SHORT" if r["is_short"] else "LONG"
             p = r["close_profit_abs"] or 0
-            mark = "🟢" if p > 0 else "🔴"
             when = str(r["close_date"])[:16] if r["close_date"] else ""
-            add(f"| {r['pair'].split('/')[0]} | {side} | {mark} {money(p)} USDT "
-                f"({(r['close_profit'] or 0)*100:+.1f}%) | {r['exit_reason']} | {when} |")
+            add(f"| {r['pair'].split('/')[0]} | {side} | {'🟢' if p > 0 else '🔴'} "
+                f"{money(p)} ({(r['close_profit'] or 0)*100:+.1f}%) | "
+                f"{r['exit_reason']} | {when} |")
     else:
         add("None yet.")
     add("")
 
+    # ---------------------------------------------------------- footer
     add("---")
     add("")
-    add("### What this bot does")
+    add("### How it works")
     add("")
-    add("Watches 47 coins on the hour. Buys when one breaks above its 3-day "
-        "high, sells short when one breaks below its 3-day low. Every trade "
-        "gets a stop-loss, and winners are left to run on a trailing stop "
-        "instead of being closed at a fixed target.")
+    add("Watches 47 coins every hour. Goes long when one breaks above its "
+        "3-day high, short when one breaks below its 3-day low — but only if "
+        "the trend, momentum and volume all agree.")
     add("")
-    add("It risks 1% of the account per trade and never holds more than 5 "
-        "positions on the same side, so a single bad day cannot take the "
-        "account out.")
+    add("Every trade gets a stop-loss. Winners are left to run on a trailing "
+        "stop rather than closed at a fixed target. It risks 1% of the account "
+        "per trade and never holds more than 5 positions on the same side, so "
+        "one bad day cannot end it.")
     add("")
-    add("**Expect it to lose more trades than it wins** — roughly 2-3 winners "
-        "in 10. It is built so the winners are much bigger than the losers. "
-        "Backtests on 2024-2026 lost money; this is running to see what it "
-        "does on live prices, with money that isn't real.")
+    add("**It loses more trades than it wins** — about 2-3 winners in 10, by "
+        "design, with the winners much larger. Backtested on 2024-2026 it lost "
+        "money. This is running on live prices with fake money to see what it "
+        "actually does.")
 
     open(OUT, "w", encoding="utf-8").write("\n".join(L) + "\n")
-    print(f"status written: balance ${balance:.4f}, "
-          f"{len(open_)} open, {len(closed)} closed")
+    print(f"status written: ${balance:.4f}, {len(open_)} open, "
+          f"{len(closed)} closed, {len(scan)} coins scanned")
     return 0
 
 

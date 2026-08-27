@@ -102,7 +102,12 @@ jobs:
               tail -n 40 user_data/logs/cloud.log 2>&1 || echo "(no log)"
             } > user_data/logs/last_run.txt 2>&1
 
-            # ---- rebuild the status page and chart ----
+            # ---- scan the market, then rebuild the status page ----
+            # market_scan.py recomputes the strategy's four entry conditions
+            # live, so "why has it not traded" is answered with the actual
+            # blocker per coin rather than a guess. Never fatal: a failed scan
+            # costs one hour of that panel, not the trading.
+            python market_scan.py || echo "market scan failed - not fatal"
             python make_status.py || echo "status page failed - not fatal"
 
             # ---- save state; a failure here must not kill the loop ----
@@ -114,7 +119,8 @@ jobs:
             set +e
             python bot_tools.py checkpoint
             rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
-            git add -f README.md equity.svg user_data/live_cloud.sqlite \
+            git add -f README.md chart-*.svg market_scan.json \
+                       user_data/live_cloud.sqlite \
                        user_data/logs/cloud.log user_data/logs/last_run.txt 2>/dev/null
             if ! git diff --cached --quiet; then
               git commit -q -m "bot: cycle $CYCLE at $(date -u '+%Y-%m-%d %H:%M UTC')"
