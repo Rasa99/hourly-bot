@@ -1,0 +1,117 @@
+run          : 5
+finished     : 2026-08-27 17:40 UTC
+freqtrade exit: 124   (124/130 = we stopped it on purpose)
+workspace    : /home/runner/work/hourly-bot/hourly-bot
+cwd          : /home/runner/work/hourly-bot/hourly-bot
+db target    : sqlite:////home/runner/work/hourly-bot/hourly-bot/user_data/live_cloud.sqlite
+
+----- ls user_data -----
+total 48
+drwxr-xr-x 12 runner runner 4096 Aug 27 17:34 .
+drwxr-xr-x  5 runner runner 4096 Aug 27 17:33 ..
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:34 backtest_results
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:33 config
+drwxr-xr-x  3 runner runner 4096 Aug 27 17:34 data
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:34 freqaimodels
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:34 hyperopt_results
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:34 hyperopts
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:40 logs
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:34 notebooks
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:34 plot
+drwxr-xr-x  2 runner runner 4096 Aug 27 17:33 strategies
+
+----- ls repo root -----
+total 40
+drwxr-xr-x  5 runner runner 4096 Aug 27 17:33 .
+drwxr-xr-x  3 runner runner 4096 Aug 27 17:33 ..
+drwxr-xr-x  7 runner runner 4096 Aug 27 17:33 .git
+drwxr-xr-x  3 runner runner 4096 Aug 27 17:33 .github
+-rw-r--r--  1 runner runner  121 Aug 27 17:33 .gitignore
+-rw-r--r--  1 runner runner 3473 Aug 27 17:33 PUT-IT-ONLINE.md
+-rw-r--r--  1 runner runner 4133 Aug 27 17:33 push-to-github.bat
+-rw-r--r--  1 runner runner  220 Aug 27 17:33 requirements.txt
+drwxr-xr-x 12 runner runner 4096 Aug 27 17:34 user_data
+
+----- every sqlite on the machine -----
+
+----- last 80 log lines -----
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/exchange.py", line 698, in _load_async_markets
+    markets = self.loop.run_until_complete(self._api_reload_markets(reload=reload))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/exchange.py", line 689, in _api_reload_markets
+    raise TemporaryError(
+freqtrade.exceptions.TemporaryError: Error in reload_markets due to RateLimitExceeded. Message: bybit GET https://api.bybit.com/v5/market/instruments-info?category=spot 403 Forbidden {
+    error:The Amazon CloudFront distribution is configured to block access from your country
+}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/exchange.py", line 685, in _api_reload_markets
+    await self._api_async.load_markets(reload=reload, params={})
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 377, in load_markets
+    raise e
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 369, in load_markets
+    result = await self.markets_loading
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 336, in load_markets_helper
+    markets = await self.fetch_markets(params)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/bybit.py", line 1903, in fetch_markets
+    promises = await asyncio.gather(*promisesUnresolved)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/bybit.py", line 1930, in fetch_spot_markets
+    response = await self.publicGetV5MarketInstrumentsInfo(self.extend(request, params))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 1068, in request
+    return await self.fetch2(path, api, method, params, headers, body, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 1062, in fetch2
+    raise e
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 1045, in fetch2
+    response = await self.fetch(request['url'], request['method'], request['headers'], request['body'])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/async_support/base/exchange.py", line 296, in fetch
+    self.handle_http_status_code(http_status_code, http_status_text, url, method, http_response)
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/ccxt/base/exchange.py", line 2076, in handle_http_status_code
+    raise ErrorClass(self.id + ' ' + method + ' ' + url + ' ' + codeAsString + ' ' + reason + ' ' + body)
+ccxt.base.errors.RateLimitExceeded: bybit GET https://api.bybit.com/v5/market/instruments-info?category=spot 403 Forbidden {
+    error:The Amazon CloudFront distribution is configured to block access from your country
+}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/exchange.py", line 725, in reload_markets
+    retrier(self._load_async_markets, retries=retries)(reload=True)
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/common.py", line 193, in wrapper
+    return wrapper(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/common.py", line 193, in wrapper
+    return wrapper(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/common.py", line 193, in wrapper
+    return wrapper(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/common.py", line 196, in wrapper
+    raise ex
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/common.py", line 181, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/exchange.py", line 698, in _load_async_markets
+    markets = self.loop.run_until_complete(self._api_reload_markets(reload=reload))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/exchange/exchange.py", line 689, in _api_reload_markets
+    raise TemporaryError(
+freqtrade.exceptions.TemporaryError: Error in reload_markets due to RateLimitExceeded. Message: bybit GET https://api.bybit.com/v5/market/instruments-info?category=spot 403 Forbidden {
+    error:The Amazon CloudFront distribution is configured to block access from your country
+}
+2026-08-27 17:34:38,271 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
+2026-08-27 17:34:38,272 - freqtrade.freqtradebot - WARNING - Exception during cleanup: AttributeError type object 'Trade' has no attribute 'session'
+2026-08-27 17:34:38,272 - freqtrade - ERROR - Could not load markets, therefore cannot start. Please investigate the above error for more details.
