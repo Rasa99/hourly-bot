@@ -46,12 +46,18 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          # cache: 'pip' needs a requirements.txt or pyproject.toml to hash, and
+          # fails the whole run if neither exists. That is what broke run #1:
+          # "No file matched to [**/requirements.txt or **/pyproject.toml]".
+          # requirements.txt now exists, which both fixes it and makes every
+          # later run install from cache in seconds instead of minutes.
           cache: 'pip'
+          cache-dependency-path: requirements.txt
 
       - name: Install freqtrade
         run: |
           python -m pip install --upgrade pip
-          pip install freqtrade
+          pip install -r requirements.txt
 
       - name: Run one hourly cycle
         env:
