@@ -59,7 +59,21 @@ class HourlyTrend(IStrategy):
     minimal_roi = {"0": 100.0}       # no profit target - winners must be free to run
     stoploss = -0.60                 # safety net only; real stop is ATR based
 
-    startup_candle_count: int = 300  # EMA200 + ATR + breakout window
+    # 800, not 300. EMA is RECURSIVE - its value depends on every candle before
+    # it - so with too little warmup it never converges and reads slightly
+    # wrong. Measured with `freqtrade recursive-analysis`:
+    #
+    #   warmup:      200      300      400      800     1000
+    #   ema_slow: -0.018%  +0.050%  +0.041%   0.000%  -0.000%
+    #
+    # 0.05% sounds trivial and is not: when price sits near the EMA it flips
+    # the trend filter, which flips the trade. `lookahead-analysis` caught it
+    # as real bias - 2 biased entries and 2 biased exits out of 20 signals,
+    # while TrendFollower (which uses a non-recursive SMA) scored a clean zero.
+    #
+    # A backtest run with unconverged indicators is measuring a strategy that
+    # could not have existed live. Do not lower this.
+    startup_candle_count: int = 800
 
     # --- entry -----------------------------------------------------------
     breakout_hours = IntParameter(
