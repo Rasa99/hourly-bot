@@ -73,6 +73,16 @@ jobs:
           git config user.name  "hourly-bot"
           git config user.email "hourly-bot@users.noreply.github.com"
 
+          # Start the Telegram listener alongside the trading loop, so /status
+          # and /closest are answered for the job's whole life rather than only
+          # during the few minutes freqtrade itself is up. Read-only: it can
+          # report, never trade. If it dies, trading is unaffected.
+          if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+            LISTEN_SECONDS=19800 python telegram_listener.py \
+              > user_data/logs/listener.log 2>&1 &
+            echo "telegram listener started (pid $!)"
+          fi
+
           DEADLINE=$(( $(date +%s) + 19200 ))     # stop starting new cycles after 5h20m
           CYCLE=0
 
