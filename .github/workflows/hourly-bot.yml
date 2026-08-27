@@ -79,6 +79,16 @@ jobs:
           # its database somewhere we were not looking, and the run failed the
           # "no database was created" check. An absolute path cannot do that.
           FREQTRADE__DB_URL: sqlite:///${{ github.workspace }}/user_data/live_cloud.sqlite
+
+          # Telegram. These were removed while chasing the Bybit block and had
+          # to be put back - the secrets existed but nothing was reading them.
+          # ENABLED is driven by whether the token secret is set, so a fork or
+          # a fresh clone with no secrets still starts normally instead of
+          # crashing on an empty token. (Verified locally that freqtrade
+          # accepts the string "false" here without complaint.)
+          FREQTRADE__TELEGRAM__ENABLED: ${{ secrets.TELEGRAM_TOKEN != '' }}
+          FREQTRADE__TELEGRAM__TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          FREQTRADE__TELEGRAM__CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           mkdir -p user_data/logs
           echo "workspace : ${{ github.workspace }}"
