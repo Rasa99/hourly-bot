@@ -1,42 +1,12 @@
-run          : 6
-finished     : 2026-08-27 18:30 UTC
-freqtrade exit: 124   (124/130 = we stopped it on purpose)
-workspace    : /home/runner/work/hourly-bot/hourly-bot
-cwd          : /home/runner/work/hourly-bot/hourly-bot
-db target    : sqlite:////home/runner/work/hourly-bot/hourly-bot/user_data/live_cloud.sqlite
-
------ ls user_data -----
-total 144
-drwxr-xr-x 12 runner runner  4096 Aug 27 18:30 .
-drwxr-xr-x  5 runner runner  4096 Aug 27 18:23 ..
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:24 backtest_results
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:23 config
-drwxr-xr-x  3 runner runner  4096 Aug 27 18:24 data
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:24 freqaimodels
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:24 hyperopt_results
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:24 hyperopts
--rw-r--r--  1 runner runner 94208 Aug 27 18:30 live_cloud.sqlite
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:24 logs
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:24 notebooks
-drwxr-xr-x  2 runner runner  4096 Aug 27 18:24 plot
-drwxr-xr-x  3 runner runner  4096 Aug 27 18:24 strategies
-
------ ls repo root -----
-total 40
-drwxr-xr-x  5 runner runner 4096 Aug 27 18:23 .
-drwxr-xr-x  3 runner runner 4096 Aug 27 18:23 ..
-drwxr-xr-x  7 runner runner 4096 Aug 27 18:23 .git
-drwxr-xr-x  3 runner runner 4096 Aug 27 18:23 .github
--rw-r--r--  1 runner runner  121 Aug 27 18:23 .gitignore
--rw-r--r--  1 runner runner 3473 Aug 27 18:23 PUT-IT-ONLINE.md
--rw-r--r--  1 runner runner 4133 Aug 27 18:23 push-to-github.bat
--rw-r--r--  1 runner runner  220 Aug 27 18:23 requirements.txt
-drwxr-xr-x 12 runner runner 4096 Aug 27 18:30 user_data
-
------ every sqlite on the machine -----
-/home/runner/work/hourly-bot/hourly-bot/user_data/live_cloud.sqlite
-
------ last 80 log lines -----
+2026-08-27 18:24:27,834 - freqtrade.loggers - INFO - Enabling colorized output.
+2026-08-27 18:24:27,834 - freqtrade.loggers - INFO - Logfile configured
+2026-08-27 18:24:27,835 - freqtrade.loggers - INFO - Verbosity set to 0
+2026-08-27 18:24:27,835 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2026-08-27 18:24:27,835 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2026-08-27 18:24:27,836 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2026-08-27 18:24:27,836 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////home/runner/work/hourly-bot/hourly-bot/user_data/live_cloud.sqlite"
+2026-08-27 18:24:27,837 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 15 ...
+2026-08-27 18:24:27,838 - freqtrade.configuration.configuration - INFO - Using user-data directory: user_data ...
 2026-08-27 18:24:27,838 - freqtrade.configuration.directory_operations - INFO - Created data directory: None
 2026-08-27 18:24:27,839 - freqtrade.configuration.configuration - INFO - Using data directory: user_data/data/gate ...
 2026-08-27 18:24:27,839 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
