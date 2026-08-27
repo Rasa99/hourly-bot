@@ -123,11 +123,16 @@ jobs:
             else
               echo "nothing changed"
             fi
-            set -e
+
+            # NOTE: `set -e` is deliberately NOT restored here. Everything from
+            # this point on is reporting, not trading, and none of it is worth
+            # killing a five-hour job over. With `set -e` active, one failed
+            # Telegram call or a momentary network blip would end the step and
+            # the bot would stop trading for the rest of the day.
 
             # ---- tell Telegram, every hour, whatever happened ----
             if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
-              MSG=$(python bot_tools.py summary)
+              MSG=$(python bot_tools.py summary || echo "Hourly check done.")
               curl -sS -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
                 --data-urlencode "chat_id=${TG_CHAT}" --data-urlencode "text=${MSG}" \
                 -o /dev/null -w "telegram: HTTP %{http_code}\n" || true
