@@ -39,8 +39,11 @@ jobs:
     timeout-minutes: 20
 
     steps:
+      # v7 rather than v4: v4 declares Node 20, which GitHub deprecated and now
+      # force-runs on Node 24, producing a yellow warning on every single run.
+      # Harmless, but a permanent warning trains you to ignore warnings.
       - name: Get the code and the bot's memory
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           # Without an explicit ref, checkout lands on a DETACHED HEAD. The
           # commit then succeeds and the push silently fails with "You are not
@@ -50,7 +53,7 @@ jobs:
           fetch-depth: 0
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           # cache: 'pip' needs a requirements.txt or pyproject.toml to hash, and
