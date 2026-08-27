@@ -1,6 +1,6 @@
 {
     "$schema": "https://schema.freqtrade.io/schema.json",
-    "_comment": "Cloud bot: HourlyTrend on the hour, dry-run only, no API keys anywhere. Runs once an hour inside GitHub Actions. Built by research/make_cloud_config.py - edit that, not this.",
+    "_comment": "Cloud bot: HourlyTrend on Gate.io, dry-run only, no API keys. Gate.io rather than Bybit because Bybit and Binance both refuse GitHub's runners (403 / 451) - see research/make_cloud_config_gate.py. Prices differ from Bybit's by a fraction of a percent on liquid coins, which is acceptable for a paper test. Live trading would still need Bybit.",
     "max_open_trades": 15,
     "stake_currency": "USDT",
     "stake_amount": "unlimited",
@@ -37,7 +37,7 @@
         "order_book_top": 1
     },
     "exchange": {
-        "name": "bybit",
+        "name": "gate",
         "key": "",
         "secret": "",
         "ccxt_config": {},
@@ -91,9 +91,7 @@
             "SKL/USDT:USDT",
             "BAND/USDT:USDT"
         ],
-        "pair_blacklist": [
-            "XRP/USDT:USDT"
-        ]
+        "pair_blacklist": []
     },
     "pairlists": [
         {
