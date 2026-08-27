@@ -1,0 +1,26 @@
+Which exchanges answer from a GitHub Actions runner?
+Testing public market data only - no keys, no account.
+
+exchange          markets  USDT perps   result
+--------------------------------------------------------------
+bybit                   -           -   FAILED: bybit GET https://api.bybit.com/v5/market/instruments-info?category=sp
+binance                 -           -   FAILED: binance GET https://api.binance.com/api/v3/exchangeInfo 451  {   "code
+okx                  4569         443   OK
+kucoinfutures         674         664   OK
+gate                 6812         937   OK
+bitget               2128         763   OK
+kraken               1437           0   OK
+htx                  2481         301   OK
+mexc                 3238        1020   OK
+
+==============================================================
+USABLE, most perpetual pairs first:
+   mexc  (1020 USDT perps)
+   gate  (937 USDT perps)
+   bitget  (763 USDT perps)
+   kucoinfutures  (664 USDT perps)
+   okx  (443 USDT perps)
+   htx  (301 USDT perps)
+   kraken  (0 USDT perps)
+
+BEST CHOICE: mexc
