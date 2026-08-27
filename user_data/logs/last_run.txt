@@ -1,124 +1,45 @@
-run          : 8
-finished     : 2026-08-27 19:44 UTC
-freqtrade exit: 124   (124/130 = we stopped it on purpose)
-workspace    : /home/runner/work/hourly-bot/hourly-bot
-cwd          : /home/runner/work/hourly-bot/hourly-bot
-db target    : sqlite:////home/runner/work/hourly-bot/hourly-bot/user_data/live_cloud.sqlite
+run          : 10   cycle: 1
+finished     : 2026-08-27 21:33 UTC
+freqtrade exit: 124
 
------ ls user_data -----
-total 144
-drwxr-xr-x 12 runner runner  4096 Aug 27 19:44 .
-drwxr-xr-x  5 runner runner  4096 Aug 27 19:37 ..
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:38 backtest_results
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:37 config
-drwxr-xr-x  3 runner runner  4096 Aug 27 19:38 data
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:38 freqaimodels
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:38 hyperopt_results
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:38 hyperopts
--rw-r--r--  1 runner runner 94208 Aug 27 19:44 live_cloud.sqlite
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:37 logs
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:38 notebooks
-drwxr-xr-x  2 runner runner  4096 Aug 27 19:38 plot
-drwxr-xr-x  3 runner runner  4096 Aug 27 19:38 strategies
-
------ ls repo root -----
-total 68
-drwxr-xr-x  5 runner runner 4096 Aug 27 19:37 .
-drwxr-xr-x  3 runner runner 4096 Aug 27 19:37 ..
-drwxr-xr-x  7 runner runner 4096 Aug 27 19:37 .git
-drwxr-xr-x  3 runner runner 4096 Aug 27 19:37 .github
--rw-r--r--  1 runner runner  121 Aug 27 19:37 .gitignore
--rw-r--r--  1 runner runner 3473 Aug 27 19:37 PUT-IT-ONLINE.md
--rw-r--r--  1 runner runner 1260 Aug 27 19:37 README.md
--rw-r--r--  1 runner runner 1089 Aug 27 19:37 equity.svg
--rw-r--r--  1 runner runner  306 Aug 27 19:37 get-telegram-id.bat
--rw-r--r--  1 runner runner 4261 Aug 27 19:37 get-telegram-id.ps1
--rw-r--r--  1 runner runner 7809 Aug 27 19:37 make_status.py
--rw-r--r--  1 runner runner 4133 Aug 27 19:37 push-to-github.bat
--rw-r--r--  1 runner runner  220 Aug 27 19:37 requirements.txt
-drwxr-xr-x 12 runner runner 4096 Aug 27 19:44 user_data
-
------ every sqlite on the machine -----
-/home/runner/work/hourly-bot/hourly-bot/user_data/live_cloud.sqlite
-
------ last 80 log lines -----
-2026-08-27 19:38:17,511 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy HourlyTrend from '/home/runner/work/hourly-bot/hourly-bot/user_data/strategies/HourlyTrend.py'...
-2026-08-27 19:38:17,512 - freqtrade.strategy.hyper - INFO - Found no parameter file.
-2026-08-27 19:38:17,513 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'timeframe' with value from the configuration: 1h.
-2026-08-27 19:38:17,513 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value from the configuration: USDT.
-2026-08-27 19:38:17,514 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value from the configuration: unlimited.
-2026-08-27 19:38:17,514 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value from the configuration: {'entry': 5, 'exit': 5, 'exit_timeout_count': 0, 'unit': 'minutes'}.
-2026-08-27 19:38:17,515 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value from the configuration: 15.
-2026-08-27 19:38:17,515 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'0': 100.0}
-2026-08-27 19:38:17,516 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 1h
-2026-08-27 19:38:17,516 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.6
-2026-08-27 19:38:17,517 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
-2026-08-27 19:38:17,517 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
-2026-08-27 19:38:17,517 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
-2026-08-27 19:38:17,518 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: True
-2026-08-27 19:38:17,518 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
-2026-08-27 19:38:17,519 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'limit', 'stoploss_on_exchange': False, 'stoploss_on_exchange_interval': 60}
-2026-08-27 19:38:17,519 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
-2026-08-27 19:38:17,520 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
-2026-08-27 19:38:17,520 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: unlimited
-2026-08-27 19:38:17,521 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 800
-2026-08-27 19:38:17,521 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 5, 'exit': 5, 'exit_timeout_count': 0, 'unit': 'minutes'}
-2026-08-27 19:38:17,521 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: False
-2026-08-27 19:38:17,522 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
-2026-08-27 19:38:17,522 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
-2026-08-27 19:38:17,523 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
-2026-08-27 19:38:17,523 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
-2026-08-27 19:38:17,524 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
-2026-08-27 19:38:17,524 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
-2026-08-27 19:38:17,525 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
-2026-08-27 19:38:17,525 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 15
-2026-08-27 19:38:17,525 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
-2026-08-27 19:38:17,859 - freqtrade.wallets - INFO - Wallets synced.
-2026-08-27 19:38:17,975 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.telegram ...
-2026-08-27 19:38:18,108 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/pairlist/StaticPairList.py'...
-2026-08-27 19:38:18,109 - freqtrade.freqtradebot - INFO - Starting initial pairlist refresh
-2026-08-27 19:38:18,177 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 47 pairs: ['BTC/USDT:USDT', 'ETH/USDT:USDT', 'BNB/USDT:USDT', 'SOL/USDT:USDT', 'ADA/USDT:USDT', 'DOGE/USDT:USDT', 'AVAX/USDT:USDT', 'DOT/USDT:USDT', 'LINK/USDT:USDT', 'LTC/USDT:USDT', 'BCH/USDT:USDT', 'ATOM/USDT:USDT', 'UNI/USDT:USDT', 'ETC/USDT:USDT', 'NEAR/USDT:USDT', 'ALGO/USDT:USDT', 'FIL/USDT:USDT', 'ICP/USDT:USDT', 'HBAR/USDT:USDT', 'APE/USDT:USDT', 'SAND/USDT:USDT', 'MANA/USDT:USDT', 'AXS/USDT:USDT', 'THETA/USDT:USDT', 'AAVE/USDT:USDT', 'GRT/USDT:USDT', 'CHZ/USDT:USDT', 'ENJ/USDT:USDT', 'CRV/USDT:USDT', 'COMP/USDT:USDT', 'DASH/USDT:USDT', 'QTUM/USDT:USDT', 'IOTA/USDT:USDT', 'ONT/USDT:USDT', 'BAT/USDT:USDT', 'RVN/USDT:USDT', 'KSM/USDT:USDT', 'EGLD/USDT:USDT', 'GALA/USDT:USDT', 'CELO/USDT:USDT', 'SUSHI/USDT:USDT', 'SNX/USDT:USDT', 'LRC/USDT:USDT', 'STORJ/USDT:USDT', 'ANKR/USDT:USDT', 'SKL/USDT:USDT', 'BAND/USDT:USDT']
-2026-08-27 19:38:18,178 - freqtrade.freqtradebot - INFO - Initial Pairlist refresh took 0.07s
-2026-08-27 19:38:18,179 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
-2026-08-27 19:38:18,180 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): adx_floor = 20
-2026-08-27 19:38:18,181 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): breakout_hours = 72
-2026-08-27 19:38:18,181 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_fast = 50
-2026-08-27 19:38:18,182 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_slow = 200
-2026-08-27 19:38:18,182 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_long_max = 78
-2026-08-27 19:38:18,183 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_short_min = 22
-2026-08-27 19:38:18,183 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
-2026-08-27 19:38:18,183 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): initial_stop_atr = 2.0
-2026-08-27 19:38:18,184 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): risk_per_trade = 0.01
-2026-08-27 19:38:18,185 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): trail_atr = 6.0
-2026-08-27 19:38:18,189 - freqtrade.resolvers.iresolver - INFO - Using resolved protection CooldownPeriod from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/cooldown_period.py'...
-2026-08-27 19:38:18,193 - freqtrade.resolvers.iresolver - INFO - Using resolved protection MaxDrawdown from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/max_drawdown_protection.py'...
-2026-08-27 19:38:18,195 - freqtrade.resolvers.iresolver - INFO - Using resolved protection StoplossGuard from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/stoploss_guard.py'...
-2026-08-27 19:38:18,196 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
-2026-08-27 19:38:18,196 - freqtrade.worker - INFO - Changing state to: RUNNING
-2026-08-27 19:38:18,202 - freqtrade.util.migrations.migrate_wallet_history - INFO - Starting wallet history migration...
-2026-08-27 19:38:18,210 - freqtrade.util.migrations.migrate_wallet_history - INFO - Wallet history migration completed.
-2026-08-27 19:38:18,239 - freqtrade.rpc.telegram - INFO - rpc.telegram is listening for following commands: [['status'], ['profit'], ['balance'], ['start'], ['stop'], ['forceexit', 'forcesell', 'fx'], ['forcebuy', 'forcelong'], ['forceshort'], ['reload_trade'], ['trades'], ['delete'], ['cancel_open_order', 'coo'], ['performance'], ['buys', 'entries'], ['exits', 'sells'], ['mix_tags'], ['stats'], ['daily'], ['weekly'], ['monthly'], ['count'], ['locks'], ['delete_locks', 'unlock'], ['reload_conf', 'reload_config'], ['show_conf', 'show_config'], ['pause', 'stopbuy', 'stopentry'], ['whitelist'], ['blacklist'], ['bl_delete', 'blacklist_delete'], ['logs'], ['health'], ['help'], ['version'], ['marketdir'], ['order'], ['list_custom_data'], ['tg_info'], ['profit_long'], ['profit_short']]
-2026-08-27 19:38:18,475 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
-2026-08-27 19:38:18,475 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `gate`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'0': 100.0}`\n*Stoploss:* `-0.6`\n*Position adjustment:* `Off`\n*Timeframe:* `1h`\n*Strategy:* `HourlyTrend`"}
-2026-08-27 19:38:18,477 - freqtrade.rpc.telegram - INFO - Notification 'startup' not sent.
-2026-08-27 19:38:18,478 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
-2026-08-27 19:38:18,479 - freqtrade.rpc.telegram - INFO - Notification 'startup' not sent.
-2026-08-27 19:38:18,479 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': 'Using Protections: \nCooldownPeriod - Cooldown period for 2 candles.\nMaxDrawdown - Max drawdown protection, stop trading if drawdown is > 0.15 within 168 candles.\nStoplossGuard - Frequent Stoploss Guard, 6 stoplosses with profit < 0.00% within 24 candles.'}
-2026-08-27 19:38:18,480 - freqtrade.rpc.telegram - INFO - Notification 'startup' not sent.
-2026-08-27 19:38:18,547 - telegram.ext.Application - INFO - Application started
-2026-08-27 19:38:23,484 - freqtrade.worker - INFO - Bot heartbeat. PID=2104, version='2026.7', state='RUNNING'
-2026-08-27 19:39:23,487 - freqtrade.worker - INFO - Bot heartbeat. PID=2104, version='2026.7', state='RUNNING'
-2026-08-27 19:40:23,490 - freqtrade.worker - INFO - Bot heartbeat. PID=2104, version='2026.7', state='RUNNING'
-2026-08-27 19:41:23,494 - freqtrade.worker - INFO - Bot heartbeat. PID=2104, version='2026.7', state='RUNNING'
-2026-08-27 19:42:23,498 - freqtrade.worker - INFO - Bot heartbeat. PID=2104, version='2026.7', state='RUNNING'
-2026-08-27 19:43:23,501 - freqtrade.worker - INFO - Bot heartbeat. PID=2104, version='2026.7', state='RUNNING'
-2026-08-27 19:44:06,195 - freqtrade.commands.trade_commands - INFO - worker found ... calling exit
-2026-08-27 19:44:06,195 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'process died'}
-2026-08-27 19:44:06,196 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
-2026-08-27 19:44:06,198 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc modules ...
-2026-08-27 19:44:06,199 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc.telegram ...
-2026-08-27 19:44:06,498 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
-2026-08-27 19:44:06,499 - telegram.ext.Application - INFO - Application.stop() complete
-2026-08-27 19:44:06,500 - freqtrade.rpc.telegram - WARNING - Telegram NetworkError: httpx.ReadError: ! Trying one more time.
-2026-08-27 19:44:06,501 - freqtrade.rpc.telegram - WARNING - TelegramError: Unknown error in HTTP implementation: RuntimeError('This HTTPXRequest is not initialized!')! Giving up on that message.
-2026-08-27 19:44:09,176 - freqtrade - INFO - SIGINT received, aborting ...
+----- last 40 log lines -----
+2026-08-27 21:28:10,425 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_fast = 50
+2026-08-27 21:28:10,425 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_slow = 200
+2026-08-27 21:28:10,426 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_long_max = 78
+2026-08-27 21:28:10,426 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_short_min = 22
+2026-08-27 21:28:10,427 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2026-08-27 21:28:10,427 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): initial_stop_atr = 2.0
+2026-08-27 21:28:10,428 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): risk_per_trade = 0.01
+2026-08-27 21:28:10,428 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): trail_atr = 6.0
+2026-08-27 21:28:10,430 - freqtrade.resolvers.iresolver - INFO - Using resolved protection CooldownPeriod from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/cooldown_period.py'...
+2026-08-27 21:28:10,434 - freqtrade.resolvers.iresolver - INFO - Using resolved protection MaxDrawdown from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/max_drawdown_protection.py'...
+2026-08-27 21:28:10,435 - freqtrade.resolvers.iresolver - INFO - Using resolved protection StoplossGuard from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/stoploss_guard.py'...
+2026-08-27 21:28:10,436 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2026-08-27 21:28:10,436 - freqtrade.rpc.telegram - INFO - Notification 'status' not sent.
+2026-08-27 21:28:10,436 - freqtrade.worker - INFO - Changing state to: RUNNING
+2026-08-27 21:28:10,439 - freqtrade.util.migrations.migrate_wallet_history - INFO - Starting wallet history migration...
+2026-08-27 21:28:10,444 - freqtrade.util.migrations.migrate_wallet_history - INFO - Wallet history migration completed.
+2026-08-27 21:28:10,467 - freqtrade.rpc.telegram - INFO - rpc.telegram is listening for following commands: [['status'], ['profit'], ['balance'], ['start'], ['stop'], ['forceexit', 'forcesell', 'fx'], ['forcebuy', 'forcelong'], ['forceshort'], ['reload_trade'], ['trades'], ['delete'], ['cancel_open_order', 'coo'], ['performance'], ['buys', 'entries'], ['exits', 'sells'], ['mix_tags'], ['stats'], ['daily'], ['weekly'], ['monthly'], ['count'], ['locks'], ['delete_locks', 'unlock'], ['reload_conf', 'reload_config'], ['show_conf', 'show_config'], ['pause', 'stopbuy', 'stopentry'], ['whitelist'], ['blacklist'], ['bl_delete', 'blacklist_delete'], ['logs'], ['health'], ['help'], ['version'], ['marketdir'], ['order'], ['list_custom_data'], ['tg_info'], ['profit_long'], ['profit_short']]
+2026-08-27 21:28:10,473 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2026-08-27 21:28:10,474 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `gate`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'0': 100.0}`\n*Stoploss:* `-0.6`\n*Position adjustment:* `Off`\n*Timeframe:* `1h`\n*Strategy:* `HourlyTrend`"}
+2026-08-27 21:28:10,475 - freqtrade.rpc.telegram - INFO - Notification 'startup' not sent.
+2026-08-27 21:28:10,475 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
+2026-08-27 21:28:10,476 - freqtrade.rpc.telegram - INFO - Notification 'startup' not sent.
+2026-08-27 21:28:10,476 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': 'Using Protections: \nCooldownPeriod - Cooldown period for 2 candles.\nMaxDrawdown - Max drawdown protection, stop trading if drawdown is > 0.15 within 168 candles.\nStoplossGuard - Frequent Stoploss Guard, 6 stoplosses with profit < 0.00% within 24 candles.'}
+2026-08-27 21:28:10,478 - freqtrade.rpc.telegram - INFO - Notification 'startup' not sent.
+2026-08-27 21:28:10,796 - telegram.ext.Application - INFO - Application started
+2026-08-27 21:28:15,481 - freqtrade.worker - INFO - Bot heartbeat. PID=2111, version='2026.7', state='RUNNING'
+2026-08-27 21:29:15,484 - freqtrade.worker - INFO - Bot heartbeat. PID=2111, version='2026.7', state='RUNNING'
+2026-08-27 21:30:15,486 - freqtrade.worker - INFO - Bot heartbeat. PID=2111, version='2026.7', state='RUNNING'
+2026-08-27 21:31:05,639 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-27 21:31:15,489 - freqtrade.worker - INFO - Bot heartbeat. PID=2111, version='2026.7', state='RUNNING'
+2026-08-27 21:32:15,492 - freqtrade.worker - INFO - Bot heartbeat. PID=2111, version='2026.7', state='RUNNING'
+2026-08-27 21:32:56,933 - freqtrade.commands.trade_commands - INFO - worker found ... calling exit
+2026-08-27 21:32:56,933 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'process died'}
+2026-08-27 21:32:56,933 - freqtrade.rpc.telegram - INFO - Notification 'status' not sent.
+2026-08-27 21:32:56,934 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
+2026-08-27 21:32:56,935 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc modules ...
+2026-08-27 21:32:56,935 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc.telegram ...
+2026-08-27 21:32:57,203 - telegram.ext.Application - INFO - Application is stopping. This might take a moment.
+2026-08-27 21:32:57,204 - telegram.ext.Application - INFO - Application.stop() complete
+2026-08-27 21:33:01,344 - freqtrade - INFO - SIGINT received, aborting ...
