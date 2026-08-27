@@ -70,8 +70,20 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run one hourly cycle
+        env:
+          # ABSOLUTE path. config.cloud.json carries a relative db_url, which
+          # depends entirely on the working directory - and that has already
+          # broken this project once, when a detached launch started in the
+          # wrong folder and freqtrade died with "unable to open database file".
+          # Here it produced something quieter and worse: freqtrade ran, wrote
+          # its database somewhere we were not looking, and the run failed the
+          # "no database was created" check. An absolute path cannot do that.
+          FREQTRADE__DB_URL: sqlite:///${{ github.workspace }}/user_data/live_cloud.sqlite
         run: |
           mkdir -p user_data/logs
+          echo "workspace : ${{ github.workspace }}"
+          echo "cwd       : $(pwd)"
+          echo "db target : $FREQTRADE__DB_URL"
           set +e
           # freqtrade never exits on its own. Give it 6 minutes: enough to load
           # markets, pull fresh candles for every coin, act on the new hourly
@@ -99,9 +111,16 @@ jobs:
             exit 1
           fi
 
+          echo "===== what actually exists afterwards ====="
+          ls -la user_data/ || true
+          echo "----- any sqlite anywhere in the workspace -----"
+          find "${{ github.workspace }}" -name '*.sqlite*' 2>/dev/null || true
+          echo "----- last 60 log lines -----"
+          tail -n 60 user_data/logs/cloud.log 2>/dev/null || echo "(no log file)"
+          echo "==========================================="
+
           if [ ! -f user_data/live_cloud.sqlite ]; then
-            echo "::error::no database was created, so the bot never really started"
-            tail -n 120 user_data/logs/cloud.log 2>/dev/null || echo "(no log either)"
+            echo "::error::no database was created - see the listing above for where it went"
             exit 1
           fi
           echo "cycle completed normally"
