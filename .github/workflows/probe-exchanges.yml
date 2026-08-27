@@ -1,0 +1,95 @@
+name: probe-exchanges
+
+# One-off diagnostic. Bybit returns 403 to GitHub's runners:
+#   "The Amazon CloudFront distribution is configured to block access from
+#    your country"
+# GitHub Actions runs in Microsoft datacentres, and Bybit's CDN refuses them.
+# That is a block on the HOST, not on Rasa - his own PC reaches Bybit fine.
+#
+# So the cloud bot needs a price source that does answer from a datacentre.
+# This tries several and writes down which ones work, instead of guessing and
+# burning another hour per attempt.
+#
+# Paper trading only needs PRICES. No account, no keys, no orders. Whichever
+# exchange answers can feed the dry run.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install ccxt
+        run: pip install ccxt
+
+      - name: Ask each exchange if it will talk to us
+        run: |
+          mkdir -p user_data/logs
+          python - <<'PY' > user_data/logs/exchange_probe.txt 2>&1
+          import ccxt, time
+
+          # Exchanges freqtrade supports for USDT perpetual futures.
+          candidates = [
+              "bybit", "binance", "okx", "kucoinfutures",
+              "gate", "bitget", "kraken", "htx", "mexc",
+          ]
+
+          print("Which exchanges answer from a GitHub Actions runner?")
+          print("Testing public market data only - no keys, no account.\n")
+          print(f"{'exchange':<16}{'markets':>9}{'USDT perps':>12}   result")
+          print("-" * 62)
+
+          working = []
+          for name in candidates:
+              try:
+                  ex = getattr(ccxt, name)({
+                      "enableRateLimit": True,
+                      "timeout": 20000,
+                      "options": {"defaultType": "swap"},
+                  })
+                  mk = ex.load_markets()
+                  perps = [s for s, m in mk.items()
+                           if m.get("swap") and m.get("quote") == "USDT" and m.get("active")]
+                  print(f"{name:<16}{len(mk):>9}{len(perps):>12}   OK")
+                  working.append((name, len(perps)))
+              except Exception as e:
+                  msg = str(e).replace("\n", " ")[:70]
+                  print(f"{name:<16}{'-':>9}{'-':>12}   FAILED: {msg}")
+              time.sleep(1)
+
+          print("\n" + "=" * 62)
+          if working:
+              working.sort(key=lambda r: -r[1])
+              print("USABLE, most perpetual pairs first:")
+              for n, c in working:
+                  print(f"   {n}  ({c} USDT perps)")
+              print(f"\nBEST CHOICE: {working[0][0]}")
+          else:
+              print("NOTHING answered. GitHub Actions cannot host this bot;")
+              print("a different free host is needed.")
+          PY
+          cat user_data/logs/exchange_probe.txt
+
+      - name: Save the result to the repo
+        if: always()
+        run: |
+          git config user.name  "hourly-bot"
+          git config user.email "hourly-bot@users.noreply.github.com"
+          git add -f user_data/logs/exchange_probe.txt
+          git diff --cached --quiet || git commit -m "probe: which exchanges answer from GitHub"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+          git push origin "HEAD:${GITHUB_REF_NAME}"
