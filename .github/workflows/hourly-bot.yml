@@ -88,10 +88,15 @@ jobs:
           # freqtrade never exits on its own. Give it 6 minutes: enough to load
           # markets, pull fresh candles for every coin, act on the new hourly
           # bar and write to the database. Then stop it.
+          # --db-url on the command line beats both the config file and the env
+          # var, so there is exactly one possible answer for where the database
+          # goes. Belt and braces, because this is the third thing to go wrong
+          # here and each round trip costs an hour.
           timeout --signal=INT 360 freqtrade trade \
             --userdir user_data \
             --config user_data/config/config.cloud.json \
             --strategy HourlyTrend \
+            --db-url "$FREQTRADE__DB_URL" \
             --logfile user_data/logs/cloud.log
           CODE=$?
           set -e
@@ -111,16 +116,35 @@ jobs:
             exit 1
           fi
 
-          echo "===== what actually exists afterwards ====="
-          ls -la user_data/ || true
-          echo "----- any sqlite anywhere in the workspace -----"
-          find "${{ github.workspace }}" -name '*.sqlite*' 2>/dev/null || true
-          echo "----- last 60 log lines -----"
-          tail -n 60 user_data/logs/cloud.log 2>/dev/null || echo "(no log file)"
-          echo "==========================================="
+          # Write the diagnosis to a FILE as well as the console. The save step
+          # commits it, so the whole picture is readable straight from the repo
+          # without needing admin rights to download Actions logs.
+          DIAG=user_data/logs/last_run.txt
+          {
+            echo "run          : ${{ github.run_number }}"
+            echo "finished     : $(date -u '+%Y-%m-%d %H:%M UTC')"
+            echo "freqtrade exit: $CODE   (124/130 = we stopped it on purpose)"
+            echo "workspace    : ${{ github.workspace }}"
+            echo "cwd          : $(pwd)"
+            echo "db target    : $FREQTRADE__DB_URL"
+            echo
+            echo "----- ls user_data -----"
+            ls -la user_data/ 2>&1
+            echo
+            echo "----- ls repo root -----"
+            ls -la . 2>&1
+            echo
+            echo "----- every sqlite on the machine -----"
+            find / -name '*.sqlite*' -newermt '-30 minutes' 2>/dev/null | head -20
+            echo
+            echo "----- last 80 log lines -----"
+            tail -n 80 user_data/logs/cloud.log 2>&1 || echo "(no log file at all)"
+          } > "$DIAG" 2>&1
+
+          cat "$DIAG"
 
           if [ ! -f user_data/live_cloud.sqlite ]; then
-            echo "::error::no database was created - see the listing above for where it went"
+            echo "::error::no database at user_data/live_cloud.sqlite - see listing above"
             exit 1
           fi
           echo "cycle completed normally"
@@ -180,6 +204,9 @@ jobs:
           PY
           rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
 
+          # last_run.txt is added even when the run failed - that is the whole
+          # point of it, so a failure can be diagnosed from the repo itself.
+          git add -f user_data/logs/last_run.txt || true
           git add -f user_data/live_cloud.sqlite user_data/logs/cloud.log || true
 
           if git diff --cached --quiet; then
