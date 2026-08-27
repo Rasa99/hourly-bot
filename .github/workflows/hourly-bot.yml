@@ -223,7 +223,7 @@ jobs:
 
           # last_run.txt is added even when the run failed - that is the whole
           # point of it, so a failure can be diagnosed from the repo itself.
-          git add -f README.md || true
+          git add -f README.md equity.svg || true
           git add -f user_data/logs/last_run.txt || true
           git add -f user_data/live_cloud.sqlite user_data/logs/cloud.log || true
 

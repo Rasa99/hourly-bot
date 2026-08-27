@@ -25,6 +25,63 @@ def money(x):
     return f"{x:+.4f}"
 
 
+def equity_svg(closed, start=START_BALANCE, path="equity.svg"):
+    """
+    Draw the balance over time as an SVG.
+
+    Hand-rolled rather than matplotlib: this runs inside GitHub Actions where
+    every extra dependency is another install to wait for and another thing
+    that can break the hourly run. SVG is just text, needs nothing, and GitHub
+    renders it inline in the README.
+    """
+    W, H, PAD = 720, 220, 34
+
+    bal, running = [start], start
+    for r in reversed(closed):                 # closed is newest-first
+        running += (r["close_profit_abs"] or 0)
+        bal.append(running)
+
+    if len(bal) < 2:
+        bal = [start, start]
+
+    lo, hi = min(bal), max(bal)
+    if hi - lo < 1e-9:
+        lo, hi = lo - 0.5, hi + 0.5
+    span = hi - lo
+
+    def x(i):
+        return PAD + i * (W - 2 * PAD) / max(len(bal) - 1, 1)
+
+    def y(v):
+        return H - PAD - (v - lo) * (H - 2 * PAD) / span
+
+    pts = " ".join(f"{x(i):.1f},{y(v):.1f}" for i, v in enumerate(bal))
+    up = bal[-1] >= start
+    line = "#2ea043" if up else "#f85149"
+    fill = "rgba(46,160,67,0.15)" if up else "rgba(248,81,73,0.15)"
+    area = f"{PAD},{y(lo):.1f} " + pts + f" {x(len(bal)-1):.1f},{y(lo):.1f}"
+
+    start_y = y(start)
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
+  <rect width="{W}" height="{H}" fill="#0d1117" rx="6"/>
+  <text x="{PAD}" y="22" fill="#8b949e" font-family="system-ui,sans-serif" font-size="12">Balance over time (paper $)</text>
+  <line x1="{PAD}" y1="{start_y:.1f}" x2="{W-PAD}" y2="{start_y:.1f}"
+        stroke="#484f58" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="{W-PAD+2}" y="{start_y+4:.1f}" fill="#484f58" font-family="system-ui,sans-serif" font-size="10">start</text>
+  <polygon points="{area}" fill="{fill}"/>
+  <polyline points="{pts}" fill="none" stroke="{line}" stroke-width="2"
+            stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="{x(len(bal)-1):.1f}" cy="{y(bal[-1]):.1f}" r="3.5" fill="{line}"/>
+  <text x="{PAD}" y="{H-10}" fill="#8b949e" font-family="system-ui,sans-serif" font-size="11">
+    {len(closed)} trades &#183; ${start:.2f} &#8594; ${bal[-1]:.4f}</text>
+  <text x="{W-PAD}" y="{H-10}" fill="#8b949e" font-family="system-ui,sans-serif"
+        font-size="11" text-anchor="end">high ${hi:.4f} &#183; low ${lo:.4f}</text>
+</svg>"""
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(svg)
+    return path
+
+
 def main() -> int:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     L = []
@@ -80,6 +137,14 @@ def main() -> int:
         add(f"| Average win | {money(avg_w)} USDT |")
         add(f"| Average loss | {money(avg_l)} USDT |")
     add("")
+
+    # ---- chart ----
+    try:
+        equity_svg(closed)
+        add("![balance over time](equity.svg)")
+        add("")
+    except Exception as e:
+        print(f"chart skipped: {e}")
 
     # ---- open ----
     add("## Open right now")

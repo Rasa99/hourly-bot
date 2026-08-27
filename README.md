@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Last updated:** 2026-08-27 19:15 UTC &nbsp;&nbsp;|&nbsp;&nbsp; updates itself every hour
+**Last updated:** 2026-08-27 19:25 UTC &nbsp;&nbsp;|&nbsp;&nbsp; updates itself every hour
 
 Paper money only. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -13,6 +13,8 @@ Paper money only. $20 simulated, real Gate.io prices, no API keys — it cannot 
 | Change | +0.00% |
 | Trades finished | 0 |
 | Trades open now | 0 |
+
+![balance over time](equity.svg)
 
 ## Open right now
 
