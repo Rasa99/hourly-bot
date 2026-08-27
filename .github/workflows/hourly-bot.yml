@@ -1,0 +1,123 @@
+name: hourly-bot
+
+# Runs the bot once every hour, forever, for free.
+#
+# Why this design: freqtrade normally runs as a process that never stops, which
+# needs a server. On an HOURLY strategy it does not have to. Nothing happens
+# between candle closes, so waking up once an hour, checking every coin, placing
+# or closing whatever is due, and shutting down again is equivalent - and it
+# fits inside GitHub's free tier.
+#
+# On a PUBLIC repository GitHub Actions minutes are unlimited and free, with no
+# credit card. That is what makes this genuinely free rather than free-for-30-days.
+#
+# The bot's memory (which trades are open) lives in user_data/live_cloud.sqlite,
+# committed back to the repo after every run. That commit is also what keeps the
+# schedule alive - GitHub switches off scheduled workflows in repos that go 60
+# days without activity.
+
+on:
+  schedule:
+    # :07 past the hour. Deliberately not :00 - that is when every cron job on
+    # the planet fires and GitHub queues them, which can delay a run by many
+    # minutes. Hourly candles close on the hour, so :07 gives the exchange time
+    # to settle the candle too.
+    - cron: '7 * * * *'
+  workflow_dispatch:        # lets you press "Run workflow" by hand any time
+
+# Stops two runs overlapping and both writing to the database.
+concurrency:
+  group: hourly-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: write           # needed to commit the state file back
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Get the code and the bot's memory
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install freqtrade
+        run: |
+          python -m pip install --upgrade pip
+          pip install freqtrade
+
+      - name: Run one hourly cycle
+        env:
+          # Telegram is optional. Add TELEGRAM_TOKEN and TELEGRAM_CHAT_ID as
+          # repository secrets and the bot messages your phone on every trade.
+          # Without them it simply runs silently.
+          FREQTRADE__TELEGRAM__ENABLED: ${{ secrets.TELEGRAM_TOKEN != '' }}
+          FREQTRADE__TELEGRAM__TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          FREQTRADE__TELEGRAM__CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set +e
+          # freqtrade never exits on its own. Give it 6 minutes: plenty to load
+          # markets, pull fresh candles for every coin, act on the new hourly
+          # bar, and write to the database. Then stop it.
+          timeout --signal=INT 360 freqtrade trade \
+            --userdir user_data \
+            --config user_data/config/config.cloud.json \
+            --strategy HourlyTrend \
+            --dry-run \
+            --logfile user_data/logs/cloud.log
+          echo "cycle finished (exit $?) - a timeout here is normal and expected"
+          exit 0
+
+      - name: Show what happened
+        if: always()
+        run: |
+          echo "===== last 40 log lines ====="
+          tail -n 40 user_data/logs/cloud.log 2>/dev/null || echo "no log"
+          echo "===== trades ====="
+          python - <<'PY'
+          import sqlite3, os
+          db = "user_data/live_cloud.sqlite"
+          if not os.path.exists(db):
+              print("no database yet - first run")
+          else:
+              c = sqlite3.connect(db); c.row_factory = sqlite3.Row
+              rows = c.execute(
+                  "select id,pair,is_open,is_short,open_rate,close_rate,"
+                  "close_profit_abs,exit_reason from trades order by id desc limit 15"
+              ).fetchall()
+              if not rows:
+                  print("no trades yet")
+              for r in rows:
+                  side = "SHORT" if r["is_short"] else "LONG"
+                  if r["is_open"]:
+                      print(f"#{r['id']:<4} OPEN   {side:<5} {r['pair']:<18} entry {r['open_rate']}")
+                  else:
+                      print(f"#{r['id']:<4} CLOSED {side:<5} {r['pair']:<18} "
+                            f"pnl {r['close_profit_abs']:+.4f} ({r['exit_reason']})")
+              tot = c.execute(
+                  "select coalesce(sum(close_profit_abs),0), count(*) "
+                  "from trades where is_open=0"
+              ).fetchone()
+              print(f"\nclosed trades: {tot[1]}   realised P/L: {tot[0]:+.4f} USDT")
+          PY
+
+      - name: Save the bot's memory back to the repo
+        if: always()
+        run: |
+          git config user.name  "hourly-bot"
+          git config user.email "hourly-bot@users.noreply.github.com"
+          # Fold SQLite's side file into the main database first, or the commit
+          # captures a half-written state.
+          python -c "import sqlite3,os; p='user_data/live_cloud.sqlite'; (os.path.exists(p) and (lambda c:(c.execute('PRAGMA wal_checkpoint(TRUNCATE)'),c.close()))(sqlite3.connect(p)))" || true
+          rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
+          git add -f user_data/live_cloud.sqlite user_data/logs/cloud.log 2>/dev/null || true
+          git commit -m "bot: hourly cycle $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "nothing changed"
+          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
+          git push || echo "push failed - will retry next hour"
