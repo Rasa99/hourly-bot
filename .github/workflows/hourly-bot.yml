@@ -204,8 +204,16 @@ jobs:
           PY
           rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
 
+          # Rewrite the front page from the database. GitHub renders README.md
+          # automatically, so the repo's front page becomes the dashboard -
+          # readable on a phone, no login, no software, always an hour fresh.
+          # The local FreqUI dashboard cannot see this bot: it talks to a bot
+          # running on a PC, and this one exists for six minutes then vanishes.
+          python make_status.py || echo "status page failed - not fatal"
+
           # last_run.txt is added even when the run failed - that is the whole
           # point of it, so a failure can be diagnosed from the repo itself.
+          git add -f README.md || true
           git add -f user_data/logs/last_run.txt || true
           git add -f user_data/live_cloud.sqlite user_data/logs/cloud.log || true
 
