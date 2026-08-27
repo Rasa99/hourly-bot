@@ -1,65 +1,47 @@
 name: hourly-bot
 
-# Runs the bot once every hour, forever, for free.
+# Trades every hour, free, with your PC off.
 #
-# Why this design: freqtrade normally runs as a process that never stops, which
-# needs a server. On an HOURLY strategy it does not have to. Nothing happens
-# between candle closes, so waking up once an hour, checking every coin, placing
-# or closing whatever is due, and shutting down again is equivalent - and it
-# fits inside GitHub's free tier.
+# DESIGN NOTE - why one job runs for hours instead of one job per hour:
 #
-# On a PUBLIC repository GitHub Actions minutes are unlimited and free, with no
-# credit card. That is what makes this genuinely free rather than free-for-30-days.
+# The obvious build is a cron every hour. It does not work. GitHub's scheduler
+# is explicitly best-effort: it delays runs under load, silently drops them,
+# and new repositories often wait hours before the first one fires. Measured
+# here: the schedule was registered and active, and fired ZERO times across
+# :07, :27 and :47 attempts.
 #
-# The bot's memory (which trades are open) lives in user_data/live_cloud.sqlite,
-# committed back to the repo after every run. That commit is also what keeps the
-# schedule alive - GitHub switches off scheduled workflows in repos that go 60
-# days without activity.
+# So the job no longer needs an hourly trigger. It starts once and then keeps
+# going by itself, doing one cycle per hour for up to five and a half hours
+# (GitHub kills any job at six). One successful trigger buys most of a day.
+#
+# The crons remain as restart attempts. With `concurrency` set, a trigger that
+# lands while the loop is still running is simply queued, never doubled.
 
 on:
   schedule:
-    # THREE attempts per hour, not one.
-    #
-    # GitHub's scheduler is best-effort: it delays runs under load and silently
-    # drops them, and brand-new repositories often wait an hour or more before
-    # the first one fires at all. One cron a day is fine with that; an hourly
-    # bot is not.
-    #
-    # Extra runs are harmless. The strategy only acts when a new hourly candle
-    # closes, so a second run in the same hour finds nothing new to do and
-    # exits. Missing an hour costs a trade; running twice costs nothing.
-    #
-    # Off-round minutes on purpose - :00 and :30 are when every cron on the
-    # planet fires and GitHub queues them behind each other.
     - cron: '7 * * * *'
     - cron: '27 * * * *'
     - cron: '47 * * * *'
-  workflow_dispatch:        # lets you press "Run workflow" by hand any time
+  workflow_dispatch:
 
-# Stops two runs overlapping and both writing to the database.
 concurrency:
   group: hourly-bot
   cancel-in-progress: false
 
 permissions:
-  contents: write           # needed to commit the state file back
+  contents: write
 
 jobs:
   trade:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 350          # 5h50m; GitHub's hard ceiling is 6h
 
     steps:
-      # v7 rather than v4: v4 declares Node 20, which GitHub deprecated and now
-      # force-runs on Node 24, producing a yellow warning on every single run.
-      # Harmless, but a permanent warning trains you to ignore warnings.
       - name: Get the code and the bot's memory
         uses: actions/checkout@v7
         with:
-          # Without an explicit ref, checkout lands on a DETACHED HEAD. The
-          # commit then succeeds and the push silently fails with "You are not
-          # currently on a branch" - which is why run #2 went green while
-          # saving nothing at all. Naming the branch keeps us on it.
+          # Without an explicit ref, checkout lands on a DETACHED HEAD: the
+          # commit succeeds and the push fails with "not currently on a branch".
           ref: ${{ github.ref_name }}
           fetch-depth: 0
 
@@ -67,11 +49,7 @@ jobs:
         uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-          # cache: 'pip' needs a requirements.txt or pyproject.toml to hash, and
-          # fails the whole run if neither exists. That is what broke run #1:
-          # "No file matched to [**/requirements.txt or **/pyproject.toml]".
-          # requirements.txt now exists, which both fixes it and makes every
-          # later run install from cache in seconds instead of minutes.
+          # Needs a requirements file to hash, or it fails the whole run.
           cache: 'pip'
           cache-dependency-path: requirements.txt
 
@@ -80,225 +58,118 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run one hourly cycle
+      - name: Trade, once an hour, for as long as this job is allowed to live
         env:
-          # ABSOLUTE path. config.cloud.json carries a relative db_url, which
-          # depends entirely on the working directory - and that has already
-          # broken this project once, when a detached launch started in the
-          # wrong folder and freqtrade died with "unable to open database file".
-          # Here it produced something quieter and worse: freqtrade ran, wrote
-          # its database somewhere we were not looking, and the run failed the
-          # "no database was created" check. An absolute path cannot do that.
+          # ABSOLUTE path. A relative db_url depends on the working directory,
+          # which has silently broken this project twice.
           FREQTRADE__DB_URL: sqlite:///${{ github.workspace }}/user_data/live_cloud.sqlite
-
-          # Telegram. These were removed while chasing the Bybit block and had
-          # to be put back - the secrets existed but nothing was reading them.
-          # ENABLED is driven by whether the token secret is set, so a fork or
-          # a fresh clone with no secrets still starts normally instead of
-          # crashing on an empty token. (Verified locally that freqtrade
-          # accepts the string "false" here without complaint.)
           FREQTRADE__TELEGRAM__ENABLED: ${{ secrets.TELEGRAM_TOKEN != '' }}
           FREQTRADE__TELEGRAM__TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           FREQTRADE__TELEGRAM__CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          mkdir -p user_data/logs
-          echo "workspace : ${{ github.workspace }}"
-          echo "cwd       : $(pwd)"
-          echo "db target : $FREQTRADE__DB_URL"
-          set +e
-          # freqtrade never exits on its own. Give it 6 minutes: enough to load
-          # markets, pull fresh candles for every coin, act on the new hourly
-          # bar and write to the database. Then stop it.
-          # --db-url on the command line beats both the config file and the env
-          # var, so there is exactly one possible answer for where the database
-          # goes. Belt and braces, because this is the third thing to go wrong
-          # here and each round trip costs an hour.
-          timeout --signal=INT 360 freqtrade trade \
-            --userdir user_data \
-            --config user_data/config/config.cloud.json \
-            --strategy HourlyTrend \
-            --db-url "$FREQTRADE__DB_URL" \
-            --logfile user_data/logs/cloud.log
-          CODE=$?
-          set -e
-
-          echo "freqtrade exited with code $CODE"
-
-          # 124 = timeout killed it, 130 = it shut down on SIGINT. Both mean it
-          # ran for the full six minutes, which is exactly what we want.
-          # ANY OTHER CODE IS A REAL CRASH and must fail the run.
-          #
-          # Run #2 "succeeded" while the bot had actually crashed on startup,
-          # because this step used to end in `exit 0`. It reported green, saved
-          # nothing, and hid the reason. Never mask the exit code again.
-          if [ "$CODE" != "124" ] && [ "$CODE" != "130" ] && [ "$CODE" != "0" ]; then
-            echo "::error::freqtrade crashed (exit $CODE) - log below"
-            tail -n 120 user_data/logs/cloud.log 2>/dev/null || echo "(no log was written - it failed before logging started)"
-            exit 1
-          fi
-
-          # Write the diagnosis to a FILE as well as the console. The save step
-          # commits it, so the whole picture is readable straight from the repo
-          # without needing admin rights to download Actions logs.
-          DIAG=user_data/logs/last_run.txt
-          {
-            echo "run          : ${{ github.run_number }}"
-            echo "finished     : $(date -u '+%Y-%m-%d %H:%M UTC')"
-            echo "freqtrade exit: $CODE   (124/130 = we stopped it on purpose)"
-            echo "workspace    : ${{ github.workspace }}"
-            echo "cwd          : $(pwd)"
-            echo "db target    : $FREQTRADE__DB_URL"
-            echo
-            echo "----- ls user_data -----"
-            ls -la user_data/ 2>&1
-            echo
-            echo "----- ls repo root -----"
-            ls -la . 2>&1
-            echo
-            echo "----- every sqlite on the machine -----"
-            find / -name '*.sqlite*' -newermt '-30 minutes' 2>/dev/null | head -20
-            echo
-            echo "----- last 80 log lines -----"
-            tail -n 80 user_data/logs/cloud.log 2>&1 || echo "(no log file at all)"
-          } > "$DIAG" 2>&1
-
-          cat "$DIAG"
-
-          if [ ! -f user_data/live_cloud.sqlite ]; then
-            echo "::error::no database at user_data/live_cloud.sqlite - see listing above"
-            exit 1
-          fi
-          echo "cycle completed normally"
-
-      - name: Show what happened
-        if: always()
-        run: |
-          echo "===== last 40 log lines ====="
-          tail -n 40 user_data/logs/cloud.log 2>/dev/null || echo "no log"
-          echo "===== trades ====="
-          python - <<'PY'
-          import sqlite3, os
-          db = "user_data/live_cloud.sqlite"
-          if not os.path.exists(db):
-              print("no database yet - first run")
-          else:
-              c = sqlite3.connect(db); c.row_factory = sqlite3.Row
-              rows = c.execute(
-                  "select id,pair,is_open,is_short,open_rate,close_rate,"
-                  "close_profit_abs,exit_reason from trades order by id desc limit 15"
-              ).fetchall()
-              if not rows:
-                  print("no trades yet")
-              for r in rows:
-                  side = "SHORT" if r["is_short"] else "LONG"
-                  if r["is_open"]:
-                      print(f"#{r['id']:<4} OPEN   {side:<5} {r['pair']:<18} entry {r['open_rate']}")
-                  else:
-                      print(f"#{r['id']:<4} CLOSED {side:<5} {r['pair']:<18} "
-                            f"pnl {r['close_profit_abs']:+.4f} ({r['exit_reason']})")
-              tot = c.execute(
-                  "select coalesce(sum(close_profit_abs),0), count(*) "
-                  "from trades where is_open=0"
-              ).fetchone()
-              print(f"\nclosed trades: {tot[1]}   realised P/L: {tot[0]:+.4f} USDT")
-          PY
-
-      - name: Send the hourly summary to Telegram
-        if: always()
-        env:
           TG_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          if [ -z "$TG_TOKEN" ] || [ -z "$TG_CHAT" ]; then
-            echo "no telegram secrets set - skipping"; exit 0
-          fi
-
-          # Sent by the WORKFLOW, not by freqtrade. freqtrade's own Telegram
-          # only lives for the six minutes the bot is awake, so it cannot answer
-          # /status the other 54 minutes of the hour - there is nothing running
-          # to answer. This message is the reliable heartbeat: it is sent after
-          # the bot has already shut down, so it always arrives.
-          MSG=$(python - <<'PY'
-          import os, sqlite3
-          db = "user_data/live_cloud.sqlite"
-          start = 20.0
-          if not os.path.exists(db):
-              print("Hourly check done. No database yet."); raise SystemExit
-          c = sqlite3.connect(db); c.row_factory = sqlite3.Row
-          rows = c.execute("select pair,is_open,is_short,close_profit_abs,"
-                           "exit_reason,open_rate from trades").fetchall()
-          c.close()
-          closed = [r for r in rows if not r["is_open"]]
-          open_ = [r for r in rows if r["is_open"]]
-          realised = sum((r["close_profit_abs"] or 0) for r in closed)
-          bal = start + realised
-          wins = sum(1 for r in closed if (r["close_profit_abs"] or 0) > 0)
-          mark = "\U0001F7E2" if bal >= start else "\U0001F534"
-          lines = [f"{mark} Hourly check done",
-                   f"Balance: ${bal:.4f}  ({(bal/start-1)*100:+.2f}%)",
-                   f"Open: {len(open_)}   Finished: {len(closed)}"]
-          if closed:
-              lines.append(f"Wins: {wins}/{len(closed)}")
-          for r in open_[:5]:
-              side = "SHORT" if r["is_short"] else "LONG"
-              lines.append(f"  {side} {r['pair'].split('/')[0]} @ {r['open_rate']}")
-          if not open_ and not closed:
-              lines.append("Nothing has triggered yet - no coin has broken out.")
-          print("\n".join(lines))
-          PY
-          )
-
-          curl -sS -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
-            --data-urlencode "chat_id=${TG_CHAT}" \
-            --data-urlencode "text=${MSG}" \
-            -o /dev/null -w "telegram: HTTP %{http_code}\n" || echo "telegram send failed - not fatal"
-
-      - name: Save the bot's memory back to the repo
-        if: always()
-        run: |
-          set -e
+          mkdir -p user_data/logs
           git config user.name  "hourly-bot"
           git config user.email "hourly-bot@users.noreply.github.com"
 
-          # Fold SQLite's side file into the main database, or the commit
-          # captures a half-written state.
-          python - <<'PY'
-          import os, sqlite3
-          p = "user_data/live_cloud.sqlite"
-          if os.path.exists(p):
-              c = sqlite3.connect(p)
-              c.execute("PRAGMA wal_checkpoint(TRUNCATE)")
-              c.close()
-              print("database checkpointed")
-          else:
-              print("no database to save")
-          PY
-          rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
+          DEADLINE=$(( $(date +%s) + 19200 ))     # stop starting new cycles after 5h20m
+          CYCLE=0
 
-          # Rewrite the front page from the database. GitHub renders README.md
-          # automatically, so the repo's front page becomes the dashboard -
-          # readable on a phone, no login, no software, always an hour fresh.
-          # The local FreqUI dashboard cannot see this bot: it talks to a bot
-          # running on a PC, and this one exists for six minutes then vanishes.
-          python make_status.py || echo "status page failed - not fatal"
+          while :; do
+            CYCLE=$(( CYCLE + 1 ))
+            echo "==================== cycle $CYCLE ===================="
+            date -u '+%Y-%m-%d %H:%M UTC'
 
-          # last_run.txt is added even when the run failed - that is the whole
-          # point of it, so a failure can be diagnosed from the repo itself.
-          git add -f README.md equity.svg || true
-          git add -f user_data/logs/last_run.txt || true
-          git add -f user_data/live_cloud.sqlite user_data/logs/cloud.log || true
+            set +e
+            timeout --signal=INT 300 freqtrade trade \
+              --userdir user_data \
+              --config user_data/config/config.cloud.json \
+              --strategy HourlyTrend \
+              --db-url "$FREQTRADE__DB_URL" \
+              --logfile user_data/logs/cloud.log
+            CODE=$?
+            set -e
+            echo "freqtrade exit: $CODE  (124/130 = stopped on purpose)"
 
-          if git diff --cached --quiet; then
-            echo "nothing changed this hour - not committing"
-            exit 0
-          fi
+            # ---- write the diagnosis where it can be read from the repo ----
+            {
+              echo "run          : ${{ github.run_number }}   cycle: $CYCLE"
+              echo "finished     : $(date -u '+%Y-%m-%d %H:%M UTC')"
+              echo "freqtrade exit: $CODE"
+              echo
+              echo "----- last 40 log lines -----"
+              tail -n 40 user_data/logs/cloud.log 2>&1 || echo "(no log)"
+            } > user_data/logs/last_run.txt 2>&1
 
-          git commit -m "bot: hourly cycle $(date -u '+%Y-%m-%d %H:%M UTC')"
+            # ---- rebuild the status page and chart ----
+            python make_status.py || echo "status page failed - not fatal"
 
-          # Rebase on anything that landed while we were trading, then push to
-          # the branch BY NAME. Failures are no longer swallowed: if the bot
-          # cannot save its memory it must go red, because a green run that
-          # saved nothing is worse than useless - it looks like it worked.
-          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
-          echo "memory saved"
+            # ---- save state; a failure here must not kill the loop ----
+            set +e
+            python - <<'PY'
+            import os, sqlite3
+            p = "user_data/live_cloud.sqlite"
+            if os.path.exists(p):
+                c = sqlite3.connect(p); c.execute("PRAGMA wal_checkpoint(TRUNCATE)"); c.close()
+            PY
+            rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
+            git add -f README.md equity.svg user_data/live_cloud.sqlite \
+                       user_data/logs/cloud.log user_data/logs/last_run.txt 2>/dev/null
+            if ! git diff --cached --quiet; then
+              git commit -q -m "bot: cycle $CYCLE at $(date -u '+%Y-%m-%d %H:%M UTC')"
+              git pull --rebase --autostash -q origin "${GITHUB_REF_NAME}"
+              git push -q origin "HEAD:${GITHUB_REF_NAME}" && echo "state saved" || echo "push failed, retrying next hour"
+            else
+              echo "nothing changed"
+            fi
+            set -e
+
+            # ---- tell Telegram, every hour, whatever happened ----
+            if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+              MSG=$(python - <<'PY'
+            import os, sqlite3
+            db, start = "user_data/live_cloud.sqlite", 20.0
+            if not os.path.exists(db):
+                print("Hourly check done. No database yet."); raise SystemExit
+            c = sqlite3.connect(db); c.row_factory = sqlite3.Row
+            rows = c.execute("select pair,is_open,is_short,close_profit_abs,open_rate from trades").fetchall()
+            c.close()
+            closed = [r for r in rows if not r["is_open"]]
+            open_  = [r for r in rows if r["is_open"]]
+            bal = start + sum((r["close_profit_abs"] or 0) for r in closed)
+            wins = sum(1 for r in closed if (r["close_profit_abs"] or 0) > 0)
+            mark = "\U0001F7E2" if bal >= start else "\U0001F534"
+            out = [f"{mark} Hourly check done",
+                   f"Balance: ${bal:.4f}  ({(bal/start-1)*100:+.2f}%)",
+                   f"Open: {len(open_)}   Finished: {len(closed)}"]
+            if closed: out.append(f"Wins: {wins}/{len(closed)}")
+            for r in open_[:5]:
+                out.append(f"  {'SHORT' if r['is_short'] else 'LONG'} {r['pair'].split('/')[0]} @ {r['open_rate']}")
+            if not open_ and not closed:
+                out.append("Nothing has triggered yet - no coin has broken out.")
+            print("\n".join(out))
+            PY
+              )
+              curl -sS -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+                --data-urlencode "chat_id=${TG_CHAT}" --data-urlencode "text=${MSG}" \
+                -o /dev/null -w "telegram: HTTP %{http_code}\n" || true
+            fi
+
+            # ---- stop, or wait for the next hour ----
+            if [ "$(date +%s)" -ge "$DEADLINE" ]; then
+              echo "time budget used - this job ends here, a cron restarts it"
+              break
+            fi
+
+            # Sleep until 7 minutes past the next hour, so cycles line up with
+            # hourly candle closes instead of drifting.
+            NOW=$(date +%s)
+            NEXT=$(( NOW - (NOW % 3600) + 3600 + 420 ))
+            SLEEP=$(( NEXT - NOW ))
+            [ "$SLEEP" -lt 60 ] && SLEEP=$(( SLEEP + 3600 ))
+            echo "sleeping ${SLEEP}s until the next hourly candle"
+            sleep "$SLEEP"
+          done
+
+          echo "completed $CYCLE cycles"
