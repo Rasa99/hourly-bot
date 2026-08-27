@@ -63,9 +63,19 @@ jobs:
           # ABSOLUTE path. A relative db_url depends on the working directory,
           # which has silently broken this project twice.
           FREQTRADE__DB_URL: sqlite:///${{ github.workspace }}/user_data/live_cloud.sqlite
-          FREQTRADE__TELEGRAM__ENABLED: ${{ secrets.TELEGRAM_TOKEN != '' }}
-          FREQTRADE__TELEGRAM__TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          FREQTRADE__TELEGRAM__CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          # freqtrade's OWN Telegram is deliberately OFF.
+          #
+          # Telegram permits exactly one getUpdates poller per bot token. With
+          # freqtrade polling AND telegram_listener.py polling, they knocked
+          # each other off every few seconds:
+          #   "Conflict: terminated by other getUpdates request"
+          # and neither could answer anything reliably.
+          #
+          # So there is now one poller: telegram_listener.py, which lives for
+          # the job's whole 5+ hours instead of only while freqtrade is up.
+          # Trade alerts and the hourly summary are sent by this workflow
+          # instead, which also means they still arrive between cycles.
+          FREQTRADE__TELEGRAM__ENABLED: "false"
           TG_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |

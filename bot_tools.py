@@ -22,6 +22,7 @@ import sys
 
 DB = "user_data/live_cloud.sqlite"
 SCAN = "market_scan.json"
+SEEN = "user_data/logs/seen_trades.json"
 START_BALANCE = 20.0
 
 
@@ -45,7 +46,8 @@ def summary():
     c = sqlite3.connect(DB)
     c.row_factory = sqlite3.Row
     rows = c.execute(
-        "select pair,is_open,is_short,close_profit_abs,open_rate from trades"
+        "select id,pair,is_open,is_short,close_profit_abs,open_rate,exit_reason "
+        "from trades"
     ).fetchall()
     c.close()
 
@@ -54,8 +56,46 @@ def summary():
     balance = START_BALANCE + sum((r["close_profit_abs"] or 0) for r in closed)
     wins = sum(1 for r in closed if (r["close_profit_abs"] or 0) > 0)
 
+    # ---- announce what CHANGED since the last message ----------------
+    # freqtrade's own Telegram is switched off (it fought this script for the
+    # single getUpdates slot Telegram allows), so trade alerts are produced
+    # here by comparing against the ids seen last cycle.
+    seen_open, seen_closed = set(), set()
+    if os.path.exists(SEEN):
+        try:
+            prev = json.load(open(SEEN, encoding="utf-8"))
+            seen_open = set(prev.get("open", []))
+            seen_closed = set(prev.get("closed", []))
+        except Exception:
+            pass
+
+    now_open = {r["id"] for r in open_}
+    now_closed = {r["id"] for r in closed}
+    newly_opened = [r for r in open_ if r["id"] not in seen_open and r["id"] not in seen_closed]
+    newly_closed = [r for r in closed if r["id"] not in seen_closed]
+
+    try:
+        json.dump({"open": sorted(now_open), "closed": sorted(now_closed)},
+                  open(SEEN, "w", encoding="utf-8"))
+    except Exception:
+        pass
+
     mark = "\U0001F7E2" if balance >= START_BALANCE else "\U0001F534"
-    out = [
+    out = []
+
+    for r in newly_opened:
+        side = "SHORT" if r["is_short"] else "LONG"
+        out.append(f"\U0001F535 OPENED {side} {r['pair'].split('/')[0]} @ {r['open_rate']}")
+    for r in newly_closed:
+        p = r["close_profit_abs"] or 0
+        emoji = "\U0001F7E2" if p > 0 else "\U0001F534"
+        side = "SHORT" if r["is_short"] else "LONG"
+        out.append(f"{emoji} CLOSED {side} {r['pair'].split('/')[0]}  "
+                   f"{p:+.4f} USDT ({r['exit_reason']})")
+    if out:
+        out.append("")
+
+    out += [
         f"{mark} Hourly check done",
         f"Balance: ${balance:.4f}  ({(balance / START_BALANCE - 1) * 100:+.2f}%)",
         f"Open: {len(open_)}   Finished: {len(closed)}",
