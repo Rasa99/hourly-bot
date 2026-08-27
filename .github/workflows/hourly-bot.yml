@@ -41,6 +41,13 @@ jobs:
     steps:
       - name: Get the code and the bot's memory
         uses: actions/checkout@v4
+        with:
+          # Without an explicit ref, checkout lands on a DETACHED HEAD. The
+          # commit then succeeds and the push silently fails with "You are not
+          # currently on a branch" - which is why run #2 went green while
+          # saving nothing at all. Naming the branch keeps us on it.
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -60,26 +67,41 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run one hourly cycle
-        env:
-          # Telegram is optional. Add TELEGRAM_TOKEN and TELEGRAM_CHAT_ID as
-          # repository secrets and the bot messages your phone on every trade.
-          # Without them it simply runs silently.
-          FREQTRADE__TELEGRAM__ENABLED: ${{ secrets.TELEGRAM_TOKEN != '' }}
-          FREQTRADE__TELEGRAM__TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          FREQTRADE__TELEGRAM__CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
+          mkdir -p user_data/logs
           set +e
-          # freqtrade never exits on its own. Give it 6 minutes: plenty to load
+          # freqtrade never exits on its own. Give it 6 minutes: enough to load
           # markets, pull fresh candles for every coin, act on the new hourly
-          # bar, and write to the database. Then stop it.
+          # bar and write to the database. Then stop it.
           timeout --signal=INT 360 freqtrade trade \
             --userdir user_data \
             --config user_data/config/config.cloud.json \
             --strategy HourlyTrend \
-            --dry-run \
             --logfile user_data/logs/cloud.log
-          echo "cycle finished (exit $?) - a timeout here is normal and expected"
-          exit 0
+          CODE=$?
+          set -e
+
+          echo "freqtrade exited with code $CODE"
+
+          # 124 = timeout killed it, 130 = it shut down on SIGINT. Both mean it
+          # ran for the full six minutes, which is exactly what we want.
+          # ANY OTHER CODE IS A REAL CRASH and must fail the run.
+          #
+          # Run #2 "succeeded" while the bot had actually crashed on startup,
+          # because this step used to end in `exit 0`. It reported green, saved
+          # nothing, and hid the reason. Never mask the exit code again.
+          if [ "$CODE" != "124" ] && [ "$CODE" != "130" ] && [ "$CODE" != "0" ]; then
+            echo "::error::freqtrade crashed (exit $CODE) - log below"
+            tail -n 120 user_data/logs/cloud.log 2>/dev/null || echo "(no log was written - it failed before logging started)"
+            exit 1
+          fi
+
+          if [ ! -f user_data/live_cloud.sqlite ]; then
+            echo "::error::no database was created, so the bot never really started"
+            tail -n 120 user_data/logs/cloud.log 2>/dev/null || echo "(no log either)"
+            exit 1
+          fi
+          echo "cycle completed normally"
 
       - name: Show what happened
         if: always()
@@ -117,13 +139,38 @@ jobs:
       - name: Save the bot's memory back to the repo
         if: always()
         run: |
+          set -e
           git config user.name  "hourly-bot"
           git config user.email "hourly-bot@users.noreply.github.com"
-          # Fold SQLite's side file into the main database first, or the commit
+
+          # Fold SQLite's side file into the main database, or the commit
           # captures a half-written state.
-          python -c "import sqlite3,os; p='user_data/live_cloud.sqlite'; (os.path.exists(p) and (lambda c:(c.execute('PRAGMA wal_checkpoint(TRUNCATE)'),c.close()))(sqlite3.connect(p)))" || true
+          python - <<'PY'
+          import os, sqlite3
+          p = "user_data/live_cloud.sqlite"
+          if os.path.exists(p):
+              c = sqlite3.connect(p)
+              c.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+              c.close()
+              print("database checkpointed")
+          else:
+              print("no database to save")
+          PY
           rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
-          git add -f user_data/live_cloud.sqlite user_data/logs/cloud.log 2>/dev/null || true
-          git commit -m "bot: hourly cycle $(date -u '+%Y-%m-%d %H:%M UTC')" || echo "nothing changed"
-          git pull --rebase --autostash origin ${GITHUB_REF_NAME} || true
-          git push || echo "push failed - will retry next hour"
+
+          git add -f user_data/live_cloud.sqlite user_data/logs/cloud.log || true
+
+          if git diff --cached --quiet; then
+            echo "nothing changed this hour - not committing"
+            exit 0
+          fi
+
+          git commit -m "bot: hourly cycle $(date -u '+%Y-%m-%d %H:%M UTC')"
+
+          # Rebase on anything that landed while we were trading, then push to
+          # the branch BY NAME. Failures are no longer swallowed: if the bot
+          # cannot save its memory it must go red, because a green run that
+          # saved nothing is worse than useless - it looks like it worked.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "memory saved"
