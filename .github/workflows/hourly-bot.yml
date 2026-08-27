@@ -18,11 +18,22 @@ name: hourly-bot
 
 on:
   schedule:
-    # :07 past the hour. Deliberately not :00 - that is when every cron job on
-    # the planet fires and GitHub queues them, which can delay a run by many
-    # minutes. Hourly candles close on the hour, so :07 gives the exchange time
-    # to settle the candle too.
+    # THREE attempts per hour, not one.
+    #
+    # GitHub's scheduler is best-effort: it delays runs under load and silently
+    # drops them, and brand-new repositories often wait an hour or more before
+    # the first one fires at all. One cron a day is fine with that; an hourly
+    # bot is not.
+    #
+    # Extra runs are harmless. The strategy only acts when a new hourly candle
+    # closes, so a second run in the same hour finds nothing new to do and
+    # exits. Missing an hour costs a trade; running twice costs nothing.
+    #
+    # Off-round minutes on purpose - :00 and :30 are when every cron on the
+    # planet fires and GitHub queues them behind each other.
     - cron: '7 * * * *'
+    - cron: '27 * * * *'
+    - cron: '47 * * * *'
   workflow_dispatch:        # lets you press "Run workflow" by hand any time
 
 # Stops two runs overlapping and both writing to the database.
