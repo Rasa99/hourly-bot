@@ -192,6 +192,56 @@ jobs:
               print(f"\nclosed trades: {tot[1]}   realised P/L: {tot[0]:+.4f} USDT")
           PY
 
+      - name: Send the hourly summary to Telegram
+        if: always()
+        env:
+          TG_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TG_CHAT: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          if [ -z "$TG_TOKEN" ] || [ -z "$TG_CHAT" ]; then
+            echo "no telegram secrets set - skipping"; exit 0
+          fi
+
+          # Sent by the WORKFLOW, not by freqtrade. freqtrade's own Telegram
+          # only lives for the six minutes the bot is awake, so it cannot answer
+          # /status the other 54 minutes of the hour - there is nothing running
+          # to answer. This message is the reliable heartbeat: it is sent after
+          # the bot has already shut down, so it always arrives.
+          MSG=$(python - <<'PY'
+          import os, sqlite3
+          db = "user_data/live_cloud.sqlite"
+          start = 20.0
+          if not os.path.exists(db):
+              print("Hourly check done. No database yet."); raise SystemExit
+          c = sqlite3.connect(db); c.row_factory = sqlite3.Row
+          rows = c.execute("select pair,is_open,is_short,close_profit_abs,"
+                           "exit_reason,open_rate from trades").fetchall()
+          c.close()
+          closed = [r for r in rows if not r["is_open"]]
+          open_ = [r for r in rows if r["is_open"]]
+          realised = sum((r["close_profit_abs"] or 0) for r in closed)
+          bal = start + realised
+          wins = sum(1 for r in closed if (r["close_profit_abs"] or 0) > 0)
+          mark = "\U0001F7E2" if bal >= start else "\U0001F534"
+          lines = [f"{mark} Hourly check done",
+                   f"Balance: ${bal:.4f}  ({(bal/start-1)*100:+.2f}%)",
+                   f"Open: {len(open_)}   Finished: {len(closed)}"]
+          if closed:
+              lines.append(f"Wins: {wins}/{len(closed)}")
+          for r in open_[:5]:
+              side = "SHORT" if r["is_short"] else "LONG"
+              lines.append(f"  {side} {r['pair'].split('/')[0]} @ {r['open_rate']}")
+          if not open_ and not closed:
+              lines.append("Nothing has triggered yet - no coin has broken out.")
+          print("\n".join(lines))
+          PY
+          )
+
+          curl -sS -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TG_CHAT}" \
+            --data-urlencode "text=${MSG}" \
+            -o /dev/null -w "telegram: HTTP %{http_code}\n" || echo "telegram send failed - not fatal"
+
       - name: Save the bot's memory back to the repo
         if: always()
         run: |
