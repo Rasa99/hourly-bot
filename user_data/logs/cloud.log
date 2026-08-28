@@ -2229,3 +2229,122 @@
 2026-08-28 16:12:00,948 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
 2026-08-28 16:12:00,949 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc modules ...
 2026-08-28 16:12:01,201 - freqtrade - INFO - SIGINT received, aborting ...
+2026-08-28 17:07:02,906 - freqtrade.loggers - INFO - Enabling colorized output.
+2026-08-28 17:07:02,907 - freqtrade.loggers - INFO - Logfile configured
+2026-08-28 17:07:02,907 - freqtrade.loggers - INFO - Verbosity set to 0
+2026-08-28 17:07:02,908 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2026-08-28 17:07:02,908 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2026-08-28 17:07:02,908 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2026-08-28 17:07:02,909 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////home/runner/work/hourly-bot/hourly-bot/user_data/live_cloud.sqlite"
+2026-08-28 17:07:02,909 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 15 ...
+2026-08-28 17:07:02,910 - freqtrade.configuration.configuration - INFO - Using user-data directory: user_data ...
+2026-08-28 17:07:02,910 - freqtrade.configuration.configuration - INFO - Using data directory: user_data/data/gate ...
+2026-08-28 17:07:02,911 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2026-08-28 17:07:02,916 - freqtrade.exchange.check_exchange - INFO - Exchange "gate" is officially supported by the Freqtrade development team.
+2026-08-28 17:07:02,917 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2026-08-28 17:07:02,917 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2026-08-28 17:07:02,918 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.76
+2026-08-28 17:07:02,918 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2026-08-28 17:07:02,923 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2026-08-28 17:07:02,929 - freqtrade.exchange.exchange - INFO - Using Exchange "Gate"
+2026-08-28 17:07:09,710 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange class 'Gate' ...
+2026-08-28 17:07:09,720 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy HourlyTrend from '/home/runner/work/hourly-bot/hourly-bot/user_data/strategies/HourlyTrend.py'...
+2026-08-28 17:07:09,720 - freqtrade.strategy.hyper - INFO - Found no parameter file.
+2026-08-28 17:07:09,721 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'timeframe' with value from the configuration: 1h.
+2026-08-28 17:07:09,721 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value from the configuration: USDT.
+2026-08-28 17:07:09,722 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value from the configuration: unlimited.
+2026-08-28 17:07:09,722 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value from the configuration: {'entry': 5, 'exit': 5, 'exit_timeout_count': 0, 'unit': 'minutes'}.
+2026-08-28 17:07:09,723 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value from the configuration: 15.
+2026-08-28 17:07:09,723 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'0': 100.0}
+2026-08-28 17:07:09,724 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 1h
+2026-08-28 17:07:09,724 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.6
+2026-08-28 17:07:09,725 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2026-08-28 17:07:09,725 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
+2026-08-28 17:07:09,725 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2026-08-28 17:07:09,726 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: True
+2026-08-28 17:07:09,726 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
+2026-08-28 17:07:09,727 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'limit', 'stoploss_on_exchange': False, 'stoploss_on_exchange_interval': 60}
+2026-08-28 17:07:09,727 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
+2026-08-28 17:07:09,727 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
+2026-08-28 17:07:09,728 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: unlimited
+2026-08-28 17:07:09,728 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 800
+2026-08-28 17:07:09,729 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 5, 'exit': 5, 'exit_timeout_count': 0, 'unit': 'minutes'}
+2026-08-28 17:07:09,729 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: False
+2026-08-28 17:07:09,729 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
+2026-08-28 17:07:09,730 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
+2026-08-28 17:07:09,730 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
+2026-08-28 17:07:09,731 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
+2026-08-28 17:07:09,731 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
+2026-08-28 17:07:09,731 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2026-08-28 17:07:09,732 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2026-08-28 17:07:09,732 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 15
+2026-08-28 17:07:09,733 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2026-08-28 17:07:09,766 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:09,943 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/pairlist/StaticPairList.py'...
+2026-08-28 17:07:09,944 - freqtrade.freqtradebot - INFO - Starting initial pairlist refresh
+2026-08-28 17:07:09,996 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 47 pairs: ['BTC/USDT:USDT', 'ETH/USDT:USDT', 'BNB/USDT:USDT', 'SOL/USDT:USDT', 'ADA/USDT:USDT', 'DOGE/USDT:USDT', 'AVAX/USDT:USDT', 'DOT/USDT:USDT', 'LINK/USDT:USDT', 'LTC/USDT:USDT', 'BCH/USDT:USDT', 'ATOM/USDT:USDT', 'UNI/USDT:USDT', 'ETC/USDT:USDT', 'NEAR/USDT:USDT', 'ALGO/USDT:USDT', 'FIL/USDT:USDT', 'ICP/USDT:USDT', 'HBAR/USDT:USDT', 'APE/USDT:USDT', 'SAND/USDT:USDT', 'MANA/USDT:USDT', 'AXS/USDT:USDT', 'THETA/USDT:USDT', 'AAVE/USDT:USDT', 'GRT/USDT:USDT', 'CHZ/USDT:USDT', 'ENJ/USDT:USDT', 'CRV/USDT:USDT', 'COMP/USDT:USDT', 'DASH/USDT:USDT', 'QTUM/USDT:USDT', 'IOTA/USDT:USDT', 'ONT/USDT:USDT', 'BAT/USDT:USDT', 'RVN/USDT:USDT', 'KSM/USDT:USDT', 'EGLD/USDT:USDT', 'GALA/USDT:USDT', 'CELO/USDT:USDT', 'SUSHI/USDT:USDT', 'SNX/USDT:USDT', 'LRC/USDT:USDT', 'STORJ/USDT:USDT', 'ANKR/USDT:USDT', 'SKL/USDT:USDT', 'BAND/USDT:USDT']
+2026-08-28 17:07:09,997 - freqtrade.freqtradebot - INFO - Initial Pairlist refresh took 0.05s
+2026-08-28 17:07:09,998 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
+2026-08-28 17:07:09,999 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): adx_floor = 20
+2026-08-28 17:07:09,999 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): breakout_hours = 72
+2026-08-28 17:07:10,000 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_fast = 50
+2026-08-28 17:07:10,000 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_slow = 200
+2026-08-28 17:07:10,001 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_long_max = 78
+2026-08-28 17:07:10,001 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_short_min = 22
+2026-08-28 17:07:10,001 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2026-08-28 17:07:10,002 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): initial_stop_atr = 2.0
+2026-08-28 17:07:10,002 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): risk_per_trade = 0.01
+2026-08-28 17:07:10,002 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): trail_atr = 6.0
+2026-08-28 17:07:10,004 - freqtrade.resolvers.iresolver - INFO - Using resolved protection CooldownPeriod from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/cooldown_period.py'...
+2026-08-28 17:07:10,005 - freqtrade.resolvers.iresolver - INFO - Using resolved protection MaxDrawdown from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/max_drawdown_protection.py'...
+2026-08-28 17:07:10,006 - freqtrade.resolvers.iresolver - INFO - Using resolved protection StoplossGuard from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/stoploss_guard.py'...
+2026-08-28 17:07:10,007 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2026-08-28 17:07:10,007 - freqtrade.worker - INFO - Changing state to: RUNNING
+2026-08-28 17:07:10,015 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2026-08-28 17:07:10,015 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `gate`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'0': 100.0}`\n*Stoploss:* `-0.6`\n*Position adjustment:* `Off`\n*Timeframe:* `1h`\n*Strategy:* `HourlyTrend`"}
+2026-08-28 17:07:10,016 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
+2026-08-28 17:07:10,016 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': 'Using Protections: \nCooldownPeriod - Cooldown period for 2 candles.\nMaxDrawdown - Max drawdown protection, stop trading if drawdown is > 0.15 within 168 candles.\nStoplossGuard - Frequent Stoploss Guard, 6 stoplosses with profit < 0.00% within 24 candles.'}
+2026-08-28 17:07:13,695 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:13,829 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for FIL/USDT:USDT with stake_amount: 0.7098209624864649 and price: 0.6813 ...
+2026-08-28 17:07:13,961 - freqtrade.freqtradebot - INFO - Order dry_run_sell_FIL/USDT:USDT_68326597-1ada-4cd7-a550-cbdebe83514d was created for FIL/USDT:USDT and status is closed.
+2026-08-28 17:07:13,970 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:13,971 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 2, 'type': entry, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'FIL/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.6813, 'order_rate': 0.6813, 'open_rate': 0.6813, 'order_type': 'limit', 'stake_amount': 0.7092333, 'stake_currency': 'USDT', 'base_currency': 'FIL', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 10.41, 'open_date': datetime.datetime(2026, 8, 28, 17, 7, 13, 962136, tzinfo=datetime.timezone.utc), 'current_rate': 0.6813, 'sub_trade': False}
+2026-08-28 17:07:13,972 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=2, pair=FIL/USDT:USDT, amount=10.41, is_short=True, leverage=10, open_rate=0.6813, open_since=2026-08-28 17:07:13)
+2026-08-28 17:07:13,978 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=2, pair=FIL/USDT:USDT, amount=10.41, is_short=True, leverage=10, open_rate=0.6813, open_since=2026-08-28 17:07:13) [sell]: 0.0035461665 USDT - rate: 0.0005
+2026-08-28 17:07:13,978 - freqtrade.persistence.trade_model - INFO - Updating trade (id=2) ...
+2026-08-28 17:07:13,979 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=2, pair=FIL/USDT:USDT, amount=10.41, is_short=True, leverage=10, open_rate=0.6813, open_since=2026-08-28 17:07:13).
+2026-08-28 17:07:14,117 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:14,120 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 2, 'type': entry_fill, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'FIL/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.6813, 'order_rate': 0.6813, 'open_rate': 0.6813, 'order_type': 'limit', 'stake_amount': 0.7092333, 'stake_currency': 'USDT', 'base_currency': 'FIL', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 10.41, 'open_date': datetime.datetime(2026, 8, 28, 17, 7, 13, 962136, tzinfo=datetime.timezone.utc), 'current_rate': 0.6813, 'sub_trade': False}
+2026-08-28 17:07:14,129 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:14,262 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for SAND/USDT:USDT with stake_amount: 0.703128406276097 and price: 0.03898 ...
+2026-08-28 17:07:14,396 - freqtrade.freqtradebot - INFO - Order dry_run_sell_SAND/USDT:USDT_b4284e56-4675-4cc5-9a64-5b9caf4a20d5 was created for SAND/USDT:USDT and status is closed.
+2026-08-28 17:07:14,402 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:14,403 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 3, 'type': entry, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'SAND/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.03898, 'order_rate': 0.03898, 'open_rate': 0.03898, 'order_type': 'limit', 'stake_amount': 0.70164, 'stake_currency': 'USDT', 'base_currency': 'SAND', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 180.0, 'open_date': datetime.datetime(2026, 8, 28, 17, 7, 14, 397449, tzinfo=datetime.timezone.utc), 'current_rate': 0.03898, 'sub_trade': False}
+2026-08-28 17:07:14,404 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=3, pair=SAND/USDT:USDT, amount=180, is_short=True, leverage=10, open_rate=0.03898, open_since=2026-08-28 17:07:14)
+2026-08-28 17:07:14,406 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=3, pair=SAND/USDT:USDT, amount=180, is_short=True, leverage=10, open_rate=0.03898, open_since=2026-08-28 17:07:14) [sell]: 0.0035082 USDT - rate: 0.0005
+2026-08-28 17:07:14,407 - freqtrade.persistence.trade_model - INFO - Updating trade (id=3) ...
+2026-08-28 17:07:14,407 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=3, pair=SAND/USDT:USDT, amount=180, is_short=True, leverage=10, open_rate=0.03898, open_since=2026-08-28 17:07:14).
+2026-08-28 17:07:14,544 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:14,547 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 3, 'type': entry_fill, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'SAND/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.03898, 'order_rate': 0.03898, 'open_rate': 0.03898, 'order_type': 'limit', 'stake_amount': 0.70164, 'stake_currency': 'USDT', 'base_currency': 'SAND', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 180.0, 'open_date': datetime.datetime(2026, 8, 28, 17, 7, 14, 397449, tzinfo=datetime.timezone.utc), 'current_rate': 0.03898, 'sub_trade': False}
+2026-08-28 17:07:14,553 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:14,687 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for AXS/USDT:USDT with stake_amount: 0.7736616346127507 and price: 0.895 ...
+2026-08-28 17:07:14,819 - freqtrade.freqtradebot - INFO - Order dry_run_sell_AXS/USDT:USDT_b4c1510b-7f43-4344-960e-50adbb235d08 was created for AXS/USDT:USDT and status is closed.
+2026-08-28 17:07:14,823 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:14,824 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 4, 'type': entry, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'AXS/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.895, 'order_rate': 0.895, 'open_rate': 0.895, 'order_type': 'limit', 'stake_amount': 0.7697, 'stake_currency': 'USDT', 'base_currency': 'AXS', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 8.6, 'open_date': datetime.datetime(2026, 8, 28, 17, 7, 14, 819829, tzinfo=datetime.timezone.utc), 'current_rate': 0.895, 'sub_trade': False}
+2026-08-28 17:07:14,825 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=4, pair=AXS/USDT:USDT, amount=8.6, is_short=True, leverage=10, open_rate=0.895, open_since=2026-08-28 17:07:14)
+2026-08-28 17:07:14,827 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=4, pair=AXS/USDT:USDT, amount=8.6, is_short=True, leverage=10, open_rate=0.895, open_since=2026-08-28 17:07:14) [sell]: 0.0038485 USDT - rate: 0.0005
+2026-08-28 17:07:14,828 - freqtrade.persistence.trade_model - INFO - Updating trade (id=4) ...
+2026-08-28 17:07:14,828 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=4, pair=AXS/USDT:USDT, amount=8.6, is_short=True, leverage=10, open_rate=0.895, open_since=2026-08-28 17:07:14).
+2026-08-28 17:07:14,965 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-28 17:07:14,968 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 4, 'type': entry_fill, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'AXS/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.895, 'order_rate': 0.895, 'open_rate': 0.895, 'order_type': 'limit', 'stake_amount': 0.7697, 'stake_currency': 'USDT', 'base_currency': 'AXS', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 8.6, 'open_date': datetime.datetime(2026, 8, 28, 17, 7, 14, 819829, tzinfo=datetime.timezone.utc), 'current_rate': 0.895, 'sub_trade': False}
+2026-08-28 17:07:15,019 - freqtrade.worker - INFO - Bot heartbeat. PID=3346, version='2026.7', state='RUNNING'
+2026-08-28 17:08:15,023 - freqtrade.worker - INFO - Bot heartbeat. PID=3346, version='2026.7', state='RUNNING'
+2026-08-28 17:09:15,026 - freqtrade.worker - INFO - Bot heartbeat. PID=3346, version='2026.7', state='RUNNING'
+2026-08-28 17:10:15,030 - freqtrade.worker - INFO - Bot heartbeat. PID=3346, version='2026.7', state='RUNNING'
+2026-08-28 17:11:15,033 - freqtrade.worker - INFO - Bot heartbeat. PID=3346, version='2026.7', state='RUNNING'
+2026-08-28 17:12:00,989 - freqtrade.commands.trade_commands - INFO - worker found ... calling exit
+2026-08-28 17:12:00,990 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'process died'}
+2026-08-28 17:12:00,991 - freqtrade.freqtradebot - INFO - Cleaning up modules ...
+2026-08-28 17:12:00,993 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': "3 open trades active.\n\nHandle these trades manually on Gate, or '/start' the bot again and use '/stopentry' to handle open trades gracefully. \nNote: Trades are simulated (dry run)."}
+2026-08-28 17:12:00,993 - freqtrade.rpc.rpc_manager - INFO - Cleaning up rpc modules ...
+2026-08-28 17:12:01,246 - freqtrade - INFO - SIGINT received, aborting ...
