@@ -20,6 +20,7 @@ import charts
 
 DB = "user_data/live_cloud.sqlite"
 SCAN = "market_scan.json"
+POSITIONS = "positions.json"
 OUT = "README.md"
 START_BALANCE = 20.0
 
@@ -35,6 +36,16 @@ def load_scan():
         return json.load(open(SCAN, encoding="utf-8"))
     except Exception:
         return []
+
+
+def load_positions():
+    """Live prices and unrealised P&L, written by positions.py this cycle."""
+    if not os.path.exists(POSITIONS):
+        return {}
+    try:
+        return json.load(open(POSITIONS, encoding="utf-8"))
+    except Exception:
+        return {}
 
 
 def main() -> int:
@@ -69,16 +80,27 @@ def main() -> int:
     balance = START_BALANCE + realised
     wins = [r for r in closed if (r["close_profit_abs"] or 0) > 0]
     scan = load_scan()
+    pos = load_positions()
+    live = pos.get("positions", [])
+    unreal = pos.get("total_pnl", 0.0)
+    equity = pos.get("equity", balance)
 
     # ---------------------------------------------------------- headline
     pct = (balance / START_BALANCE - 1) * 100
+    epct = (equity / START_BALANCE - 1) * 100
     add("## Money")
     add("")
     add("| | |")
     add("|---|---|")
-    add(f"| **Balance** | **${balance:.4f}** {'🟢' if pct >= 0 else '🔴'} |")
+    # Equity is the honest headline: balance counts only CLOSED trades, so with
+    # positions open it can read flat while real money is moving underneath.
+    add(f"| **Equity now** | **${equity:.4f}** {'🟢' if epct >= 0 else '🔴'} "
+        f"{epct:+.2f}% |")
+    add(f"| Settled balance | ${balance:.4f} ({pct:+.2f}%) |")
+    if live:
+        add(f"| Unrealised (open trades) | {'🟢' if unreal >= 0 else '🔴'} "
+            f"{money(unreal)} |")
     add(f"| Started with | $20.0000 |")
-    add(f"| Change | {pct:+.2f}% |")
     add(f"| Finished trades | {len(closed)} |")
     add(f"| Open now | {len(open_)} |")
     if closed:
@@ -95,7 +117,47 @@ def main() -> int:
     # ---------------------------------------------------------- open now
     add("## Open right now")
     add("")
-    if open_:
+    if live:
+        add("| Coin | Direction | Entry | Price now | Moved | P&L | on margin | "
+            "Room to stop |")
+        add("|---|---|---|---|---|---|---|---|")
+        for p in live:
+            side = "SHORT 🔻" if p["is_short"] else "LONG 🔺"
+            dot = "🟢" if p["pnl"] >= 0 else "🔴"
+            room = f"{p['to_stop_pct']:.2f}%" if p.get("to_stop_pct") else "—"
+            add(f"| **{p['coin']}** | {side} | {p['entry']} | {p['now']} | "
+                f"{p['move_pct']:+.2f}% | {dot} {money(p['pnl'])} | "
+                f"{p['pnl_pct_margin']:+.1f}% | {room} |")
+        add(f"| | | | | **total** | **{money(unreal)}** | | |")
+        add("")
+
+        # --- what the position set actually is, as one sentence ----------
+        # Three shorts is not three bets, it is one bet placed three times.
+        # That concentration is invisible in a per-row table, so state it.
+        ls = len([p for p in live if not p["is_short"]])
+        ss = len([p for p in live if p["is_short"]])
+        gross = pos.get("gross_pct_equity", 0)
+        if live and (ls == 0 or ss == 0):
+            way = "short" if ss else "long"
+            add(f"> ⚠️ **All {len(live)} positions are {way}.** That is one bet "
+                f"on the same market direction, placed {len(live)} times — "
+                f"these coins move together, so they will win together and "
+                f"lose together. Gross exposure is **{gross:.0f}% of equity**.")
+        else:
+            add(f"> {ls} long / {ss} short · gross exposure "
+                f"**{gross:.0f}% of equity**.")
+        add("")
+
+        # --- one chart per position --------------------------------------
+        for p in live:
+            if p.get("chart") and os.path.exists(p["chart"]):
+                add(f"![{p['coin']}]({p['chart']})")
+                add("")
+    elif open_:
+        # positions.py could not reach the exchange this cycle - still show
+        # what is open rather than claiming there is nothing.
+        add("*Live prices unavailable this cycle — entries only.*")
+        add("")
         add("| Coin | Direction | Entry | Leverage | Money in |")
         add("|---|---|---|---|---|")
         for r in open_:

@@ -128,6 +128,11 @@ jobs:
             # blocker per coin rather than a guess. Never fatal: a failed scan
             # costs one hour of that panel, not the trading.
             python market_scan.py || echo "market scan failed - not fatal"
+            # positions.py MUST run before make_status.py - it writes
+            # positions.json (live prices, unrealised P&L) and the per-trade
+            # charts that the status page then embeds. Out of order, the page
+            # silently falls back to showing entry prices with no P&L.
+            python positions.py   || echo "position charts failed - not fatal"
             python make_status.py || echo "status page failed - not fatal"
 
             # ---- save state; a failure here must not kill the loop ----
@@ -139,9 +144,17 @@ jobs:
             set +e
             python bot_tools.py checkpoint
             rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
-            git add -f README.md chart-*.svg market_scan.json \
+            git add -f README.md chart-*.svg market_scan.json positions.json \
                        user_data/live_cloud.sqlite \
                        user_data/logs/cloud.log user_data/logs/last_run.txt 2>/dev/null
+            # Position charts get their OWN add, quoted so git does the
+            # globbing rather than bash. Two reasons: with nothing open the
+            # glob matches no file, and an unmatched pathspec makes `git add`
+            # abort having staged NOTHING - which would silently stop the
+            # whole status page being saved. And `-A` with a git-side pattern
+            # also stages the DELETIONS when the last position closes, so old
+            # charts do not linger on the front page.
+            git add -A -- 'pos-*.png' 2>/dev/null || true
             if ! git diff --cached --quiet; then
               git commit -q -m "bot: cycle $CYCLE at $(date -u '+%Y-%m-%d %H:%M UTC')"
               git pull --rebase --autostash -q origin "${GITHUB_REF_NAME}"
@@ -162,6 +175,11 @@ jobs:
               curl -sS -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
                 --data-urlencode "chat_id=${TG_CHAT}" --data-urlencode "text=${MSG}" \
                 -o /dev/null -w "telegram: HTTP %{http_code}\n" || true
+
+              # Then the pictures: one chart per open position, so the phone
+              # shows where each trade entered and where it is now without
+              # having to ask. Sends nothing when nothing is open.
+              python telegram_listener.py sendcharts || echo "chart push failed - not fatal"
             fi
 
             # ---- stop, or wait for the next hour ----

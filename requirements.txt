@@ -2,3 +2,9 @@
 # so the cloud bot behaves identically to the local one. Bump deliberately, and
 # re-run the baseline backtest when you do.
 freqtrade==2026.7
+
+# Per-position charts (positions.py). PNG rather than SVG because Telegram's
+# sendPhoto will not render an SVG - it arrives as a file attachment instead of
+# an image. PNG works inline in both Telegram and GitHub markdown, so one
+# renderer feeds both. Not a freqtrade dependency, so it must be named here.
+pillow>=11,<14

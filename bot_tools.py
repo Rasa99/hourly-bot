@@ -22,6 +22,7 @@ import sys
 
 DB = "user_data/live_cloud.sqlite"
 SCAN = "market_scan.json"
+POSITIONS = "positions.json"
 SEEN = "user_data/logs/seen_trades.json"
 START_BALANCE = 20.0
 
@@ -80,7 +81,20 @@ def summary():
     except Exception:
         pass
 
-    mark = "\U0001F7E2" if balance >= START_BALANCE else "\U0001F534"
+    # Live prices for the open trades, if positions.py managed to fetch them.
+    # Balance alone counts only CLOSED trades, so with positions open it reads
+    # flat while real money is moving - equity is the number worth sending.
+    pos = {}
+    if os.path.exists(POSITIONS):
+        try:
+            pos = json.load(open(POSITIONS, encoding="utf-8"))
+        except Exception:
+            pos = {}
+    live = pos.get("positions", [])
+    unreal = pos.get("total_pnl", 0.0)
+    equity = pos.get("equity", balance)
+
+    mark = "\U0001F7E2" if equity >= START_BALANCE else "\U0001F534"
     out = []
 
     for r in newly_opened:
@@ -97,14 +111,23 @@ def summary():
 
     out += [
         f"{mark} Hourly check done",
-        f"Balance: ${balance:.4f}  ({(balance / START_BALANCE - 1) * 100:+.2f}%)",
+        f"Equity: ${equity:.4f}  ({(equity / START_BALANCE - 1) * 100:+.2f}%)",
+        f"Settled: ${balance:.4f}   Unrealised: {unreal:+.4f}",
         f"Open: {len(open_)}   Finished: {len(closed)}",
     ]
     if closed:
         out.append(f"Wins: {wins}/{len(closed)}")
-    for r in open_[:5]:
-        side = "SHORT" if r["is_short"] else "LONG"
-        out.append(f"  {side} {r['pair'].split('/')[0]} @ {r['open_rate']}")
+
+    if live:
+        for p in live:
+            dot = "\U0001F7E2" if p["pnl"] >= 0 else "\U0001F534"
+            out.append(f"{dot} {p['side']} {p['coin']}  {p['entry']} -> "
+                       f"{p['now']}  {p['pnl']:+.4f} "
+                       f"({p['pnl_pct_margin']:+.1f}%)")
+    else:
+        for r in open_[:5]:
+            side = "SHORT" if r["is_short"] else "LONG"
+            out.append(f"  {side} {r['pair'].split('/')[0]} @ {r['open_rate']}")
 
     # ---- closest to entry, so "why has it not traded" is always answered ----
     scan = []
