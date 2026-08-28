@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-28 17:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-28 18:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -35,16 +35,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| FIL | SHORT | 1.81% | needs 1.8% move; volume below average |
-| AXS | SHORT | 2.11% | needs 2.1% move; volume below average |
-| SAND | SHORT | 2.35% | needs 2.4% move; volume below average |
-| STORJ | SHORT | 3.41% | needs 3.4% move; trend too weak (ADX 19/20) |
-| BNB | LONG | 3.52% | needs 3.5% move; volume below average |
-| LRC | SHORT | 3.52% | needs 3.5% move; trend too weak (ADX 19/20) |
-| AVAX | LONG | 3.96% | needs 4.0% move; volume below average |
-| ANKR | LONG | 4.39% | needs 4.4% move; volume below average |
-| BTC | LONG | 4.62% | needs 4.6% move; volume below average |
-| LTC | LONG | 4.70% | needs 4.7% move; volume below average |
+| FIL | SHORT | 1.15% | needs 1.1% move; volume below average |
+| SAND | SHORT | 1.78% | needs 1.8% move; volume below average |
+| ATOM | SHORT | 1.89% | needs 1.9% move; volume below average |
+| AXS | SHORT | 1.99% | needs 2.0% move; volume below average |
+| STORJ | SHORT | 3.14% | needs 3.1% move; trend too weak (ADX 19/20) |
+| LRC | SHORT | 3.28% | needs 3.3% move; trend too weak (ADX 19/20) |
+| BNB | LONG | 3.88% | needs 3.9% move; volume below average |
+| ANKR | LONG | 4.26% | needs 4.3% move; volume below average |
+| AVAX | LONG | 4.34% | needs 4.3% move; volume below average |
+| MANA | LONG | 4.48% | needs 4.5% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
