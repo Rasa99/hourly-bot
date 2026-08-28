@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-28 03:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-28 03:53 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -32,16 +32,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SAND | SHORT | 0.57% | needs 0.6% move; trend too weak (ADX 17/20) |
-| BNB | LONG | 1.55% | needs 1.6% move; volume below average |
-| BTC | LONG | 2.06% | needs 2.1% move; volume below average |
-| FIL | SHORT | 2.31% | needs 2.3% move; trend too weak (ADX 20/20) |
-| LINK | LONG | 2.88% | needs 2.9% move; volume below average |
-| ETH | LONG | 3.06% | needs 3.1% move; trend too weak (ADX 13/20) |
-| ATOM | LONG | 3.20% | needs 3.2% move; trend too weak (ADX 18/20) |
-| ICP | LONG | 3.44% | needs 3.4% move; trend too weak (ADX 16/20) |
-| ANKR | LONG | 3.64% | needs 3.6% move; trend too weak (ADX 14/20) |
-| SKL | LONG | 3.91% | needs 3.9% move; trend too weak (ADX 15/20) |
+| SAND | SHORT | 0.50% | needs 0.5% move; trend too weak (ADX 17/20) |
+| BNB | LONG | 1.38% | needs 1.4% move; volume below average |
+| FIL | SHORT | 2.03% | needs 2.0% move; trend too weak (ADX 20/20) |
+| BTC | LONG | 2.13% | needs 2.1% move; volume below average |
+| BAT | LONG | 2.65% | needs 2.7% move; volume below average |
+| ATOM | LONG | 3.00% | needs 3.0% move; trend too weak (ADX 18/20) |
+| ETH | LONG | 3.02% | needs 3.0% move; trend too weak (ADX 13/20) |
+| LINK | LONG | 3.02% | needs 3.0% move; volume below average |
+| ICP | LONG | 3.10% | needs 3.1% move; trend too weak (ADX 16/20) |
+| ANKR | LONG | 3.41% | needs 3.4% move; trend too weak (ADX 14/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
