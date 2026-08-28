@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-28 09:18 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-28 10:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,19 +8,18 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Balance** | **$20.0000** 🟢 |
+| **Balance** | **$19.8584** 🔴 |
 | Started with | $20.0000 |
-| Change | +0.00% |
-| Finished trades | 0 |
-| Open now | 1 |
+| Change | -0.71% |
+| Finished trades | 1 |
+| Open now | 0 |
+| Win rate | 0% (0/1) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-| Coin | Direction | Entry | Leverage | Money in |
-|---|---|---|---|---|
-| UNI | LONG 🔺 | 4.676 | 10.0x | $0.468 |
+Nothing open.
 
 ## What it is waiting for
 
@@ -32,16 +31,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SAND | SHORT | 1.39% | needs 1.4% move; volume below average |
-| BNB | LONG | 1.85% | needs 1.9% move; trend too weak (ADX 17/20) |
-| FIL | SHORT | 2.27% | needs 2.3% move; volume below average |
-| BTC | LONG | 2.66% | needs 2.7% move; volume below average |
-| AVAX | LONG | 2.67% | needs 2.7% move; trend too weak (ADX 15/20) |
-| LINK | LONG | 2.90% | needs 2.9% move; trend too weak (ADX 19/20) |
-| ETH | LONG | 2.97% | needs 3.0% move; trend too weak (ADX 10/20) |
-| BAT | LONG | 3.42% | needs 3.4% move; trend too weak (ADX 18/20) |
-| MANA | LONG | 3.48% | needs 3.5% move; trend too weak (ADX 17/20) |
-| DOT | LONG | 3.79% | needs 3.8% move; trend too weak (ADX 19/20) |
+| SAND | SHORT | 0.92% | needs 0.9% move; volume below average |
+| FIL | SHORT | 1.54% | needs 1.5% move; volume below average |
+| BNB | LONG | 2.05% | needs 2.0% move; trend too weak (ADX 17/20) |
+| BAT | LONG | 2.37% | needs 2.4% move; trend too weak (ADX 16/20) |
+| BTC | LONG | 2.95% | needs 2.9% move; volume below average |
+| ETH | LONG | 3.16% | needs 3.2% move; trend too weak (ADX 10/20) |
+| AVAX | LONG | 3.17% | needs 3.2% move; trend too weak (ADX 15/20) |
+| LINK | LONG | 3.22% | needs 3.2% move; trend too weak (ADX 18/20) |
+| MANA | LONG | 3.62% | needs 3.6% move; trend too weak (ADX 17/20) |
+| DOT | LONG | 3.70% | needs 3.7% move; trend too weak (ADX 17/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -53,7 +52,9 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 ### Last 15 finished trades
 
-None yet.
+| Coin | Direction | Result | Why it closed | When |
+|---|---|---|---|---|
+| UNI | LONG | 🔴 -0.1416 (-30.3%) | trailing_stop_loss | 2026-08-28 10:07 |
 
 ---
 
