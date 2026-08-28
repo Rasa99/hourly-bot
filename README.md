@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-28 01:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-28 02:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -32,16 +32,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LINK | LONG | 0.00% | volume below average |
-| UNI | LONG | 0.46% | needs 0.5% move; volume below average |
-| BNB | LONG | 0.65% | needs 0.7% move; volume below average |
-| BTC | LONG | 0.70% | needs 0.7% move; volume below average |
-| ATOM | LONG | 0.70% | needs 0.7% move; volume below average |
-| ICP | LONG | 0.97% | needs 1.0% move; trend too weak (ADX 16/20) |
-| SOL | LONG | 1.44% | needs 1.4% move; volume below average |
-| ETH | LONG | 1.76% | needs 1.8% move; trend too weak (ADX 14/20) |
-| CELO | LONG | 1.77% | needs 1.8% move; trend too weak (ADX 8/20) |
-| CHZ | LONG | 1.87% | needs 1.9% move; volume below average |
+| BNB | LONG | 0.98% | needs 1.0% move; volume below average |
+| ATOM | LONG | 1.02% | needs 1.0% move; volume below average |
+| BTC | LONG | 1.51% | needs 1.5% move; volume below average |
+| ICP | LONG | 1.59% | needs 1.6% move; trend too weak (ADX 17/20) |
+| ANKR | LONG | 1.82% | needs 1.8% move; trend too weak (ADX 15/20) |
+| LINK | LONG | 1.95% | needs 2.0% move; volume below average |
+| ETH | LONG | 2.36% | needs 2.4% move; trend too weak (ADX 15/20) |
+| SAND | SHORT | 2.58% | needs 2.6% move; trend too weak (ADX 15/20) |
+| MANA | LONG | 2.61% | needs 2.6% move; volume below average |
+| RVN | LONG | 2.79% | needs 2.8% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
