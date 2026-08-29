@@ -119,9 +119,33 @@ def blockers(scan, path="chart-blockers.svg"):
     cols = {"Ready to fire": GREEN, "Volume too low": AMBER, "Trend too weak": RED}
 
     body = [_title(f"Coins that broke out ({len(broke)}) - and what is holding them back")]
+
+    # Nothing broke out - draw the message and STOP.
+    #
+    # This used to fall through into the bar loop anyway. With every count at
+    # zero each bar collapsed to its 2px minimum, so all three sat at x=16, 26
+    # and 36 while their labels - "Ready to fire", "Volume too low", "Trend too
+    # weak", each far wider than 10px - printed straight on top of one another.
+    # The "nothing has broken out" line was then drawn over the pile as well.
+    # Two separate overlaps, and this is the state the chart is in most of the
+    # time, because most hours nothing breaks out.
+    if not broke:
+        body.append(
+            f'<text x="16" y="66" fill="{DIM}" font-family="system-ui,sans-serif" '
+            f'font-size="12">Nothing has broken out yet - all {len(scan)} coins '
+            f'are still inside their 3-day range.</text>'
+            f'<text x="16" y="88" fill="{DIM}" font-family="system-ui,sans-serif" '
+            f'font-size="11" opacity="0.75">This panel fills in once a coin '
+            f'reaches a 3-day high or low.</text>')
+        return _write(path, "".join(body), W, H)
+
     x = 16
     for label, cnt in counts.items():
-        w = max((cnt / total) * (W - 32), 2)
+        if not cnt:
+            continue                      # an empty category has nothing to show
+        # Every drawn segment must be wide enough to hold its own label, or
+        # neighbouring labels collide again - just less obviously.
+        w = max((cnt / total) * (W - 32), 96)
         body.append(
             f'<rect x="{x:.1f}" y="44" width="{w:.1f}" height="26" rx="3" fill="{cols[label]}" opacity="0.85"/>'
             f'<text x="{x:.1f}" y="92" fill="{FG}" font-family="system-ui,sans-serif" font-size="11">'
@@ -130,9 +154,6 @@ def blockers(scan, path="chart-blockers.svg"):
             f'{cnt} coin(s)</text>'
         )
         x += w + 8
-    if not broke:
-        body.append(f'<text x="16" y="60" fill="{DIM}" font-family="system-ui,sans-serif" '
-                    f'font-size="12">Nothing has broken out yet - all coins still inside their 3-day range.</text>')
     return _write(path, "".join(body), W, H)
 
 
