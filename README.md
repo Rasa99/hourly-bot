@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-29 01:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-29 02:12 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -37,16 +37,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 1.24% | needs 1.2% move; volume below average |
-| SAND | SHORT | 2.08% | needs 2.1% move; volume below average |
-| ENJ | SHORT | 2.15% | needs 2.1% move; volume below average |
-| ATOM | SHORT | 2.23% | needs 2.2% move; volume below average |
-| FIL | SHORT | 2.49% | needs 2.5% move; volume below average |
-| EGLD | LONG | 2.56% | needs 2.6% move; trend too weak (ADX 18/20) |
-| AXS | SHORT | 2.59% | needs 2.6% move; volume below average |
-| LRC | SHORT | 2.93% | needs 2.9% move; volume below average |
-| ANKR | LONG | 3.40% | needs 3.4% move; volume below average |
-| COMP | SHORT | 3.46% | needs 3.5% move; volume below average |
+| STORJ | SHORT | 1.74% | needs 1.7% move; volume below average |
+| SAND | SHORT | 2.03% | needs 2.0% move; volume below average |
+| AXS | SHORT | 2.39% | needs 2.4% move; volume below average |
+| ENJ | SHORT | 2.53% | needs 2.5% move; volume below average |
+| FIL | SHORT | 2.64% | needs 2.6% move; volume below average |
+| LRC | SHORT | 2.69% | needs 2.7% move; volume below average |
+| ATOM | SHORT | 2.75% | needs 2.7% move; volume below average |
+| ANKR | LONG | 3.32% | needs 3.3% move; volume below average |
+| LTC | LONG | 3.35% | needs 3.4% move; volume below average |
+| EGLD | LONG | 3.48% | needs 3.5% move; trend too weak (ADX 18/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
