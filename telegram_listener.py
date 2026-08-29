@@ -42,10 +42,25 @@ import urllib.parse
 import urllib.request
 import uuid
 
-DB = "user_data/live_cloud.sqlite"
+SNAPSHOT_DB = "user_data/live_cloud.sqlite"
 SCAN = "market_scan.json"
 POSITIONS = "positions.json"
 START_BALANCE = 20.0
+
+
+def db_path():
+    """
+    Prefer the LIVE database freqtrade is writing to, else the hourly snapshot.
+
+    Resolved per call, not at import. This process starts before the live
+    database has been seeded, so deciding once at import would pin it to the
+    snapshot for the whole five-hour run and /status would answer with
+    hour-old data about trades that opened minutes ago.
+    """
+    live = os.environ.get("FT_LIVE_DB")
+    if live and os.path.exists(live):
+        return live
+    return SNAPSHOT_DB
 
 TOKEN = os.environ.get("TG_TOKEN", "")
 CHAT = str(os.environ.get("TG_CHAT", ""))
@@ -133,10 +148,11 @@ def send(text, keyboard=False):
 
 # ----------------------------------------------------------------- data
 def read_trades():
-    if not os.path.exists(DB):
+    db = db_path()
+    if not os.path.exists(db):
         return [], []
     try:
-        c = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+        c = sqlite3.connect(f"file:{db}?mode=ro", uri=True)
         c.row_factory = sqlite3.Row
         rows = c.execute(
             "select pair,is_open,is_short,open_rate,close_profit_abs,"

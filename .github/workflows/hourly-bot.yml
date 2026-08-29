@@ -62,7 +62,13 @@ jobs:
         env:
           # ABSOLUTE path. A relative db_url depends on the working directory,
           # which has silently broken this project twice.
-          FREQTRADE__DB_URL: sqlite:///${{ github.workspace }}/user_data/live_cloud.sqlite
+          #
+          # This is the LIVE database, and it deliberately sits in the runner's
+          # temp directory rather than in the repository. freqtrade now runs
+          # continuously, so this file is being written to at all times; the
+          # copy git commits is a consistent snapshot taken from it each hour
+          # (bot_tools.py snapshot), never the file itself.
+          FT_LIVE_DB: ${{ runner.temp }}/live_cloud.sqlite
           # freqtrade's OWN Telegram is deliberately OFF.
           #
           # Telegram permits exactly one getUpdates poller per bot token. With
@@ -93,30 +99,86 @@ jobs:
             echo "telegram listener started (pid $!)"
           fi
 
-          DEADLINE=$(( $(date +%s) + 19200 ))     # stop starting new cycles after 5h20m
+          # Print what execution settings are ACTUALLY in force. A comment in
+          # the config used to claim market orders while freqtrade's defaults
+          # are limit on entry, exit and stoploss; nothing printed the real
+          # values, so the two disagreed for weeks unnoticed.
+          python bot_tools.py execconfig || true
+
+          # ---- restore the bot's memory into a WORKING copy ---------------
+          # The live database now lives outside the repository. freqtrade no
+          # longer stops between cycles, so the file it writes cannot also be
+          # the file git commits - copying it mid-transaction captures a torn
+          # page, and removing its -wal from under an open handle loses writes.
+          python bot_tools.py seed
+
+          # ---- freqtrade now runs CONTINUOUSLY ----------------------------
+          # It used to run for 300 seconds per hour. That meant the stop was
+          # unenforced for the other 55 minutes: stoploss_on_exchange is false,
+          # so the stop is bot-managed and only exists while the process does.
+          # Price could blow through a stop at :20 and the bot would not act
+          # until :07 the next hour, exiting wherever price had got to - which
+          # a backtest, checking every candle's high and low, cannot reproduce.
+          #
+          # Running it for the job's whole life takes stop coverage from about
+          # 8% of the time to ~97%, costs nothing, and needs no VPS. Entries
+          # are unaffected: process_only_new_candles means it still acts once
+          # per closed hourly candle.
+          start_freqtrade() {
+            freqtrade trade \
+              --userdir user_data \
+              --config user_data/config/config.cloud.json \
+              --strategy HourlyTrend \
+              --db-url "sqlite:///${FT_LIVE_DB}" \
+              --logfile user_data/logs/cloud.log \
+              > user_data/logs/freqtrade.out 2>&1 &
+            FT_PID=$!
+            echo "freqtrade started (pid $FT_PID)"
+          }
+          start_freqtrade
+
+          JOB_START=$(date +%s)
+          HARD_STOP=$(( JOB_START + 20400 ))   # 5h40m; GitHub kills the job at 5h50m
           CYCLE=0
+
+          # Let freqtrade boot and reconcile before the first report, so the
+          # status page is not built from an empty database.
+          sleep 90
 
           while :; do
             CYCLE=$(( CYCLE + 1 ))
             echo "==================== cycle $CYCLE ===================="
             date -u '+%Y-%m-%d %H:%M UTC'
 
+            # ---- is freqtrade still alive? ----
+            # A crash used to be invisible: the next hour simply started it
+            # again. Now that it is meant to run continuously, a death means
+            # the stop is unmanaged until this check notices, so notice loudly.
             set +e
-            timeout --signal=INT 300 freqtrade trade \
-              --userdir user_data \
-              --config user_data/config/config.cloud.json \
-              --strategy HourlyTrend \
-              --db-url "$FREQTRADE__DB_URL" \
-              --logfile user_data/logs/cloud.log
-            CODE=$?
+            if kill -0 "$FT_PID" 2>/dev/null; then
+              FT_STATE="running (pid $FT_PID)"
+            else
+              FT_STATE="DIED - restarted"
+              echo "freqtrade is not running - restarting it"
+              tail -n 20 user_data/logs/freqtrade.out 2>/dev/null || true
+              start_freqtrade
+            fi
             set -e
-            echo "freqtrade exit: $CODE  (124/130 = stopped on purpose)"
+            echo "freqtrade: $FT_STATE"
+
+            # ---- consistent snapshot of the live database ----
+            # backup() rather than a file copy: freqtrade is writing to this
+            # database right now, and only the backup API gives a
+            # transactionally consistent image of it.
+            set +e
+            python bot_tools.py snapshot
+            set -e
 
             # ---- write the diagnosis where it can be read from the repo ----
             {
               echo "run          : ${{ github.run_number }}   cycle: $CYCLE"
               echo "finished     : $(date -u '+%Y-%m-%d %H:%M UTC')"
-              echo "freqtrade exit: $CODE"
+              echo "freqtrade    : $FT_STATE"
               echo
               echo "----- last 40 log lines -----"
               tail -n 40 user_data/logs/cloud.log 2>&1 || echo "(no log)"
@@ -141,9 +203,11 @@ jobs:
             # an INDENTED delimiter, bash never finds the end of it, and the
             # step dies of a syntax error before running a single line. That
             # is what broke run #9. The Python lives in bot_tools.py instead.
+            # No `checkpoint` and no `rm` of the -wal here any more. Both acted
+            # on the file freqtrade had open; deleting a write-ahead log from
+            # under a running process is how you lose the last hour of trades.
+            # The snapshot above already produced a clean, complete copy.
             set +e
-            python bot_tools.py checkpoint
-            rm -f user_data/live_cloud.sqlite-wal user_data/live_cloud.sqlite-shm
             git add -f README.md chart-*.svg market_scan.json positions.json \
                        user_data/live_cloud.sqlite \
                        user_data/logs/cloud.log user_data/logs/last_run.txt 2>/dev/null
@@ -183,19 +247,24 @@ jobs:
             fi
 
             # ---- stop, or wait for the next hour ----
-            if [ "$(date +%s)" -ge "$DEADLINE" ]; then
-              echo "time budget used - this job ends here, a cron restarts it"
+            # Work out the NEXT cycle first, then decide - the old code checked
+            # a deadline here and only afterwards slept up to an hour, so a
+            # deadline landing just after a cycle meant it slept straight past
+            # GitHub's 5h50m ceiling and was killed mid-sleep. That is why
+            # roughly half of all runs ended "cancelled" instead of green: it
+            # depended entirely on which minute of the hour the job started.
+            NOW=$(date +%s)
+            NEXT=$(( NOW - (NOW % 3600) + 3600 + 420 ))
+            [ "$(( NEXT - NOW ))" -lt 60 ] && NEXT=$(( NEXT + 3600 ))
+
+            if [ "$NEXT" -ge "$HARD_STOP" ]; then
+              echo "the next cycle would fall outside this job's life -"
+              echo "ending cleanly now so a queued run can take over"
               break
             fi
 
-            # Sleep until 7 minutes past the next hour, so cycles line up with
-            # hourly candle closes instead of drifting.
-            NOW=$(date +%s)
-            NEXT=$(( NOW - (NOW % 3600) + 3600 + 420 ))
-            SLEEP=$(( NEXT - NOW ))
-            [ "$SLEEP" -lt 60 ] && SLEEP=$(( SLEEP + 3600 ))
-            echo "sleeping ${SLEEP}s until the next hourly candle"
-            sleep "$SLEEP"
+            echo "sleeping $(( NEXT - NOW ))s until the next hourly candle"
+            sleep "$(( NEXT - NOW ))"
           done
 
           echo "completed $CYCLE cycles"

@@ -110,7 +110,8 @@ def open_trades():
         c.row_factory = sqlite3.Row
         rows = c.execute(
             "select id,pair,is_short,open_rate,open_date,amount,leverage,"
-            "stake_amount,stop_loss,initial_stop_loss from trades where is_open=1"
+            "stake_amount,stop_loss,initial_stop_loss,fee_open,fee_close,"
+            "funding_fees from trades where is_open=1"
         ).fetchall()
         c.close()
         return [dict(r) for r in rows]
@@ -232,10 +233,18 @@ def draw_chart(pos, closes, path):
         d.text((x1 + 8, y - 9), text, font=font, fill=colour)
 
     # ---- footer -------------------------------------------------------
+    # Left: where the net number came from. Right: the position's shape.
     opened = str(pos.get("open_date", ""))[:16]
-    foot = (f"{HOURS_SHOWN}h of price  ·  moved {pos['move_pct']:+.2f}%  ·  "
-            f"{pos['leverage']:.0f}x on ${pos['margin']:.3f}  ·  opened {opened}")
-    d.text((PAD_L - 24, H - 30), foot, font=f_body, fill=DIM)
+    foot = f"gross {pos['gross_pnl']:+.4f}  −  fees {pos['fees']:.4f}"
+    if pos["funding"]:
+        foot += f"  +  funding {pos['funding']:+.4f}"
+    foot += f"  =  net {pos['pnl']:+.4f} USDT"
+    d.text((PAD_L - 24, H - 31), foot, font=f_body, fill=DIM)
+
+    sub = (f"{pos['leverage']:.0f}x on ${pos['margin']:.3f}  ·  "
+           f"moved {pos['move_pct']:+.2f}%  ·  opened {opened}")
+    d.text((W - PAD_R + 100 - d.textlength(sub, font=f_small), H - 29),
+           sub, font=f_small, fill=(96, 104, 116))
 
     img.save(path, "PNG", optimize=True)
     return path
@@ -281,8 +290,27 @@ def main() -> int:
         margin = float(t["stake_amount"] or 0)
         short = bool(t["is_short"])
 
-        pnl = (entry - now) * amount if short else (now - entry) * amount
+        gross = (entry - now) * amount if short else (now - entry) * amount
         move = (now - entry) / entry * 100
+
+        # ---- costs, so the headline number is what you would actually keep --
+        # Fees are charged on NOTIONAL (position value), not on the margin
+        # posted. At 10x those differ by a factor of ten, so computing them
+        # from notional here rather than reusing freqtrade's stored cost
+        # columns - whose scale is inconsistent between the open and close
+        # legs - keeps this honest.
+        #
+        # The exit fee has not been paid yet; it is charged when the trade
+        # closes. Including an estimate of it is still right, because the only
+        # way to realise this profit is to pay it.
+        #
+        # funding_fees is SIGNED, per freqtrade: positive means the trade
+        # GAINED from funding, negative means it paid. So it adds.
+        fee_in = entry * amount * float(t["fee_open"] or 0)
+        fee_out = now * amount * float(t["fee_close"] or t["fee_open"] or 0)
+        funding = float(t["funding_fees"] or 0)
+        costs = fee_in + fee_out
+        pnl = gross - costs + funding
 
         pos = {
             "coin": coin,
@@ -292,7 +320,14 @@ def main() -> int:
             "entry": entry,
             "now": now,
             "move_pct": round(move, 2),
+            # "pnl" is NET - it is the headline everywhere, so it must be the
+            # number you would actually keep, not the price move.
             "pnl": round(pnl, 4),
+            "gross_pnl": round(gross, 4),
+            "fees": round(costs, 4),
+            "fee_entry": round(fee_in, 4),
+            "fee_exit_est": round(fee_out, 4),
+            "funding": round(funding, 4),
             "pnl_pct_margin": round(pnl / margin * 100, 1) if margin else 0.0,
             "leverage": float(t["leverage"] or 1),
             "margin": margin,
@@ -321,7 +356,10 @@ def main() -> int:
 
     payload = {
         "positions": out,
-        "total_pnl": round(total, 4),
+        "total_pnl": round(total, 4),                       # net
+        "total_gross_pnl": round(sum(p["gross_pnl"] for p in out), 4),
+        "total_fees": round(sum(p["fees"] for p in out), 4),
+        "total_funding": round(sum(p["funding"] for p in out), 4),
         "balance": balance,
         "equity": round(balance + total, 4),
         "long_notional": round(longs, 2),

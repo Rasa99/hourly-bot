@@ -35,11 +35,32 @@ OUT = "market_scan.json"
 
 
 def fetch(ex, pair, limit=300):
+    """
+    Returns candles with the CURRENTLY FORMING one removed.
+
+    This used to return the raw frame and the scan then read `iloc[-1]`, which
+    is the candle still being built. That made the dashboard disagree with the
+    strategy in a way that looked like a strategy problem and was not:
+
+      - freqtrade drops the incomplete candle before the strategy ever sees it
+        (exchange.py: `idx = -2 if drop_incomplete`), so trading was always
+        reading closed candles.
+      - this scanner did not, so it reported on a partial hour.
+
+    The volume filter is where it showed. The scan runs ~7 minutes past the
+    hour, so `volume` held about a tenth of an hour while `vol_sma` averaged
+    twenty FULL hours - "volume below average" was almost guaranteed and the
+    dashboard blamed a filter that was not actually blocking anything.
+    Measured at 46 minutes past the hour, when the distortion is at its
+    mildest: 4/10 coins passed on the forming candle, 7/10 on the closed one.
+
+    Dropping it here means every consumer of this file compares like with like.
+    """
     o = ex.fetch_ohlcv(pair, timeframe="1h", limit=limit)
-    if not o or len(o) < BREAKOUT_H + EMA_SLOW:
+    if not o or len(o) < BREAKOUT_H + EMA_SLOW + 1:
         return None
     df = pd.DataFrame(o, columns=["date", "open", "high", "low", "close", "volume"])
-    return df
+    return df.iloc[:-1].reset_index(drop=True)
 
 
 def main() -> int:

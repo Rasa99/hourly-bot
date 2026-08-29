@@ -38,6 +38,62 @@ def checkpoint():
     print("database checkpointed")
 
 
+# The live database freqtrade writes to. It deliberately lives OUTSIDE the
+# repository now, because freqtrade no longer stops between cycles - it runs
+# for the job's whole life so that stops are actually managed. A file being
+# written continuously cannot also be the file git commits: copying it mid
+# transaction captures a torn page, and deleting its -wal out from under an
+# open handle loses writes.
+LIVE_DB = os.environ.get("FT_LIVE_DB", "")
+
+
+def seed():
+    """
+    Copy the committed database to the live working path, once, at job start.
+
+    This is how the bot remembers open trades across runs: the repository holds
+    the last snapshot, and each new job starts from it.
+    """
+    if not LIVE_DB:
+        print("FT_LIVE_DB not set - nothing to seed")
+        return
+    os.makedirs(os.path.dirname(LIVE_DB) or ".", exist_ok=True)
+    if os.path.exists(LIVE_DB):
+        print(f"live db already present at {LIVE_DB}")
+        return
+    if not os.path.exists(DB):
+        print("no committed database yet - starting fresh")
+        return
+    src = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+    dst = sqlite3.connect(LIVE_DB)
+    src.backup(dst)
+    dst.close()
+    src.close()
+    print(f"seeded live db from {DB}")
+
+
+def snapshot():
+    """
+    Write a CONSISTENT copy of the live database into the repository.
+
+    Uses SQLite's backup API rather than a file copy. That matters: freqtrade
+    is writing to this database at the same moment, and backup() takes a
+    transactionally consistent image of it, where `cp` would capture whatever
+    half-written state happened to be on disk.
+    """
+    if not LIVE_DB or not os.path.exists(LIVE_DB):
+        print("no live db to snapshot")
+        return
+    src = sqlite3.connect(f"file:{LIVE_DB}?mode=ro", uri=True)
+    tmp = DB + ".tmp"
+    dst = sqlite3.connect(tmp)
+    src.backup(dst)
+    dst.close()
+    src.close()
+    os.replace(tmp, DB)          # atomic, so a killed job cannot leave a stub
+    print(f"snapshot written to {DB}")
+
+
 def summary():
     """One short Telegram message describing where things stand."""
     if not os.path.exists(DB):
@@ -155,12 +211,68 @@ def summary():
     print("\n".join(out))
 
 
+CONFIG = "user_data/config/config.cloud.json"
+
+
+def execconfig():
+    """
+    Print what execution settings are ACTUALLY in force, resolved against
+    freqtrade's defaults.
+
+    This exists because a comment in the config claimed the strategy used
+    "freqtrade's default MARKET orders" while the real defaults are limit on
+    entry, exit AND stoploss. Nobody caught it for weeks, because nothing ever
+    printed the effective values - the only description of behaviour was prose
+    sitting next to the settings, and prose cannot be wrong loudly.
+
+    Runs once at job start. If a setting ever drifts from what is documented,
+    it shows up in the log instead of in a surprise fill.
+    """
+    from freqtrade.strategy.interface import IStrategy
+
+    cfg = json.load(open(CONFIG, encoding="utf-8"))
+    defaults = dict(IStrategy.order_types)
+    ot = {**defaults, **cfg.get("order_types", {})}
+
+    def line(label, value, source):
+        print(f"  {label:<26} {str(value):<12} ({source})")
+
+    print("=" * 62)
+    print("EFFECTIVE EXECUTION CONFIG")
+    print("=" * 62)
+    for key in ("entry", "exit", "stoploss", "stoploss_on_exchange"):
+        src = "config" if key in cfg.get("order_types", {}) else "freqtrade default"
+        line(f"order_types.{key}", ot.get(key), src)
+    for key in ("trading_mode", "margin_mode", "dry_run", "stake_amount",
+                "max_open_trades", "timeframe"):
+        line(key, cfg.get(key), "config")
+    for side in ("entry_pricing", "exit_pricing"):
+        line(f"{side}.price_side", cfg.get(side, {}).get("price_side"), "config")
+    line("exchange", cfg.get("exchange", {}).get("name"), "config")
+
+    fee = cfg.get("fee")
+    line("fee", fee if fee is not None else "exchange-reported",
+         "config" if fee is not None else "ccxt")
+    print("=" * 62)
+    if not ot.get("stoploss_on_exchange"):
+        print("NOTE: the stop is BOT-MANAGED. It is only enforced while the")
+        print("      freqtrade process is actually running.")
+    print("=" * 62)
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "checkpoint":
         checkpoint()
     elif cmd == "summary":
         summary()
+    elif cmd == "execconfig":
+        execconfig()
+    elif cmd == "seed":
+        seed()
+    elif cmd == "snapshot":
+        snapshot()
     else:
-        print("usage: bot_tools.py [checkpoint|summary]")
+        print("usage: bot_tools.py "
+              "[checkpoint|summary|execconfig|seed|snapshot]")
         sys.exit(1)
