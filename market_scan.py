@@ -2,21 +2,46 @@
 Scans every coin and works out how close each one is to triggering a trade.
 
 This is the answer to "why has it not entered yet" and "what is closest".
-Instead of guessing, it recomputes the strategy's four entry conditions live and
+Instead of guessing, it recomputes the strategy's entry conditions live and
 reports the distance to each one.
 
-The strategy enters ONLY when all four agree:
+The strategy enters ONLY when all FIVE agree:
 
   1. price closes above the 72-hour high  (or below the 72-hour low)
   2. EMA50 is on the matching side of EMA200
   3. ADX above 20 - the move has force behind it, not a drift
   4. volume above its 20-hour average
+  5. RSI(14) not already exhausted - below 78 to go long, above 22 to go short
 
-Most "it should have entered!" moments are condition 1 passing while 2, 3 or 4
-quietly does not. This prints which one blocked it, per coin.
+Most "it should have entered!" moments are condition 1 passing while one of the
+others quietly does not. This prints which one blocked it, per coin.
 
 Writes market_scan.json for the status page and prints a short block for
 Telegram.
+
+TWO BUGS FIXED 2026-08-30, both of which made this file disagree with the bot
+it exists to explain:
+
+  - THE RSI GUARD WAS MISSING. The docstring said "all four" and listed four,
+    but HourlyTrend.populate_entry_trend has five conditions. A coin could be
+    reported READY here and refused by the strategy, with the page offering no
+    reason - the worst kind of disagreement, because it looks like the bot is
+    broken when it is in fact obeying a rule the page does not know about.
+
+  - ONLY 300 CANDLES WERE FETCHED. EMA200 is RECURSIVE: its value depends on
+    every candle before it, so with too little warmup it never converges. This
+    project has already measured that exact drift and fixed it in the strategy
+    - see HourlyTrend.startup_candle_count and research/lookahead_results.txt:
+
+        warmup:      200      300      400      800     1000
+        ema_slow: -0.018%  +0.050%  +0.041%   0.000%  -0.000%
+
+    At 300 candles this scanner's EMA200 sat ~0.05% away from the strategy's.
+    That sounds trivial and is not: condition 2 is a comparison of EMA50
+    against EMA200, so when price sits near the crossover - exactly when the
+    answer matters - a 0.05% error flips the reported direction. The strategy
+    was raised to 800 candles of warmup on 2026-08-28. This file was not, and
+    has been answering from a different EMA ever since.
 """
 
 import json
@@ -30,11 +55,16 @@ import talib.abstract as ta
 BREAKOUT_H = 72
 ADX_FLOOR = 20
 EMA_FAST, EMA_SLOW = 50, 200
+RSI_LONG_MAX, RSI_SHORT_MIN = 78, 22
+
+# Must match HourlyTrend.startup_candle_count. EMA200 is recursive and does not
+# converge in less; 800 is where the measured drift reaches zero.
+WARMUP = 800
 CONFIG = "user_data/config/config.cloud.json"
 OUT = "market_scan.json"
 
 
-def fetch(ex, pair, limit=300):
+def fetch(ex, pair, limit=1000):
     """
     Returns candles with the CURRENTLY FORMING one removed.
 
@@ -57,7 +87,12 @@ def fetch(ex, pair, limit=300):
     Dropping it here means every consumer of this file compares like with like.
     """
     o = ex.fetch_ohlcv(pair, timeframe="1h", limit=limit)
-    if not o or len(o) < BREAKOUT_H + EMA_SLOW + 1:
+    # WARMUP + 1, not BREAKOUT_H + EMA_SLOW + 1. The old bound (273) was the
+    # number of candles needed for EMA200 to be non-NaN, which is not the same
+    # as the number needed for it to be RIGHT. A coin with less than 800 hours
+    # of history is skipped rather than reported from an unconverged EMA -
+    # freqtrade would not trade it either, for the same reason.
+    if not o or len(o) < WARMUP + 1:
         return None
     df = pd.DataFrame(o, columns=["date", "open", "high", "low", "close", "volume"])
     return df.iloc[:-1].reset_index(drop=True)
@@ -83,6 +118,7 @@ def main() -> int:
         df["ema_f"] = ta.EMA(df, timeperiod=EMA_FAST)
         df["ema_s"] = ta.EMA(df, timeperiod=EMA_SLOW)
         df["adx"] = ta.ADX(df, timeperiod=14)
+        df["rsi"] = ta.RSI(df, timeperiod=14)
         df["vol_sma"] = df["volume"].rolling(20).mean()
         df["dc_hi"] = df["high"].rolling(BREAKOUT_H).max().shift(1)
         df["dc_lo"] = df["low"].rolling(BREAKOUT_H).min().shift(1)
@@ -104,6 +140,11 @@ def main() -> int:
         else:
             gap, side = dn_gap, "SHORT"
 
+        # The RSI guard is directional: a long is refused when RSI is already
+        # stretched high, a short when it is already stretched low.
+        rsi = float(r["rsi"])
+        rsi_ok = rsi < RSI_LONG_MAX if ema_up else rsi > RSI_SHORT_MIN
+
         blockers = []
         if gap > 0:
             blockers.append(f"needs {gap:.1f}% move")
@@ -111,6 +152,9 @@ def main() -> int:
             blockers.append(f"trend too weak (ADX {r['adx']:.0f}/{ADX_FLOOR})")
         if not vol_ok:
             blockers.append("volume below average")
+        if not rsi_ok:
+            limit = RSI_LONG_MAX if ema_up else RSI_SHORT_MIN
+            blockers.append(f"RSI already stretched ({rsi:.0f}/{limit})")
 
         rows.append({
             "coin": pair.split("/")[0],
@@ -122,7 +166,9 @@ def main() -> int:
             "adx_ok": adx_ok,
             "vol_ok": vol_ok,
             "ema_up": ema_up,
-            "ready": gap <= 0 and adx_ok and vol_ok,
+            "rsi": round(rsi, 1),
+            "rsi_ok": rsi_ok,
+            "ready": gap <= 0 and adx_ok and vol_ok and rsi_ok,
             "blockers": blockers,
         })
 

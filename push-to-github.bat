@@ -1,12 +1,27 @@
 @echo off
 setlocal
-title Send the bot to GitHub
+title Send the bot to GitHub - FIRST TIME ONLY
 
 rem Uploads this folder to your GitHub repository so it can run hourly on
 rem GitHub's computers, free, with your PC off.
 rem
 rem Read PUT-IT-ONLINE.md first - you need to create the (public, empty)
 rem repository yourself before running this.
+rem
+rem ##########################################################################
+rem  FIRST UPLOAD ONLY. To update a bot that is ALREADY running, use
+rem  update-cloud-bot.bat instead.
+rem
+rem  This script ends with `git push --force`, which is right for filling an
+rem  empty repository and destructive afterwards: the cloud bot commits to
+rem  that same repository every hour, and its trade database, status page and
+rem  logs all live there. Forcing this folder over the top replaces the bot's
+rem  history with whatever is on this PC, and every trade closed since the
+rem  last sync is gone - the bot then restarts from a stale database and
+rem  re-opens positions it had already closed.
+rem
+rem  The check below refuses to run once the repository has real history.
+rem ##########################################################################
 
 cd /d "%~dp0"
 
@@ -28,6 +43,32 @@ echo.
 echo   You need an EMPTY, PUBLIC repository already created at
 echo   https://github.com/new  - see PUT-IT-ONLINE.md
 echo.
+
+rem A bot that has been running has committed to this repository many times,
+rem and those commits are its memory. If they are here, this is not a first
+rem upload and the force push below would delete them.
+if exist ".git" (
+  for /f %%C in ('git log --oneline --author^=hourly-bot 2^>nul ^| find /c /v ""') do set "BOTCOMMITS=%%C"
+)
+if not "%BOTCOMMITS%"=="" if not "%BOTCOMMITS%"=="0" (
+  echo  ================================================================
+  echo   STOPPED - THIS BOT IS ALREADY ONLINE
+  echo  ================================================================
+  echo.
+  echo   This repository already contains %BOTCOMMITS% commits made by the
+  echo   running bot. They hold its trade database and its history.
+  echo.
+  echo   This script force-pushes, which would erase them.
+  echo.
+  echo   To send a code change to a bot that is already running, use:
+  echo.
+  echo       update-cloud-bot.bat
+  echo.
+  echo   Nothing has been changed or uploaded.
+  echo.
+  pause
+  exit /b 1
+)
 
 set "REPO="
 set /p REPO="  Paste your repository address and press Enter: "

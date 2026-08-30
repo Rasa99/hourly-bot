@@ -104,6 +104,45 @@ class HourlyTrend(IStrategy):
     max_forced_risk = 0.05
     max_same_side = int(os.environ.get("FT_MAX_SAME_SIDE", "5"))
 
+    # Cap on how many positions may be OPENED in a single candle.
+    #
+    # ADDED 2026-08-30, default 1. This is the only change tested this session
+    # that was better in BOTH windows, and it was better on all three measures
+    # at once (research/hourly_crowding_results.txt):
+    #
+    #                        TRAIN                    HOLDOUT
+    #   no limit (before)    -73.05%  PF 0.72  DD 75%  -60.17%  PF 0.82  DD 79%
+    #   max 1 per candle     -57.52%  PF 0.80  DD 64%  -12.06%  PF 0.97  DD 53%
+    #
+    # WHY. max_same_side limits how many correlated positions are HELD. It says
+    # nothing about how fast they are acquired, and the live bot showed what
+    # that costs on its second day (cloud/user_data/logs/cloud.log):
+    #
+    #   FIL/USDT:USDT   is_short=True  open_since=2026-08-28 17:07:13
+    #   SAND/USDT:USDT  is_short=True  open_since=2026-08-28 17:07:14
+    #   AXS/USDT:USDT   is_short=True  open_since=2026-08-28 17:07:14
+    #
+    # Three positions, one second, all short, on coins whose average pairwise
+    # correlation is 0.62 (research/correlation_results.txt). That is not three
+    # bets, it is one bet in three places, opened at the single most crowded
+    # moment - and it consumed three of the five same-side slots, after which
+    # the account was closed for business while the rest of the month's signals
+    # went past.
+    #
+    # At 1 per candle the account still reaches five per side, but it needs at
+    # least five hours to get there and the five come from five different market
+    # moments. Nominal diversification becomes real diversification.
+    #
+    # IT DOES NOT MAKE THE STRATEGY PROFITABLE. -12% is not a business. It is a
+    # genuine improvement to a strategy that still loses - see
+    # docs/findings/07-why-the-hourly-bot-loses.md before reading anything more
+    # into it.
+    #
+    # Compared against the candle boundary rather than a rolling hour so that
+    # backtest and live agree: in backtesting current_time IS the candle start,
+    # while live it is a few seconds past it.
+    max_new_per_candle = int(os.environ.get("FT_MAX_NEW", "1"))
+
     @property
     def protections(self):
         # Hourly candles, so these windows are in HOURS not days.
@@ -249,14 +288,27 @@ class HourlyTrend(IStrategy):
         time_in_force: str, current_time: datetime, entry_tag: str | None,
         side: str, **kwargs,
     ) -> bool:
-        if self.max_same_side <= 0:
+        if self.max_same_side <= 0 and self.max_new_per_candle <= 0:
             return True
-        want_short = side == "short"
         try:
             open_trades = Trade.get_open_trades()
         except Exception:
             return True
-        return sum(1 for t in open_trades if bool(t.is_short) == want_short) < self.max_same_side
+
+        if self.max_same_side > 0:
+            want_short = side == "short"
+            held = sum(1 for t in open_trades if bool(t.is_short) == want_short)
+            if held >= self.max_same_side:
+                return False
+
+        if self.max_new_per_candle > 0:
+            candle_start = current_time.replace(minute=0, second=0, microsecond=0)
+            opened_now = sum(1 for t in open_trades
+                             if t.open_date_utc and t.open_date_utc >= candle_start)
+            if opened_now >= self.max_new_per_candle:
+                return False
+
+        return True
 
     def leverage(
         self, pair: str, current_time: datetime, current_rate: float,
