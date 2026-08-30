@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-30 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-30 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.6680** 🔴 -1.66% |
-| Settled balance | $19.0456 (-4.77%) |
-| Unrealised (open trades) | 🟢 +0.6224 |
+| **Equity now** | **$19.4688** 🔴 -2.66% |
+| Settled balance | $18.6523 (-6.74%) |
+| Unrealised (open trades) | 🟢 +0.8165 |
 | Started with | $20.0000 |
-| Finished trades | 5 |
-| Open now | 7 |
-| Win rate | 0% (0/5) |
+| Finished trades | 7 |
+| Open now | 5 |
+| Win rate | 0% (0/7) |
 
 ![balance](chart-equity.svg)
 
@@ -22,26 +22,20 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6858 | +0.66% | 🔴 -0.0529 | -7.5% | 2.04% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.03946 | +1.23% | 🔴 -0.1345 | -19.2% | 1.47% |
-| **AXS** | SHORT 🔻 | 0.895 | 0.9142 | +2.15% | 🔴 -0.1690 | -22.0% | 0.33% |
-| **EGLD** | LONG 🔺 | 3.622 | 4.027 | +11.18% | 🟢 +0.9210 | +110.6% | 6.11% |
-| **CRV** | SHORT 🔻 | 0.2973 | 0.3018 | +1.51% | 🔴 -0.1579 | -15.6% | 0.36% |
-| **UNI** | LONG 🔺 | 4.879 | 5.173 | +6.03% | 🟢 +0.2887 | +59.2% | 8.22% |
-| **KSM** | LONG 🔺 | 3.636 | 3.616 | -0.55% | 🔴 -0.0731 | -6.5% | 1.08% |
-| | | | | **total** | **+0.6224** | | |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6862 | +0.72% | 🔴 -0.0570 | -8.0% | 1.98% |
+| **SAND** | SHORT 🔻 | 0.03898 | 0.03947 | +1.26% | 🔴 -0.1363 | -19.4% | 1.44% |
+| **EGLD** | LONG 🔺 | 3.622 | 3.936 | +8.67% | 🟢 +0.7118 | +85.4% | 3.56% |
+| **UNI** | LONG 🔺 | 4.879 | 5.274 | +8.10% | 🟢 +0.3896 | +79.9% | 7.38% |
+| **KSM** | LONG 🔺 | 3.636 | 3.61 | -0.72% | 🔴 -0.0916 | -8.1% | 0.91% |
+| | | | | **total** | **+0.8165** | | |
 
-> 3 long / 4 short · gross exposure **296% of equity**.
+> 3 long / 2 short · gross exposure **207% of equity**.
 
 ![FIL](pos-FIL.png)
 
 ![SAND](pos-SAND.png)
 
-![AXS](pos-AXS.png)
-
 ![EGLD](pos-EGLD.png)
-
-![CRV](pos-CRV.png)
 
 ![UNI](pos-UNI.png)
 
@@ -59,15 +53,15 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
 | UNI | LONG | 0.00% | **READY** |
-| EGLD | LONG | 0.28% | needs 0.3% move |
-| KSM | LONG | 0.89% | needs 0.9% move; volume below average |
-| STORJ | SHORT | 0.90% | needs 0.9% move; volume below average |
-| CRV | SHORT | 1.03% | needs 1.0% move; volume below average |
-| ADA | SHORT | 1.04% | needs 1.0% move; trend too weak (ADX 16/20) |
-| LRC | SHORT | 1.35% | needs 1.4% move; volume below average |
-| RVN | SHORT | 1.37% | needs 1.4% move; trend too weak (ADX 15/20) |
-| BCH | SHORT | 1.52% | needs 1.5% move |
-| ALGO | SHORT | 1.66% | needs 1.7% move; volume below average |
+| STORJ | SHORT | 0.31% | needs 0.3% move; volume below average |
+| KSM | LONG | 0.86% | needs 0.9% move |
+| RVN | SHORT | 1.08% | needs 1.1% move; trend too weak (ADX 15/20) |
+| EGLD | LONG | 1.63% | needs 1.6% move |
+| LRC | SHORT | 1.84% | needs 1.8% move; volume below average |
+| ALGO | SHORT | 1.89% | needs 1.9% move; trend too weak (ADX 19/20) |
+| SNX | SHORT | 2.04% | needs 2.0% move; volume below average |
+| ADA | SHORT | 2.07% | needs 2.1% move; trend too weak (ADX 17/20) |
+| ANKR | LONG | 2.08% | needs 2.1% move; trend too weak (ADX 12/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -83,8 +77,10 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 |---|---|---|---|---|
 | THETA | SHORT | 🔴 -0.2014 (-14.1%) | stop_loss | 2026-08-30 06:59 |
 | MANA | LONG | 🔴 -0.2131 (-17.8%) | stop_loss | 2026-08-30 04:42 |
+| CRV | SHORT | 🔴 -0.1984 (-19.6%) | stop_loss | 2026-08-30 12:09 |
 | ICP | LONG | 🔴 -0.2062 (-24.6%) | stop_loss | 2026-08-30 01:13 |
 | BCH | SHORT | 🔴 -0.1922 (-19.8%) | trailing_stop_loss | 2026-08-29 20:06 |
+| AXS | SHORT | 🔴 -0.1948 (-25.3%) | trailing_stop_loss | 2026-08-30 12:07 |
 | UNI | LONG | 🔴 -0.1416 (-30.3%) | trailing_stop_loss | 2026-08-28 10:07 |
 
 ---

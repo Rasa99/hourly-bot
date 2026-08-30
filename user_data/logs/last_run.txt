@@ -1,11 +1,8 @@
-run          : 40   cycle: 2
-finished     : 2026-08-30 12:07 UTC
+run          : 40   cycle: 3
+finished     : 2026-08-30 13:07 UTC
 freqtrade    : running (pid 2286)
 
 ----- last 40 log lines -----
-2026-08-30 11:29:32,744 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
-2026-08-30 11:30:32,747 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
-2026-08-30 11:31:06,669 - freqtrade.wallets - INFO - Wallets synced.
 2026-08-30 11:31:32,750 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
 2026-08-30 11:32:32,754 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
 2026-08-30 11:33:32,756 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
@@ -43,3 +40,6 @@ freqtrade    : running (pid 2286)
 2026-08-30 12:04:37,454 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
 2026-08-30 12:05:37,457 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
 2026-08-30 12:06:37,460 - freqtrade.worker - INFO - Bot heartbeat. PID=2286, version='2026.7', state='RUNNING'
+2026-08-30 12:07:23,115 - freqtrade.freqtradebot - INFO - Exit for AXS/USDT:USDT detected. Reason: trailing_stop_loss
+2026-08-30 12:07:23,878 - freqtrade.freqtradebot - INFO - Skipping cancelling stoploss on exchange for Trade(id=4, pair=AXS/USDT:USDT, amount=8.6, is_short=True, leverage=10, open_rate=0.895, open_since=2026-08-28 17:07:14).
+2026-08-30 12:07:23,880 - freqtrade.wallets - INFO - Wallets synced.
