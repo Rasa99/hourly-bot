@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-30 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-30 21:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.1334** 🔴 -4.33% |
+| **Equity now** | **$19.1349** 🔴 -4.33% |
 | Settled balance | $18.6465 (-6.77%) |
-| Unrealised (open trades) | 🟢 +0.4869 |
+| Unrealised (open trades) | 🟢 +0.4884 |
 | Started with | $20.0000 |
 | Finished trades | 10 |
 | Open now | 3 |
@@ -22,10 +22,10 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6795 | -0.26% | 🟢 +0.0129 | +1.8% | 2.99% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.03816 | -2.10% | 🟢 +0.0956 | +13.6% | 4.93% |
-| **UNI** | LONG 🔺 | 4.879 | 5.263 | +7.87% | 🟢 +0.3784 | +77.5% | 3.90% |
-| | | | | **total** | **+0.4869** | | |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6802 | -0.16% | 🟢 +0.0056 | +0.8% | 2.88% |
+| **SAND** | SHORT 🔻 | 0.03898 | 0.0382 | -2.00% | 🟢 +0.0884 | +12.6% | 4.82% |
+| **UNI** | LONG 🔺 | 4.879 | 5.279 | +8.20% | 🟢 +0.3943 | +80.8% | 4.19% |
+| | | | | **total** | **+0.4884** | | |
 
 > 1 long / 2 short · gross exposure **102% of equity**.
 
