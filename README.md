@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-30 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-30 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.2653** 🔴 -3.67% |
-| Settled balance | $19.0347 (-4.83%) |
-| Unrealised (open trades) | 🟢 +0.2307 |
+| **Equity now** | **$19.1334** 🔴 -4.33% |
+| Settled balance | $18.6465 (-6.77%) |
+| Unrealised (open trades) | 🟢 +0.4869 |
 | Started with | $20.0000 |
-| Finished trades | 8 |
-| Open now | 5 |
-| Win rate | 12% (1/8) |
+| Finished trades | 10 |
+| Open now | 3 |
+| Win rate | 10% (1/10) |
 
 ![balance](chart-equity.svg)
 
@@ -22,14 +22,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6898 | +1.25% | 🔴 -0.0944 | -13.3% | 1.45% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.0387 | -0.72% | 🔴 -0.0016 | -0.2% | 3.46% |
-| **UNI** | LONG 🔺 | 4.879 | 5.353 | +9.72% | 🟢 +0.4683 | +96.0% | 5.51% |
-| **KSM** | LONG 🔺 | 3.636 | 3.608 | -0.77% | 🔴 -0.0967 | -8.6% | 0.86% |
-| **DASH** | LONG 🔺 | 44.22 | 43.89 | -0.75% | 🔴 -0.0449 | -8.5% | 2.67% |
-| | | | | **total** | **+0.2307** | | |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6795 | -0.26% | 🟢 +0.0129 | +1.8% | 2.99% |
+| **SAND** | SHORT 🔻 | 0.03898 | 0.03816 | -2.10% | 🟢 +0.0956 | +13.6% | 4.93% |
+| **UNI** | LONG 🔺 | 4.879 | 5.263 | +7.87% | 🟢 +0.3784 | +77.5% | 3.90% |
+| | | | | **total** | **+0.4869** | | |
 
-> 3 long / 2 short · gross exposure **187% of equity**.
+> 1 long / 2 short · gross exposure **102% of equity**.
 
 ![FIL](pos-FIL.png)
 
@@ -37,14 +35,10 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ![UNI](pos-UNI.png)
 
-![KSM](pos-KSM.png)
-
-![DASH](pos-DASH.png)
-
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -52,16 +46,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 0.37% | needs 0.4% move; volume below average |
-| KSM | LONG | 0.91% | needs 0.9% move; volume below average |
-| RVN | SHORT | 1.04% | needs 1.0% move; trend too weak (ADX 14/20) |
-| ETH | LONG | 1.26% | needs 1.3% move; volume below average |
-| SNX | SHORT | 1.29% | needs 1.3% move; volume below average |
-| ENJ | SHORT | 1.87% | needs 1.9% move; trend too weak (ADX 16/20) |
-| GALA | SHORT | 1.89% | needs 1.9% move; trend too weak (ADX 9/20) |
-| ANKR | LONG | 1.98% | needs 2.0% move; trend too weak (ADX 10/20) |
-| ADA | SHORT | 2.02% | needs 2.0% move |
-| DASH | LONG | 2.09% | needs 2.1% move; volume below average |
+| SNX | SHORT | 0.00% | **READY** |
+| STORJ | SHORT | 0.00% | volume below average |
+| ETC | SHORT | 0.01% | needs 0.0% move |
+| ENJ | SHORT | 0.32% | needs 0.3% move; trend too weak (ADX 18/20) |
+| RVN | SHORT | 0.47% | needs 0.5% move; trend too weak (ADX 16/20) |
+| QTUM | SHORT | 0.84% | needs 0.8% move; trend too weak (ADX 11/20) |
+| ADA | SHORT | 1.09% | needs 1.1% move |
+| DOGE | SHORT | 1.59% | needs 1.6% move; trend too weak (ADX 20/20) |
+| SKL | SHORT | 1.62% | needs 1.6% move; trend too weak (ADX 14/20) |
+| GALA | SHORT | 1.78% | needs 1.8% move; trend too weak (ADX 10/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -75,6 +69,8 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| DASH | LONG | 🔴 -0.1861 (-35.0%) | stop_loss | 2026-08-30 20:43 |
+| KSM | LONG | 🔴 -0.2021 (-17.9%) | stop_loss | 2026-08-30 20:40 |
 | THETA | SHORT | 🔴 -0.2014 (-14.1%) | stop_loss | 2026-08-30 06:59 |
 | MANA | LONG | 🔴 -0.2131 (-17.8%) | stop_loss | 2026-08-30 04:42 |
 | CRV | SHORT | 🔴 -0.1984 (-19.6%) | stop_loss | 2026-08-30 12:09 |
