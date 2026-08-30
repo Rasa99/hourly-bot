@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-30 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-30 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.3622** 🔴 -3.19% |
-| Settled balance | $19.4600 (-2.70%) |
-| Unrealised (open trades) | 🔴 -0.0978 |
+| **Equity now** | **$19.4097** 🔴 -2.95% |
+| Settled balance | $19.2469 (-3.77%) |
+| Unrealised (open trades) | 🟢 +0.1628 |
 | Started with | $20.0000 |
-| Finished trades | 3 |
+| Finished trades | 4 |
 | Open now | 7 |
-| Win rate | 0% (0/3) |
+| Win rate | 0% (0/4) |
 
 ![balance](chart-equity.svg)
 
@@ -22,16 +22,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6772 | -0.60% | 🟢 +0.0360 | +5.1% | 3.34% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.03874 | -0.62% | 🔴 -0.0012 | -0.2% | 3.36% |
-| **AXS** | SHORT 🔻 | 0.895 | 0.9033 | +0.93% | 🔴 -0.0760 | -9.9% | 1.54% |
-| **EGLD** | LONG 🔺 | 3.622 | 3.687 | +1.79% | 🟢 +0.1403 | +16.8% | 3.96% |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6787 | -0.38% | 🟢 +0.0204 | +2.9% | 3.11% |
+| **SAND** | SHORT 🔻 | 0.03898 | 0.03845 | -1.36% | 🟢 +0.0511 | +7.3% | 4.14% |
+| **AXS** | SHORT 🔻 | 0.895 | 0.9018 | +0.76% | 🔴 -0.0631 | -8.2% | 1.71% |
+| **EGLD** | LONG 🔺 | 3.622 | 3.757 | +3.73% | 🟢 +0.3012 | +36.2% | 5.75% |
 | **CRV** | SHORT 🔻 | 0.2973 | 0.3003 | +1.01% | 🔴 -0.1061 | -10.5% | 0.87% |
-| **UNI** | LONG 🔺 | 4.879 | 4.87 | -0.18% | 🔴 -0.0139 | -2.8% | 2.65% |
-| **MANA** | LONG 🔺 | 0.07714 | 0.07672 | -0.54% | 🔴 -0.0769 | -6.4% | 1.07% |
-| | | | | **total** | **-0.0978** | | |
+| **UNI** | LONG 🔺 | 4.879 | 4.9 | +0.43% | 🟢 +0.0161 | +3.3% | 3.24% |
+| **THETA** | SHORT 🔻 | 0.168 | 0.1685 | +0.30% | 🔴 -0.0568 | -4.0% | 1.01% |
+| | | | | **total** | **+0.1628** | | |
 
-> 3 long / 4 short · gross exposure **293% of equity**.
+> 2 long / 5 short · gross exposure **309% of equity**.
 
 ![FIL](pos-FIL.png)
 
@@ -45,12 +45,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ![UNI](pos-UNI.png)
 
-![MANA](pos-MANA.png)
+![THETA](pos-THETA.png)
 
 
 ## What it is waiting for
 
-**3 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -58,16 +58,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| UNI | LONG | 0.00% | **READY** |
-| MANA | LONG | 0.00% | **READY** |
+| THETA | SHORT | 0.00% | **READY** |
 | EGLD | LONG | 0.00% | **READY** |
-| DOT | SHORT | 0.84% | needs 0.8% move; volume below average |
-| ADA | SHORT | 0.85% | needs 0.8% move |
-| BCH | SHORT | 1.12% | needs 1.1% move; volume below average |
-| RVN | SHORT | 1.18% | needs 1.2% move; trend too weak (ADX 14/20) |
-| SNX | SHORT | 1.29% | needs 1.3% move; volume below average |
-| FIL | SHORT | 1.57% | needs 1.6% move |
-| ANKR | LONG | 1.58% | needs 1.6% move; trend too weak (ADX 16/20) |
+| SNX | SHORT | 0.63% | needs 0.6% move; volume below average |
+| ADA | SHORT | 0.70% | needs 0.7% move |
+| DOT | SHORT | 0.72% | needs 0.7% move; volume below average |
+| BCH | SHORT | 0.92% | needs 0.9% move; volume below average |
+| FIL | SHORT | 1.32% | needs 1.3% move |
+| RVN | SHORT | 1.34% | needs 1.3% move; trend too weak (ADX 14/20) |
+| SKL | SHORT | 1.36% | needs 1.4% move; volume below average |
+| SAND | SHORT | 1.38% | needs 1.4% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -81,6 +81,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| MANA | LONG | 🔴 -0.2131 (-17.8%) | stop_loss | 2026-08-30 04:42 |
 | ICP | LONG | 🔴 -0.2062 (-24.6%) | stop_loss | 2026-08-30 01:13 |
 | BCH | SHORT | 🔴 -0.1922 (-19.8%) | trailing_stop_loss | 2026-08-29 20:06 |
 | UNI | LONG | 🔴 -0.1416 (-30.3%) | trailing_stop_loss | 2026-08-28 10:07 |
