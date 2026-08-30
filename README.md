@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-30 06:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-30 07:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.3333** 🔴 -3.33% |
-| Settled balance | $19.2469 (-3.77%) |
-| Unrealised (open trades) | 🟢 +0.0863 |
+| **Equity now** | **$19.2362** 🔴 -3.82% |
+| Settled balance | $19.0456 (-4.77%) |
+| Unrealised (open trades) | 🟢 +0.1906 |
 | Started with | $20.0000 |
-| Finished trades | 4 |
-| Open now | 8 |
-| Win rate | 0% (0/4) |
+| Finished trades | 5 |
+| Open now | 7 |
+| Win rate | 0% (0/5) |
 
 ![balance](chart-equity.svg)
 
@@ -22,17 +22,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6782 | -0.46% | 🟢 +0.0256 | +3.6% | 3.18% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.03848 | -1.28% | 🟢 +0.0456 | +6.5% | 4.05% |
-| **AXS** | SHORT 🔻 | 0.895 | 0.9051 | +1.13% | 🔴 -0.0915 | -11.9% | 1.34% |
-| **EGLD** | LONG 🔺 | 3.622 | 3.784 | +4.47% | 🟢 +0.3632 | +43.6% | 6.18% |
-| **CRV** | SHORT 🔻 | 0.2973 | 0.2996 | +0.77% | 🔴 -0.0823 | -8.1% | 1.10% |
-| **UNI** | LONG 🔺 | 4.879 | 4.875 | -0.08% | 🔴 -0.0089 | -1.8% | 2.75% |
-| **THETA** | SHORT 🔻 | 0.168 | 0.1695 | +0.89% | 🔴 -0.1418 | -9.9% | 0.41% |
-| **KSM** | LONG 🔺 | 3.636 | 3.632 | -0.11% | 🔴 -0.0237 | -2.1% | 1.51% |
-| | | | | **total** | **+0.0863** | | |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6816 | +0.04% | 🔴 -0.0098 | -1.4% | 2.67% |
+| **SAND** | SHORT 🔻 | 0.03898 | 0.03855 | -1.10% | 🟢 +0.0330 | +4.7% | 3.87% |
+| **AXS** | SHORT 🔻 | 0.895 | 0.9076 | +1.41% | 🔴 -0.1130 | -14.7% | 1.06% |
+| **EGLD** | LONG 🔺 | 3.622 | 3.795 | +4.78% | 🟢 +0.3885 | +46.6% | 5.51% |
+| **CRV** | SHORT 🔻 | 0.2973 | 0.3003 | +1.01% | 🔴 -0.1061 | -10.5% | 0.87% |
+| **UNI** | LONG 🔺 | 4.879 | 4.952 | +1.50% | 🟢 +0.0681 | +14.0% | 4.26% |
+| **KSM** | LONG 🔺 | 3.636 | 3.617 | -0.52% | 🔴 -0.0701 | -6.2% | 1.11% |
+| | | | | **total** | **+0.1906** | | |
 
-> 3 long / 5 short · gross exposure **367% of equity**.
+> 3 long / 4 short · gross exposure **296% of equity**.
 
 ![FIL](pos-FIL.png)
 
@@ -45,8 +44,6 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 ![CRV](pos-CRV.png)
 
 ![UNI](pos-UNI.png)
-
-![THETA](pos-THETA.png)
 
 ![KSM](pos-KSM.png)
 
@@ -61,16 +58,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| KSM | LONG | 0.00% | **READY** |
+| UNI | LONG | 0.00% | **READY** |
 | EGLD | LONG | 0.00% | **READY** |
-| UNI | LONG | 0.84% | needs 0.8% move |
-| ADA | SHORT | 1.00% | needs 1.0% move; volume below average |
-| BCH | SHORT | 1.06% | needs 1.1% move; volume below average |
-| DOT | SHORT | 1.31% | needs 1.3% move; volume below average |
-| THETA | SHORT | 1.41% | needs 1.4% move |
-| MANA | LONG | 1.52% | needs 1.5% move |
-| SNX | SHORT | 1.53% | needs 1.5% move; volume below average |
-| HBAR | SHORT | 1.56% | needs 1.6% move; trend too weak (ADX 18/20) |
+| KSM | LONG | 0.66% | needs 0.7% move; volume below average |
+| THETA | SHORT | 1.18% | needs 1.2% move; volume below average |
+| BCH | SHORT | 1.36% | needs 1.4% move; volume below average |
+| CRV | SHORT | 1.36% | needs 1.4% move; volume below average |
+| MANA | LONG | 1.48% | needs 1.5% move |
+| STORJ | SHORT | 1.62% | needs 1.6% move; volume below average |
+| DOT | SHORT | 1.66% | needs 1.7% move |
+| ADA | SHORT | 1.73% | needs 1.7% move; trend too weak (ADX 19/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -84,6 +81,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| THETA | SHORT | 🔴 -0.2014 (-14.1%) | stop_loss | 2026-08-30 06:59 |
 | MANA | LONG | 🔴 -0.2131 (-17.8%) | stop_loss | 2026-08-30 04:42 |
 | ICP | LONG | 🔴 -0.2062 (-24.6%) | stop_loss | 2026-08-30 01:13 |
 | BCH | SHORT | 🔴 -0.1922 (-19.8%) | trailing_stop_loss | 2026-08-29 20:06 |
