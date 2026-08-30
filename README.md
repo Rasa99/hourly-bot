@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-30 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-30 11:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.4123** 🔴 -2.94% |
+| **Equity now** | **$19.4914** 🔴 -2.54% |
 | Settled balance | $19.0456 (-4.77%) |
-| Unrealised (open trades) | 🟢 +0.3667 |
+| Unrealised (open trades) | 🟢 +0.4458 |
 | Started with | $20.0000 |
 | Finished trades | 5 |
 | Open now | 7 |
@@ -22,14 +22,14 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6831 | +0.26% | 🔴 -0.0247 | -3.5% | 2.44% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.03895 | -0.08% | 🔴 -0.0426 | -6.1% | 2.80% |
-| **AXS** | SHORT 🔻 | 0.895 | 0.914 | +2.12% | 🔴 -0.1673 | -21.7% | 0.35% |
-| **EGLD** | LONG 🔺 | 3.622 | 3.912 | +8.01% | 🟢 +0.6566 | +78.8% | 4.35% |
-| **CRV** | SHORT 🔻 | 0.2973 | 0.3 | +0.91% | 🔴 -0.0967 | -9.6% | 0.97% |
-| **UNI** | LONG 🔺 | 4.879 | 4.977 | +2.01% | 🟢 +0.0928 | +19.0% | 4.74% |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6837 | +0.35% | 🔴 -0.0310 | -4.4% | 2.35% |
+| **SAND** | SHORT 🔻 | 0.03898 | 0.03899 | +0.03% | 🔴 -0.0498 | -7.1% | 2.69% |
+| **AXS** | SHORT 🔻 | 0.895 | 0.9132 | +2.03% | 🔴 -0.1604 | -20.8% | 0.44% |
+| **EGLD** | LONG 🔺 | 3.622 | 3.935 | +8.64% | 🟢 +0.7095 | +85.2% | 4.90% |
+| **CRV** | SHORT 🔻 | 0.2973 | 0.3003 | +1.01% | 🔴 -0.1069 | -10.6% | 0.87% |
+| **UNI** | LONG 🔺 | 4.879 | 5.02 | +2.89% | 🟢 +0.1358 | +27.8% | 5.56% |
 | **KSM** | LONG 🔺 | 3.636 | 3.623 | -0.36% | 🔴 -0.0514 | -4.6% | 1.27% |
-| | | | | **total** | **+0.3667** | | |
+| | | | | **total** | **+0.4458** | | |
 
 > 3 long / 4 short · gross exposure **296% of equity**.
 
