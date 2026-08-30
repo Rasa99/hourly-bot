@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-30 06:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-30 06:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.3389** 🔴 -3.31% |
+| **Equity now** | **$19.3333** 🔴 -3.33% |
 | Settled balance | $19.2469 (-3.77%) |
-| Unrealised (open trades) | 🟢 +0.0920 |
+| Unrealised (open trades) | 🟢 +0.0863 |
 | Started with | $20.0000 |
 | Finished trades | 4 |
 | Open now | 8 |
@@ -22,15 +22,15 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6792 | -0.31% | 🟢 +0.0152 | +2.1% | 3.03% |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6782 | -0.46% | 🟢 +0.0256 | +3.6% | 3.18% |
 | **SAND** | SHORT 🔻 | 0.03898 | 0.03848 | -1.28% | 🟢 +0.0456 | +6.5% | 4.05% |
 | **AXS** | SHORT 🔻 | 0.895 | 0.9051 | +1.13% | 🔴 -0.0915 | -11.9% | 1.34% |
-| **EGLD** | LONG 🔺 | 3.622 | 3.778 | +4.31% | 🟢 +0.3495 | +41.9% | 6.03% |
-| **CRV** | SHORT 🔻 | 0.2973 | 0.2998 | +0.84% | 🔴 -0.0891 | -8.8% | 1.03% |
-| **UNI** | LONG 🔺 | 4.879 | 4.89 | +0.23% | 🟢 +0.0061 | +1.3% | 3.05% |
+| **EGLD** | LONG 🔺 | 3.622 | 3.784 | +4.47% | 🟢 +0.3632 | +43.6% | 6.18% |
+| **CRV** | SHORT 🔻 | 0.2973 | 0.2996 | +0.77% | 🔴 -0.0823 | -8.1% | 1.10% |
+| **UNI** | LONG 🔺 | 4.879 | 4.875 | -0.08% | 🔴 -0.0089 | -1.8% | 2.75% |
 | **THETA** | SHORT 🔻 | 0.168 | 0.1695 | +0.89% | 🔴 -0.1418 | -9.9% | 0.41% |
-| **KSM** | LONG 🔺 | 3.636 | 3.639 | +0.08% | 🔴 -0.0020 | -0.2% | 1.70% |
-| | | | | **total** | **+0.0920** | | |
+| **KSM** | LONG 🔺 | 3.636 | 3.632 | -0.11% | 🔴 -0.0237 | -2.1% | 1.51% |
+| | | | | **total** | **+0.0863** | | |
 
 > 3 long / 5 short · gross exposure **367% of equity**.
 
