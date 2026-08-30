@@ -5236,3 +5236,88 @@
 2026-08-30 01:08:24,951 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=7, pair=EGLD/USDT:USDT, amount=2.3, is_short=False, leverage=10, open_rate=3.622, open_since=2026-08-29 21:00:05)
 2026-08-30 01:08:31,137 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
 2026-08-30 01:09:31,140 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:10:31,143 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:11:31,146 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:12:31,149 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:13:26,776 - freqtrade.freqtradebot - INFO - Exit for ICP/USDT:USDT detected. Reason: stop_loss
+2026-08-30 01:13:27,429 - freqtrade.freqtradebot - INFO - Skipping cancelling stoploss on exchange for Trade(id=6, pair=ICP/USDT:USDT, amount=3.327, is_short=False, leverage=10, open_rate=2.518, open_since=2026-08-29 15:07:16).
+2026-08-30 01:13:27,431 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 01:13:27,546 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': exit, 'trade_id': 6, 'exchange': 'Gate', 'pair': 'ICP/USDT:USDT', 'leverage': 10.0, 'direction': 'Long', 'gain': 'loss', 'limit': 2.459, 'order_rate': 2.459, 'order_type': 'limit', 'amount': 3.327, 'open_rate': 2.518, 'close_rate': 2.459, 'current_rate': 2.459, 'profit_amount': -0.2062404, 'profit_ratio': -0.24606402, 'buy_tag': 'h_breakout_up', 'enter_tag': 'h_breakout_up', 'exit_reason': 'stop_loss', 'open_date': datetime.datetime(2026, 8, 29, 15, 7, 16, 790563, tzinfo=datetime.timezone.utc), 'close_date': datetime.datetime(2026, 8, 30, 1, 13, 27, 546201, tzinfo=datetime.timezone.utc), 'stake_amount': 0.8377386, 'stake_currency': 'USDT', 'base_currency': 'ICP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'sub_trade': False, 'cumulative_profit': 0.0, 'final_profit_ratio': None, 'is_final_exit': False}
+2026-08-30 01:13:27,547 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=6, pair=ICP/USDT:USDT, amount=3.327, is_short=False, leverage=10, open_rate=2.518, open_since=2026-08-29 15:07:16)
+2026-08-30 01:13:27,556 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=6, pair=ICP/USDT:USDT, amount=3.327, is_short=False, leverage=10, open_rate=2.518, open_since=2026-08-29 15:07:16) [sell]: 0.0040905465 USDT - rate: 0.0005
+2026-08-30 01:13:27,556 - freqtrade.persistence.trade_model - INFO - Updating trade (id=6) ...
+2026-08-30 01:13:27,557 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=6, pair=ICP/USDT:USDT, amount=3.327, is_short=False, leverage=10, open_rate=2.518, open_since=2026-08-29 15:07:16).
+2026-08-30 01:13:27,557 - freqtrade.persistence.trade_model - INFO - Marking Trade(id=6, pair=ICP/USDT:USDT, amount=3.327, is_short=False, leverage=10, open_rate=2.518, open_since=closed) as closed as the trade is fulfilled and found no open orders for it.
+2026-08-30 01:13:27,563 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 01:13:27,565 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': exit_fill, 'trade_id': 6, 'exchange': 'Gate', 'pair': 'ICP/USDT:USDT', 'leverage': 10.0, 'direction': 'Long', 'gain': 'loss', 'limit': 2.459, 'order_rate': 2.459, 'order_type': 'limit', 'amount': 3.327, 'open_rate': 2.518, 'close_rate': 2.459, 'current_rate': None, 'profit_amount': -0.2062404, 'profit_ratio': -0.24606402, 'buy_tag': 'h_breakout_up', 'enter_tag': 'h_breakout_up', 'exit_reason': 'stop_loss', 'open_date': datetime.datetime(2026, 8, 29, 15, 7, 16, 790563, tzinfo=datetime.timezone.utc), 'close_date': datetime.datetime(2026, 8, 30, 1, 13, 27, 545000, tzinfo=datetime.timezone.utc), 'stake_amount': 0.8377386, 'stake_currency': 'USDT', 'base_currency': 'ICP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'sub_trade': False, 'cumulative_profit': -0.2062404, 'final_profit_ratio': -0.24606402442758735, 'is_final_exit': True}
+2026-08-30 01:13:27,571 - cooldown_period - INFO - Cooldown for ICP/USDT:USDT for 2 candles.
+2026-08-30 01:13:27,576 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': protection_trigger, 'base_currency': 'ICP', 'id': 6, 'pair': 'ICP/USDT:USDT', 'lock_time': '2026-08-30 01:13:27', 'lock_timestamp': 1788052407569, 'lock_end_time': '2026-08-30 04:00:00', 'lock_end_timestamp': 1788062400000, 'reason': 'Cooldown period for for 2 candles.', 'side': '*', 'active': True}
+2026-08-30 01:13:27,707 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 01:13:31,152 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:14:31,156 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:15:31,159 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:16:31,163 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:17:31,166 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:18:31,169 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:19:31,172 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:20:31,176 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:21:31,179 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:22:31,182 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:23:31,185 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:24:31,188 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:25:31,191 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:26:31,195 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:27:31,198 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:28:31,201 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:29:31,204 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:30:31,207 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:31:08,163 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 01:31:31,211 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:32:31,214 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:33:31,217 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:34:31,220 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:35:31,223 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:36:31,226 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:37:31,229 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:38:31,232 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:39:31,235 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:40:31,238 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:41:31,241 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:42:31,245 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:43:31,248 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:44:31,251 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:45:31,254 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:46:31,258 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:47:31,261 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:48:31,264 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:49:31,267 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:50:31,271 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:51:31,274 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:52:31,277 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:53:31,280 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:54:31,283 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:55:31,286 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:56:31,289 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:57:31,292 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:58:31,296 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 01:59:31,299 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 02:00:05,412 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 02:00:05,528 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for CRV/USDT:USDT with stake_amount: 1.0123132560133146 and price: 0.2973 ...
+2026-08-30 02:00:05,645 - freqtrade.freqtradebot - INFO - Order dry_run_sell_CRV/USDT:USDT_78c2bbf1-0272-41bc-ba72-7b35dabe8709 was created for CRV/USDT:USDT and status is open.
+2026-08-30 02:00:05,650 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 02:00:05,651 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 8, 'type': entry, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'CRV/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.2973, 'order_rate': 0.2973, 'open_rate': 0.2973, 'order_type': 'limit', 'stake_amount': 1.0123132560133146, 'stake_currency': 'USDT', 'base_currency': 'CRV', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 34.0, 'open_date': datetime.datetime(2026, 8, 30, 2, 0, 5, 645784, tzinfo=datetime.timezone.utc), 'current_rate': 0.2973, 'sub_trade': False}
+2026-08-30 02:00:06,269 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=CRV/USDT:USDT, amount=0, is_short=True, leverage=10, open_rate=0.2973, open_since=2026-08-30 02:00:05)
+2026-08-30 02:00:11,265 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=8, pair=CRV/USDT:USDT, amount=0, is_short=True, leverage=10, open_rate=0.2973, open_since=2026-08-30 02:00:05)
+2026-08-30 02:00:11,268 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=8, pair=CRV/USDT:USDT, amount=0, is_short=True, leverage=10, open_rate=0.2973, open_since=2026-08-30 02:00:05) [sell]: 0.00202164 USDT - rate: 0.0002
+2026-08-30 02:00:11,269 - freqtrade.persistence.trade_model - INFO - Updating trade (id=8) ...
+2026-08-30 02:00:11,269 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=8, pair=CRV/USDT:USDT, amount=34, is_short=True, leverage=10, open_rate=0.2973, open_since=2026-08-30 02:00:05).
+2026-08-30 02:00:11,389 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 02:00:11,392 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 8, 'type': entry_fill, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'CRV/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.2973, 'order_rate': 0.2973, 'open_rate': 0.2973, 'order_type': 'limit', 'stake_amount': 1.01082, 'stake_currency': 'USDT', 'base_currency': 'CRV', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 34.0, 'open_date': datetime.datetime(2026, 8, 30, 2, 0, 5, 645784, tzinfo=datetime.timezone.utc), 'current_rate': 0.2973, 'sub_trade': False}
+2026-08-30 02:00:36,001 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 02:01:08,344 - freqtrade.wallets - INFO - Wallets synced.
+2026-08-30 02:01:36,004 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 02:02:36,007 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 02:03:36,010 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 02:04:36,013 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 02:05:36,016 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
+2026-08-30 02:06:36,019 - freqtrade.worker - INFO - Bot heartbeat. PID=2390, version='2026.7', state='RUNNING'
