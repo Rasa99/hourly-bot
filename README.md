@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-31 18:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-31 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$18.9381** 🔴 -5.31% |
-| Settled balance | $18.8169 (-5.92%) |
-| Unrealised (open trades) | 🟢 +0.1211 |
+| **Equity now** | **$18.8884** 🔴 -5.56% |
+| Settled balance | $18.9075 (-5.46%) |
+| Unrealised (open trades) | 🔴 -0.0192 |
 | Started with | $20.0000 |
-| Finished trades | 11 |
-| Open now | 2 |
-| Win rate | 18% (2/11) |
+| Finished trades | 12 |
+| Open now | 1 |
+| Win rate | 25% (3/12) |
 
 ![balance](chart-equity.svg)
 
@@ -22,20 +22,17 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6778 | -0.51% | 🟢 +0.0288 | +4.1% | 3.25% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.03797 | -2.59% | 🟢 +0.0924 | +13.2% | 3.92% |
-| | | | | **total** | **+0.1211** | | |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6824 | +0.16% | 🔴 -0.0192 | -2.7% | 2.55% |
+| | | | | **total** | **-0.0192** | | |
 
-> ⚠️ **All 2 positions are short.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **75% of equity**.
+> ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **38% of equity**.
 
 ![FIL](pos-FIL.png)
-
-![SAND](pos-SAND.png)
 
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -43,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DASH | LONG | 0.00% | **READY** |
-| BTC | LONG | 0.65% | needs 0.7% move; trend too weak (ADX 18/20) |
-| HBAR | SHORT | 0.84% | needs 0.8% move; volume below average |
-| LRC | SHORT | 1.26% | needs 1.3% move; trend too weak (ADX 15/20) |
-| BNB | LONG | 1.60% | needs 1.6% move; volume below average |
-| ATOM | SHORT | 2.32% | needs 2.3% move; trend too weak (ADX 18/20) |
-| LTC | SHORT | 2.37% | needs 2.4% move; volume below average |
-| ETH | LONG | 2.45% | needs 2.4% move; volume below average |
-| KSM | LONG | 2.47% | needs 2.5% move; volume below average |
-| CHZ | SHORT | 2.56% | needs 2.6% move; volume below average |
+| BTC | LONG | 0.50% | needs 0.5% move; trend too weak (ADX 18/20) |
+| HBAR | SHORT | 0.87% | needs 0.9% move; volume below average |
+| BNB | LONG | 1.64% | needs 1.6% move; volume below average |
+| LRC | SHORT | 2.00% | needs 2.0% move; trend too weak (ADX 15/20) |
+| MANA | SHORT | 2.14% | needs 2.1% move; volume below average |
+| ETH | LONG | 2.34% | needs 2.3% move; volume below average |
+| KSM | LONG | 2.35% | needs 2.4% move |
+| SKL | SHORT | 2.45% | needs 2.5% move; trend too weak (ADX 15/20) |
+| ATOM | SHORT | 2.78% | needs 2.8% move; trend too weak (ADX 17/20) |
+| SOL | LONG | 2.85% | needs 2.9% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -76,6 +73,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | ICP | LONG | 🔴 -0.2062 (-24.6%) | stop_loss | 2026-08-30 01:13 |
 | BCH | SHORT | 🔴 -0.1922 (-19.8%) | trailing_stop_loss | 2026-08-29 20:06 |
 | AXS | SHORT | 🔴 -0.1948 (-25.3%) | trailing_stop_loss | 2026-08-30 12:07 |
+| SAND | SHORT | 🟢 +0.0906 (+12.9%) | force_exit | 2026-08-31 18:07 |
 | UNI | LONG | 🔴 -0.1416 (-30.3%) | trailing_stop_loss | 2026-08-28 10:07 |
 
 ---
