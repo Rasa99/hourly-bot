@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-31 02:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-08-31 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.2732** 🔴 -3.63% |
+| **Equity now** | **$19.2715** 🔴 -3.64% |
 | Settled balance | $18.8169 (-5.92%) |
-| Unrealised (open trades) | 🟢 +0.4562 |
+| Unrealised (open trades) | 🟢 +0.4546 |
 | Started with | $20.0000 |
 | Finished trades | 11 |
 | Open now | 2 |
@@ -22,9 +22,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6639 | -2.55% | 🟢 +0.1749 | +24.7% | 5.41% |
-| **SAND** | SHORT 🔻 | 0.03898 | 0.03709 | -4.85% | 🟢 +0.2813 | +40.1% | 7.66% |
-| | | | | **total** | **+0.4562** | | |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6651 | -2.38% | 🟢 +0.1624 | +22.9% | 5.22% |
+| **SAND** | SHORT 🔻 | 0.03898 | 0.03703 | -5.00% | 🟢 +0.2921 | +41.6% | 7.83% |
+| | | | | **total** | **+0.4546** | | |
 
 > ⚠️ **All 2 positions are short.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **75% of equity**.
 
@@ -35,7 +35,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -43,16 +43,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 0.00% | **READY** |
-| LRC | SHORT | 0.25% | needs 0.3% move; volume below average |
-| HBAR | SHORT | 0.40% | needs 0.4% move; volume below average |
-| DOGE | SHORT | 0.98% | needs 1.0% move; volume below average |
-| SAND | SHORT | 1.00% | needs 1.0% move; volume below average |
-| ALGO | SHORT | 1.07% | needs 1.1% move; volume below average |
-| LTC | SHORT | 1.21% | needs 1.2% move; volume below average |
-| ETC | SHORT | 1.37% | needs 1.4% move; volume below average |
-| DOT | SHORT | 1.47% | needs 1.5% move; volume below average |
-| BCH | SHORT | 1.47% | needs 1.5% move; volume below average |
+| STORJ | SHORT | 0.00% | volume below average |
+| ALGO | SHORT | 0.14% | needs 0.1% move; volume below average |
+| SAND | SHORT | 0.41% | needs 0.4% move; volume below average |
+| HBAR | SHORT | 0.45% | needs 0.5% move |
+| SKL | SHORT | 1.10% | needs 1.1% move |
+| ETC | SHORT | 1.19% | needs 1.2% move |
+| DOGE | SHORT | 1.22% | needs 1.2% move; volume below average |
+| DOT | SHORT | 1.23% | needs 1.2% move; volume below average |
+| BCH | SHORT | 1.30% | needs 1.3% move; volume below average |
+| ATOM | SHORT | 1.31% | needs 1.3% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
