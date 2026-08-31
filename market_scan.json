@@ -1,107 +1,142 @@
 [
  {
-  "coin": "BTC",
-  "pair": "BTC/USDT:USDT",
-  "price": 78819.1,
+  "coin": "CRV",
+  "pair": "CRV/USDT:USDT",
+  "price": 0.3398,
   "side": "LONG",
-  "gap": 0.7,
-  "adx": 18.0,
-  "adx_ok": false,
-  "vol_ok": false,
+  "gap": 0.0,
+  "adx": 27.5,
+  "adx_ok": true,
+  "vol_ok": true,
   "ema_up": true,
-  "rsi": 58.0,
-  "rsi_ok": true,
+  "rsi": 80.0,
+  "rsi_ok": false,
   "ready": false,
   "blockers": [
-   "needs 0.7% move",
-   "trend too weak (ADX 18/20)",
-   "volume below average"
+   "RSI already stretched (80/78)"
   ]
  },
  {
-  "coin": "LRC",
-  "pair": "LRC/USDT:USDT",
-  "price": 0.0079,
-  "side": "SHORT",
-  "gap": 0.76,
-  "adx": 13.5,
+  "coin": "BTC",
+  "pair": "BTC/USDT:USDT",
+  "price": 78919.1,
+  "side": "LONG",
+  "gap": 0.57,
+  "adx": 17.7,
   "adx_ok": false,
   "vol_ok": false,
-  "ema_up": false,
-  "rsi": 40.1,
+  "ema_up": true,
+  "rsi": 59.6,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 0.8% move",
-   "trend too weak (ADX 14/20)",
+   "needs 0.6% move",
+   "trend too weak (ADX 18/20)",
    "volume below average"
   ]
  },
  {
   "coin": "HBAR",
   "pair": "HBAR/USDT:USDT",
-  "price": 0.07386,
+  "price": 0.07387,
   "side": "SHORT",
-  "gap": 1.34,
-  "adx": 26.6,
+  "gap": 1.35,
+  "adx": 25.0,
   "adx_ok": true,
-  "vol_ok": false,
+  "vol_ok": true,
   "ema_up": false,
-  "rsi": 48.1,
+  "rsi": 48.2,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 1.3% move",
+   "needs 1.4% move"
+  ]
+ },
+ {
+  "coin": "LRC",
+  "pair": "LRC/USDT:USDT",
+  "price": 0.00795,
+  "side": "SHORT",
+  "gap": 1.38,
+  "adx": 13.2,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 44.9,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 1.4% move",
+   "trend too weak (ADX 13/20)",
    "volume below average"
   ]
  },
  {
-  "coin": "MANA",
-  "pair": "MANA/USDT:USDT",
-  "price": 0.07139,
-  "side": "SHORT",
-  "gap": 1.79,
-  "adx": 36.9,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 43.0,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 1.8% move",
-   "volume below average"
-  ]
- },
- {
-  "coin": "BNB",
-  "pair": "BNB/USDT:USDT",
-  "price": 690.9,
+  "coin": "NEAR",
+  "pair": "NEAR/USDT:USDT",
+  "price": 1.9012,
   "side": "LONG",
-  "gap": 1.86,
-  "adx": 20.3,
+  "gap": 1.39,
+  "adx": 20.6,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": true,
-  "rsi": 52.7,
+  "rsi": 60.5,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 1.9% move",
+   "needs 1.4% move",
    "volume below average"
   ]
  },
  {
   "coin": "KSM",
   "pair": "KSM/USDT:USDT",
-  "price": 3.573,
+  "price": 3.596,
   "side": "LONG",
-  "gap": 2.21,
-  "adx": 24.0,
+  "gap": 1.56,
+  "adx": 23.5,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": true,
-  "rsi": 55.9,
+  "rsi": 58.8,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 1.6% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "BNB",
+  "pair": "BNB/USDT:USDT",
+  "price": 692.25,
+  "side": "LONG",
+  "gap": 1.66,
+  "adx": 19.0,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": true,
+  "rsi": 55.4,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 1.7% move",
+   "trend too weak (ADX 19/20)",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "MANA",
+  "pair": "MANA/USDT:USDT",
+  "price": 0.07169,
+  "side": "SHORT",
+  "gap": 2.2,
+  "adx": 35.8,
+  "adx_ok": true,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 45.9,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
@@ -110,277 +145,165 @@
   ]
  },
  {
-  "coin": "ATOM",
-  "pair": "ATOM/USDT:USDT",
-  "price": 1.467,
-  "side": "SHORT",
-  "gap": 2.32,
-  "adx": 14.9,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 47.2,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 2.3% move",
-   "trend too weak (ADX 15/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "CHZ",
-  "pair": "CHZ/USDT:USDT",
-  "price": 0.01325,
-  "side": "SHORT",
-  "gap": 2.34,
-  "adx": 36.2,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 40.6,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 2.3% move",
-   "volume below average"
-  ]
- },
- {
   "coin": "ETH",
   "pair": "ETH/USDT:USDT",
-  "price": 2471.56,
+  "price": 2477.24,
   "side": "LONG",
-  "gap": 2.54,
-  "adx": 21.1,
+  "gap": 2.31,
+  "adx": 20.5,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": true,
-  "rsi": 56.3,
+  "rsi": 58.5,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 2.5% move",
+   "needs 2.3% move",
    "volume below average"
   ]
  },
  {
-  "coin": "ALGO",
-  "pair": "ALGO/USDT:USDT",
-  "price": 0.08559,
+  "coin": "ATOM",
+  "pair": "ATOM/USDT:USDT",
+  "price": 1.468,
   "side": "SHORT",
-  "gap": 2.55,
-  "adx": 20.7,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 50.3,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 2.5% move",
-   "volume below average"
-  ]
- },
- {
-  "coin": "NEAR",
-  "pair": "NEAR/USDT:USDT",
-  "price": 1.8781,
-  "side": "LONG",
-  "gap": 2.64,
-  "adx": 19.9,
+  "gap": 2.38,
+  "adx": 14.4,
   "adx_ok": false,
   "vol_ok": false,
-  "ema_up": true,
-  "rsi": 55.3,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 2.6% move",
-   "trend too weak (ADX 20/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "SKL",
-  "pair": "SKL/USDT:USDT",
-  "price": 0.00368,
-  "side": "SHORT",
-  "gap": 2.72,
-  "adx": 14.1,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 48.4,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 2.7% move",
-   "trend too weak (ADX 14/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "AVAX",
-  "pair": "AVAX/USDT:USDT",
-  "price": 7.214,
-  "side": "SHORT",
-  "gap": 2.87,
-  "adx": 32.3,
-  "adx_ok": true,
-  "vol_ok": true,
   "ema_up": false,
   "rsi": 47.8,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 2.9% move"
-  ]
- },
- {
-  "coin": "DOGE",
-  "pair": "DOGE/USDT:USDT",
-  "price": 0.08321,
-  "side": "SHORT",
-  "gap": 2.94,
-  "adx": 27.6,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 49.3,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 2.9% move",
+   "needs 2.4% move",
+   "trend too weak (ADX 14/20)",
    "volume below average"
   ]
  },
  {
   "coin": "LTC",
   "pair": "LTC/USDT:USDT",
-  "price": 48.84,
+  "price": 48.62,
   "side": "SHORT",
-  "gap": 2.99,
-  "adx": 30.7,
+  "gap": 2.55,
+  "adx": 29.6,
+  "adx_ok": true,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 48.8,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 2.6% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "CHZ",
+  "pair": "CHZ/USDT:USDT",
+  "price": 0.0133,
+  "side": "SHORT",
+  "gap": 2.71,
+  "adx": 35.8,
   "adx_ok": true,
   "vol_ok": true,
   "ema_up": false,
-  "rsi": 53.4,
+  "rsi": 44.1,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 3.0% move"
+   "needs 2.7% move"
   ]
  },
  {
-  "coin": "THETA",
-  "pair": "THETA/USDT:USDT",
-  "price": 0.1687,
+  "coin": "SKL",
+  "pair": "SKL/USDT:USDT",
+  "price": 0.00369,
   "side": "SHORT",
-  "gap": 3.08,
-  "adx": 17.5,
+  "gap": 2.98,
+  "adx": 13.9,
   "adx_ok": false,
   "vol_ok": false,
   "ema_up": false,
-  "rsi": 49.3,
+  "rsi": 50.9,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 3.1% move",
-   "trend too weak (ADX 17/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "DOT",
-  "pair": "DOT/USDT:USDT",
-  "price": 0.832,
-  "side": "SHORT",
-  "gap": 3.25,
-  "adx": 18.4,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 49.2,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 3.2% move",
-   "trend too weak (ADX 18/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "ETC",
-  "pair": "ETC/USDT:USDT",
-  "price": 7.291,
-  "side": "SHORT",
-  "gap": 3.25,
-  "adx": 23.3,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 50.0,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 3.3% move",
-   "volume below average"
-  ]
- },
- {
-  "coin": "QTUM",
-  "pair": "QTUM/USDT:USDT",
-  "price": 0.809,
-  "side": "SHORT",
-  "gap": 3.34,
-  "adx": 10.2,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 44.6,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 3.3% move",
-   "trend too weak (ADX 10/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "BAT",
-  "pair": "BAT/USDT:USDT",
-  "price": 0.06811,
-  "side": "LONG",
-  "gap": 3.36,
-  "adx": 14.0,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": true,
-  "rsi": 49.7,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 3.4% move",
+   "needs 3.0% move",
    "trend too weak (ADX 14/20)",
    "volume below average"
   ]
  },
  {
-  "coin": "BCH",
-  "pair": "BCH/USDT:USDT",
-  "price": 247.46,
+  "coin": "ALGO",
+  "pair": "ALGO/USDT:USDT",
+  "price": 0.08599,
   "side": "SHORT",
-  "gap": 3.37,
-  "adx": 24.0,
+  "gap": 3.0,
+  "adx": 20.1,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": false,
-  "rsi": 51.8,
+  "rsi": 53.7,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 3.0% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "DOGE",
+  "pair": "DOGE/USDT:USDT",
+  "price": 0.08331,
+  "side": "SHORT",
+  "gap": 3.06,
+  "adx": 26.5,
+  "adx_ok": true,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 50.6,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 3.1% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "AVAX",
+  "pair": "AVAX/USDT:USDT",
+  "price": 7.235,
+  "side": "SHORT",
+  "gap": 3.15,
+  "adx": 31.4,
+  "adx_ok": true,
+  "vol_ok": true,
+  "ema_up": false,
+  "rsi": 51.1,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 3.2% move"
+  ]
+ },
+ {
+  "coin": "BAT",
+  "pair": "BAT/USDT:USDT",
+  "price": 0.06808,
+  "side": "LONG",
+  "gap": 3.41,
+  "adx": 13.9,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": true,
+  "rsi": 49.3,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
    "needs 3.4% move",
+   "trend too weak (ADX 14/20)",
    "volume below average"
   ]
  },
@@ -390,30 +313,47 @@
   "price": 0.01636,
   "side": "SHORT",
   "gap": 3.42,
-  "adx": 16.7,
+  "adx": 15.8,
   "adx_ok": false,
-  "vol_ok": false,
+  "vol_ok": true,
   "ema_up": false,
   "rsi": 50.0,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
    "needs 3.4% move",
-   "trend too weak (ADX 17/20)",
+   "trend too weak (ADX 16/20)"
+  ]
+ },
+ {
+  "coin": "ETC",
+  "pair": "ETC/USDT:USDT",
+  "price": 7.309,
+  "side": "SHORT",
+  "gap": 3.49,
+  "adx": 21.9,
+  "adx_ok": true,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 52.2,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 3.5% move",
    "volume below average"
   ]
  },
  {
-  "coin": "SOL",
-  "pair": "SOL/USDT:USDT",
-  "price": 103.7,
-  "side": "LONG",
-  "gap": 3.57,
-  "adx": 21.4,
+  "coin": "BCH",
+  "pair": "BCH/USDT:USDT",
+  "price": 247.97,
+  "side": "SHORT",
+  "gap": 3.56,
+  "adx": 23.5,
   "adx_ok": true,
   "vol_ok": false,
-  "ema_up": true,
-  "rsi": 51.6,
+  "ema_up": false,
+  "rsi": 53.5,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
@@ -422,213 +362,310 @@
   ]
  },
  {
-  "coin": "LINK",
-  "pair": "LINK/USDT:USDT",
-  "price": 11.375,
+  "coin": "SOL",
+  "pair": "SOL/USDT:USDT",
+  "price": 103.6,
   "side": "LONG",
-  "gap": 3.72,
-  "adx": 17.8,
-  "adx_ok": false,
-  "vol_ok": true,
+  "gap": 3.67,
+  "adx": 20.5,
+  "adx_ok": true,
+  "vol_ok": false,
   "ema_up": true,
-  "rsi": 52.6,
+  "rsi": 50.8,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
    "needs 3.7% move",
-   "trend too weak (ADX 18/20)"
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "QTUM",
+  "pair": "QTUM/USDT:USDT",
+  "price": 0.8118,
+  "side": "SHORT",
+  "gap": 3.67,
+  "adx": 10.1,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 47.5,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 3.7% move",
+   "trend too weak (ADX 10/20)",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "LINK",
+  "pair": "LINK/USDT:USDT",
+  "price": 11.364,
+  "side": "LONG",
+  "gap": 3.82,
+  "adx": 16.7,
+  "adx_ok": false,
+  "vol_ok": true,
+  "ema_up": true,
+  "rsi": 51.8,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 3.8% move",
+   "trend too weak (ADX 17/20)"
   ]
  },
  {
   "coin": "SAND",
   "pair": "SAND/USDT:USDT",
-  "price": 0.03764,
+  "price": 0.0377,
   "side": "SHORT",
-  "gap": 3.72,
-  "adx": 25.6,
+  "gap": 3.87,
+  "adx": 23.8,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": false,
-  "rsi": 50.1,
+  "rsi": 51.2,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 3.7% move",
+   "needs 3.9% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "THETA",
+  "pair": "THETA/USDT:USDT",
+  "price": 0.1701,
+  "side": "SHORT",
+  "gap": 3.88,
+  "adx": 17.0,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 54.4,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 3.9% move",
+   "trend too weak (ADX 17/20)",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "DOT",
+  "pair": "DOT/USDT:USDT",
+  "price": 0.84,
+  "side": "SHORT",
+  "gap": 4.17,
+  "adx": 17.3,
+  "adx_ok": false,
+  "vol_ok": true,
+  "ema_up": false,
+  "rsi": 55.5,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 4.2% move",
+   "trend too weak (ADX 17/20)"
+  ]
+ },
+ {
+  "coin": "APE",
+  "pair": "APE/USDT:USDT",
+  "price": 0.13587,
+  "side": "SHORT",
+  "gap": 4.29,
+  "adx": 19.8,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 48.6,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 4.3% move",
+   "trend too weak (ADX 20/20)",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "RVN",
+  "pair": "RVN/USDT:USDT",
+  "price": 0.002963,
+  "side": "SHORT",
+  "gap": 4.35,
+  "adx": 14.1,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 50.0,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 4.4% move",
+   "trend too weak (ADX 14/20)",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "UNI",
+  "pair": "UNI/USDT:USDT",
+  "price": 5.252,
+  "side": "LONG",
+  "gap": 4.47,
+  "adx": 20.4,
+  "adx_ok": true,
+  "vol_ok": false,
+  "ema_up": true,
+  "rsi": 61.3,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 4.5% move",
    "volume below average"
   ]
  },
  {
   "coin": "ENJ",
   "pair": "ENJ/USDT:USDT",
-  "price": 0.02439,
+  "price": 0.02451,
   "side": "SHORT",
-  "gap": 4.02,
-  "adx": 34.1,
+  "gap": 4.49,
+  "adx": 31.9,
   "adx_ok": true,
   "vol_ok": true,
   "ema_up": false,
-  "rsi": 49.4,
+  "rsi": 53.9,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 4.0% move"
-  ]
- },
- {
-  "coin": "RVN",
-  "pair": "RVN/USDT:USDT",
-  "price": 0.002953,
-  "side": "SHORT",
-  "gap": 4.03,
-  "adx": 14.8,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 47.1,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 4.0% move",
-   "trend too weak (ADX 15/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "APE",
-  "pair": "APE/USDT:USDT",
-  "price": 0.13565,
-  "side": "SHORT",
-  "gap": 4.14,
-  "adx": 20.8,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 47.3,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 4.1% move",
-   "volume below average"
-  ]
- },
- {
-  "coin": "STORJ",
-  "pair": "STORJ/USDT:USDT",
-  "price": 0.03269,
-  "side": "SHORT",
-  "gap": 4.31,
-  "adx": 48.9,
-  "adx_ok": true,
-  "vol_ok": true,
-  "ema_up": false,
-  "rsi": 31.9,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 4.3% move"
-  ]
- },
- {
-  "coin": "SNX",
-  "pair": "SNX/USDT:USDT",
-  "price": 0.2065,
-  "side": "SHORT",
-  "gap": 4.5,
-  "adx": 19.1,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 50.9,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 4.5% move",
-   "trend too weak (ADX 19/20)",
-   "volume below average"
+   "needs 4.5% move"
   ]
  },
  {
   "coin": "FIL",
   "pair": "FIL/USDT:USDT",
-  "price": 0.6788,
+  "price": 0.6801,
   "side": "SHORT",
-  "gap": 4.51,
-  "adx": 25.1,
+  "gap": 4.69,
+  "adx": 24.8,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": false,
-  "rsi": 53.2,
+  "rsi": 54.5,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 4.5% move",
+   "needs 4.7% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "AAVE",
+  "pair": "AAVE/USDT:USDT",
+  "price": 124.52,
+  "side": "LONG",
+  "gap": 4.69,
+  "adx": 13.9,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": true,
+  "rsi": 53.3,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 4.7% move",
+   "trend too weak (ADX 14/20)",
    "volume below average"
   ]
  },
  {
   "coin": "ADA",
   "pair": "ADA/USDT:USDT",
-  "price": 0.1985,
+  "price": 0.1991,
   "side": "SHORT",
-  "gap": 4.69,
-  "adx": 24.5,
+  "gap": 4.97,
+  "adx": 22.9,
   "adx_ok": true,
-  "vol_ok": true,
-  "ema_up": false,
-  "rsi": 53.2,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 4.7% move"
-  ]
- },
- {
-  "coin": "AAVE",
-  "pair": "AAVE/USDT:USDT",
-  "price": 124.15,
-  "side": "LONG",
-  "gap": 5.0,
-  "adx": 14.7,
-  "adx_ok": false,
   "vol_ok": false,
-  "ema_up": true,
-  "rsi": 51.4,
+  "ema_up": false,
+  "rsi": 55.0,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
    "needs 5.0% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "EGLD",
+  "pair": "EGLD/USDT:USDT",
+  "price": 3.847,
+  "side": "LONG",
+  "gap": 5.07,
+  "adx": 14.6,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": true,
+  "rsi": 50.9,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 5.1% move",
    "trend too weak (ADX 15/20)",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "STORJ",
+  "pair": "STORJ/USDT:USDT",
+  "price": 0.033,
+  "side": "SHORT",
+  "gap": 5.21,
+  "adx": 48.7,
+  "adx_ok": true,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 39.4,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 5.2% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "SNX",
+  "pair": "SNX/USDT:USDT",
+  "price": 0.2081,
+  "side": "SHORT",
+  "gap": 5.24,
+  "adx": 18.0,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 55.9,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 5.2% move",
+   "trend too weak (ADX 18/20)",
    "volume below average"
   ]
  },
  {
   "coin": "ANKR",
   "pair": "ANKR/USDT:USDT",
-  "price": 0.003902,
+  "price": 0.003903,
   "side": "LONG",
-  "gap": 5.33,
-  "adx": 48.5,
-  "adx_ok": true,
-  "vol_ok": true,
-  "ema_up": true,
-  "rsi": 38.0,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 5.3% move"
-  ]
- },
- {
-  "coin": "UNI",
-  "pair": "UNI/USDT:USDT",
-  "price": 5.209,
-  "side": "LONG",
-  "gap": 5.34,
-  "adx": 20.2,
+  "gap": 5.3,
+  "adx": 48.7,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": true,
-  "rsi": 57.9,
+  "rsi": 38.3,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
@@ -637,223 +674,186 @@
   ]
  },
  {
-  "coin": "EGLD",
-  "pair": "EGLD/USDT:USDT",
-  "price": 3.829,
+  "coin": "ICP",
+  "pair": "ICP/USDT:USDT",
+  "price": 2.409,
   "side": "LONG",
   "gap": 5.56,
-  "adx": 15.7,
+  "adx": 19.0,
   "adx_ok": false,
   "vol_ok": false,
   "ema_up": true,
-  "rsi": 48.7,
+  "rsi": 51.5,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
    "needs 5.6% move",
-   "trend too weak (ADX 16/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "IOTA",
-  "pair": "IOTA/USDT:USDT",
-  "price": 0.04016,
-  "side": "SHORT",
-  "gap": 5.7,
-  "adx": 15.3,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 53.2,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 5.7% move",
-   "trend too weak (ADX 15/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "ICP",
-  "pair": "ICP/USDT:USDT",
-  "price": 2.402,
-  "side": "LONG",
-  "gap": 5.87,
-  "adx": 18.9,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": true,
-  "rsi": 49.6,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 5.9% move",
    "trend too weak (ADX 19/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "COMP",
-  "pair": "COMP/USDT:USDT",
-  "price": 18.9,
-  "side": "SHORT",
-  "gap": 5.93,
-  "adx": 16.5,
-  "adx_ok": false,
-  "vol_ok": false,
-  "ema_up": false,
-  "rsi": 57.1,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 5.9% move",
-   "trend too weak (ADX 17/20)",
-   "volume below average"
-  ]
- },
- {
-  "coin": "CELO",
-  "pair": "CELO/USDT:USDT",
-  "price": 0.07353,
-  "side": "LONG",
-  "gap": 6.08,
-  "adx": 20.7,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": true,
-  "rsi": 43.6,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 6.1% move",
    "volume below average"
   ]
  },
  {
   "coin": "SUSHI",
   "pair": "SUSHI/USDT:USDT",
-  "price": 0.1927,
+  "price": 0.1937,
   "side": "LONG",
-  "gap": 6.12,
-  "adx": 15.1,
+  "gap": 5.58,
+  "adx": 14.9,
   "adx_ok": false,
-  "vol_ok": false,
+  "vol_ok": true,
   "ema_up": true,
-  "rsi": 49.7,
+  "rsi": 52.1,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 6.1% move",
-   "trend too weak (ADX 15/20)",
+   "needs 5.6% move",
+   "trend too weak (ADX 15/20)"
+  ]
+ },
+ {
+  "coin": "CELO",
+  "pair": "CELO/USDT:USDT",
+  "price": 0.07369,
+  "side": "LONG",
+  "gap": 5.85,
+  "adx": 20.5,
+  "adx_ok": true,
+  "vol_ok": false,
+  "ema_up": true,
+  "rsi": 45.2,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 5.8% move",
+   "volume below average"
+  ]
+ },
+ {
+  "coin": "IOTA",
+  "pair": "IOTA/USDT:USDT",
+  "price": 0.04036,
+  "side": "SHORT",
+  "gap": 6.17,
+  "adx": 15.0,
+  "adx_ok": false,
+  "vol_ok": true,
+  "ema_up": false,
+  "rsi": 56.2,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 6.2% move",
+   "trend too weak (ADX 15/20)"
+  ]
+ },
+ {
+  "coin": "COMP",
+  "pair": "COMP/USDT:USDT",
+  "price": 18.97,
+  "side": "SHORT",
+  "gap": 6.27,
+  "adx": 16.8,
+  "adx_ok": false,
+  "vol_ok": false,
+  "ema_up": false,
+  "rsi": 59.4,
+  "rsi_ok": true,
+  "ready": false,
+  "blockers": [
+   "needs 6.3% move",
+   "trend too weak (ADX 17/20)",
    "volume below average"
   ]
  },
  {
   "coin": "AXS",
   "pair": "AXS/USDT:USDT",
-  "price": 0.8962,
+  "price": 0.9002,
   "side": "SHORT",
-  "gap": 6.43,
-  "adx": 26.6,
+  "gap": 6.84,
+  "adx": 26.4,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": false,
-  "rsi": 47.4,
+  "rsi": 51.3,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 6.4% move",
-   "volume below average"
-  ]
- },
- {
-  "coin": "DASH",
-  "pair": "DASH/USDT:USDT",
-  "price": 45.51,
-  "side": "LONG",
-  "gap": 6.5,
-  "adx": 27.9,
-  "adx_ok": true,
-  "vol_ok": false,
-  "ema_up": true,
-  "rsi": 61.2,
-  "rsi_ok": true,
-  "ready": false,
-  "blockers": [
-   "needs 6.5% move",
+   "needs 6.8% move",
    "volume below average"
   ]
  },
  {
   "coin": "GALA",
   "pair": "GALA/USDT:USDT",
-  "price": 0.001747,
+  "price": 0.001742,
   "side": "SHORT",
-  "gap": 7.44,
-  "adx": 20.2,
-  "adx_ok": true,
+  "gap": 7.18,
+  "adx": 19.7,
+  "adx_ok": false,
   "vol_ok": false,
   "ema_up": false,
-  "rsi": 55.8,
+  "rsi": 54.0,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 7.4% move",
+   "needs 7.2% move",
+   "trend too weak (ADX 20/20)",
    "volume below average"
   ]
  },
  {
-  "coin": "CRV",
-  "pair": "CRV/USDT:USDT",
-  "price": 0.3351,
-  "side": "SHORT",
-  "gap": 13.52,
-  "adx": 24.9,
+  "coin": "DASH",
+  "pair": "DASH/USDT:USDT",
+  "price": 45.17,
+  "side": "LONG",
+  "gap": 7.31,
+  "adx": 27.8,
   "adx_ok": true,
-  "vol_ok": true,
-  "ema_up": false,
-  "rsi": 77.9,
+  "vol_ok": false,
+  "ema_up": true,
+  "rsi": 58.8,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 13.5% move"
+   "needs 7.3% move",
+   "volume below average"
   ]
  },
  {
   "coin": "ONT",
   "pair": "ONT/USDT:USDT",
-  "price": 0.05215,
+  "price": 0.05241,
   "side": "LONG",
-  "gap": 14.21,
-  "adx": 26.6,
+  "gap": 13.64,
+  "adx": 27.0,
   "adx_ok": true,
   "vol_ok": false,
   "ema_up": true,
-  "rsi": 38.3,
+  "rsi": 41.1,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 14.2% move",
+   "needs 13.6% move",
    "volume below average"
   ]
  },
  {
   "coin": "BAND",
   "pair": "BAND/USDT:USDT",
-  "price": 0.1797,
+  "price": 0.1799,
   "side": "LONG",
-  "gap": 19.98,
-  "adx": 12.5,
+  "gap": 19.84,
+  "adx": 11.7,
   "adx_ok": false,
   "vol_ok": false,
   "ema_up": true,
-  "rsi": 48.0,
+  "rsi": 48.5,
   "rsi_ok": true,
   "ready": false,
   "blockers": [
-   "needs 20.0% move",
-   "trend too weak (ADX 13/20)",
+   "needs 19.8% move",
+   "trend too weak (ADX 12/20)",
    "volume below average"
   ]
  }
