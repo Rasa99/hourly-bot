@@ -105,6 +105,17 @@
             "method": "StaticPairList"
         }
     ],
+    "_comment_api_server": "Added 2026-08-31 so Telegram can CLOSE a trade. This is the only way anything outside freqtrade changes a position, and that is deliberate: writing 'closed' into the sqlite file under a running bot leaves freqtrade's memory and the database disagreeing about what is open - it would go on managing a stop for a trade that no longer exists and rewrite the row on its next iteration. Through the API, freqtrade places the exit order itself. Bound to 127.0.0.1, so it is reachable only from inside the GitHub runner; there is no public port, and no exchange key exists on that machine in any case. The username below is real. The password and jwt_secret_key are PLACEHOLDERS - the workflow overrides both per run via FREQTRADE__API_SERVER__PASSWORD and FREQTRADE__API_SERVER__JWT_SECRET_KEY, generated fresh each job with openssl, so no usable credential is ever committed. They are spelled out here rather than left blank because freqtrade's schema requires all six keys to be present and jwt_secret_key to be at least 32 characters; a blank value fails config validation before an env override could rescue it.",
+    "api_server": {
+        "enabled": true,
+        "listen_ip_address": "127.0.0.1",
+        "listen_port": 8080,
+        "username": "botlocal",
+        "password": "placeholder-overridden-by-the-workflow",
+        "jwt_secret_key": "placeholder-overridden-by-the-workflow-000000000000",
+        "CORS_origins": [],
+        "verbosity": "error"
+    },
     "dataformat_ohlcv": "feather",
     "internals": {
         "process_throttle_secs": 5

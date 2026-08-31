@@ -89,10 +89,29 @@ jobs:
           git config user.name  "hourly-bot"
           git config user.email "hourly-bot@users.noreply.github.com"
 
+          # ---- credentials for freqtrade's LOCAL REST API -----------------
+          # This is how the Telegram "Close" button and the double-tap-a-chart
+          # gesture reach the bot to exit a position.
+          #
+          # Deliberately NOT a GitHub secret, and it must not become one: the
+          # API is bound to 127.0.0.1 on this runner, the runner is destroyed
+          # when the job ends, and no exchange key exists on it. Minting the
+          # password here means the value sitting in the committed config is a
+          # placeholder that is never the one actually in force.
+          #
+          # Exported before BOTH processes start, because the listener has to
+          # present the same password freqtrade is about to accept.
+          export FREQTRADE__API_SERVER__PASSWORD="$(openssl rand -hex 24)"
+          export FREQTRADE__API_SERVER__JWT_SECRET_KEY="$(openssl rand -hex 32)"
+          export FT_API_URL="http://127.0.0.1:8080"
+          export FT_API_USER="botlocal"
+          export FT_API_PASS="$FREQTRADE__API_SERVER__PASSWORD"
+
           # Start the Telegram listener alongside the trading loop, so /status
           # and /closest are answered for the job's whole life rather than only
-          # during the few minutes freqtrade itself is up. Read-only: it can
-          # report, never trade. If it dies, trading is unaffected.
+          # during the few minutes freqtrade itself is up. It can report, and
+          # it can close a trade through the API above - nothing else. If it
+          # dies, trading is unaffected.
           if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
             LISTEN_SECONDS=19800 python telegram_listener.py \
               > user_data/logs/listener.log 2>&1 &
@@ -208,9 +227,60 @@ jobs:
             # under a running process is how you lose the last hour of trades.
             # The snapshot above already produced a clean, complete copy.
             set +e
+
+            # NOTE: `set -e` is deliberately NOT restored for the rest of this
+            # loop. Everything from here on is reporting, not trading, and none
+            # of it is worth killing a five-hour job over. With `set -e` active,
+            # one failed Telegram call or a momentary network blip would end the
+            # step and the bot would stop trading for the rest of the day.
+
+            # ---- tell Telegram, every hour, whatever happened ----
+            # This runs BEFORE the commit, not after, and the ordering is load
+            # bearing. Both `bot_tools.py summary` and `sendcharts` WRITE state
+            # that has to be saved - seen_trades.json (which trades have already
+            # been announced) and chart_messages.json (which Telegram message
+            # showed which trade, so a double-tap still resolves after a
+            # handover). Reporting after the commit meant both files were always
+            # one cycle stale in the repository, and whatever happened in a
+            # job's FINAL cycle was never saved at all - so the next job
+            # re-announced it.
+            if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
+              MSG=$(python bot_tools.py summary || echo "Hourly check done.")
+              curl -sS --max-time 30 -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
+                --data-urlencode "chat_id=${TG_CHAT}" --data-urlencode "text=${MSG}" \
+                -o /dev/null -w "telegram: HTTP %{http_code}\n" || true
+
+              # Then the pictures: one chart per open position, so the phone
+              # shows where each trade entered and where it is now without
+              # having to ask. Sends nothing when nothing is open.
+              python telegram_listener.py sendcharts || echo "chart push failed - not fatal"
+            fi
+
             git add -f README.md chart-*.svg market_scan.json positions.json \
                        user_data/live_cloud.sqlite \
                        user_data/logs/cloud.log user_data/logs/last_run.txt 2>/dev/null
+            # chart_messages.json maps a Telegram chart message back to the
+            # trade it showed, so a double-tap on a chart still resolves after
+            # one 5-hour job hands over to the next. A few hundred bytes.
+            #
+            # It gets its OWN git add, deliberately, and for the same reason
+            # the position charts do: it does not exist until the first chart
+            # is sent, and an unmatched pathspec makes `git add` abort having
+            # staged NOTHING - which would silently stop the database, the
+            # status page and the logs all being saved. Never append a
+            # may-not-exist path to the list above.
+            git add -f user_data/logs/chart_messages.json 2>/dev/null || true
+            # seen_trades.json is the memory of which trades have ALREADY been
+            # announced on Telegram. It used to live only on the runner, which
+            # GitHub deletes at the end of every job - so each new job woke up
+            # with no memory, decided all thirteen trades in the database were
+            # new, and sent an OPENED or CLOSED alert for every one of them.
+            # Two positions were open; eleven of those alerts were about trades
+            # that had been closed for days. Committing it is half the fix; the
+            # other half is in bot_tools.summary(), which now stays SILENT when
+            # the file is missing instead of announcing everything.
+            # Same tolerant single add as above - it does not exist on run one.
+            git add -f user_data/logs/seen_trades.json 2>/dev/null || true
             # Position charts get their OWN add, quoted so git does the
             # globbing rather than bash. Two reasons: with nothing open the
             # glob matches no file, and an unmatched pathspec makes `git add`
@@ -225,25 +295,6 @@ jobs:
               git push -q origin "HEAD:${GITHUB_REF_NAME}" && echo "state saved" || echo "push failed, retrying next hour"
             else
               echo "nothing changed"
-            fi
-
-            # NOTE: `set -e` is deliberately NOT restored here. Everything from
-            # this point on is reporting, not trading, and none of it is worth
-            # killing a five-hour job over. With `set -e` active, one failed
-            # Telegram call or a momentary network blip would end the step and
-            # the bot would stop trading for the rest of the day.
-
-            # ---- tell Telegram, every hour, whatever happened ----
-            if [ -n "$TG_TOKEN" ] && [ -n "$TG_CHAT" ]; then
-              MSG=$(python bot_tools.py summary || echo "Hourly check done.")
-              curl -sS -X POST "https://api.telegram.org/bot${TG_TOKEN}/sendMessage" \
-                --data-urlencode "chat_id=${TG_CHAT}" --data-urlencode "text=${MSG}" \
-                -o /dev/null -w "telegram: HTTP %{http_code}\n" || true
-
-              # Then the pictures: one chart per open position, so the phone
-              # shows where each trade entered and where it is now without
-              # having to ask. Sends nothing when nothing is open.
-              python telegram_listener.py sendcharts || echo "chart push failed - not fatal"
             fi
 
             # ---- stop, or wait for the next hour ----

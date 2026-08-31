@@ -117,19 +117,43 @@ def summary():
     # freqtrade's own Telegram is switched off (it fought this script for the
     # single getUpdates slot Telegram allows), so trade alerts are produced
     # here by comparing against the ids seen last cycle.
-    seen_open, seen_closed = set(), set()
+    # THE BUG THIS GUARDS AGAINST, because it looked exactly like the bot
+    # having gone rogue. seen_trades.json used to exist ONLY in the runner's
+    # filesystem, which GitHub destroys when a job ends. Every new job - one
+    # every 5h40m - therefore started with no memory, concluded that all
+    # thirteen trades in the database were brand new, and fired one OPENED or
+    # CLOSED alert for each. Rasa, 2026-08-31: "I'm sure I had only two
+    # positions open, and I didn't have all the trades that it's mentioning
+    # ... all of this closing position that didn't exist in the first place."
+    # He had two open. The other eleven had been closed for days.
+    #
+    # Two things stop it. The workflow now commits this file, so the memory
+    # survives a handover; and if it is missing anyway - the very first run,
+    # or a lost file - the current state is adopted as the baseline and
+    # NOTHING is announced.
+    #
+    # Missing memory must mean "say nothing", never "say everything". Getting
+    # that backwards costs one skipped alert in the first case and a wall of
+    # false ones in the second, and only the second makes the bot untrustable.
+    known = None
     if os.path.exists(SEEN):
         try:
             prev = json.load(open(SEEN, encoding="utf-8"))
-            seen_open = set(prev.get("open", []))
-            seen_closed = set(prev.get("closed", []))
+            known = (set(prev.get("open", [])), set(prev.get("closed", [])))
         except Exception:
-            pass
+            known = None            # unreadable counts as missing, not as empty
 
     now_open = {r["id"] for r in open_}
     now_closed = {r["id"] for r in closed}
-    newly_opened = [r for r in open_ if r["id"] not in seen_open and r["id"] not in seen_closed]
-    newly_closed = [r for r in closed if r["id"] not in seen_closed]
+    if known is None:
+        newly_opened, newly_closed = [], []
+        print("(first summary with no memory of previous trades - "
+              "adopting current state silently)", file=sys.stderr)
+    else:
+        seen_open, seen_closed = known
+        newly_opened = [r for r in open_
+                        if r["id"] not in seen_open and r["id"] not in seen_closed]
+        newly_closed = [r for r in closed if r["id"] not in seen_closed]
 
     try:
         json.dump({"open": sorted(now_open), "closed": sorted(now_closed)},

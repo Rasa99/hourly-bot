@@ -58,6 +58,36 @@ If you want a Telegram message on every trade:
 
 The bot picks them up automatically. Without them it just runs quietly.
 
+### What you can do from Telegram
+
+Buttons appear above the text box. Most of them only report:
+
+| | |
+|---|---|
+| **Status** | equity, and every open trade with its live profit |
+| **Charts** | one price chart per open trade — entry, stop, where it is now |
+| **P&L** | live profit, and how much room is left before each stop |
+| **Closest** | which coin is nearest to triggering, and what is blocking it |
+| **Trades** | recent finished trades |
+
+**Close** is the one that changes something. It lists the open trades; tapping
+one exits it at market straight away, instead of waiting for the trailing stop.
+
+**Or just double-tap a chart.** Any reaction added to a position chart closes
+that position. It is built for the moment you look at the picture and decide
+you want out, so it acts immediately with no confirmation step. Taking a
+reaction off does nothing — undoing a mis-tap cannot close a second trade, but
+the first one has already gone.
+
+Both routes go through freqtrade's own API rather than touching the database,
+so the bot places the exit order itself and stays in step with its own records.
+That API listens only on 127.0.0.1 inside GitHub's runner and its password is
+minted fresh every run — there is nothing extra to configure and **no new
+secret to add**.
+
+Between runs the bot is not there to close anything, and it says so rather than
+failing silently.
+
 ---
 
 ## How to check on it

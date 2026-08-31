@@ -101,6 +101,72 @@ def _dashed_h(draw, x0, x1, y, colour, dash=7, gap=6, width=1):
         x += dash + gap
 
 
+def _dashed_v(draw, x, y0, y1, colour, dash=5, gap=5, width=1):
+    y = y0
+    while y < y1:
+        draw.line([(x, y), (x, min(y + dash, y1))], fill=colour, width=width)
+        y += dash + gap
+
+
+def _entry_index(open_date, times):
+    """
+    Which candle on the chart is the one the trade opened in?
+
+    `times` are candle OPEN timestamps in ms. The entry belongs to the last
+    candle that had already started when it happened. Returns None when the
+    trade opened before the window shown, so the caller can say that rather
+    than draw the marker in a place the trade was never at.
+    """
+    from datetime import datetime, timezone
+
+    if not open_date or not times:
+        return None
+    text = str(open_date).strip().replace("Z", "+00:00")
+    try:
+        dt = datetime.fromisoformat(text)
+    except ValueError:
+        try:                                # sqlite rows sometimes lack micros
+            dt = datetime.strptime(text[:19], "%Y-%m-%d %H:%M:%S")
+        except ValueError:
+            return None
+    # freqtrade stores naive UTC; anything already aware is converted to it.
+    dt = dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None \
+        else dt.astimezone(timezone.utc)
+    stamp = dt.timestamp() * 1000
+
+    if stamp < times[0]:
+        return None                         # opened before the window shown
+    idx = 0
+    for i, t in enumerate(times):
+        if t <= stamp:
+            idx = i
+        else:
+            break
+    return idx
+
+
+def _two_up(d, left, right, f_left, f_right, x_left, x_end, y,
+            c_left, c_right, gap=26):
+    """
+    A left-aligned string and a right-aligned string on one line - stacked onto
+    two lines instead when they would collide.
+
+    They DID collide, and only sometimes, which is why it survived: the left
+    string grows by "  +  funding -0.0006" the moment a trade has been held
+    across a funding window, and that was enough to run "net +0.5453 USDT"
+    straight through "10x on $0.5218". Measuring both against the space
+    available costs nothing and cannot regress.
+    """
+    wl = d.textlength(left, font=f_left)
+    wr = d.textlength(right, font=f_right)
+    if x_left + wl + gap <= x_end - wr:
+        d.text((x_left, y), left, font=f_left, fill=c_left)
+        d.text((x_end - wr, y + 2), right, font=f_right, fill=c_right)
+    else:
+        d.text((x_left, y - 11), left, font=f_left, fill=c_left)
+        d.text((x_end - wr, y + 10), right, font=f_right, fill=c_right)
+
+
 # ---------------------------------------------------------------- data
 def open_trades():
     if not os.path.exists(DB):
@@ -135,7 +201,7 @@ def realised_balance():
 
 
 # ---------------------------------------------------------------- chart
-def draw_chart(pos, closes, path):
+def draw_chart(pos, closes, path, times=None):
     """One position: price history, entry, stop, and where it is now."""
     from PIL import Image, ImageDraw
 
@@ -218,6 +284,41 @@ def draw_chart(pos, closes, path):
     d.ellipse([x1 - 5, y_now - 5, x1 + 5, y_now + 5], fill=accent)
     labels.append([y_now, f"now {_fmt(pos['now'])}", accent, f_tag])
 
+    # ---- WHERE the trade entered, not just at what price -----------------
+    # The dashed entry line alone is genuinely ambiguous: price crosses its own
+    # entry level several times in a normal trade, so the line answers "at what
+    # price" and leaves "when" to guesswork. This marks the candle it actually
+    # opened in.
+    entry_i = _entry_index(pos.get("open_date"), times or [])
+    if entry_i is not None:
+        ex = xof(entry_i)
+        _dashed_v(d, ex, min(y_entry, y1), y1, (86, 96, 112))
+
+        # Punch a hole in the price line first, then ring it, so the marker
+        # reads on top of the blue trace instead of merging into it.
+        d.ellipse([ex - 8, y_entry - 8, ex + 8, y_entry + 8], fill=BG)
+        d.ellipse([ex - 6, y_entry - 6, ex + 6, y_entry + 6],
+                  outline=INK, width=2)
+        d.ellipse([ex - 2, y_entry - 2, ex + 2, y_entry + 2], fill=INK)
+
+        # Timestamp beside the marker: above it normally, below when the marker
+        # sits high enough that the label would fall outside the plot.
+        when = str(pos.get("open_date", ""))[5:16].replace("-", "/")
+        if when:
+            wlen = d.textlength(when, font=f_small)
+            tx = min(max(ex - wlen / 2, x0 + 2), x1 - wlen - 2)
+            ty = y_entry + 16 if y_entry - 30 < y0 else y_entry - 30
+            # Plate behind it: the label lands wherever the marker is, and the
+            # marker is on the price line, so unplated text sat on top of the
+            # trace and was unreadable exactly where it mattered.
+            d.rectangle([tx - 5, ty - 3, tx + wlen + 5, ty + 17], fill=BG)
+            d.text((tx, ty), when, font=f_small, fill=(158, 170, 186))
+    elif times:
+        # Opened before the window shown. Say so rather than silently omitting
+        # the marker, which would read as "no entry found".
+        d.text((x0 + 4, y0 - 18), "entered before this window",
+               font=f_small, fill=(120, 130, 145))
+
     # Push overlapping labels apart, keeping them in price order so a label
     # never crosses the line it belongs to.
     labels.sort(key=lambda l: l[0])
@@ -239,12 +340,12 @@ def draw_chart(pos, closes, path):
     if pos["funding"]:
         foot += f"  +  funding {pos['funding']:+.4f}"
     foot += f"  =  net {pos['pnl']:+.4f} USDT"
-    d.text((PAD_L - 24, H - 31), foot, font=f_body, fill=DIM)
 
     sub = (f"{pos['leverage']:.0f}x on ${pos['margin']:.3f}  ·  "
            f"moved {pos['move_pct']:+.2f}%  ·  opened {opened}")
-    d.text((W - PAD_R + 100 - d.textlength(sub, font=f_small), H - 29),
-           sub, font=f_small, fill=(96, 104, 116))
+
+    _two_up(d, foot, sub, f_body, f_small,
+            PAD_L - 24, W - PAD_R + 100, H - 31, DIM, (96, 104, 116))
 
     img.save(path, "PNG", optimize=True)
     return path
@@ -280,6 +381,9 @@ def main() -> int:
             ohlcv = ex.fetch_ohlcv(t["pair"], timeframe="1h",
                                    limit=HOURS_SHOWN + 1)
             closes = [c[4] for c in ohlcv][-HOURS_SHOWN:]
+            # Candle OPEN timestamps, kept alongside the closes so the chart
+            # can mark WHEN the trade opened and not only at what price.
+            times = [c[0] for c in ohlcv][-HOURS_SHOWN:]
             now = float(closes[-1])
         except Exception as e:
             print(f"{coin}: price fetch failed ({type(e).__name__}) - skipped")
@@ -313,6 +417,10 @@ def main() -> int:
         pnl = gross - costs + funding
 
         pos = {
+            # freqtrade's own trade id. Needed so Telegram can ask the bot to
+            # close THIS trade through its REST API - the coin name is not a
+            # safe key, and the id is what /api/v1/forceexit expects.
+            "id": t["id"],
             "coin": coin,
             "pair": t["pair"],
             "is_short": short,
@@ -341,7 +449,7 @@ def main() -> int:
             pos["to_stop_pct"] = round(abs(pos["stop"] - now) / now * 100, 2)
 
         try:
-            pos["chart"] = draw_chart(pos, closes, f"pos-{coin}.png")
+            pos["chart"] = draw_chart(pos, closes, f"pos-{coin}.png", times)
         except Exception as e:
             print(f"{coin}: chart failed ({type(e).__name__}: {e})")
 
