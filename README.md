@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-01 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-01 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LRC | SHORT | 0.25% | needs 0.3% move; trend too weak (ADX 18/20) |
-| SKL | SHORT | 1.38% | needs 1.4% move; trend too weak (ADX 18/20) |
-| SUSHI | LONG | 1.54% | needs 1.5% move |
-| COMP | LONG | 1.56% | needs 1.6% move; volume below average |
-| BTC | LONG | 1.77% | needs 1.8% move; trend too weak (ADX 14/20) |
-| BAT | LONG | 1.88% | needs 1.9% move; trend too weak (ADX 19/20) |
-| KSM | LONG | 1.91% | needs 1.9% move; volume below average |
-| CRV | LONG | 2.00% | needs 2.0% move; volume below average |
-| RVN | SHORT | 2.17% | needs 2.2% move; trend too weak (ADX 15/20) |
-| ANKR | SHORT | 2.20% | needs 2.2% move |
+| CRV | LONG | 0.00% | RSI already stretched (80/78) |
+| UNI | LONG | 0.36% | needs 0.4% move |
+| LRC | SHORT | 0.38% | needs 0.4% move; trend too weak (ADX 17/20) |
+| COMP | LONG | 0.57% | needs 0.6% move |
+| KSM | LONG | 0.57% | needs 0.6% move; volume below average |
+| NEAR | LONG | 0.72% | needs 0.7% move; volume below average |
+| SUSHI | LONG | 1.14% | needs 1.1% move |
+| AAVE | LONG | 1.68% | needs 1.7% move |
+| BTC | LONG | 1.69% | needs 1.7% move; trend too weak (ADX 14/20) |
+| BAT | LONG | 1.90% | needs 1.9% move; trend too weak (ADX 18/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
