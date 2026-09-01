@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-01 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-01 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| CRV | LONG | 0.00% | volume below average |
-| BAT | LONG | 0.11% | needs 0.1% move; trend too weak (ADX 16/20) |
-| ICP | LONG | 0.72% | needs 0.7% move; trend too weak (ADX 18/20) |
-| BNB | SHORT | 0.82% | needs 0.8% move |
-| ANKR | SHORT | 1.13% | needs 1.1% move; volume below average |
-| DOGE | SHORT | 1.54% | needs 1.5% move; volume below average |
-| LRC | SHORT | 1.88% | needs 1.9% move |
-| SKL | SHORT | 1.92% | needs 1.9% move; volume below average |
-| HBAR | SHORT | 2.06% | needs 2.1% move; trend too weak (ADX 17/20) |
-| CELO | SHORT | 2.19% | needs 2.2% move; trend too weak (ADX 20/20) |
+| BAT | LONG | 0.57% | needs 0.6% move; trend too weak (ADX 16/20) |
+| BNB | SHORT | 0.99% | needs 1.0% move; volume below average |
+| ANKR | SHORT | 1.05% | needs 1.1% move; volume below average |
+| ICP | LONG | 1.33% | needs 1.3% move; trend too weak (ADX 18/20) |
+| CRV | LONG | 1.48% | needs 1.5% move; volume below average |
+| LRC | SHORT | 1.51% | needs 1.5% move; volume below average |
+| DOGE | SHORT | 1.60% | needs 1.6% move; volume below average |
+| GRT | SHORT | 1.86% | needs 1.9% move; trend too weak (ADX 15/20) |
+| CELO | SHORT | 2.03% | needs 2.0% move; volume below average |
+| HBAR | SHORT | 2.12% | needs 2.1% move; trend too weak (ADX 17/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
