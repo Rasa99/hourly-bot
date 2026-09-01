@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-01 07:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-01 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,27 +8,18 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$18.7395** 🔴 -6.30% |
-| Settled balance | $18.9075 (-5.46%) |
-| Unrealised (open trades) | 🔴 -0.1680 |
+| **Equity now** | **$18.7072** 🔴 -6.46% |
+| Settled balance | $18.7072 (-6.46%) |
 | Started with | $20.0000 |
-| Finished trades | 12 |
-| Open now | 1 |
-| Win rate | 25% (3/12) |
+| Finished trades | 13 |
+| Open now | 0 |
+| Win rate | 23% (3/13) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
-|---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6967 | +2.26% | 🔴 -0.1680 | -23.7% | 0.44% |
-| | | | | **total** | **-0.1680** | | |
-
-> ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **38% of equity**.
-
-![FIL](pos-FIL.png)
-
+Nothing open.
 
 ## What it is waiting for
 
@@ -40,16 +31,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| UNI | LONG | 0.00% | RSI already stretched (81/78) |
-| BTC | LONG | 0.84% | needs 0.8% move; trend too weak (ADX 15/20) |
-| KSM | LONG | 0.88% | needs 0.9% move |
-| SUSHI | LONG | 0.99% | needs 1.0% move |
-| BAT | LONG | 1.18% | needs 1.2% move; volume below average |
-| ANKR | SHORT | 1.37% | needs 1.4% move; volume below average |
-| NEAR | LONG | 1.93% | needs 1.9% move; volume below average |
+| SUSHI | LONG | 0.84% | needs 0.8% move |
+| BTC | LONG | 0.98% | needs 1.0% move; trend too weak (ADX 15/20) |
+| ANKR | SHORT | 1.12% | needs 1.1% move; volume below average |
+| KSM | LONG | 1.29% | needs 1.3% move |
+| BAT | LONG | 1.48% | needs 1.5% move; volume below average |
+| UNI | LONG | 1.84% | needs 1.8% move; RSI already stretched (83/78) |
+| LRC | SHORT | 1.88% | needs 1.9% move; volume below average |
 | BNB | LONG | 1.99% | needs 2.0% move; trend too weak (ADX 15/20) |
-| LRC | SHORT | 2.49% | needs 2.5% move; trend too weak (ADX 20/20) |
-| ETH | LONG | 2.58% | needs 2.6% move; trend too weak (ADX 18/20) |
+| HBAR | SHORT | 2.48% | needs 2.5% move; volume below average |
+| ETH | LONG | 2.54% | needs 2.5% move; trend too weak (ADX 18/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -74,6 +65,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | BCH | SHORT | 🔴 -0.1922 (-19.8%) | trailing_stop_loss | 2026-08-29 20:06 |
 | AXS | SHORT | 🔴 -0.1948 (-25.3%) | trailing_stop_loss | 2026-08-30 12:07 |
 | SAND | SHORT | 🟢 +0.0906 (+12.9%) | force_exit | 2026-08-31 18:07 |
+| FIL | SHORT | 🔴 -0.2003 (-28.3%) | trailing_stop_loss | 2026-09-01 07:08 |
 | UNI | LONG | 🔴 -0.1416 (-30.3%) | trailing_stop_loss | 2026-08-28 10:07 |
 
 ---
