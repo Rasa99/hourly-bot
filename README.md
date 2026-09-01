@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-01 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-01 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ANKR | SHORT | 0.62% | needs 0.6% move; volume below average |
-| BNB | SHORT | 0.95% | needs 0.9% move |
-| DOGE | SHORT | 0.99% | needs 1.0% move |
-| CELO | SHORT | 1.51% | needs 1.5% move; volume below average |
-| ICP | LONG | 1.70% | needs 1.7% move; trend too weak (ADX 18/20) |
-| HBAR | SHORT | 1.79% | needs 1.8% move; trend too weak (ADX 17/20) |
-| ATOM | SHORT | 1.85% | needs 1.8% move; volume below average |
-| LRC | SHORT | 1.88% | needs 1.9% move; volume below average |
-| SKL | SHORT | 1.92% | needs 1.9% move; volume below average |
-| GRT | SHORT | 1.99% | needs 2.0% move; trend too weak (ADX 16/20) |
+| DOGE | SHORT | 0.95% | needs 0.9% move; volume below average |
+| BNB | SHORT | 1.01% | needs 1.0% move; volume below average |
+| HBAR | SHORT | 1.34% | needs 1.3% move; trend too weak (ADX 18/20) |
+| LRC | SHORT | 1.39% | needs 1.4% move; volume below average |
+| ATOM | SHORT | 1.44% | needs 1.4% move |
+| EGLD | LONG | 1.46% | needs 1.5% move; trend too weak (ADX 12/20) |
+| CELO | SHORT | 1.49% | needs 1.5% move; volume below average |
+| ANKR | SHORT | 1.56% | needs 1.6% move; volume below average |
+| GRT | SHORT | 1.92% | needs 1.9% move; trend too weak (ADX 17/20) |
+| IOTA | SHORT | 1.93% | needs 1.9% move; trend too weak (ADX 16/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
