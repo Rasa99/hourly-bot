@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-08-31 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-01 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$18.9217** 🔴 -5.39% |
+| **Equity now** | **$18.8915** 🔴 -5.54% |
 | Settled balance | $18.9075 (-5.46%) |
-| Unrealised (open trades) | 🟢 +0.0142 |
+| Unrealised (open trades) | 🔴 -0.0160 |
 | Started with | $20.0000 |
 | Finished trades | 12 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **FIL** | SHORT 🔻 | 0.6813 | 0.6792 | -0.31% | 🟢 +0.0142 | +2.0% | 3.03% |
-| | | | | **total** | **+0.0142** | | |
+| **FIL** | SHORT 🔻 | 0.6813 | 0.6821 | +0.12% | 🔴 -0.0160 | -2.3% | 2.59% |
+| | | | | **total** | **-0.0160** | | |
 
 > ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **38% of equity**.
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| CRV | LONG | 0.56% | needs 0.6% move; volume below average |
-| NEAR | LONG | 0.78% | needs 0.8% move |
-| LRC | SHORT | 0.88% | needs 0.9% move; trend too weak (ADX 13/20) |
-| HBAR | SHORT | 0.91% | needs 0.9% move |
-| BTC | LONG | 1.04% | needs 1.0% move; trend too weak (ADX 17/20) |
-| BNB | LONG | 1.89% | needs 1.9% move; trend too weak (ADX 18/20) |
-| KSM | LONG | 2.04% | needs 2.0% move; volume below average |
-| ATOM | SHORT | 2.25% | needs 2.3% move; trend too weak (ADX 14/20) |
-| CHZ | SHORT | 2.27% | needs 2.3% move; volume below average |
-| ALGO | SHORT | 2.28% | needs 2.3% move; trend too weak (ADX 19/20) |
+| NEAR | LONG | 0.36% | needs 0.4% move |
+| CRV | LONG | 0.80% | needs 0.8% move; volume below average |
+| HBAR | SHORT | 0.95% | needs 1.0% move; volume below average |
+| LRC | SHORT | 1.01% | needs 1.0% move; trend too weak (ADX 13/20) |
+| BTC | LONG | 1.04% | needs 1.0% move; trend too weak (ADX 16/20) |
+| BNB | LONG | 1.85% | needs 1.9% move; trend too weak (ADX 17/20) |
+| CHZ | SHORT | 2.19% | needs 2.2% move; volume below average |
+| MANA | SHORT | 2.23% | needs 2.2% move |
+| KSM | LONG | 2.30% | needs 2.3% move; volume below average |
+| ATOM | SHORT | 2.32% | needs 2.3% move; trend too weak (ADX 14/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
