@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-02 07:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-02 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ALGO | LONG | 0.44% | needs 0.4% move; trend too weak (ADX 17/20) |
-| ICP | LONG | 0.94% | needs 0.9% move; trend too weak (ADX 20/20) |
-| EGLD | LONG | 0.99% | needs 1.0% move |
-| UNI | LONG | 1.17% | needs 1.2% move |
-| ATOM | SHORT | 1.51% | needs 1.5% move; volume below average |
-| LRC | SHORT | 1.51% | needs 1.5% move; volume below average |
-| HBAR | SHORT | 1.55% | needs 1.6% move; volume below average |
-| AAVE | LONG | 1.67% | needs 1.7% move |
-| BAT | LONG | 1.75% | needs 1.7% move; trend too weak (ADX 12/20) |
-| DOGE | SHORT | 1.85% | needs 1.8% move; volume below average |
+| CELO | LONG | 0.15% | needs 0.2% move |
+| ALGO | LONG | 0.71% | needs 0.7% move; trend too weak (ADX 18/20) |
+| FIL | LONG | 1.05% | needs 1.0% move; volume below average |
+| UNI | LONG | 1.43% | needs 1.4% move |
+| HBAR | SHORT | 1.51% | needs 1.5% move |
+| ICP | LONG | 1.53% | needs 1.5% move; volume below average |
+| DOGE | SHORT | 1.70% | needs 1.7% move; volume below average |
+| ATOM | SHORT | 1.71% | needs 1.7% move |
+| BNB | SHORT | 1.96% | needs 2.0% move; volume below average |
+| LINK | SHORT | 1.98% | needs 2.0% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
