@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-02 04:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-02 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**3 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DOT | LONG | 0.00% | trend too weak (ADX 20/20) |
-| FIL | LONG | 0.00% | **READY** |
-| CRV | LONG | 0.00% | **READY** |
-| EGLD | LONG | 0.00% | **READY** |
-| UNI | LONG | 0.50% | needs 0.5% move |
-| AAVE | LONG | 0.85% | needs 0.9% move; trend too weak (ADX 15/20) |
-| HBAR | SHORT | 1.39% | needs 1.4% move; volume below average |
-| DOGE | SHORT | 1.55% | needs 1.5% move; volume below average |
-| ICP | LONG | 1.70% | needs 1.7% move; trend too weak (ADX 14/20) |
-| ANKR | SHORT | 1.78% | needs 1.8% move; volume below average |
+| DOT | LONG | 0.00% | volume below average |
+| UNI | LONG | 0.00% | RSI already stretched (79/78) |
+| ICP | LONG | 0.00% | trend too weak (ADX 15/20) |
+| AAVE | LONG | 0.00% | trend too weak (ADX 16/20) |
+| EGLD | LONG | 0.00% | RSI already stretched (79/78) |
+| SUSHI | LONG | 0.00% | trend too weak (ADX 15/20) |
+| FIL | LONG | 0.51% | needs 0.5% move |
+| LRC | SHORT | 1.39% | needs 1.4% move; volume below average |
+| HBAR | SHORT | 1.66% | needs 1.7% move |
+| DOGE | SHORT | 1.79% | needs 1.8% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
