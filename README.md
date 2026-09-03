@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-03 10:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-03 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BNB | LONG | 0.39% | needs 0.4% move |
-| LTC | LONG | 0.73% | needs 0.7% move |
-| THETA | SHORT | 1.55% | needs 1.5% move; trend too weak (ADX 11/20) |
-| ETH | SHORT | 1.57% | needs 1.6% move; volume below average |
-| MANA | LONG | 1.58% | needs 1.6% move; trend too weak (ADX 11/20) |
-| BTC | LONG | 2.11% | needs 2.1% move; trend too weak (ADX 15/20) |
-| DOT | LONG | 2.17% | needs 2.2% move; trend too weak (ADX 15/20) |
+| BNB | LONG | 0.00% | **READY** |
+| LTC | LONG | 0.63% | needs 0.6% move; volume below average |
+| THETA | SHORT | 1.19% | needs 1.2% move; trend too weak (ADX 10/20) |
+| MANA | LONG | 1.50% | needs 1.5% move; trend too weak (ADX 11/20) |
+| ETH | SHORT | 1.70% | needs 1.7% move; volume below average |
+| QTUM | SHORT | 1.71% | needs 1.7% move; trend too weak (ADX 14/20) |
+| DOT | LONG | 1.82% | needs 1.8% move; trend too weak (ADX 15/20) |
+| BTC | LONG | 1.95% | needs 2.0% move; trend too weak (ADX 15/20) |
 | SKL | SHORT | 2.17% | needs 2.2% move; volume below average |
-| QTUM | SHORT | 2.23% | needs 2.2% move; trend too weak (ADX 14/20) |
-| LINK | SHORT | 2.27% | needs 2.3% move; trend too weak (ADX 15/20) |
+| ALGO | LONG | 2.49% | needs 2.5% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
