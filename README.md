@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-03 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-03 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| FIL | LONG | 0.22% | needs 0.2% move |
-| APE | SHORT | 0.34% | needs 0.3% move; trend too weak (ADX 20/20) |
-| CELO | LONG | 0.92% | needs 0.9% move; volume below average |
-| COMP | LONG | 0.98% | needs 1.0% move; trend too weak (ADX 15/20) |
-| ETH | SHORT | 1.28% | needs 1.3% move |
-| ONT | SHORT | 1.44% | needs 1.4% move; trend too weak (ADX 13/20) |
-| BTC | SHORT | 1.45% | needs 1.4% move |
-| BCH | SHORT | 1.49% | needs 1.5% move; trend too weak (ADX 19/20) |
-| ATOM | SHORT | 1.51% | needs 1.5% move |
-| LINK | SHORT | 1.72% | needs 1.7% move; volume below average |
+| LTC | LONG | 0.00% | trend too weak (ADX 19/20) |
+| COMP | LONG | 0.57% | needs 0.6% move; trend too weak (ADX 17/20) |
+| CELO | LONG | 0.83% | needs 0.8% move; volume below average |
+| QTUM | SHORT | 1.05% | needs 1.1% move; trend too weak (ADX 19/20) |
+| DOT | LONG | 1.13% | needs 1.1% move; trend too weak (ADX 13/20) |
+| MANA | LONG | 1.23% | needs 1.2% move; trend too weak (ADX 10/20) |
+| APE | SHORT | 1.30% | needs 1.3% move; trend too weak (ADX 19/20) |
+| ATOM | SHORT | 1.84% | needs 1.8% move |
+| BTC | SHORT | 2.04% | needs 2.0% move |
+| ETH | SHORT | 2.07% | needs 2.1% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
