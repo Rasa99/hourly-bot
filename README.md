@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-03 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-03 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BNB | LONG | 0.00% | **READY** |
-| LTC | LONG | 0.63% | needs 0.6% move; volume below average |
-| THETA | SHORT | 1.19% | needs 1.2% move; trend too weak (ADX 10/20) |
-| MANA | LONG | 1.50% | needs 1.5% move; trend too weak (ADX 11/20) |
-| ETH | SHORT | 1.70% | needs 1.7% move; volume below average |
-| QTUM | SHORT | 1.71% | needs 1.7% move; trend too weak (ADX 14/20) |
-| DOT | LONG | 1.82% | needs 1.8% move; trend too weak (ADX 15/20) |
-| BTC | LONG | 1.95% | needs 2.0% move; trend too weak (ADX 15/20) |
-| SKL | SHORT | 2.17% | needs 2.2% move; volume below average |
-| ALGO | LONG | 2.49% | needs 2.5% move; volume below average |
+| BNB | LONG | 0.00% | RSI already stretched (82/78) |
+| LTC | LONG | 0.02% | needs 0.0% move; volume below average |
+| BAT | SHORT | 1.00% | needs 1.0% move; trend too weak (ADX 17/20) |
+| MANA | LONG | 1.53% | needs 1.5% move; trend too weak (ADX 11/20) |
+| BTC | LONG | 1.70% | needs 1.7% move; trend too weak (ADX 14/20) |
+| THETA | SHORT | 1.72% | needs 1.7% move; trend too weak (ADX 10/20) |
+| DOT | LONG | 1.82% | needs 1.8% move; trend too weak (ADX 14/20) |
+| SKL | SHORT | 1.91% | needs 1.9% move; volume below average |
+| ETH | SHORT | 2.10% | needs 2.1% move; volume below average |
+| QTUM | SHORT | 2.50% | needs 2.5% move; trend too weak (ADX 13/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
