@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-03 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-03 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LTC | LONG | 0.00% | trend too weak (ADX 19/20) |
-| COMP | LONG | 0.57% | needs 0.6% move; trend too weak (ADX 17/20) |
-| CELO | LONG | 0.83% | needs 0.8% move; volume below average |
-| QTUM | SHORT | 1.05% | needs 1.1% move; trend too weak (ADX 19/20) |
-| DOT | LONG | 1.13% | needs 1.1% move; trend too weak (ADX 13/20) |
-| MANA | LONG | 1.23% | needs 1.2% move; trend too weak (ADX 10/20) |
-| APE | SHORT | 1.30% | needs 1.3% move; trend too weak (ADX 19/20) |
-| ATOM | SHORT | 1.84% | needs 1.8% move |
-| BTC | SHORT | 2.04% | needs 2.0% move |
-| ETH | SHORT | 2.07% | needs 2.1% move |
+| COMP | LONG | 0.00% | trend too weak (ADX 19/20) |
+| CELO | LONG | 0.00% | **READY** |
+| LTC | LONG | 0.18% | needs 0.2% move; volume below average |
+| MANA | LONG | 0.82% | needs 0.8% move; trend too weak (ADX 10/20) |
+| APE | SHORT | 0.99% | needs 1.0% move; trend too weak (ADX 19/20) |
+| ATOM | SHORT | 1.44% | needs 1.4% move; volume below average |
+| THETA | SHORT | 1.55% | needs 1.5% move; trend too weak (ADX 13/20) |
+| SKL | SHORT | 1.64% | needs 1.6% move; volume below average |
+| BTC | SHORT | 1.89% | needs 1.9% move; volume below average |
+| ETH | SHORT | 1.96% | needs 2.0% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
