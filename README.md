@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-03 15:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-03 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BTC | LONG | 0.00% | trend too weak (ADX 19/20); RSI already stretched (82/78) |
-| BNB | LONG | 0.00% | RSI already stretched (84/78) |
+| BTC | LONG | 0.00% | RSI already stretched (85/78) |
+| BNB | LONG | 0.00% | RSI already stretched (86/78) |
+| SOL | LONG | 0.00% | **READY** |
+| ADA | LONG | 0.00% | RSI already stretched (80/78) |
+| DOT | LONG | 0.00% | trend too weak (ADX 15/20) |
 | LTC | LONG | 0.00% | **READY** |
-| SOL | LONG | 0.19% | needs 0.2% move; trend too weak (ADX 19/20) |
-| DOT | LONG | 0.34% | needs 0.3% move; trend too weak (ADX 14/20) |
-| MANA | LONG | 0.39% | needs 0.4% move; trend too weak (ADX 10/20) |
-| ALGO | LONG | 0.63% | needs 0.6% move; volume below average |
-| AAVE | LONG | 1.02% | needs 1.0% move |
-| ICP | LONG | 2.13% | needs 2.1% move; trend too weak (ADX 9/20) |
-| QTUM | SHORT | 2.75% | needs 2.7% move; trend too weak (ADX 13/20) |
+| HBAR | LONG | 0.00% | RSI already stretched (82/78) |
+| MANA | LONG | 0.00% | trend too weak (ADX 11/20) |
+| AXS | LONG | 0.00% | trend too weak (ADX 13/20) |
+| QTUM | LONG | 0.00% | trend too weak (ADX 16/20); RSI already stretched (80/78) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
