@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-03 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-03 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BAT | LONG | 0.00% | RSI already stretched (79/78) |
-| DOT | LONG | 0.11% | needs 0.1% move; trend too weak (ADX 19/20) |
-| ALGO | LONG | 0.11% | needs 0.1% move; volume below average |
-| BTC | LONG | 0.14% | needs 0.1% move; volume below average |
-| LTC | LONG | 0.18% | needs 0.2% move; volume below average |
-| AVAX | LONG | 0.20% | needs 0.2% move; volume below average |
-| AXS | LONG | 0.21% | needs 0.2% move; trend too weak (ADX 18/20) |
-| MANA | LONG | 0.23% | needs 0.2% move; trend too weak (ADX 14/20) |
-| ETH | LONG | 0.25% | needs 0.2% move; volume below average |
-| GRT | LONG | 0.29% | needs 0.3% move; volume below average |
+| BTC | LONG | 0.00% | RSI already stretched (82/78) |
+| LTC | LONG | 0.00% | **READY** |
+| GRT | LONG | 0.00% | **READY** |
+| LINK | LONG | 0.01% | needs 0.0% move |
+| ETH | LONG | 0.05% | needs 0.0% move |
+| AXS | LONG | 0.09% | needs 0.1% move; trend too weak (ADX 18/20) |
+| AVAX | LONG | 0.17% | needs 0.2% move; volume below average |
+| DOT | LONG | 0.22% | needs 0.2% move |
+| SOL | LONG | 0.35% | needs 0.4% move; volume below average |
+| BAT | LONG | 0.40% | needs 0.4% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
