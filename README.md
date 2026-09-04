@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-04 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-04 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| NEAR | LONG | 0.00% | trend too weak (ADX 19/20) |
 | ENJ | LONG | 0.00% | volume below average |
-| ONT | LONG | 0.92% | needs 0.9% move; volume below average |
-| BNB | LONG | 1.43% | needs 1.4% move; volume below average |
-| IOTA | SHORT | 2.17% | needs 2.2% move; volume below average |
-| APE | LONG | 2.36% | needs 2.4% move; volume below average |
-| LTC | LONG | 2.37% | needs 2.4% move; volume below average |
-| DASH | LONG | 2.47% | needs 2.5% move; volume below average |
-| AVAX | LONG | 2.49% | needs 2.5% move; volume below average |
-| ATOM | LONG | 2.80% | needs 2.8% move; volume below average |
+| DASH | LONG | 0.00% | volume below average |
+| ONT | LONG | 1.01% | needs 1.0% move; volume below average |
+| IOTA | SHORT | 1.18% | needs 1.2% move |
+| BNB | LONG | 1.71% | needs 1.7% move; volume below average |
+| LTC | LONG | 2.15% | needs 2.1% move; volume below average |
+| AVAX | LONG | 2.61% | needs 2.6% move; volume below average |
+| CHZ | SHORT | 2.68% | needs 2.7% move; volume below average |
+| APE | LONG | 2.72% | needs 2.7% move; trend too weak (ADX 20/20) |
+| BAND | LONG | 2.77% | needs 2.8% move; trend too weak (ADX 14/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
