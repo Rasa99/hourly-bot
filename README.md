@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-05 17:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-05 18:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.0609** 🟢 +0.30% |
-| Settled balance | $19.3021 (-3.49%) |
-| Unrealised (open trades) | 🟢 +0.7588 |
+| **Equity now** | **$20.0354** 🟢 +0.18% |
+| Settled balance | $20.0984 (+0.49%) |
+| Unrealised (open trades) | 🔴 -0.0630 |
 | Started with | $20.0000 |
-| Finished trades | 17 |
-| Open now | 3 |
-| Win rate | 29% (5/17) |
+| Finished trades | 19 |
+| Open now | 1 |
+| Win rate | 32% (6/19) |
 
 ![balance](chart-equity.svg)
 
@@ -23,17 +23,11 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
 | **DOT** | LONG 🔺 | 0.918 | 0.91 | -0.87% | 🔴 -0.0630 | -9.8% | 1.87% |
-| **SUSHI** | LONG 🔺 | 0.2071 | 0.2333 | +12.65% | 🟢 +0.9086 | +125.3% | 5.49% |
-| **UNI** | LONG 🔺 | 6.74 | 6.66 | -1.19% | 🔴 -0.0867 | -12.9% | 2.76% |
-| | | | | **total** | **+0.7588** | | |
+| | | | | **total** | **-0.0630** | | |
 
-> ⚠️ **All 3 positions are long.** That is one bet on the same market direction, placed 3 times — these coins move together, so they will win together and lose together. Gross exposure is **106% of equity**.
+> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **32% of equity**.
 
 ![DOT](pos-DOT.png)
-
-![SUSHI](pos-SUSHI.png)
-
-![UNI](pos-UNI.png)
 
 
 ## What it is waiting for
@@ -46,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BNB | LONG | 0.00% | RSI already stretched (83/78) |
-| UNI | LONG | 0.00% | **READY** |
-| SUSHI | LONG | 0.00% | RSI already stretched (91/78) |
-| LTC | LONG | 0.06% | needs 0.1% move; volume below average |
-| AVAX | LONG | 0.34% | needs 0.3% move; volume below average |
-| ATOM | LONG | 0.71% | needs 0.7% move; volume below average |
-| ETC | LONG | 1.02% | needs 1.0% move; volume below average |
-| GRT | LONG | 1.15% | needs 1.1% move; volume below average |
-| HBAR | LONG | 1.34% | needs 1.3% move; volume below average |
-| AXS | LONG | 1.34% | needs 1.3% move; volume below average |
+| DOGE | LONG | 0.00% | RSI already stretched (89/78) |
+| AVAX | LONG | 0.00% | **READY** |
+| LTC | LONG | 0.00% | RSI already stretched (79/78) |
+| SUSHI | LONG | 0.00% | RSI already stretched (94/78) |
+| ETC | LONG | 0.05% | needs 0.1% move |
+| UNI | LONG | 0.07% | needs 0.1% move |
+| BNB | LONG | 0.17% | needs 0.2% move; RSI already stretched (84/78) |
+| ATOM | LONG | 0.39% | needs 0.4% move; volume below average |
+| GRT | LONG | 0.40% | needs 0.4% move; volume below average |
+| HBAR | LONG | 0.44% | needs 0.4% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -69,6 +63,8 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| UNI | LONG | 🔴 -0.0737 (-10.9%) | force_exit | 2026-09-05 17:25 |
+| SUSHI | LONG | 🟢 +0.8701 (+120.0%) | force_exit | 2026-09-05 17:24 |
 | LINK | LONG | 🔴 -0.2654 (-22.0%) | stop_loss | 2026-09-04 12:30 |
 | DASH | LONG | 🟢 +0.3396 (+75.4%) | force_exit | 2026-09-04 09:07 |
 | EGLD | LONG | 🟢 +0.7674 (+147.5%) | trailing_stop_loss | 2026-09-03 00:18 |
@@ -82,8 +78,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | EGLD | LONG | 🟢 +0.3823 (+45.9%) | trailing_stop_loss | 2026-08-30 17:24 |
 | ICP | LONG | 🔴 -0.2062 (-24.6%) | stop_loss | 2026-08-30 01:13 |
 | BCH | SHORT | 🔴 -0.1922 (-19.8%) | trailing_stop_loss | 2026-08-29 20:06 |
-| AXS | SHORT | 🔴 -0.1948 (-25.3%) | trailing_stop_loss | 2026-08-30 12:07 |
-| SAND | SHORT | 🟢 +0.0906 (+12.9%) | force_exit | 2026-08-31 18:07 |
 
 ---
 
