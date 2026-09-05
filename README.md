@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-05 02:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-05 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DASH | LONG | 0.00% | RSI already stretched (84/78) |
-| DOT | LONG | 0.11% | needs 0.1% move; volume below average |
-| LTC | LONG | 1.03% | needs 1.0% move |
-| ONT | LONG | 1.06% | needs 1.1% move; volume below average |
-| KSM | LONG | 1.17% | needs 1.2% move; trend too weak (ADX 14/20) |
-| BAND | LONG | 1.18% | needs 1.2% move; trend too weak (ADX 16/20) |
-| IOTA | SHORT | 1.26% | needs 1.3% move; volume below average |
-| BNB | LONG | 1.39% | needs 1.4% move; trend too weak (ADX 19/20) |
-| NEAR | LONG | 1.65% | needs 1.7% move; volume below average |
-| BAT | LONG | 2.43% | needs 2.4% move; trend too weak (ADX 17/20) |
+| LTC | LONG | 0.00% | **READY** |
+| DASH | LONG | 0.00% | RSI already stretched (85/78) |
+| KSM | LONG | 0.00% | trend too weak (ADX 17/20) |
+| ONT | LONG | 0.97% | needs 1.0% move; volume below average |
+| ATOM | LONG | 0.98% | needs 1.0% move; volume below average |
+| BAND | LONG | 1.18% | needs 1.2% move; trend too weak (ADX 18/20) |
+| BNB | LONG | 1.33% | needs 1.3% move; trend too weak (ADX 19/20) |
+| ETC | LONG | 1.48% | needs 1.5% move |
+| IOTA | SHORT | 1.54% | needs 1.5% move; volume below average |
+| DOT | LONG | 1.67% | needs 1.7% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
