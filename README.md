@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-05 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-05 01:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DASH | LONG | 0.00% | RSI already stretched (80/78) |
-| DOT | LONG | 0.45% | needs 0.4% move; trend too weak (ADX 19/20) |
-| ONT | LONG | 0.46% | needs 0.5% move; volume below average |
-| NEAR | LONG | 0.73% | needs 0.7% move |
-| BNB | LONG | 1.24% | needs 1.2% move; volume below average |
-| IOTA | SHORT | 1.59% | needs 1.6% move; volume below average |
-| BAND | LONG | 2.11% | needs 2.1% move; trend too weak (ADX 14/20) |
-| LTC | LONG | 2.21% | needs 2.2% move; volume below average |
-| SUSHI | SHORT | 2.31% | needs 2.3% move; volume below average |
-| CHZ | SHORT | 2.39% | needs 2.4% move; volume below average |
+| NEAR | LONG | 0.00% | **READY** |
+| DASH | LONG | 0.00% | RSI already stretched (82/78) |
+| ONT | LONG | 0.65% | needs 0.7% move; volume below average |
+| BAND | LONG | 1.34% | needs 1.3% move; trend too weak (ADX 15/20) |
+| IOTA | SHORT | 1.36% | needs 1.4% move; volume below average |
+| DOT | LONG | 1.46% | needs 1.5% move; volume below average |
+| BNB | LONG | 1.49% | needs 1.5% move; trend too weak (ADX 19/20) |
+| LTC | LONG | 1.65% | needs 1.6% move; volume below average |
+| KSM | LONG | 2.19% | needs 2.2% move; trend too weak (ADX 13/20) |
+| BAT | LONG | 2.30% | needs 2.3% move; trend too weak (ADX 16/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
