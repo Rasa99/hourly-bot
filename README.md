@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-05 06:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-05 07:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**4 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DASH | LONG | 0.00% | RSI already stretched (83/78) |
-| KSM | LONG | 0.00% | **READY** |
-| LTC | LONG | 0.09% | needs 0.1% move |
-| ICP | LONG | 0.11% | needs 0.1% move; volume below average |
-| BAND | LONG | 0.48% | needs 0.5% move; volume below average |
-| ATOM | LONG | 0.59% | needs 0.6% move |
-| ONT | LONG | 0.85% | needs 0.8% move |
-| DOT | LONG | 1.00% | needs 1.0% move; volume below average |
-| GALA | LONG | 1.02% | needs 1.0% move |
-| BNB | LONG | 1.11% | needs 1.1% move; trend too weak (ADX 20/20) |
+| DOT | LONG | 0.00% | volume below average |
+| LTC | LONG | 0.00% | RSI already stretched (81/78) |
+| ATOM | LONG | 0.00% | **READY** |
+| ETC | LONG | 0.00% | **READY** |
+| ICP | LONG | 0.00% | RSI already stretched (78/78) |
+| GALA | LONG | 0.00% | **READY** |
+| BAND | LONG | 0.00% | **READY** |
+| GRT | LONG | 0.06% | needs 0.1% move |
+| NEAR | LONG | 0.11% | needs 0.1% move |
+| BNB | LONG | 0.45% | needs 0.4% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
