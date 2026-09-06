@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-06 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-06 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ANKR | LONG | 0.81% | needs 0.8% move |
-| BAT | LONG | 0.91% | needs 0.9% move; volume below average |
-| STORJ | SHORT | 1.18% | needs 1.2% move; trend too weak (ADX 12/20) |
-| SOL | LONG | 1.54% | needs 1.5% move |
-| APE | LONG | 1.73% | needs 1.7% move; trend too weak (ADX 20/20) |
-| COMP | LONG | 1.79% | needs 1.8% move; volume below average |
-| CHZ | LONG | 1.81% | needs 1.8% move |
-| AVAX | LONG | 1.86% | needs 1.9% move |
-| RVN | LONG | 1.87% | needs 1.9% move |
-| AXS | LONG | 1.99% | needs 2.0% move |
+| ANKR | LONG | 0.00% | volume below average |
+| BAT | LONG | 0.05% | needs 0.1% move |
+| COMP | LONG | 0.19% | needs 0.2% move; volume below average |
+| THETA | LONG | 0.33% | needs 0.3% move; trend too weak (ADX 20/20) |
+| RVN | LONG | 0.91% | needs 0.9% move |
+| SNX | LONG | 0.96% | needs 1.0% move |
+| STORJ | SHORT | 1.31% | needs 1.3% move; trend too weak (ADX 12/20) |
+| CHZ | LONG | 1.37% | needs 1.4% move |
+| AVAX | LONG | 1.51% | needs 1.5% move; volume below average |
+| SOL | LONG | 1.52% | needs 1.5% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
