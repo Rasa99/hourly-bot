@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-07 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-07 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**4 coin(s) ready to fire right now.** Scanned 47 coins.
+**3 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| AVAX | LONG | 0.00% | **READY** |
-| LTC | LONG | 0.00% | RSI already stretched (83/78) |
-| ATOM | LONG | 0.00% | **READY** |
-| ETC | LONG | 0.00% | trend too weak (ADX 16/20) |
+| DOT | LONG | 0.00% | **READY** |
 | FIL | LONG | 0.00% | **READY** |
-| HBAR | LONG | 0.00% | trend too weak (ADX 16/20) |
-| APE | LONG | 0.00% | trend too weak (ADX 11/20) |
-| AXS | LONG | 0.00% | trend too weak (ADX 17/20) |
-| CHZ | LONG | 0.00% | trend too weak (ADX 13/20) |
-| RVN | LONG | 0.00% | volume below average |
+| SAND | LONG | 0.00% | trend too weak (ADX 13/20) |
+| AXS | LONG | 0.00% | trend too weak (ADX 18/20) |
+| QTUM | LONG | 0.00% | trend too weak (ADX 12/20) |
+| KSM | LONG | 0.00% | **READY** |
+| AVAX | LONG | 0.09% | needs 0.1% move |
+| THETA | LONG | 0.16% | needs 0.2% move; trend too weak (ADX 16/20) |
+| HBAR | LONG | 0.24% | needs 0.2% move; trend too weak (ADX 18/20) |
+| GALA | LONG | 0.31% | needs 0.3% move; trend too weak (ADX 14/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
