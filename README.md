@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-07 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-07 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**4 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SKL | LONG | 0.00% | trend too weak (ADX 19/20) |
-| COMP | LONG | 0.61% | needs 0.6% move |
-| ANKR | LONG | 0.78% | needs 0.8% move; trend too weak (ADX 16/20) |
-| RVN | LONG | 0.97% | needs 1.0% move; volume below average |
-| CHZ | LONG | 1.00% | needs 1.0% move; trend too weak (ADX 11/20) |
-| LTC | LONG | 1.06% | needs 1.1% move |
-| ATOM | LONG | 1.11% | needs 1.1% move; volume below average |
-| ONT | LONG | 1.31% | needs 1.3% move; trend too weak (ADX 14/20) |
-| AVAX | LONG | 1.43% | needs 1.4% move; volume below average |
-| AXS | LONG | 1.45% | needs 1.4% move; trend too weak (ADX 17/20) |
+| AVAX | LONG | 0.00% | **READY** |
+| LTC | LONG | 0.00% | RSI already stretched (83/78) |
+| ATOM | LONG | 0.00% | **READY** |
+| ETC | LONG | 0.00% | trend too weak (ADX 16/20) |
+| FIL | LONG | 0.00% | **READY** |
+| HBAR | LONG | 0.00% | trend too weak (ADX 16/20) |
+| APE | LONG | 0.00% | trend too weak (ADX 11/20) |
+| AXS | LONG | 0.00% | trend too weak (ADX 17/20) |
+| CHZ | LONG | 0.00% | trend too weak (ADX 13/20) |
+| RVN | LONG | 0.00% | volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
