@@ -1,45 +1,45 @@
-run          : 192   cycle: 5
-finished     : 2026-09-07 18:07 UTC
+run          : 192   cycle: 6
+finished     : 2026-09-07 19:07 UTC
 freqtrade    : running (pid 2296)
 
 ----- last 40 log lines -----
-2026-09-07 17:37:42,050 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:38:42,052 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:39:42,055 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:40:42,058 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:41:42,060 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:42:42,063 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:43:42,066 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:44:42,069 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:45:42,071 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:46:42,074 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:47:42,077 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:48:42,079 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:49:42,082 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:50:42,085 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:51:42,087 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:52:42,090 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:53:42,093 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:54:42,095 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:55:42,098 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:56:42,100 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:57:42,103 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:58:42,106 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 17:59:42,108 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 18:00:04,977 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for THETA/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,095 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for EGLD/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,153 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for CHZ/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,338 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for GRT/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,473 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for SKL/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,572 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for ATOM/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,591 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for CRV/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,723 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for COMP/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:05,974 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for AXS/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-07 18:00:43,405 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 18:01:04,286 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-07 18:01:43,408 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 18:02:43,411 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 18:03:43,414 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 18:04:43,417 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 18:05:43,420 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
-2026-09-07 18:06:43,423 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:29:44,339 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:30:44,342 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:31:05,230 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-07 18:31:44,345 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:32:44,347 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:33:44,350 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:34:44,353 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:35:44,356 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:36:44,358 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:37:44,361 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:38:44,364 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:39:44,367 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:40:44,370 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:41:44,373 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:42:44,376 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:43:44,379 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:44:44,382 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:45:44,384 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:46:44,387 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:47:44,390 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:48:44,393 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:49:44,395 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:50:44,398 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:51:44,401 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:52:44,404 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:53:44,407 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:54:44,410 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:55:44,412 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:56:44,415 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:57:44,418 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:58:44,421 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 18:59:44,424 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 19:00:46,001 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 19:01:06,921 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-07 19:01:46,004 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 19:02:46,006 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 19:03:46,009 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 19:04:46,012 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 19:05:46,015 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
+2026-09-07 19:06:46,017 - freqtrade.worker - INFO - Bot heartbeat. PID=2296, version='2026.7', state='RUNNING'
