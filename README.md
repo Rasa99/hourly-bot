@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-07 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-07 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| RVN | LONG | 0.94% | needs 0.9% move; volume below average |
-| THETA | LONG | 1.01% | needs 1.0% move; trend too weak (ADX 18/20) |
-| HBAR | LONG | 1.49% | needs 1.5% move; volume below average |
-| BAT | LONG | 1.52% | needs 1.5% move; volume below average |
-| COMP | LONG | 1.53% | needs 1.5% move; volume below average |
-| ONT | LONG | 1.56% | needs 1.6% move; trend too weak (ADX 19/20) |
-| SNX | LONG | 1.63% | needs 1.6% move |
-| ATOM | LONG | 1.64% | needs 1.6% move; volume below average |
-| LRC | LONG | 1.65% | needs 1.7% move; trend too weak (ADX 9/20) |
-| CHZ | LONG | 1.66% | needs 1.7% move; trend too weak (ADX 16/20) |
+| CRV | LONG | 0.00% | **READY** |
+| LRC | LONG | 0.00% | trend too weak (ADX 13/20) |
+| RVN | LONG | 0.16% | needs 0.2% move; volume below average |
+| BAT | LONG | 0.27% | needs 0.3% move |
+| ATOM | LONG | 0.50% | needs 0.5% move |
+| THETA | LONG | 0.69% | needs 0.7% move; trend too weak (ADX 19/20) |
+| QTUM | LONG | 0.90% | needs 0.9% move; trend too weak (ADX 12/20) |
+| COMP | LONG | 1.00% | needs 1.0% move |
+| AVAX | LONG | 1.27% | needs 1.3% move |
+| SAND | LONG | 1.27% | needs 1.3% move; trend too weak (ADX 16/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
