@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-07 04:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-07 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BAT | LONG | 0.09% | needs 0.1% move; volume below average |
-| COMP | LONG | 0.85% | needs 0.9% move |
-| QTUM | LONG | 0.90% | needs 0.9% move; trend too weak (ADX 13/20) |
-| RVN | LONG | 1.23% | needs 1.2% move; volume below average |
-| ANKR | LONG | 1.43% | needs 1.4% move; volume below average |
-| ATOM | LONG | 1.64% | needs 1.6% move |
-| STORJ | SHORT | 1.65% | needs 1.7% move; trend too weak (ADX 16/20) |
-| CHZ | LONG | 1.66% | needs 1.7% move; trend too weak (ADX 15/20) |
-| SNX | LONG | 1.99% | needs 2.0% move; volume below average |
-| ETH | LONG | 2.05% | needs 2.0% move |
+| BAT | LONG | 0.00% | **READY** |
+| ICP | LONG | 0.18% | needs 0.2% move; volume below average |
+| COMP | LONG | 0.38% | needs 0.4% move; volume below average |
+| QTUM | LONG | 1.08% | needs 1.1% move; trend too weak (ADX 12/20) |
+| ATOM | LONG | 1.39% | needs 1.4% move |
+| STORJ | SHORT | 1.42% | needs 1.4% move; trend too weak (ADX 18/20) |
+| RVN | LONG | 1.49% | needs 1.5% move; volume below average |
+| CHZ | LONG | 1.58% | needs 1.6% move; trend too weak (ADX 14/20) |
+| ETC | LONG | 1.59% | needs 1.6% move; trend too weak (ADX 16/20) |
+| ANKR | LONG | 1.69% | needs 1.7% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
