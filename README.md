@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-07 07:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-07 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | LONG | 0.06% | needs 0.1% move; volume below average |
-| ICP | LONG | 0.61% | needs 0.6% move |
-| QTUM | LONG | 0.74% | needs 0.7% move; trend too weak (ADX 12/20) |
-| RVN | LONG | 0.74% | needs 0.7% move; volume below average |
-| BAT | LONG | 0.94% | needs 0.9% move; volume below average |
-| APE | LONG | 1.10% | needs 1.1% move; trend too weak (ADX 12/20) |
-| STORJ | SHORT | 1.18% | needs 1.2% move |
-| ETC | LONG | 1.39% | needs 1.4% move; trend too weak (ADX 18/20) |
-| ANKR | LONG | 1.43% | needs 1.4% move; volume below average |
-| CHZ | LONG | 1.44% | needs 1.4% move; trend too weak (ADX 13/20) |
+| ATOM | LONG | 0.00% | **READY** |
+| ICP | LONG | 0.00% | RSI already stretched (78/78) |
+| ANKR | LONG | 1.78% | needs 1.8% move; trend too weak (ADX 20/20) |
+| AXS | LONG | 1.84% | needs 1.8% move; trend too weak (ADX 16/20) |
+| ONT | LONG | 1.84% | needs 1.8% move; trend too weak (ADX 15/20) |
+| QTUM | LONG | 1.96% | needs 2.0% move; trend too weak (ADX 12/20) |
+| STORJ | SHORT | 2.09% | needs 2.1% move |
+| CHZ | LONG | 2.17% | needs 2.2% move; trend too weak (ADX 13/20) |
+| COMP | LONG | 2.26% | needs 2.3% move |
+| ETH | LONG | 2.38% | needs 2.4% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
