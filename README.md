@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-08 20:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-08 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DOT | LONG | 0.00% | **READY** |
-| EGLD | LONG | 0.00% | trend too weak (ADX 18/20) |
-| BAT | LONG | 0.85% | needs 0.8% move; volume below average |
-| CHZ | LONG | 1.48% | needs 1.5% move; trend too weak (ADX 12/20) |
-| ATOM | LONG | 1.51% | needs 1.5% move; volume below average |
-| ONT | LONG | 2.16% | needs 2.2% move; trend too weak (ADX 13/20) |
-| BAND | LONG | 2.16% | needs 2.2% move; trend too weak (ADX 15/20) |
-| ETH | LONG | 2.19% | needs 2.2% move; trend too weak (ADX 11/20) |
-| ALGO | LONG | 2.58% | needs 2.6% move; volume below average |
-| STORJ | SHORT | 2.63% | needs 2.6% move; trend too weak (ADX 20/20) |
+| DOT | LONG | 0.08% | needs 0.1% move |
+| BAT | LONG | 0.15% | needs 0.2% move |
+| EGLD | LONG | 0.18% | needs 0.2% move; trend too weak (ADX 19/20) |
+| ATOM | LONG | 0.33% | needs 0.3% move; volume below average |
+| CHZ | LONG | 1.62% | needs 1.6% move; trend too weak (ADX 12/20) |
+| MANA | LONG | 1.96% | needs 2.0% move; trend too weak (ADX 12/20) |
+| BAND | LONG | 2.06% | needs 2.1% move; trend too weak (ADX 15/20) |
+| ETH | LONG | 2.16% | needs 2.2% move; trend too weak (ADX 11/20) |
+| STORJ | SHORT | 2.17% | needs 2.2% move; trend too weak (ADX 20/20) |
+| ONT | LONG | 2.43% | needs 2.4% move; trend too weak (ADX 13/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
