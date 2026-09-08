@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-08 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-08 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BAT | LONG | 0.63% | needs 0.6% move; trend too weak (ADX 13/20) |
-| QTUM | LONG | 1.00% | needs 1.0% move; trend too weak (ADX 12/20) |
+| BAT | LONG | 0.03% | needs 0.0% move; trend too weak (ADX 14/20) |
+| IOTA | LONG | 0.05% | needs 0.0% move; trend too weak (ADX 13/20) |
 | SKL | LONG | 1.02% | needs 1.0% move; volume below average |
-| IOTA | LONG | 1.24% | needs 1.2% move; trend too weak (ADX 13/20) |
-| STORJ | SHORT | 1.26% | needs 1.3% move; volume below average |
-| ETC | LONG | 1.43% | needs 1.4% move; trend too weak (ADX 19/20) |
-| ALGO | LONG | 1.65% | needs 1.6% move; trend too weak (ADX 19/20) |
-| ANKR | LONG | 1.69% | needs 1.7% move; trend too weak (ADX 18/20) |
-| ENJ | LONG | 1.77% | needs 1.8% move; trend too weak (ADX 17/20) |
-| HBAR | LONG | 1.83% | needs 1.8% move; trend too weak (ADX 12/20) |
+| ANKR | LONG | 1.34% | needs 1.3% move; trend too weak (ADX 17/20) |
+| QTUM | LONG | 1.47% | needs 1.5% move; trend too weak (ADX 12/20) |
+| KSM | LONG | 1.50% | needs 1.5% move; volume below average |
+| ENJ | LONG | 1.70% | needs 1.7% move; trend too weak (ADX 17/20) |
+| AVAX | LONG | 1.90% | needs 1.9% move; volume below average |
+| BAND | LONG | 1.90% | needs 1.9% move; trend too weak (ADX 15/20) |
+| MANA | LONG | 2.28% | needs 2.3% move; trend too weak (ADX 11/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
