@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-08 18:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-08 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DOT | LONG | 0.00% | **READY** |
-| BAT | LONG | 0.01% | needs 0.0% move; trend too weak (ADX 18/20) |
-| EGLD | LONG | 0.08% | needs 0.1% move; trend too weak (ADX 16/20) |
-| BAND | LONG | 0.61% | needs 0.6% move; trend too weak (ADX 17/20) |
-| CHZ | LONG | 0.77% | needs 0.8% move; trend too weak (ADX 12/20) |
-| ATOM | LONG | 0.83% | needs 0.8% move |
-| ONT | LONG | 1.26% | needs 1.3% move; trend too weak (ADX 15/20) |
-| QTUM | LONG | 1.28% | needs 1.3% move; trend too weak (ADX 18/20) |
-| ALGO | LONG | 1.44% | needs 1.4% move; volume below average |
-| ETH | LONG | 1.95% | needs 2.0% move; trend too weak (ADX 11/20) |
+| BAT | LONG | 0.23% | needs 0.2% move; trend too weak (ADX 19/20) |
+| EGLD | LONG | 0.78% | needs 0.8% move; trend too weak (ADX 16/20) |
+| KSM | LONG | 0.91% | needs 0.9% move |
+| CHZ | LONG | 1.33% | needs 1.3% move; trend too weak (ADX 12/20) |
+| DOT | LONG | 1.49% | needs 1.5% move |
+| ONT | LONG | 1.58% | needs 1.6% move; trend too weak (ADX 14/20) |
+| ATOM | LONG | 1.74% | needs 1.7% move |
+| ETH | LONG | 2.01% | needs 2.0% move; trend too weak (ADX 11/20) |
+| BAND | LONG | 2.06% | needs 2.1% move; trend too weak (ADX 16/20) |
+| MANA | LONG | 2.73% | needs 2.7% move; trend too weak (ADX 11/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
