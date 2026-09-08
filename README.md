@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-08 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-08 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DOT | LONG | 0.08% | needs 0.1% move |
-| BAT | LONG | 0.15% | needs 0.2% move |
-| EGLD | LONG | 0.18% | needs 0.2% move; trend too weak (ADX 19/20) |
-| ATOM | LONG | 0.33% | needs 0.3% move; volume below average |
-| CHZ | LONG | 1.62% | needs 1.6% move; trend too weak (ADX 12/20) |
-| MANA | LONG | 1.96% | needs 2.0% move; trend too weak (ADX 12/20) |
-| BAND | LONG | 2.06% | needs 2.1% move; trend too weak (ADX 15/20) |
-| ETH | LONG | 2.16% | needs 2.2% move; trend too weak (ADX 11/20) |
-| STORJ | SHORT | 2.17% | needs 2.2% move; trend too weak (ADX 20/20) |
-| ONT | LONG | 2.43% | needs 2.4% move; trend too weak (ADX 13/20) |
+| ATOM | LONG | 0.00% | volume below average |
+| EGLD | LONG | 0.00% | **READY** |
+| BAT | LONG | 1.28% | needs 1.3% move |
+| CHZ | LONG | 2.05% | needs 2.1% move; trend too weak (ADX 12/20) |
+| ETH | LONG | 2.17% | needs 2.2% move; trend too weak (ADX 11/20) |
+| MANA | LONG | 2.27% | needs 2.3% move; trend too weak (ADX 12/20) |
+| BAND | LONG | 2.27% | needs 2.3% move; trend too weak (ADX 15/20) |
+| ETC | LONG | 2.36% | needs 2.4% move; volume below average |
+| BTC | LONG | 2.67% | needs 2.7% move; volume below average |
+| DOGE | LONG | 2.69% | needs 2.7% move; trend too weak (ADX 11/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
