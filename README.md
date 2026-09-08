@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-08 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-08 17:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,40 +8,22 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.8452** 🟢 +9.23% |
-| Settled balance | $20.4539 (+2.27%) |
-| Unrealised (open trades) | 🟢 +1.3914 |
+| **Equity now** | **$21.8139** 🟢 +9.07% |
+| Settled balance | $21.8139 (+9.07%) |
 | Started with | $20.0000 |
-| Finished trades | 20 |
-| Open now | 4 |
-| Win rate | 35% (7/20) |
+| Finished trades | 24 |
+| Open now | 0 |
+| Win rate | 46% (11/24) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
-|---|---|---|---|---|---|---|---|
-| **DOT** | LONG 🔺 | 1.069 | 1.181 | +10.48% | 🟢 +0.4417 | +103.3% | 9.06% |
-| **ETC** | LONG 🔺 | 8.203 | 8.634 | +5.25% | 🟢 +0.3374 | +51.4% | 7.35% |
-| **ATOM** | LONG 🔺 | 1.697 | 1.792 | +5.60% | 🟢 +0.4654 | +54.8% | 6.08% |
-| **ALGO** | LONG 🔺 | 0.10042 | 0.10263 | +2.20% | 🟢 +0.1469 | +20.9% | 4.79% |
-| | | | | **total** | **+1.3914** | | |
-
-> ⚠️ **All 4 positions are long.** That is one bet on the same market direction, placed 4 times — these coins move together, so they will win together and lose together. Gross exposure is **129% of equity**.
-
-![DOT](pos-DOT.png)
-
-![ETC](pos-ETC.png)
-
-![ATOM](pos-ATOM.png)
-
-![ALGO](pos-ALGO.png)
-
+Nothing open.
 
 ## What it is waiting for
 
-**4 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -49,16 +31,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ADA | LONG | 0.00% | trend too weak (ADX 19/20) |
-| DOT | LONG | 0.00% | **READY** |
-| ATOM | LONG | 0.00% | **READY** |
 | ETC | LONG | 0.00% | **READY** |
-| ALGO | LONG | 0.00% | **READY** |
-| QTUM | LONG | 0.00% | trend too weak (ADX 15/20) |
-| ONT | LONG | 0.00% | trend too weak (ADX 13/20) |
-| BAT | LONG | 0.00% | trend too weak (ADX 16/20) |
-| KSM | LONG | 0.00% | trend too weak (ADX 18/20) |
-| BAND | LONG | 0.15% | needs 0.2% move; trend too weak (ADX 16/20) |
+| BAT | LONG | 0.00% | trend too weak (ADX 17/20) |
+| IOTA | LONG | 0.16% | needs 0.2% move; trend too weak (ADX 12/20) |
+| ALGO | LONG | 0.45% | needs 0.4% move |
+| CHZ | LONG | 0.49% | needs 0.5% move; trend too weak (ADX 13/20) |
+| ATOM | LONG | 0.61% | needs 0.6% move |
+| BAND | LONG | 0.61% | needs 0.6% move; trend too weak (ADX 17/20) |
+| QTUM | LONG | 0.69% | needs 0.7% move; trend too weak (ADX 17/20) |
+| EGLD | LONG | 0.74% | needs 0.7% move; trend too weak (ADX 16/20) |
+| ONT | LONG | 0.92% | needs 0.9% move; trend too weak (ADX 14/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -72,6 +54,10 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| ALGO | LONG | 🟢 +0.1357 (+19.3%) | force_exit | 2026-09-08 16:07 |
+| ATOM | LONG | 🟢 +0.4604 (+54.2%) | force_exit | 2026-09-08 16:07 |
+| ETC | LONG | 🟢 +0.3342 (+50.9%) | force_exit | 2026-09-08 16:07 |
+| DOT | LONG | 🟢 +0.4297 (+100.5%) | force_exit | 2026-09-08 16:07 |
 | UNI | LONG | 🔴 -0.0737 (-10.9%) | force_exit | 2026-09-05 17:25 |
 | SUSHI | LONG | 🟢 +0.8701 (+120.0%) | force_exit | 2026-09-05 17:24 |
 | DOT | LONG | 🟢 +0.3555 (+55.3%) | force_exit | 2026-09-06 14:09 |
@@ -83,10 +69,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | KSM | LONG | 🔴 -0.2021 (-17.9%) | stop_loss | 2026-08-30 20:40 |
 | THETA | SHORT | 🔴 -0.2014 (-14.1%) | stop_loss | 2026-08-30 06:59 |
 | MANA | LONG | 🔴 -0.2131 (-17.8%) | stop_loss | 2026-08-30 04:42 |
-| UNI | LONG | 🟢 +0.1705 (+34.9%) | trailing_stop_loss | 2026-08-30 23:46 |
-| CRV | SHORT | 🔴 -0.1984 (-19.6%) | stop_loss | 2026-08-30 12:09 |
-| EGLD | LONG | 🟢 +0.3823 (+45.9%) | trailing_stop_loss | 2026-08-30 17:24 |
-| ICP | LONG | 🔴 -0.2062 (-24.6%) | stop_loss | 2026-08-30 01:13 |
 
 ---
 
