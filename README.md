@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-09 11:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-09 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| NEAR | LONG | 0.00% | trend too weak (ADX 20/20) |
-| QTUM | LONG | 0.15% | needs 0.2% move |
-| BAND | LONG | 1.02% | needs 1.0% move; trend too weak (ADX 13/20) |
-| DOGE | LONG | 1.21% | needs 1.2% move; trend too weak (ADX 11/20) |
-| ANKR | LONG | 1.41% | needs 1.4% move; trend too weak (ADX 20/20) |
-| BNB | LONG | 1.46% | needs 1.5% move; trend too weak (ADX 10/20) |
-| CHZ | LONG | 1.83% | needs 1.8% move; trend too weak (ADX 12/20) |
-| ETH | LONG | 1.97% | needs 2.0% move; trend too weak (ADX 14/20) |
-| BTC | LONG | 2.10% | needs 2.1% move |
-| ONT | LONG | 2.25% | needs 2.2% move; trend too weak (ADX 11/20) |
+| NEAR | LONG | 0.00% | **READY** |
+| CHZ | LONG | 0.91% | needs 0.9% move; trend too weak (ADX 12/20) |
+| BAND | LONG | 0.91% | needs 0.9% move; trend too weak (ADX 13/20) |
+| DOGE | LONG | 1.11% | needs 1.1% move; trend too weak (ADX 11/20) |
+| ANKR | LONG | 1.38% | needs 1.4% move |
+| ETH | LONG | 1.44% | needs 1.4% move; trend too weak (ADX 14/20) |
+| BNB | LONG | 1.49% | needs 1.5% move; trend too weak (ADX 10/20) |
+| BTC | LONG | 1.59% | needs 1.6% move |
+| ONT | LONG | 1.79% | needs 1.8% move; trend too weak (ADX 11/20) |
+| IOTA | LONG | 1.87% | needs 1.9% move; trend too weak (ADX 15/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
