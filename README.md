@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-09 01:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-09 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| EGLD | LONG | 0.00% | RSI already stretched (83/78) |
-| ALGO | LONG | 1.25% | needs 1.2% move; volume below average |
+| ETC | LONG | 0.00% | volume below average |
 | BAT | LONG | 1.29% | needs 1.3% move |
-| BTC | SHORT | 1.45% | needs 1.4% move; volume below average |
-| MANA | LONG | 1.45% | needs 1.5% move; trend too weak (ADX 11/20) |
-| DOGE | LONG | 1.58% | needs 1.6% move; trend too weak (ADX 10/20) |
-| ETH | LONG | 1.62% | needs 1.6% move; trend too weak (ADX 10/20) |
-| CHZ | LONG | 1.76% | needs 1.8% move; trend too weak (ADX 11/20) |
-| SAND | LONG | 1.87% | needs 1.9% move; trend too weak (ADX 10/20) |
-| BNB | LONG | 1.92% | needs 1.9% move; trend too weak (ADX 14/20) |
+| BTC | SHORT | 1.58% | needs 1.6% move; volume below average |
+| ETH | LONG | 1.58% | needs 1.6% move; trend too weak (ADX 10/20) |
+| BNB | LONG | 1.88% | needs 1.9% move; trend too weak (ADX 14/20) |
+| DOGE | LONG | 1.92% | needs 1.9% move; trend too weak (ADX 10/20) |
+| MANA | LONG | 2.01% | needs 2.0% move; trend too weak (ADX 11/20) |
+| CHZ | LONG | 2.12% | needs 2.1% move; trend too weak (ADX 11/20) |
+| BAND | LONG | 2.32% | needs 2.3% move; trend too weak (ADX 13/20) |
+| SAND | LONG | 2.35% | needs 2.4% move; trend too weak (ADX 9/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
