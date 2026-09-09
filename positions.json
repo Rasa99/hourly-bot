@@ -1,5 +1,39 @@
 {
- "positions": [],
- "total_pnl": 0.0,
- "balance": 21.8138606
+ "positions": [
+  {
+   "id": 25,
+   "coin": "AAVE",
+   "pair": "AAVE/USDT:USDT",
+   "is_short": true,
+   "side": "SHORT",
+   "entry": 125.97,
+   "now": 125.81,
+   "move_pct": -0.13,
+   "pnl": 0.0024,
+   "gross_pnl": 0.0112,
+   "fees": 0.0088,
+   "fee_entry": 0.0044,
+   "fee_exit_est": 0.0044,
+   "funding": 0.0,
+   "pnl_pct_margin": 0.3,
+   "leverage": 10.0,
+   "margin": 0.88179,
+   "notional": 8.82,
+   "stop": 128.91,
+   "open_date": "2026-09-09 20:00:09.085389",
+   "to_stop_pct": 2.46,
+   "chart": "pos-AAVE.png"
+  }
+ ],
+ "total_pnl": 0.0024,
+ "total_gross_pnl": 0.0112,
+ "total_fees": 0.0088,
+ "total_funding": 0.0,
+ "balance": 21.8138606,
+ "equity": 21.8162,
+ "long_notional": 0,
+ "short_notional": 8.82,
+ "net_notional": -8.82,
+ "gross_notional": 8.82,
+ "gross_pct_equity": 40.4
 }
