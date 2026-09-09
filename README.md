@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-09 16:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-09 17:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LRC | LONG | 0.73% | needs 0.7% move |
-| CHZ | LONG | 1.05% | needs 1.0% move; trend too weak (ADX 12/20) |
-| BAND | LONG | 1.06% | needs 1.1% move; trend too weak (ADX 17/20) |
-| ANKR | LONG | 1.62% | needs 1.6% move |
-| BAT | LONG | 1.78% | needs 1.8% move; trend too weak (ADX 13/20) |
-| ETH | LONG | 1.87% | needs 1.9% move; trend too weak (ADX 14/20) |
-| NEAR | LONG | 2.06% | needs 2.1% move |
-| BTC | LONG | 2.52% | needs 2.5% move |
-| BNB | LONG | 3.03% | needs 3.0% move; trend too weak (ADX 16/20) |
-| IOTA | LONG | 3.08% | needs 3.1% move; trend too weak (ADX 17/20) |
+| CHZ | LONG | 0.21% | needs 0.2% move; trend too weak (ADX 12/20) |
+| EGLD | LONG | 0.25% | needs 0.3% move |
+| BAND | LONG | 0.40% | needs 0.4% move; trend too weak (ADX 16/20) |
+| ANKR | LONG | 0.46% | needs 0.5% move |
+| BAT | LONG | 0.91% | needs 0.9% move; trend too weak (ADX 13/20) |
+| SKL | LONG | 1.26% | needs 1.3% move; trend too weak (ADX 11/20) |
+| ETH | LONG | 1.65% | needs 1.6% move; trend too weak (ADX 14/20) |
+| NEAR | LONG | 1.74% | needs 1.7% move |
+| ENJ | LONG | 1.78% | needs 1.8% move; trend too weak (ADX 12/20) |
+| IOTA | LONG | 2.02% | needs 2.0% move; trend too weak (ADX 16/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
