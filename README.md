@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-10 09:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-10 10:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$22.1224** 🟢 +10.61% |
+| **Equity now** | **$21.9473** 🟢 +9.74% |
 | Settled balance | $21.8139 (+9.07%) |
-| Unrealised (open trades) | 🟢 +0.3085 |
+| Unrealised (open trades) | 🟢 +0.1334 |
 | Started with | $20.0000 |
 | Finished trades | 24 |
 | Open now | 4 |
@@ -22,11 +22,11 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **AAVE** | SHORT 🔻 | 125.97 | 124.49 | -1.17% | 🟢 +0.0961 | +10.9% | 3.53% |
-| **CRV** | SHORT 🔻 | 0.3377 | 0.3364 | -0.38% | 🟢 +0.0187 | +3.0% | 3.72% |
-| **EGLD** | LONG 🔺 | 5.305 | 5.517 | +4.00% | 🟢 +0.2066 | +38.9% | 7.72% |
-| **MANA** | SHORT 🔻 | 0.07142 | 0.07144 | +0.03% | 🔴 -0.0129 | -1.3% | 2.10% |
-| | | | | **total** | **+0.3085** | | |
+| **AAVE** | SHORT 🔻 | 125.97 | 123.9 | -1.64% | 🟢 +0.1375 | +15.6% | 4.03% |
+| **CRV** | SHORT 🔻 | 0.3377 | 0.3391 | +0.41% | 🔴 -0.0321 | -5.0% | 2.89% |
+| **EGLD** | LONG 🔺 | 5.305 | 5.347 | +0.79% | 🟢 +0.0367 | +6.9% | 4.79% |
+| **MANA** | SHORT 🔻 | 0.07142 | 0.07141 | -0.01% | 🔴 -0.0087 | -0.9% | 2.09% |
+| | | | | **total** | **+0.1334** | | |
 
 > 1 long / 3 short · gross exposure **140% of equity**.
 
@@ -41,7 +41,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**2 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -49,16 +49,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| MANA | SHORT | 0.00% | **READY** |
-| EGLD | LONG | 0.00% | **READY** |
-| BCH | SHORT | 0.28% | needs 0.3% move; volume below average |
-| SAND | SHORT | 0.45% | needs 0.4% move; volume below average |
-| BTC | SHORT | 0.62% | needs 0.6% move; volume below average |
-| CRV | SHORT | 0.62% | needs 0.6% move; volume below average |
-| AXS | SHORT | 0.69% | needs 0.7% move; volume below average |
-| HBAR | SHORT | 0.72% | needs 0.7% move; volume below average |
+| MANA | SHORT | 0.00% | volume below average |
+| RVN | SHORT | 0.00% | RSI already stretched (17/22) |
+| BCH | SHORT | 0.17% | needs 0.2% move; volume below average |
+| AAVE | SHORT | 0.24% | needs 0.2% move; volume below average |
+| SAND | SHORT | 0.25% | needs 0.3% move; volume below average |
+| HBAR | SHORT | 0.36% | needs 0.4% move; volume below average |
+| BTC | SHORT | 0.47% | needs 0.5% move; volume below average |
 | GALA | SHORT | 0.75% | needs 0.8% move; volume below average |
-| AAVE | SHORT | 0.81% | needs 0.8% move; volume below average |
+| SNX | SHORT | 0.76% | needs 0.8% move; volume below average |
+| SOL | SHORT | 0.87% | needs 0.9% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
