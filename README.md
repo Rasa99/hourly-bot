@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-09 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-10 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.8954** 🟢 +9.48% |
+| **Equity now** | **$21.8567** 🟢 +9.28% |
 | Settled balance | $21.8139 (+9.07%) |
-| Unrealised (open trades) | 🟢 +0.0815 |
+| Unrealised (open trades) | 🟢 +0.0428 |
 | Started with | $20.0000 |
 | Finished trades | 24 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **AAVE** | SHORT 🔻 | 125.97 | 124.68 | -1.02% | 🟢 +0.0815 | +9.2% | 3.38% |
-| | | | | **total** | **+0.0815** | | |
+| **AAVE** | SHORT 🔻 | 125.97 | 125.24 | -0.58% | 🟢 +0.0428 | +4.9% | 2.91% |
+| | | | | **total** | **+0.0428** | | |
 
 > ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **40% of equity**.
 
@@ -32,7 +32,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SAND | SHORT | 0.00% | RSI already stretched (19/22) |
-| AAVE | SHORT | 0.00% | **READY** |
-| BTC | SHORT | 0.36% | needs 0.4% move; volume below average |
-| STORJ | SHORT | 1.01% | needs 1.0% move |
-| ANKR | LONG | 2.37% | needs 2.4% move; trend too weak (ADX 19/20) |
-| ETH | LONG | 3.53% | needs 3.5% move; trend too weak (ADX 18/20) |
-| CHZ | LONG | 3.80% | needs 3.8% move; trend too weak (ADX 16/20) |
-| IOTA | LONG | 3.97% | needs 4.0% move; trend too weak (ADX 14/20) |
-| EGLD | LONG | 4.17% | needs 4.2% move; volume below average |
-| BAND | LONG | 4.33% | needs 4.3% move; trend too weak (ADX 17/20) |
+| BTC | SHORT | 0.85% | needs 0.8% move; volume below average |
+| ANKR | LONG | 0.94% | needs 0.9% move; trend too weak (ADX 19/20) |
+| CHZ | LONG | 1.19% | needs 1.2% move; trend too weak (ADX 16/20) |
+| AAVE | SHORT | 1.28% | needs 1.3% move; volume below average |
+| EGLD | LONG | 2.03% | needs 2.0% move; volume below average |
+| IOTA | LONG | 2.13% | needs 2.1% move; trend too weak (ADX 14/20) |
+| ETH | LONG | 2.78% | needs 2.8% move; trend too weak (ADX 20/20) |
+| SAND | SHORT | 3.21% | needs 3.2% move; volume below average |
+| BAND | LONG | 3.47% | needs 3.5% move; trend too weak (ADX 19/20) |
+| ALGO | LONG | 3.82% | needs 3.8% move; trend too weak (ADX 15/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
