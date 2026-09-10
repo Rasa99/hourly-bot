@@ -1,45 +1,45 @@
-run          : 241   cycle: 2
-finished     : 2026-09-10 08:07 UTC
+run          : 241   cycle: 3
+finished     : 2026-09-10 09:07 UTC
 freqtrade    : running (pid 2366)
 
 ----- last 40 log lines -----
-2026-09-10 07:39:28,618 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:40:28,621 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:41:28,623 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:42:28,626 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:43:28,629 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:44:28,632 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:45:28,635 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:46:28,638 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:47:28,641 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:48:28,643 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:49:28,646 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:50:28,648 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:51:28,651 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:52:28,654 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:53:28,656 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:54:28,659 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:55:28,662 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:56:28,665 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:57:28,667 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:58:28,670 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 07:59:28,673 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 08:00:05,039 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-10 08:00:05,155 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for EGLD/USDT:USDT with stake_amount: 0.5350286523286877 and price: 5.305 ...
-2026-09-10 08:00:05,269 - freqtrade.freqtradebot - INFO - Order dry_run_buy_EGLD/USDT:USDT_7cc177a8-1d43-454a-a331-fdc653591662 was created for EGLD/USDT:USDT and status is closed.
-2026-09-10 08:00:05,277 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-10 08:00:05,277 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 27, 'type': entry, 'buy_tag': 'h_breakout_up', 'enter_tag': 'h_breakout_up', 'exchange': 'Gate', 'pair': 'EGLD/USDT:USDT', 'leverage': 10.0, 'direction': 'Long', 'limit': 5.305, 'order_rate': 5.305, 'open_rate': 5.305, 'order_type': 'limit', 'stake_amount': 0.5305, 'stake_currency': 'USDT', 'base_currency': 'EGLD', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 1.0, 'open_date': datetime.datetime(2026, 9, 10, 8, 0, 5, 270512, tzinfo=datetime.timezone.utc), 'current_rate': 5.305, 'sub_trade': False}
-2026-09-10 08:00:05,278 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=27, pair=EGLD/USDT:USDT, amount=1, is_short=False, leverage=10, open_rate=5.305, open_since=2026-09-10 08:00:05)
-2026-09-10 08:00:05,284 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=27, pair=EGLD/USDT:USDT, amount=1, is_short=False, leverage=10, open_rate=5.305, open_since=2026-09-10 08:00:05) [buy]: 0.0026525 USDT - rate: 0.0005
-2026-09-10 08:00:05,285 - freqtrade.persistence.trade_model - INFO - Updating trade (id=27) ...
-2026-09-10 08:00:05,285 - freqtrade.persistence.trade_model - INFO - LIMIT_BUY has been fulfilled for Trade(id=27, pair=EGLD/USDT:USDT, amount=1, is_short=False, leverage=10, open_rate=5.305, open_since=2026-09-10 08:00:05).
-2026-09-10 08:00:05,405 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-10 08:00:05,410 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 27, 'type': entry_fill, 'buy_tag': 'h_breakout_up', 'enter_tag': 'h_breakout_up', 'exchange': 'Gate', 'pair': 'EGLD/USDT:USDT', 'leverage': 10.0, 'direction': 'Long', 'limit': 5.305, 'order_rate': 5.305, 'open_rate': 5.305, 'order_type': 'limit', 'stake_amount': 0.5305, 'stake_currency': 'USDT', 'base_currency': 'EGLD', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 1.0, 'open_date': datetime.datetime(2026, 9, 10, 8, 0, 5, 270512, tzinfo=datetime.timezone.utc), 'current_rate': 5.305, 'sub_trade': False}
-2026-09-10 08:00:31,001 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 08:01:07,592 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-10 08:01:31,003 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 08:02:31,006 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 08:03:31,009 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 08:04:31,011 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 08:05:31,015 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
-2026-09-10 08:06:31,018 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:39:32,859 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:40:32,862 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:41:32,864 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:42:32,867 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:43:32,870 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:44:32,873 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:45:32,875 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:46:32,878 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:47:32,881 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:48:32,883 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:49:32,886 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:50:32,888 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:51:32,891 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:52:32,894 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:53:32,897 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:54:32,900 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:55:32,902 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:56:32,905 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:57:32,908 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:58:32,911 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 08:59:32,913 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 09:00:06,156 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-10 09:00:06,277 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for MANA/USDT:USDT with stake_amount: 1.011250729975682 and price: 0.07142 ...
+2026-09-10 09:00:06,397 - freqtrade.freqtradebot - INFO - Order dry_run_sell_MANA/USDT:USDT_9206a559-9f59-44de-be51-11584d485ba8 was created for MANA/USDT:USDT and status is closed.
+2026-09-10 09:00:06,402 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-10 09:00:06,403 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 28, 'type': entry, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'MANA/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.07142, 'order_rate': 0.07142, 'open_rate': 0.07142, 'order_type': 'limit', 'stake_amount': 1.010593, 'stake_currency': 'USDT', 'base_currency': 'MANA', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 141.5, 'open_date': datetime.datetime(2026, 9, 10, 9, 0, 6, 398442, tzinfo=datetime.timezone.utc), 'current_rate': 0.07142, 'sub_trade': False}
+2026-09-10 09:00:06,403 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=28, pair=MANA/USDT:USDT, amount=141.5, is_short=True, leverage=10, open_rate=0.07142, open_since=2026-09-10 09:00:06)
+2026-09-10 09:00:06,406 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=28, pair=MANA/USDT:USDT, amount=141.5, is_short=True, leverage=10, open_rate=0.07142, open_since=2026-09-10 09:00:06) [sell]: 0.005052965 USDT - rate: 0.0005
+2026-09-10 09:00:06,406 - freqtrade.persistence.trade_model - INFO - Updating trade (id=28) ...
+2026-09-10 09:00:06,407 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=28, pair=MANA/USDT:USDT, amount=141.5, is_short=True, leverage=10, open_rate=0.07142, open_since=2026-09-10 09:00:06).
+2026-09-10 09:00:06,530 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-10 09:00:06,533 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 28, 'type': entry_fill, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'MANA/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.07142, 'order_rate': 0.07142, 'open_rate': 0.07142, 'order_type': 'limit', 'stake_amount': 1.010593, 'stake_currency': 'USDT', 'base_currency': 'MANA', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 141.5, 'open_date': datetime.datetime(2026, 9, 10, 9, 0, 6, 398442, tzinfo=datetime.timezone.utc), 'current_rate': 0.07142, 'sub_trade': False}
+2026-09-10 09:00:36,562 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 09:01:03,826 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-10 09:01:36,564 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 09:02:36,567 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 09:03:36,570 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 09:04:36,572 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 09:05:36,575 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
+2026-09-10 09:06:36,578 - freqtrade.worker - INFO - Bot heartbeat. PID=2366, version='2026.7', state='RUNNING'
