@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-10 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-10 02:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.9253** 🟢 +9.63% |
+| **Equity now** | **$21.9330** 🟢 +9.66% |
 | Settled balance | $21.8139 (+9.07%) |
-| Unrealised (open trades) | 🟢 +0.1115 |
+| Unrealised (open trades) | 🟢 +0.1192 |
 | Started with | $20.0000 |
 | Finished trades | 24 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **AAVE** | SHORT 🔻 | 125.97 | 124.26 | -1.36% | 🟢 +0.1115 | +12.6% | 3.73% |
-| | | | | **total** | **+0.1115** | | |
+| **AAVE** | SHORT 🔻 | 125.97 | 124.15 | -1.44% | 🟢 +0.1192 | +13.5% | 3.82% |
+| | | | | **total** | **+0.1192** | | |
 
 > ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **40% of equity**.
 
