@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-10 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-10 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$22.0306** 🟢 +10.15% |
+| **Equity now** | **$22.0316** 🟢 +10.16% |
 | Settled balance | $22.0379 (+10.19%) |
-| Unrealised (open trades) | 🔴 -0.0073 |
+| Unrealised (open trades) | 🔴 -0.0063 |
 | Started with | $20.0000 |
 | Finished trades | 28 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | SHORT 🔻 | 0.07142 | 0.0714 | -0.03% | 🔴 -0.0073 | -0.7% | 2.10% |
-| | | | | **total** | **-0.0073** | | |
+| **MANA** | SHORT 🔻 | 0.07142 | 0.0714 | -0.03% | 🔴 -0.0063 | -0.6% | 2.10% |
+| | | | | **total** | **-0.0063** | | |
 
 > ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **46% of equity**.
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BCH | SHORT | 0.38% | needs 0.4% move; RSI already stretched (14/22) |
-| SKL | SHORT | 0.82% | needs 0.8% move |
-| BTC | SHORT | 0.95% | needs 1.0% move |
-| HBAR | SHORT | 1.07% | needs 1.1% move; volume below average |
-| AAVE | SHORT | 1.30% | needs 1.3% move; volume below average |
-| LINK | SHORT | 1.39% | needs 1.4% move |
-| SNX | SHORT | 1.39% | needs 1.4% move; volume below average |
-| SAND | SHORT | 1.61% | needs 1.6% move |
-| THETA | SHORT | 1.75% | needs 1.8% move |
-| MANA | SHORT | 1.76% | needs 1.8% move; volume below average |
+| BCH | SHORT | 0.00% | RSI already stretched (13/22) |
+| SKL | SHORT | 0.55% | needs 0.5% move; volume below average |
+| BTC | SHORT | 0.75% | needs 0.7% move; volume below average |
+| SNX | SHORT | 0.96% | needs 1.0% move; volume below average |
+| HBAR | SHORT | 1.06% | needs 1.1% move |
+| AAVE | SHORT | 1.10% | needs 1.1% move; volume below average |
+| LINK | SHORT | 1.13% | needs 1.1% move; volume below average |
+| ONT | SHORT | 1.32% | needs 1.3% move; volume below average |
+| APE | SHORT | 1.38% | needs 1.4% move; volume below average |
+| THETA | SHORT | 1.47% | needs 1.5% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
