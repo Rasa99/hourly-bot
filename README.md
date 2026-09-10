@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-10 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-10 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$22.0619** 🟢 +10.31% |
-| Settled balance | $22.2560 (+11.28%) |
-| Unrealised (open trades) | 🔴 -0.1941 |
+| **Equity now** | **$22.0306** 🟢 +10.15% |
+| Settled balance | $22.0379 (+10.19%) |
+| Unrealised (open trades) | 🔴 -0.0073 |
 | Started with | $20.0000 |
-| Finished trades | 27 |
-| Open now | 2 |
-| Win rate | 48% (13/27) |
+| Finished trades | 28 |
+| Open now | 1 |
+| Win rate | 46% (13/28) |
 
 ![balance](chart-equity.svg)
 
@@ -22,20 +22,17 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **CRV** | SHORT 🔻 | 0.3377 | 0.3456 | +2.34% | 🔴 -0.1543 | -24.3% | 0.95% |
-| **MANA** | SHORT 🔻 | 0.07142 | 0.07163 | +0.29% | 🔴 -0.0398 | -3.9% | 1.77% |
-| | | | | **total** | **-0.1941** | | |
+| **MANA** | SHORT 🔻 | 0.07142 | 0.0714 | -0.03% | 🔴 -0.0073 | -0.7% | 2.10% |
+| | | | | **total** | **-0.0073** | | |
 
-> ⚠️ **All 2 positions are short.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **74% of equity**.
-
-![CRV](pos-CRV.png)
+> ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **46% of equity**.
 
 ![MANA](pos-MANA.png)
 
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -43,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BCH | SHORT | 0.00% | RSI already stretched (14/22) |
-| STORJ | SHORT | 0.00% | **READY** |
-| BTC | SHORT | 0.65% | needs 0.6% move |
-| AAVE | SHORT | 1.20% | needs 1.2% move |
-| HBAR | SHORT | 1.23% | needs 1.2% move; volume below average |
-| CELO | SHORT | 1.50% | needs 1.5% move |
-| MANA | SHORT | 1.72% | needs 1.7% move; volume below average |
-| LINK | SHORT | 1.73% | needs 1.7% move |
-| SNX | SHORT | 1.76% | needs 1.8% move |
-| SAND | SHORT | 1.81% | needs 1.8% move |
+| BCH | SHORT | 0.38% | needs 0.4% move; RSI already stretched (14/22) |
+| SKL | SHORT | 0.82% | needs 0.8% move |
+| BTC | SHORT | 0.95% | needs 1.0% move |
+| HBAR | SHORT | 1.07% | needs 1.1% move; volume below average |
+| AAVE | SHORT | 1.30% | needs 1.3% move; volume below average |
+| LINK | SHORT | 1.39% | needs 1.4% move |
+| SNX | SHORT | 1.39% | needs 1.4% move; volume below average |
+| SAND | SHORT | 1.61% | needs 1.6% move |
+| THETA | SHORT | 1.75% | needs 1.8% move |
+| MANA | SHORT | 1.76% | needs 1.8% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -68,6 +65,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 |---|---|---|---|---|
 | BCH | SHORT | 🟢 +0.4651 (+63.3%) | force_exit | 2026-09-10 13:25 |
 | EGLD | LONG | 🔴 -0.2262 (-42.6%) | stop_loss | 2026-09-10 11:05 |
+| CRV | SHORT | 🔴 -0.2182 (-34.4%) | trailing_stop_loss | 2026-09-10 14:26 |
 | AAVE | SHORT | 🟢 +0.2033 (+23.1%) | force_exit | 2026-09-10 11:07 |
 | ALGO | LONG | 🟢 +0.1357 (+19.3%) | force_exit | 2026-09-08 16:07 |
 | ATOM | LONG | 🟢 +0.4604 (+54.2%) | force_exit | 2026-09-08 16:07 |
@@ -80,7 +78,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | DASH | LONG | 🟢 +0.3396 (+75.4%) | force_exit | 2026-09-04 09:07 |
 | EGLD | LONG | 🟢 +0.7674 (+147.5%) | trailing_stop_loss | 2026-09-03 00:18 |
 | LINK | SHORT | 🔴 -0.2467 (-22.5%) | stop_loss | 2026-09-02 13:45 |
-| DASH | LONG | 🔴 -0.1861 (-35.0%) | stop_loss | 2026-08-30 20:43 |
 
 ---
 
