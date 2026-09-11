@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-11 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | LONG | 0.00% | RSI already stretched (81/78) |
-| HBAR | SHORT | 0.73% | needs 0.7% move |
-| IOTA | SHORT | 1.17% | needs 1.2% move; volume below average |
-| CRV | SHORT | 1.25% | needs 1.3% move; trend too weak (ADX 18/20) |
-| SKL | SHORT | 1.38% | needs 1.4% move; volume below average |
-| BTC | SHORT | 1.42% | needs 1.4% move |
-| GALA | SHORT | 1.51% | needs 1.5% move |
-| SAND | SHORT | 1.65% | needs 1.7% move; volume below average |
-| ADA | SHORT | 1.67% | needs 1.7% move |
-| SNX | SHORT | 1.71% | needs 1.7% move; volume below average |
+| STORJ | LONG | 0.00% | RSI already stretched (84/78) |
+| HBAR | SHORT | 1.52% | needs 1.5% move; volume below average |
+| BTC | SHORT | 1.71% | needs 1.7% move; volume below average |
+| IOTA | SHORT | 2.04% | needs 2.0% move; volume below average |
+| SKL | SHORT | 2.19% | needs 2.2% move; volume below average |
+| CRV | SHORT | 2.21% | needs 2.2% move; trend too weak (ADX 17/20) |
+| CELO | SHORT | 2.42% | needs 2.4% move; trend too weak (ADX 19/20) |
+| ANKR | SHORT | 2.42% | needs 2.4% move; volume below average |
+| BAND | SHORT | 2.42% | needs 2.4% move; volume below average |
+| LTC | LONG | 2.43% | needs 2.4% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
