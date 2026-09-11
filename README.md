@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-11 18:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | LONG | 0.00% | RSI already stretched (79/78) |
-| LTC | LONG | 1.80% | needs 1.8% move; volume below average |
-| HBAR | SHORT | 1.93% | needs 1.9% move; volume below average |
-| BTC | SHORT | 2.02% | needs 2.0% move; volume below average |
-| SKL | SHORT | 2.72% | needs 2.7% move; volume below average |
-| IOTA | SHORT | 2.85% | needs 2.9% move; volume below average |
-| SAND | SHORT | 3.01% | needs 3.0% move; volume below average |
-| KSM | SHORT | 3.09% | needs 3.1% move; volume below average |
-| ANKR | SHORT | 3.10% | needs 3.1% move; volume below average |
-| SNX | SHORT | 3.14% | needs 3.1% move; volume below average |
+| STORJ | LONG | 0.00% | RSI already stretched (81/78) |
+| HBAR | SHORT | 0.73% | needs 0.7% move |
+| IOTA | SHORT | 1.17% | needs 1.2% move; volume below average |
+| CRV | SHORT | 1.25% | needs 1.3% move; trend too weak (ADX 18/20) |
+| SKL | SHORT | 1.38% | needs 1.4% move; volume below average |
+| BTC | SHORT | 1.42% | needs 1.4% move |
+| GALA | SHORT | 1.51% | needs 1.5% move |
+| SAND | SHORT | 1.65% | needs 1.7% move; volume below average |
+| ADA | SHORT | 1.67% | needs 1.7% move |
+| SNX | SHORT | 1.71% | needs 1.7% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
