@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-11 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,31 +8,22 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$22.0973** 🟢 +10.49% |
-| Settled balance | $22.0379 (+10.19%) |
-| Unrealised (open trades) | 🟢 +0.0594 |
+| **Equity now** | **$21.8142** 🟢 +9.07% |
+| Settled balance | $21.8142 (+9.07%) |
 | Started with | $20.0000 |
-| Finished trades | 28 |
-| Open now | 1 |
-| Win rate | 46% (13/28) |
+| Finished trades | 29 |
+| Open now | 0 |
+| Win rate | 45% (13/29) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
-|---|---|---|---|---|---|---|---|
-| **MANA** | SHORT 🔻 | 0.07142 | 0.07095 | -0.66% | 🟢 +0.0594 | +5.9% | 2.75% |
-| | | | | **total** | **+0.0594** | | |
-
-> ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **46% of equity**.
-
-![MANA](pos-MANA.png)
-
+Nothing open.
 
 ## What it is waiting for
 
-**4 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -40,16 +31,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| AVAX | SHORT | 0.00% | **READY** |
-| ETC | SHORT | 0.00% | **READY** |
-| BAT | SHORT | 0.00% | volume below average |
-| SKL | SHORT | 0.00% | **READY** |
-| BAND | SHORT | 0.00% | **READY** |
-| ADA | SHORT | 0.10% | needs 0.1% move |
-| GRT | SHORT | 0.17% | needs 0.2% move |
-| LINK | SHORT | 0.27% | needs 0.3% move |
-| HBAR | SHORT | 0.27% | needs 0.3% move |
-| SUSHI | SHORT | 0.28% | needs 0.3% move |
+| STORJ | LONG | 0.00% | RSI already stretched (91/78) |
+| THETA | LONG | 0.82% | needs 0.8% move; RSI already stretched (79/78) |
+| SNX | SHORT | 1.90% | needs 1.9% move |
+| BTC | SHORT | 2.01% | needs 2.0% move |
+| SKL | SHORT | 2.19% | needs 2.2% move |
+| CELO | SHORT | 2.29% | needs 2.3% move |
+| ANKR | SHORT | 2.54% | needs 2.5% move |
+| BAT | SHORT | 2.58% | needs 2.6% move |
+| NEAR | LONG | 2.68% | needs 2.7% move; trend too weak (ADX 13/20) |
+| BNB | SHORT | 2.81% | needs 2.8% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -64,6 +55,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
 | BCH | SHORT | 🟢 +0.4651 (+63.3%) | force_exit | 2026-09-10 13:25 |
+| MANA | SHORT | 🔴 -0.2237 (-22.1%) | trailing_stop_loss | 2026-09-11 12:37 |
 | EGLD | LONG | 🔴 -0.2262 (-42.6%) | stop_loss | 2026-09-10 11:05 |
 | CRV | SHORT | 🔴 -0.2182 (-34.4%) | trailing_stop_loss | 2026-09-10 14:26 |
 | AAVE | SHORT | 🟢 +0.2033 (+23.1%) | force_exit | 2026-09-10 11:07 |
@@ -77,7 +69,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | LINK | LONG | 🔴 -0.2654 (-22.0%) | stop_loss | 2026-09-04 12:30 |
 | DASH | LONG | 🟢 +0.3396 (+75.4%) | force_exit | 2026-09-04 09:07 |
 | EGLD | LONG | 🟢 +0.7674 (+147.5%) | trailing_stop_loss | 2026-09-03 00:18 |
-| LINK | SHORT | 🔴 -0.2467 (-22.5%) | stop_loss | 2026-09-02 13:45 |
 
 ---
 
