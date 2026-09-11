@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-11 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| HBAR | SHORT | 1.35% | needs 1.3% move; volume below average |
-| BTC | SHORT | 1.78% | needs 1.8% move; volume below average |
-| CRV | SHORT | 1.92% | needs 1.9% move; trend too weak (ADX 17/20) |
-| APE | SHORT | 1.97% | needs 2.0% move |
-| IOTA | SHORT | 2.00% | needs 2.0% move; volume below average |
-| LTC | LONG | 2.28% | needs 2.3% move; volume below average |
-| AVAX | SHORT | 2.32% | needs 2.3% move; volume below average |
-| GALA | SHORT | 2.56% | needs 2.6% move; volume below average |
-| ANKR | SHORT | 2.61% | needs 2.6% move |
-| ADA | SHORT | 2.63% | needs 2.6% move; volume below average |
+| CRV | SHORT | 0.45% | needs 0.5% move; trend too weak (ADX 17/20) |
+| HBAR | SHORT | 0.99% | needs 1.0% move; volume below average |
+| RVN | SHORT | 1.34% | needs 1.3% move; volume below average |
+| GALA | SHORT | 1.45% | needs 1.4% move |
+| APE | SHORT | 1.48% | needs 1.5% move; volume below average |
+| BTC | SHORT | 1.50% | needs 1.5% move; volume below average |
+| IOTA | SHORT | 1.52% | needs 1.5% move; volume below average |
+| SNX | SHORT | 1.71% | needs 1.7% move; volume below average |
+| AVAX | SHORT | 1.99% | needs 2.0% move; volume below average |
+| ANKR | SHORT | 2.07% | needs 2.1% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
