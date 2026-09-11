@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-11 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 06:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BTC | SHORT | 0.84% | needs 0.8% move; volume below average |
-| BAND | SHORT | 1.12% | needs 1.1% move |
-| ANKR | SHORT | 1.15% | needs 1.1% move; volume below average |
+| BTC | SHORT | 1.04% | needs 1.0% move; volume below average |
+| BAND | SHORT | 1.06% | needs 1.1% move; volume below average |
 | HBAR | SHORT | 1.19% | needs 1.2% move; volume below average |
-| LINK | SHORT | 1.26% | needs 1.3% move; volume below average |
-| APE | SHORT | 1.27% | needs 1.3% move; volume below average |
-| ONT | SHORT | 1.56% | needs 1.6% move; volume below average |
-| SKL | SHORT | 1.64% | needs 1.6% move; volume below average |
-| BNB | SHORT | 1.85% | needs 1.8% move |
-| AAVE | SHORT | 1.98% | needs 2.0% move |
+| ANKR | SHORT | 1.24% | needs 1.2% move; volume below average |
+| SKL | SHORT | 1.37% | needs 1.4% move; volume below average |
+| ONT | SHORT | 1.39% | needs 1.4% move; volume below average |
+| APE | SHORT | 1.43% | needs 1.4% move; volume below average |
+| LINK | SHORT | 1.61% | needs 1.6% move; volume below average |
+| BNB | SHORT | 1.84% | needs 1.8% move; volume below average |
+| BCH | SHORT | 2.03% | needs 2.0% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
