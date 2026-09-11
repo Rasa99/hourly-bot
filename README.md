@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-11 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ETH | LONG | 0.00% | RSI already stretched (82/78) |
-| NEAR | LONG | 0.00% | trend too weak (ADX 15/20) |
-| THETA | LONG | 0.00% | RSI already stretched (84/78) |
-| LTC | LONG | 2.94% | needs 2.9% move |
-| BAT | SHORT | 3.49% | needs 3.5% move; volume below average |
-| SKL | SHORT | 4.03% | needs 4.0% move |
-| BTC | SHORT | 4.14% | needs 4.1% move |
-| ANKR | SHORT | 4.21% | needs 4.2% move; volume below average |
-| CELO | SHORT | 4.48% | needs 4.5% move; volume below average |
-| BNB | SHORT | 4.49% | needs 4.5% move |
+| NEAR | LONG | 0.15% | needs 0.1% move; trend too weak (ADX 17/20) |
+| THETA | LONG | 0.54% | needs 0.5% move; RSI already stretched (84/78) |
+| ETH | LONG | 1.55% | needs 1.5% move |
+| LTC | LONG | 2.87% | needs 2.9% move |
+| BAT | SHORT | 3.49% | needs 3.5% move |
+| SKL | SHORT | 3.51% | needs 3.5% move |
+| BTC | SHORT | 3.61% | needs 3.6% move |
+| BAND | SHORT | 3.73% | needs 3.7% move; volume below average |
+| ANKR | SHORT | 3.75% | needs 3.8% move |
+| HBAR | SHORT | 3.86% | needs 3.9% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
