@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-11 10:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$22.1115** 🟢 +10.56% |
+| **Equity now** | **$22.2545** 🟢 +11.27% |
 | Settled balance | $22.0379 (+10.19%) |
-| Unrealised (open trades) | 🟢 +0.0736 |
+| Unrealised (open trades) | 🟢 +0.2166 |
 | Started with | $20.0000 |
 | Finished trades | 28 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | SHORT 🔻 | 0.07142 | 0.07085 | -0.80% | 🟢 +0.0736 | +7.3% | 2.89% |
-| | | | | **total** | **+0.0736** | | |
+| **MANA** | SHORT 🔻 | 0.07142 | 0.06984 | -2.21% | 🟢 +0.2166 | +21.4% | 4.38% |
+| | | | | **total** | **+0.2166** | | |
 
 > ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **46% of equity**.
 
@@ -42,14 +42,14 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 |---|---|---|---|
 | ADA | SHORT | 0.00% | **READY** |
 | AVAX | SHORT | 0.00% | **READY** |
-| HBAR | SHORT | 0.00% | **READY** |
+| LINK | SHORT | 0.00% | volume below average |
+| HBAR | SHORT | 0.00% | volume below average |
+| THETA | LONG | 0.00% | RSI already stretched (82/78) |
 | SKL | SHORT | 0.00% | volume below average |
-| BAND | SHORT | 0.00% | volume below average |
-| APE | SHORT | 0.10% | needs 0.1% move; volume below average |
-| LINK | SHORT | 0.34% | needs 0.3% move |
-| BTC | SHORT | 0.76% | needs 0.8% move |
-| BCH | SHORT | 1.12% | needs 1.1% move; volume below average |
-| ANKR | SHORT | 1.22% | needs 1.2% move; volume below average |
+| BAND | SHORT | 0.00% | **READY** |
+| APE | SHORT | 0.11% | needs 0.1% move; volume below average |
+| ETC | SHORT | 0.19% | needs 0.2% move; volume below average |
+| ANKR | SHORT | 0.47% | needs 0.5% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
