@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-10 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-11 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$22.1222** 🟢 +10.61% |
+| **Equity now** | **$22.1954** 🟢 +10.98% |
 | Settled balance | $22.0379 (+10.19%) |
-| Unrealised (open trades) | 🟢 +0.0843 |
+| Unrealised (open trades) | 🟢 +0.1575 |
 | Started with | $20.0000 |
 | Finished trades | 28 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | SHORT 🔻 | 0.07142 | 0.07076 | -0.92% | 🟢 +0.0843 | +8.3% | 3.02% |
-| | | | | **total** | **+0.0843** | | |
+| **MANA** | SHORT 🔻 | 0.07142 | 0.07025 | -1.64% | 🟢 +0.1575 | +15.6% | 3.77% |
+| | | | | **total** | **+0.1575** | | |
 
 > ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **46% of equity**.
 
@@ -32,7 +32,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**6 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
+| BTC | SHORT | 0.00% | **READY** |
+| ADA | SHORT | 0.00% | **READY** |
+| LINK | SHORT | 0.00% | **READY** |
 | APE | SHORT | 0.00% | volume below average |
-| IOTA | SHORT | 0.03% | needs 0.0% move; volume below average |
-| BTC | SHORT | 0.20% | needs 0.2% move; volume below average |
-| LINK | SHORT | 0.27% | needs 0.3% move; volume below average |
-| CELO | SHORT | 0.29% | needs 0.3% move; volume below average |
-| ADA | SHORT | 0.44% | needs 0.4% move; volume below average |
-| BAND | SHORT | 0.45% | needs 0.4% move |
-| SKL | SHORT | 0.55% | needs 0.6% move; volume below average |
-| CRV | SHORT | 0.77% | needs 0.8% move; volume below average |
-| BCH | SHORT | 0.79% | needs 0.8% move; volume below average |
+| MANA | SHORT | 0.00% | **READY** |
+| IOTA | SHORT | 0.00% | **READY** |
+| SKL | SHORT | 0.00% | volume below average |
+| BAND | SHORT | 0.00% | **READY** |
+| SAND | SHORT | 0.20% | needs 0.2% move |
+| HBAR | SHORT | 0.24% | needs 0.2% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
