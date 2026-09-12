@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-12 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-12 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,12 +8,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.8142** 🟢 +9.07% |
-| Settled balance | $21.8142 (+9.07%) |
+| **Equity now** | **$21.5895** 🟢 +7.95% |
+| Settled balance | $21.5895 (+7.95%) |
 | Started with | $20.0000 |
-| Finished trades | 29 |
+| Finished trades | 30 |
 | Open now | 0 |
-| Win rate | 45% (13/29) |
+| Win rate | 43% (13/30) |
 
 ![balance](chart-equity.svg)
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| QTUM | LONG | 0.78% | needs 0.8% move; volume below average |
-| LTC | LONG | 1.00% | needs 1.0% move; trend too weak (ADX 12/20) |
-| ANKR | LONG | 1.36% | needs 1.4% move |
-| HBAR | SHORT | 1.76% | needs 1.8% move; trend too weak (ADX 15/20) |
-| CRV | SHORT | 1.85% | needs 1.8% move; trend too weak (ADX 13/20) |
-| BTC | SHORT | 1.94% | needs 1.9% move; trend too weak (ADX 10/20) |
-| AVAX | SHORT | 1.98% | needs 2.0% move; trend too weak (ADX 15/20) |
-| EGLD | SHORT | 2.23% | needs 2.2% move; trend too weak (ADX 11/20) |
-| LINK | SHORT | 2.70% | needs 2.7% move; trend too weak (ADX 12/20) |
-| ONT | SHORT | 2.79% | needs 2.8% move; trend too weak (ADX 12/20) |
+| QTUM | LONG | 0.00% | **READY** |
+| CELO | LONG | 0.35% | needs 0.3% move |
+| LTC | LONG | 0.96% | needs 1.0% move; trend too weak (ADX 12/20) |
+| BNB | LONG | 1.50% | needs 1.5% move; volume below average |
+| ANKR | LONG | 1.79% | needs 1.8% move; volume below average |
+| BTC | SHORT | 1.85% | needs 1.8% move; trend too weak (ADX 10/20) |
+| AVAX | SHORT | 2.07% | needs 2.1% move; trend too weak (ADX 14/20) |
+| HBAR | SHORT | 2.16% | needs 2.2% move; trend too weak (ADX 15/20) |
+| EGLD | SHORT | 2.27% | needs 2.3% move; trend too weak (ADX 11/20) |
+| LINK | SHORT | 2.80% | needs 2.8% move; trend too weak (ADX 12/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -54,6 +54,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| QTUM | LONG | 🔴 -0.2246 (-20.2%) | stop_loss | 2026-09-12 16:06 |
 | BCH | SHORT | 🟢 +0.4651 (+63.3%) | force_exit | 2026-09-10 13:25 |
 | MANA | SHORT | 🔴 -0.2237 (-22.1%) | trailing_stop_loss | 2026-09-11 12:37 |
 | EGLD | LONG | 🔴 -0.2262 (-42.6%) | stop_loss | 2026-09-10 11:05 |
@@ -68,7 +69,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | DOT | LONG | 🟢 +0.3555 (+55.3%) | force_exit | 2026-09-06 14:09 |
 | LINK | LONG | 🔴 -0.2654 (-22.0%) | stop_loss | 2026-09-04 12:30 |
 | DASH | LONG | 🟢 +0.3396 (+75.4%) | force_exit | 2026-09-04 09:07 |
-| EGLD | LONG | 🟢 +0.7674 (+147.5%) | trailing_stop_loss | 2026-09-03 00:18 |
 
 ---
 
