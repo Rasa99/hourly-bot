@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-12 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-12 01:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| CRV | SHORT | 1.37% | needs 1.4% move; trend too weak (ADX 17/20) |
-| HBAR | SHORT | 1.43% | needs 1.4% move; volume below average |
-| APE | SHORT | 1.51% | needs 1.5% move; volume below average |
-| BTC | SHORT | 1.64% | needs 1.6% move; volume below average |
-| GRT | SHORT | 1.94% | needs 1.9% move; volume below average |
-| CELO | SHORT | 2.02% | needs 2.0% move; trend too weak (ADX 16/20) |
-| KSM | SHORT | 2.08% | needs 2.1% move; volume below average |
-| SNX | SHORT | 2.15% | needs 2.1% move; volume below average |
-| IOTA | SHORT | 2.44% | needs 2.4% move; trend too weak (ADX 20/20) |
-| AVAX | SHORT | 2.45% | needs 2.5% move; volume below average |
+| CRV | SHORT | 1.40% | needs 1.4% move; trend too weak (ADX 17/20) |
+| HBAR | SHORT | 1.44% | needs 1.4% move; volume below average |
+| BTC | SHORT | 1.72% | needs 1.7% move; trend too weak (ADX 19/20) |
+| LINK | SHORT | 2.09% | needs 2.1% move; volume below average |
+| APE | SHORT | 2.14% | needs 2.1% move; volume below average |
+| KSM | SHORT | 2.26% | needs 2.3% move; volume below average |
+| DOGE | SHORT | 2.44% | needs 2.4% move; volume below average |
+| AVAX | SHORT | 2.48% | needs 2.5% move; volume below average |
+| COMP | SHORT | 2.50% | needs 2.5% move; trend too weak (ADX 14/20) |
+| GRT | SHORT | 2.55% | needs 2.6% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
