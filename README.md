@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-12 19:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-12 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| EGLD | SHORT | 1.22% | needs 1.2% move; trend too weak (ADX 12/20) |
-| LTC | LONG | 1.28% | needs 1.3% move; trend too weak (ADX 10/20) |
-| AVAX | SHORT | 1.34% | needs 1.3% move; trend too weak (ADX 16/20) |
-| ANKR | LONG | 1.44% | needs 1.4% move; volume below average |
-| BTC | SHORT | 1.54% | needs 1.5% move; trend too weak (ADX 9/20) |
-| HBAR | SHORT | 1.65% | needs 1.7% move; trend too weak (ADX 14/20) |
-| BNB | LONG | 1.72% | needs 1.7% move; volume below average |
-| CRV | SHORT | 1.82% | needs 1.8% move; trend too weak (ADX 11/20) |
+| EGLD | SHORT | 0.00% | trend too weak (ADX 13/20) |
+| LTC | LONG | 1.14% | needs 1.1% move; trend too weak (ADX 10/20) |
+| AVAX | SHORT | 1.18% | needs 1.2% move; trend too weak (ADX 17/20) |
+| CRV | SHORT | 1.38% | needs 1.4% move; trend too weak (ADX 11/20) |
+| HBAR | SHORT | 1.41% | needs 1.4% move; trend too weak (ADX 14/20) |
+| BTC | SHORT | 1.52% | needs 1.5% move; trend too weak (ADX 9/20) |
+| LINK | SHORT | 1.84% | needs 1.8% move; trend too weak (ADX 10/20) |
+| DASH | SHORT | 1.86% | needs 1.9% move; trend too weak (ADX 12/20) |
+| ONT | SHORT | 1.86% | needs 1.9% move; trend too weak (ADX 12/20) |
 | QTUM | LONG | 2.00% | needs 2.0% move; volume below average |
-| LINK | SHORT | 2.20% | needs 2.2% move; trend too weak (ADX 10/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
