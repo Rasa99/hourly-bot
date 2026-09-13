@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-13 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-13 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| FIL | LONG | 0.00% | trend too weak (ADX 18/20) |
-| ANKR | LONG | 0.00% | **READY** |
-| BAND | LONG | 0.05% | needs 0.1% move; volume below average |
-| LINK | SHORT | 0.10% | needs 0.1% move |
-| EGLD | SHORT | 0.33% | needs 0.3% move |
-| AVAX | SHORT | 0.53% | needs 0.5% move; volume below average |
-| DASH | SHORT | 0.70% | needs 0.7% move; volume below average |
-| BTC | SHORT | 1.05% | needs 1.0% move |
-| COMP | SHORT | 1.06% | needs 1.1% move; volume below average |
-| BAT | LONG | 1.31% | needs 1.3% move |
+| FIL | LONG | 0.00% | **READY** |
+| EGLD | SHORT | 0.00% | volume below average |
+| ANKR | LONG | 0.00% | RSI already stretched (81/78) |
+| BAND | LONG | 0.45% | needs 0.5% move |
+| AXS | LONG | 0.52% | needs 0.5% move; trend too weak (ADX 20/20) |
+| DASH | SHORT | 0.65% | needs 0.6% move; volume below average |
+| LINK | SHORT | 0.68% | needs 0.7% move |
+| CELO | LONG | 0.88% | needs 0.9% move; volume below average |
+| GRT | LONG | 1.12% | needs 1.1% move |
+| BTC | SHORT | 1.17% | needs 1.2% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
