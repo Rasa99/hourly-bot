@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-13 10:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-13 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | SHORT | 0.32% | needs 0.3% move |
-| AVAX | SHORT | 0.76% | needs 0.8% move; trend too weak (ADX 17/20) |
-| LINK | SHORT | 0.88% | needs 0.9% move; trend too weak (ADX 15/20) |
-| ICP | SHORT | 0.90% | needs 0.9% move; volume below average |
-| ONT | SHORT | 1.04% | needs 1.0% move |
-| COMP | SHORT | 1.06% | needs 1.1% move; trend too weak (ADX 17/20) |
-| BTC | SHORT | 1.11% | needs 1.1% move; trend too weak (ADX 13/20) |
-| THETA | LONG | 1.37% | needs 1.4% move |
-| BAND | LONG | 1.39% | needs 1.4% move; volume below average |
-| LTC | LONG | 1.53% | needs 1.5% move; trend too weak (ADX 13/20) |
+| ATOM | SHORT | 0.00% | volume below average |
+| THETA | LONG | 0.00% | **READY** |
+| AVAX | SHORT | 0.40% | needs 0.4% move; trend too weak (ADX 19/20) |
+| BAND | LONG | 0.41% | needs 0.4% move; volume below average |
+| LINK | SHORT | 0.45% | needs 0.5% move; trend too weak (ADX 17/20) |
+| ICP | SHORT | 0.57% | needs 0.6% move; volume below average |
+| COMP | SHORT | 0.66% | needs 0.7% move; trend too weak (ADX 19/20) |
+| ONT | SHORT | 0.72% | needs 0.7% move; volume below average |
+| EGLD | SHORT | 0.73% | needs 0.7% move; volume below average |
+| DASH | SHORT | 0.74% | needs 0.7% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
