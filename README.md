@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-13 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-13 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,22 +8,31 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.5895** 🟢 +7.95% |
+| **Equity now** | **$21.5701** 🟢 +7.85% |
 | Settled balance | $21.5895 (+7.95%) |
+| Unrealised (open trades) | 🔴 -0.0195 |
 | Started with | $20.0000 |
 | Finished trades | 30 |
-| Open now | 0 |
+| Open now | 1 |
 | Win rate | 43% (13/30) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-Nothing open.
+| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
+|---|---|---|---|---|---|---|---|
+| **LINK** | SHORT 🔻 | 11.164 | 11.179 | +0.13% | 🔴 -0.0195 | -1.7% | 1.45% |
+| | | | | **total** | **-0.0195** | | |
+
+> ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **52% of equity**.
+
+![LINK](pos-LINK.png)
+
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**4 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +40,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| KSM | LONG | 0.28% | needs 0.3% move; trend too weak (ADX 16/20) |
-| COMP | SHORT | 0.66% | needs 0.7% move; volume below average |
-| AXS | LONG | 0.84% | needs 0.8% move; trend too weak (ADX 19/20) |
-| LTC | LONG | 1.12% | needs 1.1% move; volume below average |
-| BAND | LONG | 1.37% | needs 1.4% move; volume below average |
-| ONT | SHORT | 1.47% | needs 1.5% move; trend too weak (ADX 12/20) |
-| BTC | SHORT | 1.75% | needs 1.7% move; trend too weak (ADX 17/20) |
-| ATOM | SHORT | 1.88% | needs 1.9% move; volume below average |
-| DASH | SHORT | 1.88% | needs 1.9% move; volume below average |
-| LINK | SHORT | 1.93% | needs 1.9% move; volume below average |
+| LINK | SHORT | 0.00% | **READY** |
+| COMP | SHORT | 0.00% | **READY** |
+| DASH | SHORT | 0.00% | **READY** |
+| ONT | SHORT | 0.00% | trend too weak (ADX 14/20); volume below average |
+| EGLD | SHORT | 0.00% | **READY** |
+| DOGE | SHORT | 0.07% | needs 0.1% move |
+| AVAX | SHORT | 0.18% | needs 0.2% move; trend too weak (ADX 18/20) |
+| ETC | SHORT | 0.23% | needs 0.2% move; trend too weak (ADX 16/20) |
+| DOT | SHORT | 0.50% | needs 0.5% move; trend too weak (ADX 16/20) |
+| ATOM | SHORT | 0.57% | needs 0.6% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
