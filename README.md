@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-13 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-13 09:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -32,15 +32,15 @@ Nothing open.
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
 | ATOM | SHORT | 0.00% | **READY** |
-| EGLD | SHORT | 0.00% | volume below average |
-| LTC | LONG | 0.89% | needs 0.9% move; trend too weak (ADX 14/20) |
-| MANA | LONG | 1.14% | needs 1.1% move; RSI already stretched (78/78) |
-| AVAX | SHORT | 1.18% | needs 1.2% move; trend too weak (ADX 15/20) |
-| BAND | LONG | 1.29% | needs 1.3% move; volume below average |
-| LINK | SHORT | 1.44% | needs 1.4% move; trend too weak (ADX 10/20) |
-| KSM | LONG | 1.44% | needs 1.4% move; volume below average |
-| BTC | SHORT | 1.51% | needs 1.5% move; trend too weak (ADX 8/20) |
-| BAT | LONG | 1.67% | needs 1.7% move |
+| ICP | SHORT | 0.00% | **READY** |
+| DASH | SHORT | 0.09% | needs 0.1% move; trend too weak (ADX 19/20) |
+| AVAX | SHORT | 0.32% | needs 0.3% move; trend too weak (ADX 16/20) |
+| LINK | SHORT | 0.47% | needs 0.5% move; trend too weak (ADX 12/20) |
+| CRV | SHORT | 0.48% | needs 0.5% move; trend too weak (ADX 11/20) |
+| EGLD | SHORT | 0.64% | needs 0.6% move |
+| ONT | SHORT | 0.87% | needs 0.9% move; volume below average |
+| BAND | LONG | 0.92% | needs 0.9% move |
+| BTC | SHORT | 1.12% | needs 1.1% move; trend too weak (ADX 10/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
