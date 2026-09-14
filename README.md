@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-14 17:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-14 18:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| AXS | LONG | 0.00% | trend too weak (ADX 12/20); volume below average |
-| KSM | LONG | 1.12% | needs 1.1% move |
-| ONT | SHORT | 1.47% | needs 1.5% move; volume below average |
-| ATOM | SHORT | 1.48% | needs 1.5% move; volume below average |
-| BNB | SHORT | 1.62% | needs 1.6% move; trend too weak (ADX 16/20) |
-| COMP | SHORT | 1.69% | needs 1.7% move; volume below average |
-| APE | SHORT | 1.89% | needs 1.9% move; trend too weak (ADX 20/20) |
-| LTC | LONG | 1.98% | needs 2.0% move; trend too weak (ADX 15/20) |
-| ETH | LONG | 2.18% | needs 2.2% move; trend too weak (ADX 16/20) |
-| DOT | SHORT | 2.26% | needs 2.3% move; trend too weak (ADX 11/20) |
+| AXS | LONG | 0.32% | needs 0.3% move; trend too weak (ADX 12/20) |
+| NEAR | LONG | 1.45% | needs 1.4% move; trend too weak (ADX 20/20) |
+| KSM | LONG | 1.45% | needs 1.5% move; volume below average |
+| BNB | SHORT | 1.81% | needs 1.8% move; trend too weak (ADX 15/20) |
+| ETH | LONG | 1.88% | needs 1.9% move; trend too weak (ADX 16/20) |
+| DOT | SHORT | 1.88% | needs 1.9% move; trend too weak (ADX 11/20) |
+| GRT | LONG | 1.92% | needs 1.9% move; trend too weak (ADX 12/20) |
+| APE | SHORT | 1.93% | needs 1.9% move |
+| COMP | SHORT | 1.94% | needs 1.9% move; volume below average |
+| EGLD | SHORT | 1.94% | needs 1.9% move; trend too weak (ADX 14/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
