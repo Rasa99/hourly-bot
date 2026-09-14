@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-14 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-14 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| IOTA | LONG | 0.00% | trend too weak (ADX 20/20) |
-| ONT | SHORT | 0.47% | needs 0.5% move; volume below average |
-| ATOM | SHORT | 0.89% | needs 0.9% move |
-| KSM | LONG | 1.15% | needs 1.1% move; volume below average |
-| BAND | LONG | 1.53% | needs 1.5% move; volume below average |
-| COMP | SHORT | 1.64% | needs 1.6% move |
-| AVAX | SHORT | 1.72% | needs 1.7% move; trend too weak (ADX 13/20) |
-| AXS | LONG | 1.76% | needs 1.8% move; trend too weak (ADX 14/20) |
-| DOT | SHORT | 1.88% | needs 1.9% move; trend too weak (ADX 15/20) |
-| BCH | SHORT | 2.21% | needs 2.2% move; volume below average |
+| IOTA | LONG | 0.00% | **READY** |
+| ONT | SHORT | 0.06% | needs 0.1% move; volume below average |
+| ATOM | SHORT | 0.32% | needs 0.3% move |
+| KSM | LONG | 1.30% | needs 1.3% move |
+| BAND | LONG | 1.32% | needs 1.3% move; volume below average |
+| COMP | SHORT | 1.39% | needs 1.4% move; volume below average |
+| AXS | LONG | 1.40% | needs 1.4% move; trend too weak (ADX 14/20) |
+| DOT | SHORT | 1.97% | needs 2.0% move; trend too weak (ADX 14/20) |
+| BCH | SHORT | 2.01% | needs 2.0% move; volume below average |
+| SAND | SHORT | 2.09% | needs 2.1% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
