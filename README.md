@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-14 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-14 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**2 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | SHORT | 0.00% | **READY** |
-| ONT | SHORT | 0.00% | **READY** |
-| COMP | SHORT | 0.67% | needs 0.7% move; volume below average |
-| APE | SHORT | 0.89% | needs 0.9% move; trend too weak (ADX 14/20) |
-| AXS | LONG | 1.11% | needs 1.1% move; trend too weak (ADX 14/20) |
-| EGLD | SHORT | 1.23% | needs 1.2% move; trend too weak (ADX 15/20) |
+| ATOM | SHORT | 0.39% | needs 0.4% move; volume below average |
+| ONT | SHORT | 0.51% | needs 0.5% move |
+| COMP | SHORT | 0.52% | needs 0.5% move |
+| APE | SHORT | 0.74% | needs 0.7% move; trend too weak (ADX 16/20) |
+| EGLD | SHORT | 0.99% | needs 1.0% move; trend too weak (ADX 14/20) |
+| BNB | SHORT | 1.05% | needs 1.0% move; trend too weak (ADX 17/20) |
+| AXS | LONG | 1.11% | needs 1.1% move; trend too weak (ADX 13/20) |
+| SAND | SHORT | 1.31% | needs 1.3% move; volume below average |
+| KSM | LONG | 1.43% | needs 1.4% move; volume below average |
 | DOT | SHORT | 1.49% | needs 1.5% move; trend too weak (ADX 13/20) |
-| DASH | SHORT | 1.50% | needs 1.5% move; trend too weak (ADX 17/20) |
-| BCH | SHORT | 1.51% | needs 1.5% move; volume below average |
-| SAND | SHORT | 1.59% | needs 1.6% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
