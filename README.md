@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-14 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-14 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,27 +8,18 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.4342** 🟢 +7.17% |
-| Settled balance | $21.5895 (+7.95%) |
-| Unrealised (open trades) | 🔴 -0.1553 |
+| **Equity now** | **$21.4058** 🟢 +7.03% |
+| Settled balance | $21.4058 (+7.03%) |
 | Started with | $20.0000 |
-| Finished trades | 30 |
-| Open now | 1 |
-| Win rate | 43% (13/30) |
+| Finished trades | 31 |
+| Open now | 0 |
+| Win rate | 42% (13/31) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
-|---|---|---|---|---|---|---|---|
-| **LINK** | SHORT 🔻 | 11.164 | 11.315 | +1.35% | 🔴 -0.1553 | -13.9% | 0.22% |
-| | | | | **total** | **-0.1553** | | |
-
-> ⚠️ **All 1 positions are short.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **52% of equity**.
-
-![LINK](pos-LINK.png)
-
+Nothing open.
 
 ## What it is waiting for
 
@@ -40,16 +31,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| KSM | LONG | 0.43% | needs 0.4% move; trend too weak (ADX 15/20) |
-| DOGE | SHORT | 1.43% | needs 1.4% move |
-| BTC | SHORT | 1.50% | needs 1.5% move |
-| AVAX | SHORT | 1.51% | needs 1.5% move; trend too weak (ADX 19/20) |
-| ONT | SHORT | 1.60% | needs 1.6% move; trend too weak (ADX 16/20) |
-| AXS | LONG | 1.65% | needs 1.7% move; trend too weak (ADX 20/20) |
-| LINK | SHORT | 1.72% | needs 1.7% move; volume below average |
-| LTC | LONG | 1.77% | needs 1.8% move; trend too weak (ADX 18/20) |
-| EGLD | SHORT | 1.78% | needs 1.8% move; volume below average |
-| BNB | SHORT | 1.88% | needs 1.9% move |
+| KSM | LONG | 0.00% | trend too weak (ADX 16/20); volume below average |
+| GRT | LONG | 0.84% | needs 0.8% move; trend too weak (ADX 20/20) |
+| AXS | LONG | 1.01% | needs 1.0% move; trend too weak (ADX 19/20) |
+| BAND | LONG | 1.48% | needs 1.5% move |
+| ICP | LONG | 1.56% | needs 1.6% move |
+| ATOM | SHORT | 1.63% | needs 1.6% move; volume below average |
+| LTC | LONG | 1.69% | needs 1.7% move; trend too weak (ADX 17/20) |
+| SNX | LONG | 1.84% | needs 1.8% move; volume below average |
+| ONT | SHORT | 1.92% | needs 1.9% move; trend too weak (ADX 16/20) |
+| EGLD | SHORT | 2.04% | needs 2.0% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -63,6 +54,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| LINK | SHORT | 🔴 -0.1837 (-16.5%) | trailing_stop_loss | 2026-09-14 02:10 |
 | QTUM | LONG | 🔴 -0.2246 (-20.2%) | stop_loss | 2026-09-12 16:06 |
 | BCH | SHORT | 🟢 +0.4651 (+63.3%) | force_exit | 2026-09-10 13:25 |
 | MANA | SHORT | 🔴 -0.2237 (-22.1%) | trailing_stop_loss | 2026-09-11 12:37 |
@@ -77,7 +69,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | SUSHI | LONG | 🟢 +0.8701 (+120.0%) | force_exit | 2026-09-05 17:24 |
 | DOT | LONG | 🟢 +0.3555 (+55.3%) | force_exit | 2026-09-06 14:09 |
 | LINK | LONG | 🔴 -0.2654 (-22.0%) | stop_loss | 2026-09-04 12:30 |
-| DASH | LONG | 🟢 +0.3396 (+75.4%) | force_exit | 2026-09-04 09:07 |
 
 ---
 
