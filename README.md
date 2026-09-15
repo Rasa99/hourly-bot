@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-15 21:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-15 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,12 +8,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.7737** 🟢 +8.87% |
+| **Equity now** | **$21.8970** 🟢 +9.48% |
 | Settled balance | $21.2203 (+6.10%) |
-| Unrealised (open trades) | 🟢 +0.5534 |
+| Unrealised (open trades) | 🟢 +0.6767 |
 | Started with | $20.0000 |
 | Finished trades | 32 |
-| Open now | 4 |
+| Open now | 5 |
 | Win rate | 41% (13/32) |
 
 ![balance](chart-equity.svg)
@@ -22,13 +22,14 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **RVN** | SHORT 🔻 | 0.002126 | 0.002065 | -2.87% | 🟢 +0.2146 | +27.0% | 5.67% |
-| **ICP** | SHORT 🔻 | 2.557 | 2.462 | -3.72% | 🟢 +0.2772 | +36.1% | 6.70% |
-| **DOT** | SHORT 🔻 | 0.953 | 0.948 | -0.52% | 🟢 +0.0283 | +4.2% | 3.48% |
-| **CRV** | SHORT 🔻 | 0.3239 | 0.3218 | -0.65% | 🟢 +0.0333 | +6.1% | 4.47% |
-| | | | | **total** | **+0.5534** | | |
+| **RVN** | SHORT 🔻 | 0.002126 | 0.002074 | -2.45% | 🟢 +0.1809 | +22.8% | 5.21% |
+| **ICP** | SHORT 🔻 | 2.557 | 2.458 | -3.87% | 🟢 +0.2892 | +37.7% | 6.88% |
+| **DOT** | SHORT 🔻 | 0.953 | 0.942 | -1.15% | 🟢 +0.0704 | +10.5% | 4.14% |
+| **CRV** | SHORT 🔻 | 0.3239 | 0.3147 | -2.84% | 🟢 +0.1533 | +28.0% | 6.83% |
+| **AAVE** | SHORT 🔻 | 120.91 | 121.13 | +0.18% | 🔴 -0.0171 | -2.8% | 2.80% |
+| | | | | **total** | **+0.6767** | | |
 
-> ⚠️ **All 4 positions are short.** That is one bet on the same market direction, placed 4 times — these coins move together, so they will win together and lose together. Gross exposure is **131% of equity**.
+> ⚠️ **All 5 positions are short.** That is one bet on the same market direction, placed 5 times — these coins move together, so they will win together and lose together. Gross exposure is **159% of equity**.
 
 ![RVN](pos-RVN.png)
 
@@ -38,10 +39,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ![CRV](pos-CRV.png)
 
+![AAVE](pos-AAVE.png)
+
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -49,16 +52,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| CRV | SHORT | 0.00% | **READY** |
-| ICP | SHORT | 0.69% | needs 0.7% move; volume below average |
-| BAND | SHORT | 0.78% | needs 0.8% move; volume below average |
-| ALGO | SHORT | 0.97% | needs 1.0% move; trend too weak (ADX 18/20) |
-| BNB | SHORT | 1.08% | needs 1.1% move; trend too weak (ADX 15/20) |
-| AAVE | SHORT | 1.23% | needs 1.2% move; trend too weak (ADX 18/20) |
-| ATOM | SHORT | 1.25% | needs 1.3% move; volume below average |
-| BTC | SHORT | 1.31% | needs 1.3% move; volume below average |
-| GRT | SHORT | 1.33% | needs 1.3% move; volume below average |
-| LTC | SHORT | 1.36% | needs 1.4% move; volume below average |
+| ALGO | SHORT | 0.00% | trend too weak (ADX 20/20); volume below average |
+| AAVE | SHORT | 0.00% | **READY** |
+| CRV | SHORT | 0.00% | volume below average |
+| EGLD | SHORT | 0.00% | **READY** |
+| BAND | SHORT | 0.17% | needs 0.2% move; volume below average |
+| ICP | SHORT | 0.20% | needs 0.2% move; volume below average |
+| GRT | SHORT | 0.29% | needs 0.3% move |
+| ATOM | SHORT | 0.33% | needs 0.3% move |
+| LTC | SHORT | 0.35% | needs 0.4% move; volume below average |
+| BNB | SHORT | 0.49% | needs 0.5% move; trend too weak (ADX 17/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
