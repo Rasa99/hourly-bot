@@ -1,45 +1,45 @@
-run          : 336   cycle: 6
-finished     : 2026-09-15 16:07 UTC
-freqtrade    : running (pid 2145)
+run          : 339   cycle: 1
+finished     : 2026-09-15 16:09 UTC
+freqtrade    : running (pid 2435)
 
 ----- last 40 log lines -----
-2026-09-15 15:59:51,823 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for DASH/USDT:USDT with stake_amount: 0.7218881250072159 and price: 51.64 ...
-2026-09-15 15:59:51,824 - freqtrade.freqtradebot - INFO - User denied entry for DASH/USDT:USDT.
-2026-09-15 15:59:51,835 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:51,975 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.8842630900422155 and price: 0.2105 ...
-2026-09-15 15:59:51,976 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
-2026-09-15 15:59:55,666 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:55,805 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for SOL/USDT:USDT with stake_amount: 1.2572419334704728 and price: 99.3 ...
-2026-09-15 15:59:55,806 - freqtrade.freqtradebot - INFO - User denied entry for SOL/USDT:USDT.
-2026-09-15 15:59:55,809 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:55,949 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ADA/USDT:USDT with stake_amount: 0.8683105158098098 and price: 0.2017 ...
-2026-09-15 15:59:55,950 - freqtrade.freqtradebot - INFO - User denied entry for ADA/USDT:USDT.
-2026-09-15 15:59:55,953 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:56,092 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for DOGE/USDT:USDT with stake_amount: 1.208067767929445 and price: 0.08163 ...
-2026-09-15 15:59:56,093 - freqtrade.freqtradebot - INFO - User denied entry for DOGE/USDT:USDT.
-2026-09-15 15:59:56,099 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:56,240 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for LTC/USDT:USDT with stake_amount: 1.2910708165372473 and price: 51.83 ...
-2026-09-15 15:59:56,241 - freqtrade.freqtradebot - INFO - User denied entry for LTC/USDT:USDT.
-2026-09-15 15:59:56,247 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:56,386 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ETC/USDT:USDT with stake_amount: 1.0583505506924509 and price: 7.344 ...
-2026-09-15 15:59:56,387 - freqtrade.freqtradebot - INFO - User denied entry for ETC/USDT:USDT.
-2026-09-15 15:59:56,394 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:56,533 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for SAND/USDT:USDT with stake_amount: 1.0276390861231943 and price: 0.03442 ...
-2026-09-15 15:59:56,535 - freqtrade.freqtradebot - INFO - User denied entry for SAND/USDT:USDT.
-2026-09-15 15:59:56,542 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:56,681 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ENJ/USDT:USDT with stake_amount: 1.1301130387206368 and price: 0.02501 ...
-2026-09-15 15:59:56,682 - freqtrade.freqtradebot - INFO - User denied entry for ENJ/USDT:USDT.
-2026-09-15 15:59:56,687 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:56,825 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for DASH/USDT:USDT with stake_amount: 0.7221677098736012 and price: 51.66 ...
-2026-09-15 15:59:56,826 - freqtrade.freqtradebot - INFO - User denied entry for DASH/USDT:USDT.
-2026-09-15 15:59:56,836 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 15:59:56,974 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.8842630900422155 and price: 0.2105 ...
-2026-09-15 15:59:56,976 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
-2026-09-15 16:00:46,001 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 16:01:07,831 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 16:01:46,004 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 16:02:46,006 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 16:03:46,009 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 16:04:46,012 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 16:05:46,015 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 16:06:46,018 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 16:08:29,455 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2026-09-15 16:08:29,455 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 15
+2026-09-15 16:08:29,455 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2026-09-15 16:08:29,495 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-15 16:08:29,571 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2026-09-15 16:08:29,737 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 127.0.0.1:8080
+2026-09-15 16:08:29,737 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2026-09-15 16:08:29,755 - uvicorn.error - INFO - Started server process [2435]
+2026-09-15 16:08:29,756 - uvicorn.error - INFO - Waiting for application startup.
+2026-09-15 16:08:29,757 - uvicorn.error - INFO - Application startup complete.
+2026-09-15 16:08:29,757 - uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2026-09-15 16:08:29,761 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/pairlist/StaticPairList.py'...
+2026-09-15 16:08:29,762 - freqtrade.freqtradebot - INFO - Starting initial pairlist refresh
+2026-09-15 16:08:29,822 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 47 pairs: ['BTC/USDT:USDT', 'ETH/USDT:USDT', 'BNB/USDT:USDT', 'SOL/USDT:USDT', 'ADA/USDT:USDT', 'DOGE/USDT:USDT', 'AVAX/USDT:USDT', 'DOT/USDT:USDT', 'LINK/USDT:USDT', 'LTC/USDT:USDT', 'BCH/USDT:USDT', 'ATOM/USDT:USDT', 'UNI/USDT:USDT', 'ETC/USDT:USDT', 'NEAR/USDT:USDT', 'ALGO/USDT:USDT', 'FIL/USDT:USDT', 'ICP/USDT:USDT', 'HBAR/USDT:USDT', 'APE/USDT:USDT', 'SAND/USDT:USDT', 'MANA/USDT:USDT', 'AXS/USDT:USDT', 'THETA/USDT:USDT', 'AAVE/USDT:USDT', 'GRT/USDT:USDT', 'CHZ/USDT:USDT', 'ENJ/USDT:USDT', 'CRV/USDT:USDT', 'COMP/USDT:USDT', 'DASH/USDT:USDT', 'QTUM/USDT:USDT', 'IOTA/USDT:USDT', 'ONT/USDT:USDT', 'BAT/USDT:USDT', 'RVN/USDT:USDT', 'KSM/USDT:USDT', 'EGLD/USDT:USDT', 'GALA/USDT:USDT', 'CELO/USDT:USDT', 'SUSHI/USDT:USDT', 'SNX/USDT:USDT', 'LRC/USDT:USDT', 'STORJ/USDT:USDT', 'ANKR/USDT:USDT', 'SKL/USDT:USDT', 'BAND/USDT:USDT']
+2026-09-15 16:08:29,823 - freqtrade.freqtradebot - INFO - Initial Pairlist refresh took 0.06s
+2026-09-15 16:08:29,824 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
+2026-09-15 16:08:29,825 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): adx_floor = 20
+2026-09-15 16:08:29,825 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): breakout_hours = 72
+2026-09-15 16:08:29,825 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_fast = 50
+2026-09-15 16:08:29,826 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_slow = 200
+2026-09-15 16:08:29,826 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_long_max = 78
+2026-09-15 16:08:29,826 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_short_min = 22
+2026-09-15 16:08:29,827 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2026-09-15 16:08:29,827 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): initial_stop_atr = 2.0
+2026-09-15 16:08:29,827 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): risk_per_trade = 0.01
+2026-09-15 16:08:29,828 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): trail_atr = 6.0
+2026-09-15 16:08:29,829 - freqtrade.resolvers.iresolver - INFO - Using resolved protection CooldownPeriod from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/cooldown_period.py'...
+2026-09-15 16:08:29,830 - freqtrade.resolvers.iresolver - INFO - Using resolved protection MaxDrawdown from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/max_drawdown_protection.py'...
+2026-09-15 16:08:29,831 - freqtrade.resolvers.iresolver - INFO - Using resolved protection StoplossGuard from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/stoploss_guard.py'...
+2026-09-15 16:08:29,832 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2026-09-15 16:08:29,832 - freqtrade.worker - INFO - Changing state to: RUNNING
+2026-09-15 16:08:29,841 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2026-09-15 16:08:29,841 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `gate`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'0': 100.0}`\n*Stoploss:* `-0.6`\n*Position adjustment:* `Off`\n*Timeframe:* `1h`\n*Strategy:* `HourlyTrend`"}
+2026-09-15 16:08:29,842 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
+2026-09-15 16:08:29,842 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': 'Using Protections: \nCooldownPeriod - Cooldown period for 2 candles.\nMaxDrawdown - Max drawdown protection, stop trading if drawdown is > 0.15 within 168 candles.\nStoplossGuard - Frequent Stoploss Guard, 6 stoplosses with profit < 0.00% within 24 candles.'}
+2026-09-15 16:08:29,846 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=32, pair=RVN/USDT:USDT, amount=3740, is_short=True, leverage=10, open_rate=0.002126, open_since=2026-09-15 08:00:05)
+2026-09-15 16:08:29,846 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=33, pair=ICP/USDT:USDT, amount=3.002, is_short=True, leverage=10, open_rate=2.557, open_since=2026-09-15 12:00:04)
+2026-09-15 16:08:29,847 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=34, pair=BTC/USDT:USDT, amount=0.0002, is_short=True, leverage=10, open_rate=75918.2, open_since=2026-09-15 15:00:05)
+2026-09-15 16:08:35,552 - freqtrade.worker - INFO - Bot heartbeat. PID=2435, version='2026.7', state='RUNNING'
+2026-09-15 16:09:35,555 - freqtrade.worker - INFO - Bot heartbeat. PID=2435, version='2026.7', state='RUNNING'
