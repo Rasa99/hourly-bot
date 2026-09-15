@@ -1,45 +1,45 @@
-run          : 336   cycle: 2
-finished     : 2026-09-15 12:07 UTC
+run          : 336   cycle: 3
+finished     : 2026-09-15 13:07 UTC
 freqtrade    : running (pid 2145)
 
 ----- last 40 log lines -----
-2026-09-15 11:39:24,601 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:40:24,603 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:41:24,606 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:42:24,608 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:43:24,610 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:44:24,612 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:45:24,615 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:46:24,617 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:47:24,619 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:48:24,622 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:49:24,624 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:50:24,626 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:51:24,628 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:52:24,631 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:53:24,633 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:54:24,635 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:55:24,638 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:56:24,640 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:57:24,642 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:58:24,644 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 11:59:24,647 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 12:00:04,560 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 12:00:04,699 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ICP/USDT:USDT with stake_amount: 0.7677432813798774 and price: 2.557 ...
-2026-09-15 12:00:04,836 - freqtrade.freqtradebot - INFO - Order dry_run_sell_ICP/USDT:USDT_262a8fc2-2193-46ca-93d9-a849ac3beb0d was created for ICP/USDT:USDT and status is closed.
-2026-09-15 12:00:04,843 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 12:00:04,843 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 33, 'type': entry, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'ICP/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 2.557, 'order_rate': 2.557, 'open_rate': 2.557, 'order_type': 'limit', 'stake_amount': 0.7676114, 'stake_currency': 'USDT', 'base_currency': 'ICP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 3.002, 'open_date': datetime.datetime(2026, 9, 15, 12, 0, 4, 836899, tzinfo=datetime.timezone.utc), 'current_rate': 2.557, 'sub_trade': False}
-2026-09-15 12:00:04,844 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=33, pair=ICP/USDT:USDT, amount=3.002, is_short=True, leverage=10, open_rate=2.557, open_since=2026-09-15 12:00:04)
-2026-09-15 12:00:04,850 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=33, pair=ICP/USDT:USDT, amount=3.002, is_short=True, leverage=10, open_rate=2.557, open_since=2026-09-15 12:00:04) [sell]: 0.003838057 USDT - rate: 0.0005
-2026-09-15 12:00:04,850 - freqtrade.persistence.trade_model - INFO - Updating trade (id=33) ...
-2026-09-15 12:00:04,850 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=33, pair=ICP/USDT:USDT, amount=3.002, is_short=True, leverage=10, open_rate=2.557, open_since=2026-09-15 12:00:04).
-2026-09-15 12:00:04,992 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 12:00:04,995 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 33, 'type': entry_fill, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'ICP/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 2.557, 'order_rate': 2.557, 'open_rate': 2.557, 'order_type': 'limit', 'stake_amount': 0.7676114, 'stake_currency': 'USDT', 'base_currency': 'ICP', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 3.002, 'open_date': datetime.datetime(2026, 9, 15, 12, 0, 4, 836899, tzinfo=datetime.timezone.utc), 'current_rate': 2.557, 'sub_trade': False}
-2026-09-15 12:00:26,000 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 12:01:07,397 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-15 12:01:26,003 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 12:02:26,005 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 12:03:26,007 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 12:04:26,009 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 12:05:26,012 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
-2026-09-15 12:06:26,014 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:29:27,651 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:30:27,653 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:31:04,076 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-15 12:31:27,655 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:32:27,658 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:33:27,660 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:34:27,662 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:35:27,665 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:36:27,667 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:37:27,669 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:38:27,671 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:39:27,674 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:40:27,676 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:41:27,678 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:42:27,680 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:43:27,683 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:44:27,685 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:45:27,688 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:46:27,690 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:47:27,693 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:48:27,695 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:49:27,697 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:50:27,700 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:51:27,702 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:52:27,705 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:53:27,707 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:54:27,709 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:55:27,711 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:56:27,714 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:57:27,716 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:58:27,719 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 12:59:27,721 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 13:00:31,001 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 13:01:07,399 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-15 13:01:31,003 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 13:02:31,005 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 13:03:31,008 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 13:04:31,010 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 13:05:31,013 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
+2026-09-15 13:06:31,015 - freqtrade.worker - INFO - Bot heartbeat. PID=2145, version='2026.7', state='RUNNING'
