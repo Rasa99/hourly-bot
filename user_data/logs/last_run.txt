@@ -1,45 +1,45 @@
-run          : 354   cycle: 2
-finished     : 2026-09-16 13:07 UTC
+run          : 354   cycle: 3
+finished     : 2026-09-16 14:07 UTC
 freqtrade    : running (pid 2370)
 
 ----- last 40 log lines -----
-2026-09-16 12:39:30,192 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:40:30,195 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:41:30,198 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:42:30,201 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:43:30,203 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:44:30,206 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:45:30,209 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:46:30,211 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:47:30,214 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:48:30,217 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:49:30,219 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:50:30,222 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:51:30,225 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:52:30,227 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:53:30,230 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:54:30,233 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:55:30,236 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:56:30,238 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:57:30,241 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:58:30,244 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 12:59:30,247 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 13:00:05,706 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-16 13:00:05,873 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for BAND/USDT:USDT with stake_amount: 1.407840381125926 and price: 0.1769 ...
-2026-09-16 13:00:06,035 - freqtrade.freqtradebot - INFO - Order dry_run_sell_BAND/USDT:USDT_e9ab26c0-7f27-4c79-ba1b-fb461c323a16 was created for BAND/USDT:USDT and status is closed.
-2026-09-16 13:00:06,041 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-16 13:00:06,041 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 38, 'type': entry, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'BAND/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.1769, 'order_rate': 0.1769, 'open_rate': 0.1769, 'order_type': 'limit', 'stake_amount': 1.406355, 'stake_currency': 'USDT', 'base_currency': 'BAND', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 79.5, 'open_date': datetime.datetime(2026, 9, 16, 13, 0, 6, 36256, tzinfo=datetime.timezone.utc), 'current_rate': 0.1769, 'sub_trade': False}
-2026-09-16 13:00:06,042 - freqtrade.freqtradebot - INFO - Found open order for Trade(id=38, pair=BAND/USDT:USDT, amount=79.5, is_short=True, leverage=10, open_rate=0.1769, open_since=2026-09-16 13:00:06)
-2026-09-16 13:00:06,045 - freqtrade.freqtradebot - INFO - Fee for Trade Trade(id=38, pair=BAND/USDT:USDT, amount=79.5, is_short=True, leverage=10, open_rate=0.1769, open_since=2026-09-16 13:00:06) [sell]: 0.007031775 USDT - rate: 0.0005
-2026-09-16 13:00:06,045 - freqtrade.persistence.trade_model - INFO - Updating trade (id=38) ...
-2026-09-16 13:00:06,046 - freqtrade.persistence.trade_model - INFO - LIMIT_SELL has been fulfilled for Trade(id=38, pair=BAND/USDT:USDT, amount=79.5, is_short=True, leverage=10, open_rate=0.1769, open_since=2026-09-16 13:00:06).
-2026-09-16 13:00:06,212 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-16 13:00:06,215 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'trade_id': 38, 'type': entry_fill, 'buy_tag': 'h_breakout_down', 'enter_tag': 'h_breakout_down', 'exchange': 'Gate', 'pair': 'BAND/USDT:USDT', 'leverage': 10.0, 'direction': 'Short', 'limit': 0.1769, 'order_rate': 0.1769, 'open_rate': 0.1769, 'order_type': 'limit', 'stake_amount': 1.406355, 'stake_currency': 'USDT', 'base_currency': 'BAND', 'quote_currency': 'USDT', 'fiat_currency': 'USD', 'amount': 79.5, 'open_date': datetime.datetime(2026, 9, 16, 13, 0, 6, 36256, tzinfo=datetime.timezone.utc), 'current_rate': 0.1769, 'sub_trade': False}
-2026-09-16 13:00:31,217 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 13:01:04,240 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-16 13:01:31,220 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 13:02:31,222 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 13:03:31,225 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 13:04:31,228 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 13:05:31,230 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
-2026-09-16 13:06:31,233 - freqtrade.worker - INFO - Bot heartbeat. PID=2370, version='2026.7', state='RUNNING'
+2026-09-16 14:06:36,459 - freqtrade.freqtradebot - INFO - User denied entry for THETA/USDT:USDT.
+2026-09-16 14:06:36,470 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:36,634 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for IOTA/USDT:USDT with stake_amount: 0.5834451608817947 and price: 0.03761 ...
+2026-09-16 14:06:36,636 - freqtrade.freqtradebot - INFO - User denied entry for IOTA/USDT:USDT.
+2026-09-16 14:06:41,112 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:41,276 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for HBAR/USDT:USDT with stake_amount: 0.9270656365723436 and price: 0.07288 ...
+2026-09-16 14:06:41,277 - freqtrade.freqtradebot - INFO - User denied entry for HBAR/USDT:USDT.
+2026-09-16 14:06:41,286 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:41,450 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for THETA/USDT:USDT with stake_amount: 0.7486762366724639 and price: 0.174 ...
+2026-09-16 14:06:41,452 - freqtrade.freqtradebot - INFO - User denied entry for THETA/USDT:USDT.
+2026-09-16 14:06:41,464 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:41,629 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for IOTA/USDT:USDT with stake_amount: 0.5836002912090699 and price: 0.03762 ...
+2026-09-16 14:06:41,630 - freqtrade.freqtradebot - INFO - User denied entry for IOTA/USDT:USDT.
+2026-09-16 14:06:46,132 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:46,296 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for HBAR/USDT:USDT with stake_amount: 0.9270656365723436 and price: 0.07288 ...
+2026-09-16 14:06:46,297 - freqtrade.freqtradebot - INFO - User denied entry for HBAR/USDT:USDT.
+2026-09-16 14:06:46,307 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:46,472 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for THETA/USDT:USDT with stake_amount: 0.7486762366724639 and price: 0.174 ...
+2026-09-16 14:06:46,473 - freqtrade.freqtradebot - INFO - User denied entry for THETA/USDT:USDT.
+2026-09-16 14:06:46,485 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:46,648 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for IOTA/USDT:USDT with stake_amount: 0.5834451608817947 and price: 0.03761 ...
+2026-09-16 14:06:46,650 - freqtrade.freqtradebot - INFO - User denied entry for IOTA/USDT:USDT.
+2026-09-16 14:06:51,114 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:51,280 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for HBAR/USDT:USDT with stake_amount: 0.9270656365723436 and price: 0.07288 ...
+2026-09-16 14:06:51,282 - freqtrade.freqtradebot - INFO - User denied entry for HBAR/USDT:USDT.
+2026-09-16 14:06:51,291 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:51,455 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for THETA/USDT:USDT with stake_amount: 0.7486762366724639 and price: 0.174 ...
+2026-09-16 14:06:51,456 - freqtrade.freqtradebot - INFO - User denied entry for THETA/USDT:USDT.
+2026-09-16 14:06:51,468 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:51,632 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for IOTA/USDT:USDT with stake_amount: 0.5834451608817947 and price: 0.03761 ...
+2026-09-16 14:06:51,634 - freqtrade.freqtradebot - INFO - User denied entry for IOTA/USDT:USDT.
+2026-09-16 14:06:56,118 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:56,281 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for HBAR/USDT:USDT with stake_amount: 0.9271928409681411 and price: 0.07289 ...
+2026-09-16 14:06:56,283 - freqtrade.freqtradebot - INFO - User denied entry for HBAR/USDT:USDT.
+2026-09-16 14:06:56,292 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:56,456 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for THETA/USDT:USDT with stake_amount: 0.7491065103717011 and price: 0.1741 ...
+2026-09-16 14:06:56,457 - freqtrade.freqtradebot - INFO - User denied entry for THETA/USDT:USDT.
+2026-09-16 14:06:56,469 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 14:06:56,633 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for IOTA/USDT:USDT with stake_amount: 0.5834451608817947 and price: 0.03761 ...
+2026-09-16 14:06:56,634 - freqtrade.freqtradebot - INFO - User denied entry for IOTA/USDT:USDT.
