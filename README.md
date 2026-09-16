@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-16 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-16 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.7777** 🟢 +8.89% |
-| Settled balance | $21.0174 (+5.09%) |
-| Unrealised (open trades) | 🟢 +0.7603 |
+| **Equity now** | **$21.4793** 🟢 +7.40% |
+| Settled balance | $20.7741 (+3.87%) |
+| Unrealised (open trades) | 🟢 +0.7052 |
 | Started with | $20.0000 |
-| Finished trades | 33 |
-| Open now | 5 |
-| Win rate | 39% (13/33) |
+| Finished trades | 34 |
+| Open now | 4 |
+| Win rate | 38% (13/34) |
 
 ![balance](chart-equity.svg)
 
@@ -22,14 +22,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **RVN** | SHORT 🔻 | 0.002126 | 0.002047 | -3.72% | 🟢 +0.2743 | +34.5% | 6.20% |
-| **ICP** | SHORT 🔻 | 2.557 | 2.504 | -2.07% | 🟢 +0.1506 | +19.6% | 4.91% |
-| **CRV** | SHORT 🔻 | 0.3239 | 0.3122 | -3.61% | 🟢 +0.1945 | +35.5% | 7.69% |
-| **AAVE** | SHORT 🔻 | 120.91 | 116.94 | -3.28% | 🟢 +0.1934 | +32.0% | 6.18% |
-| **BAND** | SHORT 🔻 | 0.1769 | 0.1774 | +0.28% | 🔴 -0.0524 | -3.7% | 1.18% |
-| | | | | **total** | **+0.7603** | | |
+| **RVN** | SHORT 🔻 | 0.002126 | 0.002046 | -3.76% | 🟢 +0.2780 | +35.0% | 6.26% |
+| **ICP** | SHORT 🔻 | 2.557 | 2.536 | -0.82% | 🟢 +0.0544 | +7.1% | 3.59% |
+| **CRV** | SHORT 🔻 | 0.3239 | 0.312 | -3.67% | 🟢 +0.1979 | +36.2% | 7.76% |
+| **AAVE** | SHORT 🔻 | 120.91 | 117.31 | -2.98% | 🟢 +0.1749 | +28.9% | 5.85% |
+| | | | | **total** | **+0.7052** | | |
 
-> ⚠️ **All 5 positions are short.** That is one bet on the same market direction, placed 5 times — these coins move together, so they will win together and lose together. Gross exposure is **196% of equity**.
+> ⚠️ **All 4 positions are short.** That is one bet on the same market direction, placed 4 times — these coins move together, so they will win together and lose together. Gross exposure is **131% of equity**.
 
 ![RVN](pos-RVN.png)
 
@@ -38,8 +37,6 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 ![CRV](pos-CRV.png)
 
 ![AAVE](pos-AAVE.png)
-
-![BAND](pos-BAND.png)
 
 
 ## What it is waiting for
@@ -52,16 +49,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | SHORT | 0.94% | needs 0.9% move; volume below average |
-| LTC | SHORT | 1.36% | needs 1.4% move |
-| CELO | SHORT | 1.47% | needs 1.5% move |
-| BTC | SHORT | 1.49% | needs 1.5% move |
-| ENJ | SHORT | 1.53% | needs 1.5% move |
-| BAT | SHORT | 1.60% | needs 1.6% move; volume below average |
-| EGLD | SHORT | 1.73% | needs 1.7% move; volume below average |
-| BAND | SHORT | 1.75% | needs 1.8% move; volume below average |
-| AXS | SHORT | 1.84% | needs 1.8% move; volume below average |
-| ONT | SHORT | 1.85% | needs 1.9% move; volume below average |
+| NEAR | LONG | 0.74% | needs 0.7% move |
+| BTC | SHORT | 1.63% | needs 1.6% move; volume below average |
+| ENJ | SHORT | 1.70% | needs 1.7% move; volume below average |
+| RVN | SHORT | 2.11% | needs 2.1% move; volume below average |
+| CELO | SHORT | 2.20% | needs 2.2% move; volume below average |
+| ETH | SHORT | 2.21% | needs 2.2% move; volume below average |
+| EGLD | SHORT | 2.22% | needs 2.2% move; volume below average |
+| BNB | SHORT | 2.28% | needs 2.3% move; volume below average |
+| LTC | SHORT | 2.37% | needs 2.4% move |
+| HBAR | SHORT | 2.40% | needs 2.4% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -75,6 +72,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| BAND | SHORT | 🔴 -0.2433 (-17.3%) | stop_loss | 2026-09-16 21:01 |
 | DOT | SHORT | 🔴 -0.2029 (-30.4%) | stop_loss | 2026-09-16 12:22 |
 | BTC | SHORT | 🔴 -0.1855 (-12.2%) | stop_loss | 2026-09-15 17:33 |
 | LINK | SHORT | 🔴 -0.1837 (-16.5%) | trailing_stop_loss | 2026-09-14 02:10 |
@@ -89,7 +87,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | ETC | LONG | 🟢 +0.3342 (+50.9%) | force_exit | 2026-09-08 16:07 |
 | DOT | LONG | 🟢 +0.4297 (+100.5%) | force_exit | 2026-09-08 16:07 |
 | UNI | LONG | 🔴 -0.0737 (-10.9%) | force_exit | 2026-09-05 17:25 |
-| SUSHI | LONG | 🟢 +0.8701 (+120.0%) | force_exit | 2026-09-05 17:24 |
 
 ---
 
