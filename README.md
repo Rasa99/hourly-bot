@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-16 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-16 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.8431** 🟢 +9.22% |
+| **Equity now** | **$21.6974** 🟢 +8.49% |
 | Settled balance | $21.2203 (+6.10%) |
-| Unrealised (open trades) | 🟢 +0.6227 |
+| Unrealised (open trades) | 🟢 +0.4770 |
 | Started with | $20.0000 |
 | Finished trades | 32 |
 | Open now | 5 |
@@ -22,12 +22,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **RVN** | SHORT 🔻 | 0.002126 | 0.002039 | -4.09% | 🟢 +0.3053 | +38.4% | 7.01% |
-| **ICP** | SHORT 🔻 | 2.557 | 2.518 | -1.53% | 🟢 +0.1086 | +14.1% | 4.33% |
-| **DOT** | SHORT 🔻 | 0.953 | 0.958 | +0.52% | 🔴 -0.0418 | -6.3% | 2.40% |
-| **CRV** | SHORT 🔻 | 0.3239 | 0.3124 | -3.55% | 🟢 +0.1916 | +35.0% | 7.62% |
-| **AAVE** | SHORT 🔻 | 120.91 | 119.62 | -1.07% | 🟢 +0.0592 | +9.8% | 4.10% |
-| | | | | **total** | **+0.6227** | | |
+| **RVN** | SHORT 🔻 | 0.002126 | 0.002033 | -4.37% | 🟢 +0.3277 | +41.2% | 7.33% |
+| **ICP** | SHORT 🔻 | 2.557 | 2.523 | -1.33% | 🟢 +0.0935 | +12.2% | 4.12% |
+| **DOT** | SHORT 🔻 | 0.953 | 0.976 | +2.41% | 🔴 -0.1679 | -25.2% | 0.51% |
+| **CRV** | SHORT 🔻 | 0.3239 | 0.3127 | -3.46% | 🟢 +0.1865 | +34.1% | 7.52% |
+| **AAVE** | SHORT 🔻 | 120.91 | 120.06 | -0.70% | 🟢 +0.0372 | +6.1% | 3.71% |
+| | | | | **total** | **+0.4770** | | |
 
 > ⚠️ **All 5 positions are short.** That is one bet on the same market direction, placed 5 times — these coins move together, so they will win together and lose together. Gross exposure is **159% of equity**.
 
@@ -52,16 +52,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BAND | SHORT | 0.00% | volume below average |
-| LTC | SHORT | 0.37% | needs 0.4% move; volume below average |
-| THETA | SHORT | 0.62% | needs 0.6% move; volume below average |
-| BAT | SHORT | 0.65% | needs 0.6% move; volume below average |
-| AXS | SHORT | 0.67% | needs 0.7% move; volume below average |
-| ATOM | SHORT | 0.74% | needs 0.7% move; volume below average |
-| HBAR | SHORT | 0.83% | needs 0.8% move; volume below average |
-| ENJ | SHORT | 0.95% | needs 0.9% move; volume below average |
-| AVAX | SHORT | 0.96% | needs 1.0% move; volume below average |
-| BNB | SHORT | 1.05% | needs 1.0% move; volume below average |
+| BAND | SHORT | 0.51% | needs 0.5% move; volume below average |
+| LTC | SHORT | 0.71% | needs 0.7% move |
+| HBAR | SHORT | 0.93% | needs 0.9% move; volume below average |
+| CRV | SHORT | 0.93% | needs 0.9% move; volume below average |
+| BAT | SHORT | 1.01% | needs 1.0% move |
+| AXS | SHORT | 1.14% | needs 1.1% move; volume below average |
+| ENJ | SHORT | 1.31% | needs 1.3% move; volume below average |
+| ADA | SHORT | 1.34% | needs 1.3% move; volume below average |
+| SKL | SHORT | 1.43% | needs 1.4% move |
+| BNB | SHORT | 1.44% | needs 1.4% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
