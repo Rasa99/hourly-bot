@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-16 01:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-16 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.7536** 🟢 +8.77% |
+| **Equity now** | **$21.8931** 🟢 +9.47% |
 | Settled balance | $21.2203 (+6.10%) |
-| Unrealised (open trades) | 🟢 +0.5333 |
+| Unrealised (open trades) | 🟢 +0.6728 |
 | Started with | $20.0000 |
 | Finished trades | 32 |
 | Open now | 5 |
@@ -22,12 +22,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **RVN** | SHORT 🔻 | 0.002126 | 0.002096 | -1.41% | 🟢 +0.0965 | +12.1% | 4.10% |
-| **ICP** | SHORT 🔻 | 2.557 | 2.477 | -3.13% | 🟢 +0.2321 | +30.2% | 6.06% |
-| **DOT** | SHORT 🔻 | 0.953 | 0.938 | -1.57% | 🟢 +0.0979 | +14.7% | 4.58% |
-| **CRV** | SHORT 🔻 | 0.3239 | 0.3139 | -3.09% | 🟢 +0.1663 | +30.4% | 7.10% |
-| **AAVE** | SHORT 🔻 | 120.91 | 121.99 | +0.89% | 🔴 -0.0595 | -9.8% | 2.07% |
-| | | | | **total** | **+0.5333** | | |
+| **RVN** | SHORT 🔻 | 0.002126 | 0.00209 | -1.69% | 🟢 +0.1189 | +15.0% | 4.40% |
+| **ICP** | SHORT 🔻 | 2.557 | 2.457 | -3.91% | 🟢 +0.2922 | +38.1% | 6.92% |
+| **DOT** | SHORT 🔻 | 0.953 | 0.94 | -1.36% | 🟢 +0.0839 | +12.6% | 4.36% |
+| **CRV** | SHORT 🔻 | 0.3239 | 0.3142 | -2.99% | 🟢 +0.1612 | +29.5% | 7.00% |
+| **AAVE** | SHORT 🔻 | 120.91 | 120.47 | -0.36% | 🟢 +0.0166 | +2.7% | 3.36% |
+| | | | | **total** | **+0.6728** | | |
 
 > ⚠️ **All 5 positions are short.** That is one bet on the same market direction, placed 5 times — these coins move together, so they will win together and lose together. Gross exposure is **159% of equity**.
 
@@ -44,7 +44,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**4 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -52,16 +52,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | SHORT | 0.00% | **READY** |
-| HBAR | SHORT | 0.20% | needs 0.2% move; volume below average |
-| EGLD | SHORT | 0.32% | needs 0.3% move |
-| ADA | SHORT | 0.62% | needs 0.6% move; volume below average |
-| AVAX | SHORT | 0.72% | needs 0.7% move; volume below average |
-| DOT | SHORT | 0.75% | needs 0.7% move; volume below average |
-| LTC | SHORT | 0.76% | needs 0.8% move; volume below average |
-| BNB | SHORT | 0.93% | needs 0.9% move; volume below average |
-| BAND | SHORT | 0.94% | needs 0.9% move |
-| GRT | SHORT | 0.99% | needs 1.0% move |
+| ADA | SHORT | 0.00% | volume below average |
+| LINK | SHORT | 0.00% | volume below average |
+| LTC | SHORT | 0.00% | **READY** |
+| ATOM | SHORT | 0.00% | volume below average |
+| HBAR | SHORT | 0.00% | volume below average |
+| AAVE | SHORT | 0.00% | **READY** |
+| GRT | SHORT | 0.00% | **READY** |
+| CHZ | SHORT | 0.00% | **READY** |
+| AVAX | SHORT | 0.13% | needs 0.1% move; volume below average |
+| ALGO | SHORT | 0.14% | needs 0.1% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
