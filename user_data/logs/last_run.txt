@@ -1,45 +1,45 @@
-run          : 343   cycle: 4
-finished     : 2026-09-16 00:07 UTC
+run          : 343   cycle: 5
+finished     : 2026-09-16 01:07 UTC
 freqtrade    : running (pid 2503)
 
 ----- last 40 log lines -----
-2026-09-15 23:32:03,318 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:33:03,321 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:34:03,323 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:35:03,326 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:36:03,329 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:37:03,332 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:38:03,334 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:39:03,337 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:40:03,340 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:41:03,343 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:42:03,346 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:43:03,349 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:44:03,352 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:45:03,356 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:46:03,359 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:47:03,362 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:48:03,365 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:49:03,367 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:50:03,370 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:51:03,372 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:52:03,374 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:53:03,377 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:54:03,379 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:55:03,381 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:56:03,383 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:57:03,385 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:58:03,387 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-15 23:59:03,389 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-16 00:00:05,445 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for EGLD/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-16 00:00:05,543 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for CRV/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-16 00:00:06,030 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for THETA/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-16 00:00:06,385 - freqtrade.exchange.common - WARNING - _async_get_candle_history() returned exception: "Could not fetch historical candle (OHLCV) data for LRC/USDT:USDT, 1h, futures due to ExchangeNotAvailable. Message: gate {"label":"INTERNAL","message":"Internal error"}". Retrying still for 4 times.
-2026-09-16 00:00:09,488 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-16 00:01:07,193 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-16 00:01:09,490 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-16 00:02:09,493 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-16 00:03:09,495 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-16 00:04:09,498 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-16 00:05:09,500 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
-2026-09-16 00:06:09,503 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
+2026-09-16 01:05:56,825 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:05:56,954 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.7603406916966381 and price: 1.496 ...
+2026-09-16 01:05:56,956 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:01,828 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:01,958 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.7603406916966381 and price: 1.496 ...
+2026-09-16 01:06:01,959 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:06,825 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:06,955 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.7603406916966381 and price: 1.496 ...
+2026-09-16 01:06:06,956 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:11,825 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:11,954 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:11,956 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:16,016 - freqtrade.worker - INFO - Bot heartbeat. PID=2503, version='2026.7', state='RUNNING'
+2026-09-16 01:06:16,827 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:16,956 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:16,958 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:21,829 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:21,958 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:21,959 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:26,830 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:26,962 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.7603406916966381 and price: 1.496 ...
+2026-09-16 01:06:26,963 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:31,833 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:31,963 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:31,965 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:36,827 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:36,957 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:36,959 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:41,826 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:41,956 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:41,957 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:46,827 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:46,957 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:46,958 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:51,831 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:51,960 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.760848940822104 and price: 1.497 ...
+2026-09-16 01:06:51,961 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
+2026-09-16 01:06:56,831 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-16 01:06:56,961 - freqtrade.freqtradebot - INFO - Short signal found: about create a new trade for ATOM/USDT:USDT with stake_amount: 0.7613571899475694 and price: 1.498 ...
+2026-09-16 01:06:56,963 - freqtrade.freqtradebot - INFO - User denied entry for ATOM/USDT:USDT.
