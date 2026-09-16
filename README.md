@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-16 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-16 22:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$21.6013** 🟢 +8.01% |
+| **Equity now** | **$21.6269** 🟢 +8.13% |
 | Settled balance | $20.7741 (+3.87%) |
-| Unrealised (open trades) | 🟢 +0.8272 |
+| Unrealised (open trades) | 🟢 +0.8528 |
 | Started with | $20.0000 |
 | Finished trades | 34 |
 | Open now | 4 |
@@ -23,10 +23,10 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
 | **RVN** | SHORT 🔻 | 0.002126 | 0.002053 | -3.43% | 🟢 +0.2518 | +31.7% | 5.89% |
-| **ICP** | SHORT 🔻 | 2.557 | 2.507 | -1.96% | 🟢 +0.1415 | +18.4% | 4.79% |
-| **CRV** | SHORT 🔻 | 0.3239 | 0.3112 | -3.92% | 🟢 +0.2114 | +38.6% | 8.03% |
-| **AAVE** | SHORT 🔻 | 120.91 | 116.36 | -3.76% | 🟢 +0.2224 | +36.8% | 6.71% |
-| | | | | **total** | **+0.8272** | | |
+| **ICP** | SHORT 🔻 | 2.557 | 2.502 | -2.15% | 🟢 +0.1566 | +20.4% | 5.00% |
+| **CRV** | SHORT 🔻 | 0.3239 | 0.3101 | -4.26% | 🟢 +0.2300 | +42.0% | 8.42% |
+| **AAVE** | SHORT 🔻 | 120.91 | 116.52 | -3.63% | 🟢 +0.2144 | +35.5% | 6.57% |
+| | | | | **total** | **+0.8528** | | |
 
 > ⚠️ **All 4 positions are short.** That is one bet on the same market direction, placed 4 times — these coins move together, so they will win together and lose together. Gross exposure is **131% of equity**.
 
