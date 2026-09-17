@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-17 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-17 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BTC | SHORT | 2.13% | needs 2.1% move; trend too weak (ADX 14/20) |
-| DASH | LONG | 2.47% | needs 2.5% move; volume below average |
-| NEAR | LONG | 2.81% | needs 2.8% move |
-| BNB | SHORT | 3.29% | needs 3.3% move; trend too weak (ADX 19/20) |
-| UNI | LONG | 3.39% | needs 3.4% move; volume below average |
-| ETH | SHORT | 3.85% | needs 3.8% move; volume below average |
-| DOGE | SHORT | 3.86% | needs 3.9% move; volume below average |
-| STORJ | SHORT | 3.98% | needs 4.0% move; trend too weak (ADX 17/20) |
-| EGLD | SHORT | 4.10% | needs 4.1% move; volume below average |
-| ONT | SHORT | 4.24% | needs 4.2% move; trend too weak (ADX 19/20) |
+| NEAR | LONG | 1.00% | needs 1.0% move; volume below average |
+| DASH | LONG | 1.32% | needs 1.3% move; volume below average |
+| BTC | SHORT | 2.16% | needs 2.2% move; trend too weak (ADX 13/20) |
+| UNI | LONG | 2.23% | needs 2.2% move; volume below average |
+| ETH | SHORT | 3.73% | needs 3.7% move; volume below average |
+| BNB | SHORT | 3.90% | needs 3.9% move |
+| ONT | SHORT | 3.93% | needs 3.9% move; trend too weak (ADX 19/20) |
+| DOGE | SHORT | 4.14% | needs 4.1% move; volume below average |
+| HBAR | SHORT | 4.17% | needs 4.2% move; volume below average |
+| EGLD | SHORT | 4.47% | needs 4.5% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
