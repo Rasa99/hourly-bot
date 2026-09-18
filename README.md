@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-18 14:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-18 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SOL | LONG | 0.00% | RSI already stretched (83/78) |
-| AVAX | LONG | 0.00% | **READY** |
-| BCH | LONG | 0.00% | RSI already stretched (79/78) |
-| AAVE | LONG | 0.00% | **READY** |
-| SNX | LONG | 0.00% | **READY** |
-| ADA | LONG | 0.09% | needs 0.1% move |
-| ETC | LONG | 0.10% | needs 0.1% move; RSI already stretched (81/78) |
-| BNB | LONG | 0.13% | needs 0.1% move |
-| ANKR | LONG | 0.36% | needs 0.4% move |
-| BAT | LONG | 0.37% | needs 0.4% move; volume below average |
+| SOL | LONG | 0.00% | RSI already stretched (87/78) |
+| ADA | LONG | 0.00% | **READY** |
+| LINK | LONG | 0.00% | RSI already stretched (82/78) |
+| ETC | LONG | 0.00% | RSI already stretched (85/78) |
+| FIL | LONG | 0.00% | **READY** |
+| GRT | LONG | 0.00% | volume below average; RSI already stretched (80/78) |
+| CHZ | LONG | 0.00% | volume below average |
+| BAT | LONG | 0.00% | **READY** |
+| SNX | LONG | 0.00% | volume below average; RSI already stretched (82/78) |
+| ANKR | LONG | 0.00% | RSI already stretched (81/78) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
