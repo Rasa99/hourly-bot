@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-18 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-18 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| AVAX | LONG | 0.00% | RSI already stretched (78/78) |
-| MANA | LONG | 0.00% | RSI already stretched (79/78) |
-| THETA | LONG | 0.00% | RSI already stretched (82/78) |
-| ANKR | LONG | 0.19% | needs 0.2% move; volume below average |
-| AAVE | LONG | 0.24% | needs 0.2% move |
-| SOL | LONG | 0.34% | needs 0.3% move; volume below average |
-| GRT | LONG | 0.51% | needs 0.5% move; volume below average |
-| BAT | LONG | 0.52% | needs 0.5% move |
-| SNX | LONG | 0.55% | needs 0.5% move |
-| BCH | LONG | 0.83% | needs 0.8% move; volume below average |
+| ANKR | LONG | 0.00% | **READY** |
+| SNX | LONG | 0.77% | needs 0.8% move |
+| SOL | LONG | 0.88% | needs 0.9% move |
+| MANA | LONG | 0.97% | needs 1.0% move |
+| BCH | LONG | 1.06% | needs 1.1% move |
+| AVAX | LONG | 1.21% | needs 1.2% move |
+| CHZ | LONG | 1.24% | needs 1.2% move |
+| BAT | LONG | 1.31% | needs 1.3% move; volume below average |
+| SAND | LONG | 1.36% | needs 1.4% move; RSI already stretched (80/78) |
+| BNB | LONG | 1.38% | needs 1.4% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
