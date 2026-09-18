@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-18 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-18 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**5 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BNB | LONG | 0.00% | **READY** |
+| BNB | LONG | 0.00% | RSI already stretched (80/78) |
 | AVAX | LONG | 0.00% | **READY** |
-| DOT | LONG | 0.00% | volume below average |
-| UNI | LONG | 0.00% | **READY** |
-| NEAR | LONG | 0.00% | RSI already stretched (80/78) |
-| AXS | LONG | 0.00% | RSI already stretched (88/78) |
-| GRT | LONG | 0.00% | **READY** |
-| SUSHI | LONG | 0.00% | **READY** |
-| BTC | SHORT | 2.33% | needs 2.3% move; trend too weak (ADX 10/20) |
-| GALA | LONG | 2.36% | needs 2.4% move; volume below average |
+| DOT | LONG | 0.00% | volume below average; RSI already stretched (79/78) |
+| NEAR | LONG | 0.00% | RSI already stretched (84/78) |
+| GRT | LONG | 0.16% | needs 0.2% move |
+| SUSHI | LONG | 1.03% | needs 1.0% move; volume below average |
+| AXS | LONG | 1.64% | needs 1.6% move |
+| DASH | LONG | 1.73% | needs 1.7% move |
+| UNI | LONG | 1.78% | needs 1.8% move |
+| GALA | LONG | 2.30% | needs 2.3% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
