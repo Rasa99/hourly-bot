@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-18 06:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-18 07:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BNB | LONG | 0.24% | needs 0.2% move; RSI already stretched (82/78) |
-| LTC | LONG | 0.29% | needs 0.3% move; RSI already stretched (78/78) |
-| GRT | LONG | 0.36% | needs 0.4% move |
-| SUSHI | LONG | 0.84% | needs 0.8% move; volume below average |
-| MANA | LONG | 1.09% | needs 1.1% move; volume below average |
-| CHZ | LONG | 1.24% | needs 1.2% move |
-| AVAX | LONG | 1.28% | needs 1.3% move |
-| DOT | LONG | 1.33% | needs 1.3% move; volume below average |
-| AAVE | LONG | 1.39% | needs 1.4% move; volume below average |
-| AXS | LONG | 1.46% | needs 1.5% move; volume below average |
+| BNB | LONG | 0.00% | volume below average; RSI already stretched (84/78) |
+| LTC | LONG | 0.07% | needs 0.1% move; volume below average |
+| AAVE | LONG | 0.22% | needs 0.2% move; volume below average |
+| DOT | LONG | 0.26% | needs 0.3% move; volume below average |
+| MANA | LONG | 0.35% | needs 0.4% move |
+| SOL | LONG | 0.56% | needs 0.6% move; volume below average |
+| GRT | LONG | 0.72% | needs 0.7% move; RSI already stretched (79/78) |
+| AVAX | LONG | 0.81% | needs 0.8% move; volume below average |
+| CHZ | LONG | 1.31% | needs 1.3% move; volume below average |
+| SUSHI | LONG | 1.35% | needs 1.3% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
