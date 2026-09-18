@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-18 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-18 09:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LTC | LONG | 0.00% | volume below average; RSI already stretched (82/78) |
-| GRT | LONG | 0.00% | volume below average; RSI already stretched (81/78) |
-| MANA | LONG | 0.05% | needs 0.1% move |
-| DOT | LONG | 0.09% | needs 0.1% move; volume below average |
-| BCH | LONG | 0.22% | needs 0.2% move; volume below average |
-| BNB | LONG | 0.29% | needs 0.3% move; RSI already stretched (79/78) |
-| SUSHI | LONG | 0.33% | needs 0.3% move; volume below average |
-| SOL | LONG | 0.36% | needs 0.4% move; RSI already stretched (80/78) |
-| AVAX | LONG | 0.59% | needs 0.6% move |
-| AAVE | LONG | 0.76% | needs 0.8% move; volume below average |
+| SOL | LONG | 0.00% | RSI already stretched (82/78) |
+| DOT | LONG | 0.00% | volume below average; RSI already stretched (81/78) |
+| LTC | LONG | 0.00% | RSI already stretched (86/78) |
+| GRT | LONG | 0.00% | volume below average; RSI already stretched (83/78) |
+| SUSHI | LONG | 0.00% | **READY** |
+| BCH | LONG | 0.04% | needs 0.0% move; RSI already stretched (82/78) |
+| THETA | LONG | 0.05% | needs 0.1% move; volume below average |
+| AAVE | LONG | 0.06% | needs 0.1% move |
+| UNI | LONG | 0.07% | needs 0.1% move; RSI already stretched (81/78) |
+| CHZ | LONG | 0.27% | needs 0.3% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
