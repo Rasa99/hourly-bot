@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-19 05:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-19 06:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.7911** 🟢 +3.96% |
-| Settled balance | $19.9488 (-0.26%) |
-| Unrealised (open trades) | 🟢 +0.8423 |
+| **Equity now** | **$20.6563** 🟢 +3.28% |
+| Settled balance | $19.7755 (-1.12%) |
+| Unrealised (open trades) | 🟢 +0.8808 |
 | Started with | $20.0000 |
-| Finished trades | 38 |
-| Open now | 5 |
-| Win rate | 34% (13/38) |
+| Finished trades | 39 |
+| Open now | 4 |
+| Win rate | 33% (13/39) |
 
 ![balance](chart-equity.svg)
 
@@ -22,14 +22,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **AVAX** | LONG 🔺 | 8.209 | 8.472 | +3.20% | 🟢 +0.2538 | +30.9% | 2.80% |
-| **FIL** | LONG 🔺 | 0.9162 | 0.9799 | +6.95% | 🟢 +0.4211 | +68.4% | 7.65% |
-| **ADA** | LONG 🔺 | 0.2238 | 0.2264 | +1.16% | 🟢 +0.0706 | +10.5% | 3.53% |
-| **CELO** | LONG 🔺 | 0.0838 | 0.08553 | +2.06% | 🟢 +0.2275 | +19.5% | 3.67% |
-| **DASH** | LONG 🔺 | 63.12 | 61.01 | -3.34% | 🔴 -0.1307 | -34.5% | 1.16% |
-| | | | | **total** | **+0.8423** | | |
+| **AVAX** | LONG 🔺 | 8.209 | 8.491 | +3.44% | 🟢 +0.2728 | +33.2% | 3.01% |
+| **FIL** | LONG 🔺 | 0.9162 | 0.9954 | +8.64% | 🟢 +0.5252 | +85.3% | 8.77% |
+| **ADA** | LONG 🔺 | 0.2238 | 0.2239 | +0.04% | 🔴 -0.0044 | -0.7% | 2.46% |
+| **CELO** | LONG 🔺 | 0.0838 | 0.08452 | +0.86% | 🟢 +0.0872 | +7.5% | 2.52% |
+| | | | | **total** | **+0.8808** | | |
 
-> ⚠️ **All 5 positions are long.** That is one bet on the same market direction, placed 5 times — these coins move together, so they will win together and lose together. Gross exposure is **183% of equity**.
+> ⚠️ **All 4 positions are long.** That is one bet on the same market direction, placed 4 times — these coins move together, so they will win together and lose together. Gross exposure is **166% of equity**.
 
 ![AVAX](pos-AVAX.png)
 
@@ -38,8 +37,6 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 ![ADA](pos-ADA.png)
 
 ![CELO](pos-CELO.png)
-
-![DASH](pos-DASH.png)
 
 
 ## What it is waiting for
@@ -52,16 +49,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| IOTA | LONG | 0.00% | RSI already stretched (86/78) |
-| CELO | LONG | 0.00% | RSI already stretched (80/78) |
-| FIL | LONG | 0.63% | needs 0.6% move; RSI already stretched (83/78) |
-| BTC | LONG | 0.95% | needs 1.0% move; volume below average |
-| ETH | LONG | 1.06% | needs 1.1% move; volume below average |
-| SNX | LONG | 1.15% | needs 1.2% move; volume below average |
-| BAT | LONG | 1.16% | needs 1.2% move |
-| BNB | LONG | 1.18% | needs 1.2% move |
-| HBAR | LONG | 1.27% | needs 1.3% move |
-| LINK | LONG | 1.28% | needs 1.3% move; volume below average |
+| FIL | LONG | 0.58% | needs 0.6% move; RSI already stretched (84/78) |
+| BNB | LONG | 0.70% | needs 0.7% move; volume below average |
+| ETH | LONG | 0.72% | needs 0.7% move; volume below average |
+| BTC | LONG | 0.93% | needs 0.9% move; volume below average |
+| HBAR | LONG | 0.96% | needs 1.0% move; volume below average |
+| LINK | LONG | 1.09% | needs 1.1% move; volume below average |
+| BAT | LONG | 1.16% | needs 1.2% move; volume below average |
+| ICP | LONG | 1.22% | needs 1.2% move; volume below average |
+| CHZ | LONG | 1.61% | needs 1.6% move; volume below average |
+| DOGE | LONG | 1.66% | needs 1.7% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -75,6 +72,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| DASH | LONG | 🔴 -0.1733 (-45.7%) | stop_loss | 2026-09-19 05:58 |
 | BAND | SHORT | 🔴 -0.2433 (-17.3%) | stop_loss | 2026-09-16 21:01 |
 | AAVE | SHORT | 🔴 -0.1684 (-27.9%) | trailing_stop_loss | 2026-09-17 12:58 |
 | CRV | SHORT | 🔴 -0.2163 (-39.5%) | stop_loss | 2026-09-17 17:07 |
@@ -89,7 +87,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | EGLD | LONG | 🔴 -0.2262 (-42.6%) | stop_loss | 2026-09-10 11:05 |
 | CRV | SHORT | 🔴 -0.2182 (-34.4%) | trailing_stop_loss | 2026-09-10 14:26 |
 | AAVE | SHORT | 🟢 +0.2033 (+23.1%) | force_exit | 2026-09-10 11:07 |
-| ALGO | LONG | 🟢 +0.1357 (+19.3%) | force_exit | 2026-09-08 16:07 |
 
 ---
 
