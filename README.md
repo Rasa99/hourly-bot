@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-19 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-19 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| AVAX | LONG | 0.00% | RSI already stretched (84/78) |
-| HBAR | LONG | 0.00% | **READY** |
-| DOGE | LONG | 0.19% | needs 0.2% move |
-| BAND | LONG | 0.35% | needs 0.3% move |
-| ALGO | LONG | 0.36% | needs 0.4% move |
-| CHZ | LONG | 0.46% | needs 0.5% move |
-| ONT | LONG | 0.46% | needs 0.5% move; volume below average |
-| COMP | LONG | 0.51% | needs 0.5% move |
-| BNB | LONG | 0.54% | needs 0.5% move |
-| BTC | LONG | 0.56% | needs 0.6% move; volume below average |
+| ALGO | LONG | 0.00% | **READY** |
+| COMP | LONG | 0.00% | **READY** |
+| CELO | LONG | 0.00% | RSI already stretched (82/78) |
+| IOTA | LONG | 0.02% | needs 0.0% move |
+| AVAX | LONG | 0.13% | needs 0.1% move; volume below average |
+| ENJ | LONG | 0.25% | needs 0.3% move; volume below average |
+| BTC | LONG | 0.28% | needs 0.3% move |
+| BNB | LONG | 0.51% | needs 0.5% move |
+| BAND | LONG | 0.55% | needs 0.5% move |
+| SNX | LONG | 0.61% | needs 0.6% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
