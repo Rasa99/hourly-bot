@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-18 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-19 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.0698** 🟢 +0.35% |
+| **Equity now** | **$20.2468** 🟢 +1.23% |
 | Settled balance | $19.9488 (-0.26%) |
-| Unrealised (open trades) | 🟢 +0.1210 |
+| Unrealised (open trades) | 🟢 +0.2980 |
 | Started with | $20.0000 |
 | Finished trades | 38 |
 | Open now | 5 |
@@ -22,12 +22,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **AVAX** | LONG 🔺 | 8.209 | 8.191 | -0.22% | 🔴 -0.0262 | -3.2% | 1.88% |
-| **FIL** | LONG 🔺 | 0.9162 | 0.9306 | +1.57% | 🟢 +0.0906 | +14.7% | 4.70% |
-| **ADA** | LONG 🔺 | 0.2238 | 0.2253 | +0.67% | 🟢 +0.0383 | +5.7% | 3.11% |
-| **CELO** | LONG 🔺 | 0.0838 | 0.084 | +0.24% | 🟢 +0.0161 | +1.4% | 1.92% |
-| **DASH** | LONG 🔺 | 63.12 | 63.22 | +0.16% | 🟢 +0.0022 | +0.6% | 4.62% |
-| | | | | **total** | **+0.1210** | | |
+| **AVAX** | LONG 🔺 | 8.209 | 8.217 | +0.10% | 🔴 -0.0010 | -0.1% | 2.19% |
+| **FIL** | LONG 🔺 | 0.9162 | 0.9456 | +3.21% | 🟢 +0.1907 | +31.0% | 6.21% |
+| **ADA** | LONG 🔺 | 0.2238 | 0.2264 | +1.16% | 🟢 +0.0706 | +10.5% | 3.58% |
+| **CELO** | LONG 🔺 | 0.0838 | 0.084 | +0.24% | 🟢 +0.0150 | +1.3% | 1.92% |
+| **DASH** | LONG 🔺 | 63.12 | 63.57 | +0.71% | 🟢 +0.0228 | +6.0% | 5.14% |
+| | | | | **total** | **+0.2980** | | |
 
 > ⚠️ **All 5 positions are long.** That is one bet on the same market direction, placed 5 times — these coins move together, so they will win together and lose together. Gross exposure is **183% of equity**.
 
@@ -52,16 +52,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ADA | LONG | 0.00% | volume below average; RSI already stretched (78/78) |
-| LTC | LONG | 0.00% | RSI already stretched (85/78) |
-| BCH | LONG | 0.00% | RSI already stretched (82/78) |
-| FIL | LONG | 0.00% | volume below average; RSI already stretched (78/78) |
-| CHZ | LONG | 0.00% | volume below average |
+| LTC | LONG | 0.00% | RSI already stretched (87/78) |
+| FIL | LONG | 0.00% | volume below average; RSI already stretched (81/78) |
+| ENJ | LONG | 0.00% | volume below average |
+| COMP | LONG | 0.00% | RSI already stretched (80/78) |
 | DASH | LONG | 0.00% | **READY** |
-| MANA | LONG | 0.13% | needs 0.1% move; volume below average |
-| QTUM | LONG | 0.17% | needs 0.2% move; volume below average |
-| GRT | LONG | 0.24% | needs 0.2% move; RSI already stretched (82/78) |
-| BAT | LONG | 0.25% | needs 0.3% move; volume below average |
+| BAT | LONG | 0.00% | volume below average |
+| MANA | LONG | 0.28% | needs 0.3% move; volume below average |
+| IOTA | LONG | 0.29% | needs 0.3% move; volume below average |
+| CHZ | LONG | 0.33% | needs 0.3% move; volume below average |
+| ICP | LONG | 0.38% | needs 0.4% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
