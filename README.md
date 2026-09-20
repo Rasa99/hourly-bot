@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-20 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-20 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.8708** 🟢 +4.35% |
-| Settled balance | $21.0630 (+5.32%) |
-| Unrealised (open trades) | 🔴 -0.1923 |
+| **Equity now** | **$20.8352** 🟢 +4.18% |
+| Settled balance | $20.8611 (+4.31%) |
+| Unrealised (open trades) | 🔴 -0.0259 |
 | Started with | $20.0000 |
-| Finished trades | 43 |
-| Open now | 3 |
-| Win rate | 37% (16/43) |
+| Finished trades | 44 |
+| Open now | 2 |
+| Win rate | 36% (16/44) |
 
 ![balance](chart-equity.svg)
 
@@ -22,14 +22,11 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **HBAR** | LONG 🔺 | 0.08775 | 0.086 | -1.99% | 🔴 -0.1292 | -21.0% | 1.13% |
-| **ALGO** | LONG 🔺 | 0.11309 | 0.11108 | -1.78% | 🔴 -0.0849 | -18.8% | 2.37% |
-| **GRT** | LONG 🔺 | 0.02214 | 0.02224 | +0.45% | 🟢 +0.0218 | +3.5% | 3.69% |
-| | | | | **total** | **-0.1923** | | |
+| **ALGO** | LONG 🔺 | 0.11309 | 0.11012 | -2.63% | 🔴 -0.1233 | -27.2% | 1.52% |
+| **GRT** | LONG 🔺 | 0.02214 | 0.02251 | +1.67% | 🟢 +0.0973 | +15.7% | 4.84% |
+| | | | | **total** | **-0.0259** | | |
 
-> ⚠️ **All 3 positions are long.** That is one bet on the same market direction, placed 3 times — these coins move together, so they will win together and lose together. Gross exposure is **80% of equity**.
-
-![HBAR](pos-HBAR.png)
+> ⚠️ **All 2 positions are long.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **51% of equity**.
 
 ![ALGO](pos-ALGO.png)
 
@@ -38,7 +35,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -46,16 +43,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
+| ATOM | LONG | 0.00% | **READY** |
 | GRT | LONG | 0.00% | **READY** |
-| BNB | LONG | 0.96% | needs 1.0% move |
-| BTC | LONG | 1.13% | needs 1.1% move; volume below average |
-| ETH | LONG | 1.65% | needs 1.7% move; volume below average |
-| LTC | LONG | 1.80% | needs 1.8% move; volume below average |
-| CRV | LONG | 1.81% | needs 1.8% move; volume below average |
-| SUSHI | LONG | 2.10% | needs 2.1% move |
-| LINK | LONG | 2.12% | needs 2.1% move; volume below average |
-| ENJ | LONG | 2.18% | needs 2.2% move |
-| ATOM | LONG | 2.24% | needs 2.2% move |
+| BNB | LONG | 0.56% | needs 0.6% move |
+| LTC | LONG | 0.58% | needs 0.6% move; volume below average |
+| DOT | LONG | 0.69% | needs 0.7% move; volume below average |
+| BTC | LONG | 0.94% | needs 0.9% move; volume below average |
+| LINK | LONG | 1.28% | needs 1.3% move; volume below average |
+| ETH | LONG | 1.38% | needs 1.4% move; volume below average |
+| ENJ | LONG | 1.47% | needs 1.5% move; volume below average |
+| SUSHI | LONG | 1.82% | needs 1.8% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -69,6 +66,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| HBAR | LONG | 🔴 -0.2020 (-32.9%) | stop_loss | 2026-09-20 19:21 |
 | DASH | LONG | 🔴 -0.1733 (-45.7%) | stop_loss | 2026-09-19 05:58 |
 | CELO | LONG | 🟢 +0.1347 (+11.6%) | force_exit | 2026-09-19 09:28 |
 | ADA | LONG | 🔴 -0.0111 (-1.6%) | force_exit | 2026-09-19 09:28 |
@@ -83,7 +81,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | RVN | SHORT | 🔴 -0.2229 (-28.0%) | trailing_stop_loss | 2026-09-17 06:14 |
 | LINK | SHORT | 🔴 -0.1837 (-16.5%) | trailing_stop_loss | 2026-09-14 02:10 |
 | QTUM | LONG | 🔴 -0.2246 (-20.2%) | stop_loss | 2026-09-12 16:06 |
-| BCH | SHORT | 🟢 +0.4651 (+63.3%) | force_exit | 2026-09-10 13:25 |
 
 ---
 
