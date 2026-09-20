@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-20 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-20 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| EGLD | SHORT | 0.00% | RSI already stretched (20/22) |
-| BTC | LONG | 2.00% | needs 2.0% move |
-| BAT | LONG | 2.59% | needs 2.6% move |
-| ENJ | LONG | 2.71% | needs 2.7% move; trend too weak (ADX 18/20) |
-| ANKR | LONG | 3.46% | needs 3.5% move |
-| BNB | LONG | 3.49% | needs 3.5% move |
-| GRT | LONG | 3.67% | needs 3.7% move |
-| ETH | LONG | 3.71% | needs 3.7% move |
-| QTUM | LONG | 3.79% | needs 3.8% move |
-| COMP | LONG | 3.80% | needs 3.8% move |
+| ONT | LONG | 1.22% | needs 1.2% move |
+| MANA | LONG | 1.24% | needs 1.2% move |
+| GRT | LONG | 1.41% | needs 1.4% move; volume below average |
+| SAND | LONG | 1.53% | needs 1.5% move |
+| BTC | LONG | 1.81% | needs 1.8% move |
+| EGLD | SHORT | 2.15% | needs 2.2% move; volume below average |
+| BAT | LONG | 2.40% | needs 2.4% move |
+| ENJ | LONG | 2.41% | needs 2.4% move; trend too weak (ADX 19/20) |
+| COMP | LONG | 2.90% | needs 2.9% move; volume below average |
+| CHZ | LONG | 3.11% | needs 3.1% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
