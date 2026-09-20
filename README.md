@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-20 21:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-20 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.6733** 🟢 +3.37% |
-| Settled balance | $20.8611 (+4.31%) |
-| Unrealised (open trades) | 🔴 -0.1878 |
+| **Equity now** | **$20.6545** 🟢 +3.27% |
+| Settled balance | $20.6691 (+3.35%) |
+| Unrealised (open trades) | 🔴 -0.0146 |
 | Started with | $20.0000 |
-| Finished trades | 44 |
-| Open now | 2 |
-| Win rate | 36% (16/44) |
+| Finished trades | 45 |
+| Open now | 1 |
+| Win rate | 36% (16/45) |
 
 ![balance](chart-equity.svg)
 
@@ -22,20 +22,17 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **ALGO** | LONG 🔺 | 0.11309 | 0.10915 | -3.48% | 🔴 -0.1620 | -35.8% | 0.64% |
-| **GRT** | LONG 🔺 | 0.02214 | 0.02207 | -0.32% | 🔴 -0.0258 | -4.2% | 2.95% |
-| | | | | **total** | **-0.1878** | | |
+| **GRT** | LONG 🔺 | 0.02214 | 0.02211 | -0.14% | 🔴 -0.0146 | -2.4% | 3.12% |
+| | | | | **total** | **-0.0146** | | |
 
-> ⚠️ **All 2 positions are long.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **51% of equity**.
-
-![ALGO](pos-ALGO.png)
+> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **30% of equity**.
 
 ![GRT](pos-GRT.png)
 
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -43,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | LONG | 0.45% | needs 0.5% move |
-| CRV | LONG | 0.71% | needs 0.7% move; volume below average |
-| BNB | LONG | 0.74% | needs 0.7% move |
-| ENJ | LONG | 1.02% | needs 1.0% move; volume below average |
-| BTC | LONG | 1.06% | needs 1.1% move; volume below average |
-| LTC | LONG | 1.07% | needs 1.1% move; volume below average |
-| ETH | LONG | 1.32% | needs 1.3% move; volume below average |
-| COMP | LONG | 1.33% | needs 1.3% move |
-| LINK | LONG | 1.56% | needs 1.6% move; volume below average |
-| BAT | LONG | 1.60% | needs 1.6% move; volume below average |
+| CRV | LONG | 0.00% | volume below average |
+| COMP | LONG | 0.00% | **READY** |
+| SUSHI | LONG | 0.00% | **READY** |
+| ATOM | LONG | 0.73% | needs 0.7% move |
+| LTC | LONG | 0.80% | needs 0.8% move; volume below average |
+| GALA | LONG | 0.92% | needs 0.9% move |
+| BNB | LONG | 1.04% | needs 1.0% move; volume below average |
+| BTC | LONG | 1.25% | needs 1.2% move |
+| AVAX | LONG | 1.27% | needs 1.3% move; volume below average |
+| ETH | LONG | 1.46% | needs 1.5% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -66,6 +63,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| ALGO | LONG | 🔴 -0.1920 (-42.4%) | stop_loss | 2026-09-20 21:11 |
 | HBAR | LONG | 🔴 -0.2020 (-32.9%) | stop_loss | 2026-09-20 19:21 |
 | DASH | LONG | 🔴 -0.1733 (-45.7%) | stop_loss | 2026-09-19 05:58 |
 | CELO | LONG | 🟢 +0.1347 (+11.6%) | force_exit | 2026-09-19 09:28 |
@@ -80,7 +78,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | ICP | SHORT | 🔴 -0.2177 (-28.4%) | stop_loss | 2026-09-17 18:20 |
 | RVN | SHORT | 🔴 -0.2229 (-28.0%) | trailing_stop_loss | 2026-09-17 06:14 |
 | LINK | SHORT | 🔴 -0.1837 (-16.5%) | trailing_stop_loss | 2026-09-14 02:10 |
-| QTUM | LONG | 🔴 -0.2246 (-20.2%) | stop_loss | 2026-09-12 16:06 |
 
 ---
 
