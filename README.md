@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-20 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-20 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.8352** 🟢 +4.18% |
+| **Equity now** | **$20.6621** 🟢 +3.31% |
 | Settled balance | $20.8611 (+4.31%) |
-| Unrealised (open trades) | 🔴 -0.0259 |
+| Unrealised (open trades) | 🔴 -0.1990 |
 | Started with | $20.0000 |
 | Finished trades | 44 |
 | Open now | 2 |
@@ -22,9 +22,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **ALGO** | LONG 🔺 | 0.11309 | 0.11012 | -2.63% | 🔴 -0.1233 | -27.2% | 1.52% |
-| **GRT** | LONG 🔺 | 0.02214 | 0.02251 | +1.67% | 🟢 +0.0973 | +15.7% | 4.84% |
-| | | | | **total** | **-0.0259** | | |
+| **ALGO** | LONG 🔺 | 0.11309 | 0.10922 | -3.42% | 🔴 -0.1592 | -35.2% | 0.70% |
+| **GRT** | LONG 🔺 | 0.02214 | 0.02202 | -0.54% | 🔴 -0.0398 | -6.4% | 2.72% |
+| | | | | **total** | **-0.1990** | | |
 
 > ⚠️ **All 2 positions are long.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **51% of equity**.
 
@@ -35,7 +35,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**2 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -43,16 +43,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | LONG | 0.00% | **READY** |
-| GRT | LONG | 0.00% | **READY** |
-| BNB | LONG | 0.56% | needs 0.6% move |
-| LTC | LONG | 0.58% | needs 0.6% move; volume below average |
-| DOT | LONG | 0.69% | needs 0.7% move; volume below average |
-| BTC | LONG | 0.94% | needs 0.9% move; volume below average |
-| LINK | LONG | 1.28% | needs 1.3% move; volume below average |
-| ETH | LONG | 1.38% | needs 1.4% move; volume below average |
-| ENJ | LONG | 1.47% | needs 1.5% move; volume below average |
-| SUSHI | LONG | 1.82% | needs 1.8% move; volume below average |
+| ATOM | LONG | 0.45% | needs 0.5% move |
+| CRV | LONG | 0.71% | needs 0.7% move; volume below average |
+| BNB | LONG | 0.74% | needs 0.7% move |
+| ENJ | LONG | 1.02% | needs 1.0% move; volume below average |
+| BTC | LONG | 1.06% | needs 1.1% move; volume below average |
+| LTC | LONG | 1.07% | needs 1.1% move; volume below average |
+| ETH | LONG | 1.32% | needs 1.3% move; volume below average |
+| COMP | LONG | 1.33% | needs 1.3% move |
+| LINK | LONG | 1.56% | needs 1.6% move; volume below average |
+| BAT | LONG | 1.60% | needs 1.6% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
