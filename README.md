@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-21 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-21 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,31 +8,22 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.8861** 🟢 +4.43% |
-| Settled balance | $20.6691 (+3.35%) |
-| Unrealised (open trades) | 🟢 +0.2171 |
+| **Equity now** | **$20.8162** 🟢 +4.08% |
+| Settled balance | $20.8162 (+4.08%) |
 | Started with | $20.0000 |
-| Finished trades | 45 |
-| Open now | 1 |
-| Win rate | 36% (16/45) |
+| Finished trades | 46 |
+| Open now | 0 |
+| Win rate | 37% (17/46) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
-|---|---|---|---|---|---|---|---|
-| **GRT** | LONG 🔺 | 0.02214 | 0.02294 | +3.61% | 🟢 +0.2171 | +35.0% | 6.63% |
-| | | | | **total** | **+0.2171** | | |
-
-> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **30% of equity**.
-
-![GRT](pos-GRT.png)
-
+Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**4 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -40,16 +31,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
+| NEAR | LONG | 0.00% | **READY** |
 | ICP | LONG | 0.00% | **READY** |
-| GRT | LONG | 0.79% | needs 0.8% move; volume below average |
-| BNB | LONG | 0.95% | needs 0.9% move |
-| BTC | LONG | 1.00% | needs 1.0% move |
-| DOT | LONG | 1.56% | needs 1.6% move; volume below average |
-| BAT | LONG | 1.58% | needs 1.6% move |
-| LINK | LONG | 1.73% | needs 1.7% move |
-| ETH | LONG | 1.78% | needs 1.8% move |
-| LTC | LONG | 1.96% | needs 2.0% move; volume below average |
-| ADA | LONG | 2.04% | needs 2.0% move |
+| ENJ | LONG | 0.00% | volume below average |
+| COMP | LONG | 0.00% | **READY** |
+| BAT | LONG | 0.00% | **READY** |
+| GRT | LONG | 0.13% | needs 0.1% move; volume below average |
+| GALA | LONG | 0.25% | needs 0.3% move; volume below average |
+| BTC | LONG | 0.85% | needs 0.9% move; volume below average |
+| DOT | LONG | 0.86% | needs 0.9% move; volume below average |
+| LINK | LONG | 0.94% | needs 0.9% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -63,6 +54,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| GRT | LONG | 🟢 +0.1471 (+23.7%) | force_exit | 2026-09-21 03:14 |
 | ALGO | LONG | 🔴 -0.1920 (-42.4%) | stop_loss | 2026-09-20 21:11 |
 | HBAR | LONG | 🔴 -0.2020 (-32.9%) | stop_loss | 2026-09-20 19:21 |
 | DASH | LONG | 🔴 -0.1733 (-45.7%) | stop_loss | 2026-09-19 05:58 |
@@ -77,7 +69,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | BTC | SHORT | 🔴 -0.1855 (-12.2%) | stop_loss | 2026-09-15 17:33 |
 | ICP | SHORT | 🔴 -0.2177 (-28.4%) | stop_loss | 2026-09-17 18:20 |
 | RVN | SHORT | 🔴 -0.2229 (-28.0%) | trailing_stop_loss | 2026-09-17 06:14 |
-| LINK | SHORT | 🔴 -0.1837 (-16.5%) | trailing_stop_loss | 2026-09-14 02:10 |
 
 ---
 
