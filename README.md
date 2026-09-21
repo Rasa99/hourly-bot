@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-21 18:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-21 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BTC | LONG | 0.52% | needs 0.5% move; volume below average |
-| ETC | LONG | 0.55% | needs 0.6% move |
-| DOGE | LONG | 0.78% | needs 0.8% move; RSI already stretched (82/78) |
-| ETH | LONG | 1.00% | needs 1.0% move; volume below average |
-| BAT | LONG | 1.17% | needs 1.2% move; volume below average |
-| BNB | LONG | 1.43% | needs 1.4% move; volume below average |
-| LRC | LONG | 1.48% | needs 1.5% move; volume below average |
-| QTUM | LONG | 1.51% | needs 1.5% move; trend too weak (ADX 17/20) |
-| SOL | LONG | 1.68% | needs 1.7% move; volume below average |
-| ONT | LONG | 1.96% | needs 2.0% move; trend too weak (ADX 17/20) |
+| DOGE | LONG | 0.00% | volume below average; RSI already stretched (85/78) |
+| BTC | LONG | 0.31% | needs 0.3% move; volume below average |
+| ETH | LONG | 0.45% | needs 0.5% move; volume below average |
+| BNB | LONG | 0.79% | needs 0.8% move; volume below average |
+| QTUM | LONG | 0.89% | needs 0.9% move; trend too weak (ADX 17/20) |
+| BAT | LONG | 1.02% | needs 1.0% move |
+| SOL | LONG | 1.23% | needs 1.2% move; volume below average |
+| ATOM | LONG | 1.23% | needs 1.2% move; trend too weak (ADX 14/20) |
+| ONT | LONG | 1.49% | needs 1.5% move; trend too weak (ADX 16/20) |
+| KSM | LONG | 1.61% | needs 1.6% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
