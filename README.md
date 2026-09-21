@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-21 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-21 09:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**8 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BTC | LONG | 0.49% | needs 0.5% move; volume below average |
-| ENJ | LONG | 0.61% | needs 0.6% move; volume below average |
-| DOT | LONG | 0.95% | needs 0.9% move; volume below average |
-| ONT | LONG | 0.98% | needs 1.0% move; trend too weak (ADX 12/20) |
-| BAT | LONG | 1.04% | needs 1.0% move; volume below average |
-| ADA | LONG | 1.25% | needs 1.2% move; volume below average |
-| SNX | LONG | 1.39% | needs 1.4% move; trend too weak (ADX 18/20) |
-| ATOM | LONG | 1.48% | needs 1.5% move; trend too weak (ADX 15/20) |
-| MANA | LONG | 1.77% | needs 1.8% move; trend too weak (ADX 19/20) |
-| ETH | LONG | 1.78% | needs 1.8% move; volume below average |
+| BTC | LONG | 0.00% | RSI already stretched (80/78) |
+| SOL | LONG | 0.00% | **READY** |
+| ADA | LONG | 0.00% | **READY** |
+| DOGE | LONG | 0.00% | **READY** |
+| DOT | LONG | 0.00% | **READY** |
+| LINK | LONG | 0.00% | **READY** |
+| SAND | LONG | 0.00% | **READY** |
+| MANA | LONG | 0.00% | **READY** |
+| GRT | LONG | 0.00% | **READY** |
+| ENJ | LONG | 0.00% | volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
