@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-21 10:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-21 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**4 coin(s) ready to fire right now.** Scanned 47 coins.
+**5 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BTC | LONG | 0.00% | RSI already stretched (84/78) |
-| ETH | LONG | 0.00% | **READY** |
-| LINK | LONG | 0.00% | **READY** |
+| DOT | LONG | 0.00% | **READY** |
+| LTC | LONG | 0.00% | **READY** |
+| BCH | LONG | 0.00% | trend too weak (ADX 17/20) |
+| APE | LONG | 0.00% | **READY** |
 | MANA | LONG | 0.00% | **READY** |
+| AXS | LONG | 0.00% | trend too weak (ADX 16/20) |
 | CHZ | LONG | 0.00% | **READY** |
-| BAT | LONG | 0.00% | volume below average |
-| BNB | LONG | 0.13% | needs 0.1% move |
-| GALA | LONG | 0.20% | needs 0.2% move |
-| SNX | LONG | 0.21% | needs 0.2% move; volume below average |
-| ADA | LONG | 0.38% | needs 0.4% move |
+| GALA | LONG | 0.00% | volume below average |
+| ONT | LONG | 0.05% | needs 0.1% move; trend too weak (ADX 15/20) |
+| ANKR | LONG | 0.08% | needs 0.1% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
