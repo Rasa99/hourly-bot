@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-21 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-21 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**2 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BTC | LONG | 0.00% | needs 0.0% move; RSI already stretched (84/78) |
-| SOL | LONG | 0.00% | RSI already stretched (82/78) |
-| COMP | LONG | 0.00% | volume below average |
-| BNB | LONG | 0.01% | needs 0.0% move |
-| GALA | LONG | 0.24% | needs 0.2% move |
-| QTUM | LONG | 0.46% | needs 0.5% move; trend too weak (ADX 16/20) |
-| SAND | LONG | 0.52% | needs 0.5% move |
-| THETA | LONG | 0.53% | needs 0.5% move |
-| ONT | LONG | 0.57% | needs 0.6% move; trend too weak (ADX 16/20) |
-| ETH | LONG | 0.61% | needs 0.6% move |
+| BNB | LONG | 0.00% | **READY** |
+| DOGE | LONG | 0.00% | RSI already stretched (81/78) |
+| GALA | LONG | 0.00% | **READY** |
+| BTC | LONG | 0.02% | needs 0.0% move; RSI already stretched (85/78) |
+| ONT | LONG | 0.14% | needs 0.1% move; trend too weak (ADX 17/20) |
+| ETC | LONG | 0.15% | needs 0.1% move |
+| SOL | LONG | 0.31% | needs 0.3% move; RSI already stretched (82/78) |
+| APE | LONG | 0.43% | needs 0.4% move |
+| CHZ | LONG | 0.44% | needs 0.4% move |
+| ETH | LONG | 0.47% | needs 0.5% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
