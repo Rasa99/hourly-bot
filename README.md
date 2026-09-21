@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-21 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-21 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**4 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -32,15 +32,15 @@ Nothing open.
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
 | NEAR | LONG | 0.00% | **READY** |
-| ICP | LONG | 0.00% | **READY** |
-| ENJ | LONG | 0.00% | volume below average |
-| COMP | LONG | 0.00% | **READY** |
-| BAT | LONG | 0.00% | **READY** |
-| GRT | LONG | 0.13% | needs 0.1% move; volume below average |
-| GALA | LONG | 0.25% | needs 0.3% move; volume below average |
-| BTC | LONG | 0.85% | needs 0.9% move; volume below average |
-| DOT | LONG | 0.86% | needs 0.9% move; volume below average |
-| LINK | LONG | 0.94% | needs 0.9% move; volume below average |
+| BAT | LONG | 0.69% | needs 0.7% move |
+| KSM | LONG | 0.73% | needs 0.7% move; volume below average |
+| ENJ | LONG | 0.87% | needs 0.9% move; volume below average |
+| BTC | LONG | 0.89% | needs 0.9% move; volume below average |
+| GALA | LONG | 0.91% | needs 0.9% move; volume below average |
+| ONT | LONG | 1.13% | needs 1.1% move; trend too weak (ADX 14/20) |
+| LINK | LONG | 1.33% | needs 1.3% move; volume below average |
+| ATOM | LONG | 1.42% | needs 1.4% move; trend too weak (ADX 17/20) |
+| BNB | LONG | 1.48% | needs 1.5% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
