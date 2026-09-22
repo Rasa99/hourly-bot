@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-22 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-22 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BCH | LONG | 0.00% | RSI already stretched (86/78) |
-| BAND | LONG | 0.14% | needs 0.1% move |
-| QTUM | LONG | 0.55% | needs 0.5% move; trend too weak (ADX 16/20) |
-| ONT | LONG | 0.62% | needs 0.6% move; trend too weak (ADX 11/20) |
-| KSM | LONG | 0.68% | needs 0.7% move; trend too weak (ADX 15/20) |
-| ETC | LONG | 0.97% | needs 1.0% move; volume below average |
-| GALA | LONG | 0.99% | needs 1.0% move |
-| CHZ | LONG | 1.02% | needs 1.0% move |
-| ANKR | LONG | 1.10% | needs 1.1% move; trend too weak (ADX 16/20) |
-| BTC | LONG | 1.11% | needs 1.1% move; volume below average |
+| GRT | LONG | 0.00% | volume below average |
+| HBAR | LONG | 0.22% | needs 0.2% move |
+| ONT | LONG | 0.30% | needs 0.3% move; trend too weak (ADX 11/20) |
+| ADA | LONG | 0.63% | needs 0.6% move; volume below average |
+| ANKR | LONG | 0.63% | needs 0.6% move; trend too weak (ADX 17/20) |
+| COMP | LONG | 0.70% | needs 0.7% move; trend too weak (ADX 15/20) |
+| QTUM | LONG | 0.74% | needs 0.7% move; trend too weak (ADX 16/20) |
+| GALA | LONG | 1.03% | needs 1.0% move |
+| SAND | LONG | 1.04% | needs 1.0% move; trend too weak (ADX 14/20) |
+| CHZ | LONG | 1.14% | needs 1.1% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
