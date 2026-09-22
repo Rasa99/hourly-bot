@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-22 13:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-22 14:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**4 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BCH | LONG | 0.00% | RSI already stretched (87/78) |
-| UNI | LONG | 0.00% | trend too weak (ADX 16/20) |
-| EGLD | LONG | 0.54% | needs 0.5% move; volume below average |
-| BAT | LONG | 0.59% | needs 0.6% move; volume below average |
-| ETC | LONG | 0.61% | needs 0.6% move |
-| APE | LONG | 0.82% | needs 0.8% move; volume below average |
-| GRT | LONG | 0.88% | needs 0.9% move; volume below average |
-| NEAR | LONG | 0.93% | needs 0.9% move |
-| KSM | LONG | 0.95% | needs 1.0% move; trend too weak (ADX 15/20) |
-| ADA | LONG | 0.96% | needs 1.0% move; volume below average |
+| ADA | LONG | 0.00% | **READY** |
+| BCH | LONG | 0.00% | RSI already stretched (90/78) |
+| ETC | LONG | 0.00% | **READY** |
+| GRT | LONG | 0.00% | **READY** |
+| BAT | LONG | 0.00% | **READY** |
+| APE | LONG | 0.20% | needs 0.2% move |
+| EGLD | LONG | 0.47% | needs 0.5% move; volume below average |
+| HBAR | LONG | 0.75% | needs 0.8% move |
+| QTUM | LONG | 0.84% | needs 0.8% move; trend too weak (ADX 18/20) |
+| KSM | LONG | 0.86% | needs 0.9% move; trend too weak (ADX 15/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
