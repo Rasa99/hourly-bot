@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-22 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-22 01:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| QTUM | LONG | 0.00% | volume below average |
-| BAT | LONG | 0.00% | volume below average |
-| HBAR | LONG | 0.03% | needs 0.0% move; volume below average |
-| AXS | LONG | 0.18% | needs 0.2% move; volume below average |
-| ONT | LONG | 0.19% | needs 0.2% move; trend too weak (ADX 17/20) |
-| ICP | LONG | 0.36% | needs 0.4% move; volume below average |
-| DOT | LONG | 0.41% | needs 0.4% move; volume below average |
-| CRV | LONG | 0.43% | needs 0.4% move; volume below average |
-| APE | LONG | 0.49% | needs 0.5% move; volume below average |
-| ANKR | LONG | 0.70% | needs 0.7% move; volume below average |
+| APE | LONG | 0.01% | needs 0.0% move |
+| ANKR | LONG | 0.02% | needs 0.0% move |
+| QTUM | LONG | 0.33% | needs 0.3% move; volume below average |
+| ONT | LONG | 0.57% | needs 0.6% move; trend too weak (ADX 18/20) |
+| COMP | LONG | 0.88% | needs 0.9% move; volume below average |
+| KSM | LONG | 0.95% | needs 1.0% move; volume below average |
+| CHZ | LONG | 1.07% | needs 1.1% move |
+| LRC | LONG | 1.14% | needs 1.1% move; volume below average |
+| BAT | LONG | 1.25% | needs 1.2% move; volume below average |
+| HBAR | LONG | 1.27% | needs 1.3% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
