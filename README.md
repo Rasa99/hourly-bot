@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-22 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-22 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**4 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| BAT | LONG | 0.12% | needs 0.1% move |
-| GRT | LONG | 0.96% | needs 1.0% move |
-| ADA | LONG | 1.24% | needs 1.2% move |
-| BTC | LONG | 1.37% | needs 1.4% move |
-| HBAR | LONG | 1.44% | needs 1.4% move |
-| QTUM | LONG | 1.46% | needs 1.5% move; trend too weak (ADX 17/20) |
-| APE | LONG | 1.50% | needs 1.5% move |
-| AXS | LONG | 1.52% | needs 1.5% move; trend too weak (ADX 14/20) |
-| CHZ | LONG | 1.57% | needs 1.6% move; trend too weak (ADX 18/20) |
-| KSM | LONG | 1.72% | needs 1.7% move; trend too weak (ADX 14/20) |
+| ETC | LONG | 0.00% | **READY** |
+| HBAR | LONG | 0.00% | **READY** |
+| APE | LONG | 0.00% | **READY** |
+| CHZ | LONG | 0.00% | trend too weak (ADX 18/20) |
+| BAT | LONG | 0.00% | **READY** |
+| BCH | LONG | 0.03% | needs 0.0% move; RSI already stretched (84/78) |
+| QTUM | LONG | 0.58% | needs 0.6% move; trend too weak (ADX 18/20) |
+| GRT | LONG | 0.62% | needs 0.6% move |
+| ADA | LONG | 0.87% | needs 0.9% move |
+| AXS | LONG | 0.89% | needs 0.9% move; trend too weak (ADX 13/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
