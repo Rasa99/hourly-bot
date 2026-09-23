@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-23 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-23 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**2 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| UNI | LONG | 0.00% | **READY** |
-| GRT | LONG | 0.00% | **READY** |
-| QTUM | LONG | 0.30% | needs 0.3% move; trend too weak (ADX 20/20) |
-| SNX | LONG | 0.33% | needs 0.3% move; trend too weak (ADX 17/20) |
-| HBAR | LONG | 0.37% | needs 0.4% move; volume below average |
-| ONT | LONG | 1.00% | needs 1.0% move; trend too weak (ADX 16/20) |
-| SUSHI | LONG | 1.17% | needs 1.2% move |
-| COMP | LONG | 1.21% | needs 1.2% move; trend too weak (ADX 15/20) |
-| BTC | LONG | 1.23% | needs 1.2% move |
-| AAVE | LONG | 1.34% | needs 1.3% move; trend too weak (ADX 18/20) |
+| HBAR | LONG | 0.00% | volume below average |
+| GRT | LONG | 0.00% | RSI already stretched (80/78) |
+| QTUM | LONG | 0.00% | volume below average |
+| CELO | LONG | 0.00% | volume below average |
+| SUSHI | LONG | 0.00% | **READY** |
+| SAND | LONG | 0.57% | needs 0.6% move; trend too weak (ADX 17/20) |
+| ADA | LONG | 0.59% | needs 0.6% move; volume below average |
+| ONT | LONG | 0.59% | needs 0.6% move; trend too weak (ADX 17/20) |
+| IOTA | LONG | 0.69% | needs 0.7% move; trend too weak (ADX 17/20) |
+| SNX | LONG | 0.73% | needs 0.7% move; trend too weak (ADX 18/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
