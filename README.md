@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-23 10:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-23 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**2 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| GRT | LONG | 0.00% | **READY** |
-| SNX | LONG | 0.00% | **READY** |
-| SUSHI | LONG | 0.39% | needs 0.4% move; volume below average |
-| ICP | LONG | 0.49% | needs 0.5% move; trend too weak (ADX 15/20) |
-| MANA | LONG | 0.82% | needs 0.8% move; trend too weak (ADX 15/20) |
-| BCH | LONG | 0.88% | needs 0.9% move; volume below average |
-| CELO | LONG | 0.91% | needs 0.9% move; volume below average |
-| ENJ | LONG | 1.11% | needs 1.1% move; volume below average |
-| ANKR | LONG | 1.20% | needs 1.2% move; trend too weak (ADX 18/20) |
-| QTUM | LONG | 1.23% | needs 1.2% move |
+| ICP | LONG | 0.06% | needs 0.1% move; trend too weak (ADX 16/20) |
+| GRT | LONG | 0.44% | needs 0.4% move; volume below average |
+| ONT | LONG | 0.44% | needs 0.4% move |
+| SNX | LONG | 0.45% | needs 0.5% move; RSI already stretched (79/78) |
+| CELO | LONG | 0.53% | needs 0.5% move; volume below average |
+| SUSHI | LONG | 0.68% | needs 0.7% move; volume below average |
+| MANA | LONG | 0.69% | needs 0.7% move; trend too weak (ADX 15/20) |
+| BAND | LONG | 0.96% | needs 1.0% move; volume below average |
+| ANKR | LONG | 0.99% | needs 1.0% move; trend too weak (ADX 17/20) |
+| APE | LONG | 1.00% | needs 1.0% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
