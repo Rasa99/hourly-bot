@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-23 11:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-23 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,22 +8,31 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.6329** 🟢 +3.16% |
+| **Equity now** | **$20.6589** 🟢 +3.29% |
 | Settled balance | $20.6329 (+3.16%) |
+| Unrealised (open trades) | 🟢 +0.0260 |
 | Started with | $20.0000 |
 | Finished trades | 47 |
-| Open now | 0 |
+| Open now | 1 |
 | Win rate | 36% (17/47) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-Nothing open.
+| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
+|---|---|---|---|---|---|---|---|
+| **NEAR** | LONG 🔺 | 4.6985 | 4.7264 | +0.59% | 🟢 +0.0260 | +4.9% | 6.25% |
+| | | | | **total** | **+0.0260** | | |
+
+> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **23% of equity**.
+
+![NEAR](pos-NEAR.png)
+
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +40,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ICP | LONG | 0.06% | needs 0.1% move; trend too weak (ADX 16/20) |
-| GRT | LONG | 0.44% | needs 0.4% move; volume below average |
-| ONT | LONG | 0.44% | needs 0.4% move |
-| SNX | LONG | 0.45% | needs 0.5% move; RSI already stretched (79/78) |
-| CELO | LONG | 0.53% | needs 0.5% move; volume below average |
-| SUSHI | LONG | 0.68% | needs 0.7% move; volume below average |
-| MANA | LONG | 0.69% | needs 0.7% move; trend too weak (ADX 15/20) |
-| BAND | LONG | 0.96% | needs 1.0% move; volume below average |
-| ANKR | LONG | 0.99% | needs 1.0% move; trend too weak (ADX 17/20) |
-| APE | LONG | 1.00% | needs 1.0% move; volume below average |
+| NEAR | LONG | 0.00% | **READY** |
+| ICP | LONG | 0.00% | trend too weak (ADX 18/20) |
+| GRT | LONG | 1.52% | needs 1.5% move |
+| BTC | LONG | 2.05% | needs 2.0% move |
+| CELO | LONG | 2.10% | needs 2.1% move |
+| SNX | LONG | 2.14% | needs 2.1% move |
+| MANA | LONG | 2.25% | needs 2.3% move; trend too weak (ADX 14/20) |
+| BAND | LONG | 2.38% | needs 2.4% move |
+| SOL | LONG | 2.51% | needs 2.5% move; trend too weak (ADX 20/20) |
+| ONT | LONG | 2.52% | needs 2.5% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
