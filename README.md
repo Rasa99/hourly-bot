@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-23 19:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-23 20:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 0.35% | needs 0.3% move; volume below average |
-| BTC | LONG | 3.68% | needs 3.7% move; volume below average |
-| SOL | LONG | 5.03% | needs 5.0% move; volume below average |
-| BCH | LONG | 5.06% | needs 5.1% move; volume below average |
-| ETH | LONG | 5.21% | needs 5.2% move; volume below average |
-| BNB | LONG | 5.36% | needs 5.4% move; volume below average |
-| LTC | LONG | 5.99% | needs 6.0% move; volume below average |
-| MANA | LONG | 7.68% | needs 7.7% move; volume below average |
-| ONT | LONG | 7.78% | needs 7.8% move; volume below average |
-| COMP | LONG | 8.21% | needs 8.2% move; volume below average |
+| STORJ | SHORT | 0.00% | volume below average |
+| BTC | LONG | 3.45% | needs 3.5% move; volume below average |
+| SOL | LONG | 4.81% | needs 4.8% move; volume below average |
+| ETH | LONG | 4.83% | needs 4.8% move; volume below average |
+| BNB | LONG | 5.17% | needs 5.2% move; volume below average |
+| LTC | LONG | 5.61% | needs 5.6% move; volume below average |
+| BCH | LONG | 5.90% | needs 5.9% move; volume below average |
+| MANA | LONG | 7.93% | needs 7.9% move; volume below average |
+| ONT | LONG | 7.96% | needs 8.0% move; volume below average |
+| LINK | LONG | 8.17% | needs 8.2% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
