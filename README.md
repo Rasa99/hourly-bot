@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-22 23:09 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-23 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ATOM | LONG | 0.00% | trend too weak (ADX 16/20) |
-| UNI | LONG | 0.00% | **READY** |
-| SAND | LONG | 0.00% | trend too weak (ADX 13/20) |
-| MANA | LONG | 0.00% | trend too weak (ADX 14/20) |
-| COMP | LONG | 0.00% | trend too weak (ADX 14/20) |
-| QTUM | LONG | 0.00% | trend too weak (ADX 17/20) |
-| ONT | LONG | 0.00% | trend too weak (ADX 13/20) |
-| RVN | LONG | 0.00% | trend too weak (ADX 18/20); volume below average |
-| SUSHI | LONG | 0.00% | trend too weak (ADX 16/20) |
-| ANKR | LONG | 0.00% | trend too weak (ADX 19/20); volume below average |
+| ATOM | LONG | 0.00% | trend too weak (ADX 19/20) |
+| ETC | LONG | 0.00% | volume below average |
+| FIL | LONG | 0.00% | volume below average |
+| CHZ | LONG | 0.00% | **READY** |
+| COMP | LONG | 0.00% | trend too weak (ADX 15/20); volume below average |
+| ONT | LONG | 0.00% | trend too weak (ADX 14/20); volume below average |
+| BAT | LONG | 0.00% | volume below average |
+| RVN | LONG | 0.00% | volume below average |
+| GALA | LONG | 0.00% | **READY** |
+| SNX | LONG | 0.00% | trend too weak (ADX 15/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
