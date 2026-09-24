@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-24 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-24 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LTC | LONG | 0.00% | **READY** |
-| STORJ | SHORT | 1.46% | needs 1.5% move; volume below average |
-| CRV | SHORT | 2.38% | needs 2.4% move; volume below average |
-| COMP | LONG | 3.67% | needs 3.7% move; volume below average |
-| BTC | LONG | 4.15% | needs 4.1% move; volume below average |
-| SOL | LONG | 4.62% | needs 4.6% move; volume below average |
-| ETH | LONG | 4.91% | needs 4.9% move; volume below average |
-| BNB | LONG | 5.34% | needs 5.3% move; volume below average |
-| ETC | LONG | 6.29% | needs 6.3% move |
-| SKL | LONG | 7.09% | needs 7.1% move |
+| LTC | LONG | 0.00% | RSI already stretched (78/78) |
+| COMP | LONG | 2.49% | needs 2.5% move; volume below average |
+| STORJ | SHORT | 3.52% | needs 3.5% move; volume below average |
+| CRV | SHORT | 3.98% | needs 4.0% move; volume below average |
+| SOL | LONG | 4.01% | needs 4.0% move; volume below average |
+| BTC | LONG | 4.02% | needs 4.0% move; volume below average |
+| ETC | LONG | 4.50% | needs 4.5% move |
+| ETH | LONG | 4.70% | needs 4.7% move; volume below average |
+| BNB | LONG | 4.76% | needs 4.8% move; volume below average |
+| ONT | LONG | 5.83% | needs 5.8% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
