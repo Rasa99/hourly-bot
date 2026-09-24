@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-24 12:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-24 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| ETC | LONG | 2.01% | needs 2.0% move |
-| COMP | LONG | 2.11% | needs 2.1% move; volume below average |
-| STORJ | SHORT | 2.11% | needs 2.1% move; volume below average |
-| CRV | SHORT | 3.05% | needs 3.1% move; volume below average |
-| BTC | LONG | 4.71% | needs 4.7% move; volume below average |
-| LTC | LONG | 4.78% | needs 4.8% move; volume below average |
-| BNB | LONG | 4.89% | needs 4.9% move |
-| SOL | LONG | 5.88% | needs 5.9% move |
-| ETH | LONG | 6.06% | needs 6.1% move; volume below average |
-| RVN | LONG | 7.37% | needs 7.4% move; volume below average |
+| COMP | LONG | 1.81% | needs 1.8% move; volume below average |
+| STORJ | SHORT | 2.76% | needs 2.8% move; volume below average |
+| CRV | SHORT | 3.29% | needs 3.3% move; volume below average |
+| ETC | LONG | 3.30% | needs 3.3% move |
+| LTC | LONG | 3.90% | needs 3.9% move; volume below average |
+| BTC | LONG | 4.57% | needs 4.6% move; volume below average |
+| BNB | LONG | 4.73% | needs 4.7% move |
+| ICP | LONG | 4.93% | needs 4.9% move; trend too weak (ADX 17/20) |
+| SOL | LONG | 5.44% | needs 5.4% move; volume below average |
+| ETH | LONG | 6.02% | needs 6.0% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
