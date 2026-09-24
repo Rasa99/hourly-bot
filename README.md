@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-24 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-24 17:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LTC | LONG | 1.40% | needs 1.4% move |
-| COMP | LONG | 2.01% | needs 2.0% move; volume below average |
-| ALGO | LONG | 2.40% | needs 2.4% move |
-| MANA | LONG | 3.15% | needs 3.1% move |
-| SOL | LONG | 3.17% | needs 3.2% move |
-| BNB | LONG | 3.47% | needs 3.5% move |
-| BTC | LONG | 3.56% | needs 3.6% move |
-| ICP | LONG | 3.65% | needs 3.6% move |
-| LINK | LONG | 3.93% | needs 3.9% move |
-| ONT | LONG | 4.08% | needs 4.1% move |
+| LTC | LONG | 0.82% | needs 0.8% move |
+| ALGO | LONG | 0.97% | needs 1.0% move |
+| ICP | LONG | 1.55% | needs 1.6% move |
+| COMP | LONG | 1.59% | needs 1.6% move; volume below average |
+| MANA | LONG | 1.81% | needs 1.8% move |
+| EGLD | LONG | 2.06% | needs 2.1% move |
+| NEAR | LONG | 2.15% | needs 2.1% move; trend too weak (ADX 19/20) |
+| SOL | LONG | 2.52% | needs 2.5% move |
+| LINK | LONG | 2.53% | needs 2.5% move |
+| BNB | LONG | 3.37% | needs 3.4% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
