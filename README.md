@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-24 02:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-24 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 1.74% | needs 1.7% move; volume below average |
-| BTC | LONG | 3.94% | needs 3.9% move; volume below average |
-| LTC | LONG | 4.13% | needs 4.1% move; volume below average |
-| SOL | LONG | 4.63% | needs 4.6% move; volume below average |
-| ETH | LONG | 4.98% | needs 5.0% move; volume below average |
-| BNB | LONG | 5.34% | needs 5.3% move; volume below average |
-| COMP | LONG | 5.39% | needs 5.4% move; volume below average |
-| SKL | LONG | 7.59% | needs 7.6% move; volume below average |
-| BCH | LONG | 8.38% | needs 8.4% move; volume below average |
-| LINK | LONG | 8.58% | needs 8.6% move; volume below average |
+| LTC | LONG | 0.00% | **READY** |
+| STORJ | SHORT | 1.62% | needs 1.6% move; volume below average |
+| COMP | LONG | 2.85% | needs 2.9% move; volume below average |
+| BTC | LONG | 3.62% | needs 3.6% move; volume below average |
+| SOL | LONG | 4.09% | needs 4.1% move; volume below average |
+| BNB | LONG | 4.54% | needs 4.5% move |
+| ETH | LONG | 4.56% | needs 4.6% move; volume below average |
+| SKL | LONG | 6.36% | needs 6.4% move; volume below average |
+| ICP | LONG | 6.45% | needs 6.4% move; volume below average |
+| BCH | LONG | 7.17% | needs 7.2% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
