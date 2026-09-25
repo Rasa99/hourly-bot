@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-25 15:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-25 16:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.5660** 🟢 +2.83% |
-| Settled balance | $19.7996 (-1.00%) |
-| Unrealised (open trades) | 🟢 +0.7664 |
+| **Equity now** | **$20.4798** 🟢 +2.40% |
+| Settled balance | $20.4136 (+2.07%) |
+| Unrealised (open trades) | 🟢 +0.0662 |
 | Started with | $20.0000 |
-| Finished trades | 50 |
-| Open now | 3 |
-| Win rate | 34% (17/50) |
+| Finished trades | 52 |
+| Open now | 1 |
+| Win rate | 37% (19/52) |
 
 ![balance](chart-equity.svg)
 
@@ -22,18 +22,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **LINK** | LONG 🔺 | 13.424 | 13.98 | +4.14% | 🟢 +0.5478 | +40.8% | 6.96% |
-| **MANA** | LONG 🔺 | 0.09099 | 0.09154 | +0.60% | 🟢 +0.0358 | +4.9% | 3.35% |
-| **NEAR** | LONG 🔺 | 4.9082 | 5.0959 | +3.82% | 🟢 +0.1827 | +30.0% | 9.59% |
-| | | | | **total** | **+0.7664** | | |
+| **MANA** | LONG 🔺 | 0.09099 | 0.09193 | +1.03% | 🟢 +0.0662 | +9.1% | 3.76% |
+| | | | | **total** | **+0.0662** | | |
 
-> ⚠️ **All 3 positions are long.** That is one bet on the same market direction, placed 3 times — these coins move together, so they will win together and lose together. Gross exposure is **129% of equity**.
-
-![LINK](pos-LINK.png)
+> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **36% of equity**.
 
 ![MANA](pos-MANA.png)
-
-![NEAR](pos-NEAR.png)
 
 
 ## What it is waiting for
@@ -46,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| KSM | LONG | 1.08% | needs 1.1% move |
-| QTUM | LONG | 1.12% | needs 1.1% move |
-| LINK | LONG | 1.24% | needs 1.2% move |
-| NEAR | LONG | 1.36% | needs 1.4% move |
-| MANA | LONG | 1.39% | needs 1.4% move |
-| IOTA | LONG | 1.39% | needs 1.4% move |
-| SOL | LONG | 1.57% | needs 1.6% move |
-| COMP | LONG | 1.67% | needs 1.7% move; volume below average |
-| SKL | LONG | 1.75% | needs 1.7% move |
-| ONT | LONG | 1.95% | needs 1.9% move; volume below average |
+| MANA | LONG | 0.00% | volume below average |
+| KSM | LONG | 1.25% | needs 1.2% move |
+| QTUM | LONG | 1.39% | needs 1.4% move; volume below average |
+| SKL | LONG | 1.53% | needs 1.5% move |
+| NEAR | LONG | 1.75% | needs 1.7% move |
+| SOL | LONG | 1.80% | needs 1.8% move |
+| IOTA | LONG | 2.29% | needs 2.3% move |
+| ALGO | LONG | 2.32% | needs 2.3% move |
+| ONT | LONG | 2.45% | needs 2.5% move |
+| EGLD | LONG | 2.50% | needs 2.5% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -70,6 +64,8 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
 | ALGO | LONG | 🔴 -0.1848 (-31.4%) | trailing_stop_loss | 2026-09-25 14:03 |
+| NEAR | LONG | 🟢 +0.1803 (+29.6%) | force_exit | 2026-09-25 15:27 |
+| LINK | LONG | 🟢 +0.4337 (+32.3%) | force_exit | 2026-09-25 15:27 |
 | LTC | LONG | 🔴 -0.3727 (-51.2%) | stop_loss | 2026-09-25 13:47 |
 | NEAR | LONG | 🔴 -0.2758 (-51.5%) | stop_loss | 2026-09-23 14:13 |
 | HBAR | LONG | 🔴 -0.1833 (-37.7%) | stop_loss | 2026-09-22 10:24 |
@@ -82,8 +78,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | FIL | LONG | 🟢 +0.3452 (+56.0%) | force_exit | 2026-09-19 09:28 |
 | AVAX | LONG | 🟢 +0.8187 (+99.7%) | force_exit | 2026-09-19 09:28 |
 | BAND | SHORT | 🔴 -0.2433 (-17.3%) | stop_loss | 2026-09-16 21:01 |
-| AAVE | SHORT | 🔴 -0.1684 (-27.9%) | trailing_stop_loss | 2026-09-17 12:58 |
-| CRV | SHORT | 🔴 -0.2163 (-39.5%) | stop_loss | 2026-09-17 17:07 |
 
 ---
 
