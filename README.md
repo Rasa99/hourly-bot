@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-25 05:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-25 06:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.0924** 🟢 +0.46% |
+| **Equity now** | **$20.1683** 🟢 +0.84% |
 | Settled balance | $20.3571 (+1.79%) |
-| Unrealised (open trades) | 🔴 -0.2648 |
+| Unrealised (open trades) | 🔴 -0.1888 |
 | Started with | $20.0000 |
 | Finished trades | 48 |
 | Open now | 2 |
@@ -22,9 +22,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **LTC** | LONG 🔺 | 72.69 | 70.77 | -2.64% | 🔴 -0.2001 | -27.5% | 2.18% |
-| **LINK** | LONG 🔺 | 13.424 | 13.366 | -0.43% | 🔴 -0.0647 | -4.8% | 2.69% |
-| | | | | **total** | **-0.2648** | | |
+| **LTC** | LONG 🔺 | 72.69 | 71.26 | -1.97% | 🔴 -0.1511 | -20.8% | 2.85% |
+| **LINK** | LONG 🔺 | 13.424 | 13.393 | -0.23% | 🔴 -0.0377 | -2.8% | 2.88% |
+| | | | | **total** | **-0.1888** | | |
 
 > ⚠️ **All 2 positions are long.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **102% of equity**.
 
@@ -43,16 +43,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| MANA | LONG | 0.17% | needs 0.2% move; volume below average |
-| LINK | LONG | 1.04% | needs 1.0% move; volume below average |
-| ALGO | LONG | 1.64% | needs 1.6% move; volume below average |
+| MANA | LONG | 0.08% | needs 0.1% move; volume below average |
+| LINK | LONG | 0.62% | needs 0.6% move; volume below average |
+| ALGO | LONG | 1.71% | needs 1.7% move; volume below average |
 | SKL | LONG | 1.75% | needs 1.7% move; volume below average |
-| QTUM | LONG | 2.58% | needs 2.6% move |
-| SOL | LONG | 2.87% | needs 2.9% move; volume below average |
-| SNX | LONG | 2.97% | needs 3.0% move; volume below average |
-| BNB | LONG | 3.34% | needs 3.3% move; trend too weak (ADX 18/20) |
-| AXS | LONG | 3.50% | needs 3.5% move; volume below average |
-| ONT | LONG | 3.57% | needs 3.6% move; volume below average |
+| EGLD | LONG | 1.94% | needs 1.9% move |
+| SOL | LONG | 2.83% | needs 2.8% move; volume below average |
+| AXS | LONG | 2.98% | needs 3.0% move; volume below average |
+| BNB | LONG | 3.15% | needs 3.2% move; trend too weak (ADX 17/20) |
+| SNX | LONG | 3.17% | needs 3.2% move; volume below average |
+| QTUM | LONG | 3.51% | needs 3.5% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
