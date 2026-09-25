@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-25 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-25 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.4472** 🟢 +2.24% |
+| **Equity now** | **$20.5324** 🟢 +2.66% |
 | Settled balance | $20.4136 (+2.07%) |
-| Unrealised (open trades) | 🟢 +0.0335 |
+| Unrealised (open trades) | 🟢 +0.1187 |
 | Started with | $20.0000 |
 | Finished trades | 52 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | LONG 🔺 | 0.09099 | 0.09152 | +0.58% | 🟢 +0.0335 | +4.6% | 3.33% |
-| | | | | **total** | **+0.0335** | | |
+| **MANA** | LONG 🔺 | 0.09099 | 0.09259 | +1.76% | 🟢 +0.1187 | +16.4% | 4.45% |
+| | | | | **total** | **+0.1187** | | |
 
 > ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **36% of equity**.
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| QTUM | LONG | 1.09% | needs 1.1% move; volume below average |
-| IOTA | LONG | 1.61% | needs 1.6% move |
-| SOL | LONG | 1.62% | needs 1.6% move; volume below average |
-| MANA | LONG | 1.92% | needs 1.9% move; volume below average |
-| SKL | LONG | 1.97% | needs 2.0% move; volume below average |
-| KSM | LONG | 1.98% | needs 2.0% move; volume below average |
-| THETA | LONG | 2.02% | needs 2.0% move; volume below average |
-| ONT | LONG | 2.24% | needs 2.2% move |
-| COMP | LONG | 2.74% | needs 2.7% move; volume below average |
-| RVN | LONG | 3.00% | needs 3.0% move; volume below average |
+| QTUM | LONG | 0.11% | needs 0.1% move; volume below average |
+| MANA | LONG | 0.18% | needs 0.2% move; volume below average |
+| THETA | LONG | 0.34% | needs 0.3% move; volume below average |
+| SOL | LONG | 0.63% | needs 0.6% move; volume below average |
+| COMP | LONG | 0.74% | needs 0.7% move; volume below average |
+| IOTA | LONG | 0.79% | needs 0.8% move; volume below average |
+| ONT | LONG | 0.93% | needs 0.9% move; volume below average |
+| KSM | LONG | 0.97% | needs 1.0% move; volume below average |
+| SKL | LONG | 1.08% | needs 1.1% move; volume below average |
+| GALA | LONG | 1.34% | needs 1.3% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
