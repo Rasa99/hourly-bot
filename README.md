@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-26 18:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-26 19:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.2785** 🟢 +1.39% |
-| Settled balance | $20.4136 (+2.07%) |
-| Unrealised (open trades) | 🔴 -0.1352 |
+| **Equity now** | **$19.9886** 🔴 -0.06% |
+| Settled balance | $20.2059 (+1.03%) |
+| Unrealised (open trades) | 🔴 -0.2173 |
 | Started with | $20.0000 |
-| Finished trades | 52 |
-| Open now | 4 |
-| Win rate | 37% (19/52) |
+| Finished trades | 53 |
+| Open now | 3 |
+| Win rate | 36% (19/53) |
 
 ![balance](chart-equity.svg)
 
@@ -22,26 +22,23 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | LONG 🔺 | 0.09099 | 0.09278 | +1.97% | 🟢 +0.1317 | +18.2% | 4.65% |
-| **DOT** | LONG 🔺 | 1.285 | 1.262 | -1.79% | 🔴 -0.0971 | -18.9% | 1.51% |
-| **ICP** | LONG 🔺 | 3.334 | 3.273 | -1.83% | 🔴 -0.1222 | -19.3% | 1.37% |
-| **SAND** | LONG 🔺 | 0.04623 | 0.04599 | -0.52% | 🔴 -0.0475 | -6.2% | 2.11% |
-| | | | | **total** | **-0.1352** | | |
+| **MANA** | LONG 🔺 | 0.09099 | 0.0916 | +0.67% | 🟢 +0.0377 | +5.2% | 3.42% |
+| **DOT** | LONG 🔺 | 1.285 | 1.251 | -2.65% | 🔴 -0.1411 | -27.4% | 0.64% |
+| **SAND** | LONG 🔺 | 0.04623 | 0.04559 | -1.38% | 🔴 -0.1139 | -14.8% | 1.25% |
+| | | | | **total** | **-0.2173** | | |
 
-> ⚠️ **All 4 positions are long.** That is one bet on the same market direction, placed 4 times — these coins move together, so they will win together and lose together. Gross exposure is **129% of equity**.
+> ⚠️ **All 3 positions are long.** That is one bet on the same market direction, placed 3 times — these coins move together, so they will win together and lose together. Gross exposure is **99% of equity**.
 
 ![MANA](pos-MANA.png)
 
 ![DOT](pos-DOT.png)
-
-![ICP](pos-ICP.png)
 
 ![SAND](pos-SAND.png)
 
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -49,16 +46,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SUSHI | LONG | 0.00% | **READY** |
-| DASH | LONG | 0.41% | needs 0.4% move; volume below average |
-| ATOM | LONG | 0.59% | needs 0.6% move |
-| CHZ | LONG | 0.65% | needs 0.6% move; trend too weak (ADX 18/20) |
-| MANA | LONG | 0.81% | needs 0.8% move; trend too weak (ADX 15/20) |
-| AAVE | LONG | 0.95% | needs 0.9% move; volume below average |
-| BAT | LONG | 1.05% | needs 1.0% move; volume below average |
-| BAND | LONG | 1.05% | needs 1.1% move; volume below average |
-| LINK | LONG | 1.08% | needs 1.1% move |
-| APE | LONG | 1.17% | needs 1.2% move; volume below average |
+| BAT | LONG | 0.78% | needs 0.8% move; volume below average |
+| ANKR | LONG | 1.20% | needs 1.2% move; volume below average |
+| CHZ | LONG | 1.25% | needs 1.2% move; trend too weak (ADX 18/20) |
+| SUSHI | LONG | 1.45% | needs 1.5% move |
+| BTC | LONG | 1.48% | needs 1.5% move; trend too weak (ADX 11/20) |
+| SKL | LONG | 1.50% | needs 1.5% move; volume below average |
+| SOL | LONG | 1.57% | needs 1.6% move; volume below average |
+| LRC | LONG | 1.61% | needs 1.6% move; volume below average |
+| AAVE | LONG | 1.75% | needs 1.8% move; volume below average |
+| BAND | LONG | 1.86% | needs 1.9% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -72,6 +69,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| ICP | LONG | 🔴 -0.2077 (-32.8%) | stop_loss | 2026-09-26 18:45 |
 | ALGO | LONG | 🔴 -0.1848 (-31.4%) | trailing_stop_loss | 2026-09-25 14:03 |
 | NEAR | LONG | 🟢 +0.1803 (+29.6%) | force_exit | 2026-09-25 15:27 |
 | LINK | LONG | 🟢 +0.4337 (+32.3%) | force_exit | 2026-09-25 15:27 |
@@ -86,7 +84,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | ADA | LONG | 🔴 -0.0111 (-1.6%) | force_exit | 2026-09-19 09:28 |
 | FIL | LONG | 🟢 +0.3452 (+56.0%) | force_exit | 2026-09-19 09:28 |
 | AVAX | LONG | 🟢 +0.8187 (+99.7%) | force_exit | 2026-09-19 09:28 |
-| BAND | SHORT | 🔴 -0.2433 (-17.3%) | stop_loss | 2026-09-16 21:01 |
 
 ---
 
