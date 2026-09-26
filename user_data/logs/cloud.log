@@ -1525,3 +1525,156 @@
 2026-09-26 18:07:20,471 - freqtrade.wallets - INFO - Wallets synced.
 2026-09-26 18:07:20,624 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7155963600738741 and price: 0.2733 ...
 2026-09-26 18:07:20,625 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:08:54,471 - freqtrade.loggers - INFO - Enabling colorized output.
+2026-09-26 18:08:54,471 - freqtrade.loggers - INFO - Logfile configured
+2026-09-26 18:08:54,472 - freqtrade.loggers - INFO - Verbosity set to 0
+2026-09-26 18:08:54,472 - freqtrade.configuration.configuration - INFO - Runmode set to dry_run.
+2026-09-26 18:08:54,472 - freqtrade.configuration.configuration - INFO - Parameter --db-url detected ...
+2026-09-26 18:08:54,473 - freqtrade.configuration.configuration - INFO - Dry run is enabled
+2026-09-26 18:08:54,473 - freqtrade.configuration.configuration - INFO - Using DB: "sqlite:////home/runner/work/_temp/live_cloud.sqlite"
+2026-09-26 18:08:54,473 - freqtrade.configuration.configuration - INFO - Using max_open_trades: 15 ...
+2026-09-26 18:08:54,474 - freqtrade.configuration.configuration - INFO - Using user-data directory: user_data ...
+2026-09-26 18:08:54,475 - freqtrade.configuration.directory_operations - INFO - Created data directory: None
+2026-09-26 18:08:54,475 - freqtrade.configuration.configuration - INFO - Using data directory: user_data/data/gate ...
+2026-09-26 18:08:54,476 - freqtrade.exchange.check_exchange - INFO - Checking exchange...
+2026-09-26 18:08:54,482 - freqtrade.exchange.check_exchange - INFO - Exchange "gate" is officially supported by the Freqtrade development team.
+2026-09-26 18:08:54,483 - freqtrade.configuration.configuration - INFO - Using pairlist from configuration.
+2026-09-26 18:08:54,483 - freqtrade.exchange.exchange - INFO - Instance is running with dry_run enabled
+2026-09-26 18:08:54,484 - freqtrade.exchange.exchange - INFO - Using CCXT 4.5.84
+2026-09-26 18:08:54,484 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2026-09-26 18:08:54,486 - freqtrade.exchange.exchange - INFO - Applying additional ccxt config: {'options': {'defaultType': 'swap'}}
+2026-09-26 18:08:54,489 - freqtrade.exchange.exchange - INFO - Using Exchange "Gate"
+2026-09-26 18:09:04,511 - freqtrade.resolvers.exchange_resolver - INFO - Using resolved exchange class 'Gate' ...
+2026-09-26 18:09:04,523 - freqtrade.resolvers.iresolver - INFO - Using resolved strategy HourlyTrend from '/home/runner/work/hourly-bot/hourly-bot/user_data/strategies/HourlyTrend.py'...
+2026-09-26 18:09:04,524 - freqtrade.strategy.hyper - INFO - Found no parameter file.
+2026-09-26 18:09:04,524 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'timeframe' with value from the configuration: 1h.
+2026-09-26 18:09:04,525 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'order_types' with value from the configuration: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'limit', 'stoploss_on_exchange': False}.
+2026-09-26 18:09:04,525 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_currency' with value from the configuration: USDT.
+2026-09-26 18:09:04,526 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'stake_amount' with value from the configuration: unlimited.
+2026-09-26 18:09:04,526 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'unfilledtimeout' with value from the configuration: {'entry': 5, 'exit': 5, 'exit_timeout_count': 0, 'unit': 'minutes'}.
+2026-09-26 18:09:04,526 - freqtrade.resolvers.strategy_resolver - INFO - Override strategy 'max_open_trades' with value from the configuration: 15.
+2026-09-26 18:09:04,527 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using minimal_roi: {'0': 100.0}
+2026-09-26 18:09:04,527 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using timeframe: 1h
+2026-09-26 18:09:04,527 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stoploss: -0.6
+2026-09-26 18:09:04,528 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop: False
+2026-09-26 18:09:04,528 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_stop_positive_offset: 0.0
+2026-09-26 18:09:04,528 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using trailing_only_offset_is_reached: False
+2026-09-26 18:09:04,529 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_custom_stoploss: True
+2026-09-26 18:09:04,529 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using process_only_new_candles: True
+2026-09-26 18:09:04,529 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_types: {'entry': 'limit', 'exit': 'limit', 'stoploss': 'limit', 'stoploss_on_exchange': False}
+2026-09-26 18:09:04,530 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using order_time_in_force: {'entry': 'GTC', 'exit': 'GTC'}
+2026-09-26 18:09:04,530 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_currency: USDT
+2026-09-26 18:09:04,530 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using stake_amount: unlimited
+2026-09-26 18:09:04,531 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using startup_candle_count: 800
+2026-09-26 18:09:04,531 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using unfilledtimeout: {'entry': 5, 'exit': 5, 'exit_timeout_count': 0, 'unit': 'minutes'}
+2026-09-26 18:09:04,531 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using use_exit_signal: False
+2026-09-26 18:09:04,532 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_only: False
+2026-09-26 18:09:04,532 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_roi_if_entry_signal: False
+2026-09-26 18:09:04,532 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using exit_profit_offset: 0.0
+2026-09-26 18:09:04,533 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using disable_dataframe_checks: False
+2026-09-26 18:09:04,533 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using ignore_buying_expired_candle_after: 0
+2026-09-26 18:09:04,533 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2026-09-26 18:09:04,533 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2026-09-26 18:09:04,534 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 15
+2026-09-26 18:09:04,534 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2026-09-26 18:09:04,572 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:04,683 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2026-09-26 18:09:04,843 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 127.0.0.1:8080
+2026-09-26 18:09:04,843 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2026-09-26 18:09:04,861 - uvicorn.error - INFO - Started server process [2359]
+2026-09-26 18:09:04,862 - uvicorn.error - INFO - Waiting for application startup.
+2026-09-26 18:09:04,862 - uvicorn.error - INFO - Application startup complete.
+2026-09-26 18:09:04,863 - uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2026-09-26 18:09:04,867 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/pairlist/StaticPairList.py'...
+2026-09-26 18:09:04,867 - freqtrade.freqtradebot - INFO - Starting initial pairlist refresh
+2026-09-26 18:09:04,927 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 47 pairs: ['BTC/USDT:USDT', 'ETH/USDT:USDT', 'BNB/USDT:USDT', 'SOL/USDT:USDT', 'ADA/USDT:USDT', 'DOGE/USDT:USDT', 'AVAX/USDT:USDT', 'DOT/USDT:USDT', 'LINK/USDT:USDT', 'LTC/USDT:USDT', 'BCH/USDT:USDT', 'ATOM/USDT:USDT', 'UNI/USDT:USDT', 'ETC/USDT:USDT', 'NEAR/USDT:USDT', 'ALGO/USDT:USDT', 'FIL/USDT:USDT', 'ICP/USDT:USDT', 'HBAR/USDT:USDT', 'APE/USDT:USDT', 'SAND/USDT:USDT', 'MANA/USDT:USDT', 'AXS/USDT:USDT', 'THETA/USDT:USDT', 'AAVE/USDT:USDT', 'GRT/USDT:USDT', 'CHZ/USDT:USDT', 'ENJ/USDT:USDT', 'CRV/USDT:USDT', 'COMP/USDT:USDT', 'DASH/USDT:USDT', 'QTUM/USDT:USDT', 'IOTA/USDT:USDT', 'ONT/USDT:USDT', 'BAT/USDT:USDT', 'RVN/USDT:USDT', 'KSM/USDT:USDT', 'EGLD/USDT:USDT', 'GALA/USDT:USDT', 'CELO/USDT:USDT', 'SUSHI/USDT:USDT', 'SNX/USDT:USDT', 'LRC/USDT:USDT', 'STORJ/USDT:USDT', 'ANKR/USDT:USDT', 'SKL/USDT:USDT', 'BAND/USDT:USDT']
+2026-09-26 18:09:04,928 - freqtrade.freqtradebot - INFO - Initial Pairlist refresh took 0.06s
+2026-09-26 18:09:04,930 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
+2026-09-26 18:09:04,930 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): adx_floor = 20
+2026-09-26 18:09:04,930 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): breakout_hours = 72
+2026-09-26 18:09:04,931 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_fast = 50
+2026-09-26 18:09:04,931 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_slow = 200
+2026-09-26 18:09:04,931 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_long_max = 78
+2026-09-26 18:09:04,932 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_short_min = 22
+2026-09-26 18:09:04,932 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2026-09-26 18:09:04,932 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): initial_stop_atr = 2.0
+2026-09-26 18:09:04,933 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): risk_per_trade = 0.01
+2026-09-26 18:09:04,933 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): trail_atr = 6.0
+2026-09-26 18:09:04,934 - freqtrade.resolvers.iresolver - INFO - Using resolved protection CooldownPeriod from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/cooldown_period.py'...
+2026-09-26 18:09:04,935 - freqtrade.resolvers.iresolver - INFO - Using resolved protection MaxDrawdown from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/max_drawdown_protection.py'...
+2026-09-26 18:09:04,937 - freqtrade.resolvers.iresolver - INFO - Using resolved protection StoplossGuard from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/stoploss_guard.py'...
+2026-09-26 18:09:04,937 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2026-09-26 18:09:04,938 - freqtrade.worker - INFO - Changing state to: RUNNING
+2026-09-26 18:09:04,947 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2026-09-26 18:09:04,947 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `gate`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'0': 100.0}`\n*Stoploss:* `-0.6`\n*Position adjustment:* `Off`\n*Timeframe:* `1h`\n*Strategy:* `HourlyTrend`"}
+2026-09-26 18:09:04,948 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
+2026-09-26 18:09:04,948 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': 'Using Protections: \nCooldownPeriod - Cooldown period for 2 candles.\nMaxDrawdown - Max drawdown protection, stop trading if drawdown is > 0.15 within 168 candles.\nStoplossGuard - Frequent Stoploss Guard, 6 stoplosses with profit < 0.00% within 24 candles.'}
+2026-09-26 18:09:04,951 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=51, pair=MANA/USDT:USDT, amount=79.7, is_short=False, leverage=10, open_rate=0.09099, open_since=2026-09-25 07:00:04)
+2026-09-26 18:09:04,952 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=54, pair=DOT/USDT:USDT, amount=4, is_short=False, leverage=10, open_rate=1.285, open_since=2026-09-26 16:00:04)
+2026-09-26 18:09:04,952 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=55, pair=ICP/USDT:USDT, amount=1.901, is_short=False, leverage=10, open_rate=3.334, open_since=2026-09-26 17:00:05)
+2026-09-26 18:09:04,953 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=56, pair=SAND/USDT:USDT, amount=166, is_short=False, leverage=10, open_rate=0.04623, open_since=2026-09-26 18:00:00)
+2026-09-26 18:09:10,607 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:10,766 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7132398407761553 and price: 0.2724 ...
+2026-09-26 18:09:10,768 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:11,068 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
+2026-09-26 18:09:11,908 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:12,068 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7132398407761553 and price: 0.2724 ...
+2026-09-26 18:09:12,070 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:16,912 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:17,071 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:17,073 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:21,908 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:22,068 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:22,069 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:26,912 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:27,071 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:27,073 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:31,908 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:32,068 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:32,069 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:36,910 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:37,070 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:37,072 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:41,909 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:42,069 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:42,071 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:46,908 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:47,067 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:47,069 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:51,908 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:52,068 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:52,069 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:09:56,909 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:09:57,069 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:09:57,071 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:01,919 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:02,079 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7132398407761553 and price: 0.2724 ...
+2026-09-26 18:10:02,080 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:06,910 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:07,070 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7132398407761553 and price: 0.2724 ...
+2026-09-26 18:10:07,072 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:11,070 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
+2026-09-26 18:10:11,913 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:12,073 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7132398407761553 and price: 0.2724 ...
+2026-09-26 18:10:12,075 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:16,909 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:17,069 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7132398407761553 and price: 0.2724 ...
+2026-09-26 18:10:17,070 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:21,909 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:22,069 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:10:22,070 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:26,911 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:27,071 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7140253472087283 and price: 0.2727 ...
+2026-09-26 18:10:27,072 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:31,912 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:32,072 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7140253472087283 and price: 0.2727 ...
+2026-09-26 18:10:32,073 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:36,910 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:37,083 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7140253472087283 and price: 0.2727 ...
+2026-09-26 18:10:37,085 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:41,910 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:42,069 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:10:42,071 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
+2026-09-26 18:10:46,915 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 18:10:47,074 - freqtrade.freqtradebot - INFO - Long signal found: about create a new trade for SUSHI/USDT:USDT with stake_amount: 0.7137635117312041 and price: 0.2726 ...
+2026-09-26 18:10:47,076 - freqtrade.freqtradebot - INFO - User denied entry for SUSHI/USDT:USDT.
