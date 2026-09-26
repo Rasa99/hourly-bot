@@ -1,45 +1,45 @@
-run          : 531   cycle: 6
-finished     : 2026-09-26 23:07 UTC
-freqtrade    : running (pid 2359)
+run          : 536   cycle: 1
+finished     : 2026-09-26 23:09 UTC
+freqtrade    : running (pid 2149)
 
 ----- last 40 log lines -----
-2026-09-26 22:30:38,145 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:31:04,257 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-26 22:31:38,148 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:32:38,151 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:33:38,153 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:34:38,156 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:35:38,159 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:36:38,161 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:37:38,164 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:38:38,167 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:39:38,169 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:40:38,172 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:41:38,174 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:42:38,177 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:43:38,180 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:44:38,182 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:45:38,185 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:46:38,188 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:47:38,190 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:48:38,193 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:49:38,196 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:50:38,198 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:51:38,201 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:52:38,204 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:53:38,206 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:54:38,209 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:55:38,212 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:56:38,214 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:57:38,217 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:58:38,220 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 22:59:38,223 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 23:00:41,001 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 23:01:07,150 - freqtrade.wallets - INFO - Wallets synced.
-2026-09-26 23:01:41,004 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 23:02:41,007 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 23:03:41,009 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 23:04:41,012 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 23:04:51,323 - freqtrade.freqtradebot - INFO - Global pairlock active until 2026-09-27 21:00:00. Not creating new trades, reason: 2.5574590656685197 passed 0.15 in 168 candles, locking for 24 candles..
-2026-09-26 23:05:41,014 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
-2026-09-26 23:06:41,017 - freqtrade.worker - INFO - Bot heartbeat. PID=2359, version='2026.7', state='RUNNING'
+2026-09-26 23:08:20,350 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using position_adjustment_enable: False
+2026-09-26 23:08:20,350 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_entry_position_adjustment: -1
+2026-09-26 23:08:20,350 - freqtrade.resolvers.strategy_resolver - INFO - Strategy using max_open_trades: 15
+2026-09-26 23:08:20,350 - freqtrade.configuration.config_validation - INFO - Validating configuration ...
+2026-09-26 23:08:20,379 - freqtrade.wallets - INFO - Wallets synced.
+2026-09-26 23:08:20,448 - freqtrade.rpc.rpc_manager - INFO - Enabling rpc.api_server
+2026-09-26 23:08:20,566 - freqtrade.rpc.api_server.webserver - INFO - Starting HTTP Server at 127.0.0.1:8080
+2026-09-26 23:08:20,566 - freqtrade.rpc.api_server.webserver - INFO - Starting Local Rest Server.
+2026-09-26 23:08:20,580 - uvicorn.error - INFO - Started server process [2149]
+2026-09-26 23:08:20,580 - uvicorn.error - INFO - Waiting for application startup.
+2026-09-26 23:08:20,581 - uvicorn.error - INFO - Application startup complete.
+2026-09-26 23:08:20,581 - uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+2026-09-26 23:08:20,584 - freqtrade.resolvers.iresolver - INFO - Using resolved pairlist StaticPairList from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/pairlist/StaticPairList.py'...
+2026-09-26 23:08:20,584 - freqtrade.freqtradebot - INFO - Starting initial pairlist refresh
+2026-09-26 23:08:20,632 - freqtrade.plugins.pairlistmanager - INFO - Whitelist with 47 pairs: ['BTC/USDT:USDT', 'ETH/USDT:USDT', 'BNB/USDT:USDT', 'SOL/USDT:USDT', 'ADA/USDT:USDT', 'DOGE/USDT:USDT', 'AVAX/USDT:USDT', 'DOT/USDT:USDT', 'LINK/USDT:USDT', 'LTC/USDT:USDT', 'BCH/USDT:USDT', 'ATOM/USDT:USDT', 'UNI/USDT:USDT', 'ETC/USDT:USDT', 'NEAR/USDT:USDT', 'ALGO/USDT:USDT', 'FIL/USDT:USDT', 'ICP/USDT:USDT', 'HBAR/USDT:USDT', 'APE/USDT:USDT', 'SAND/USDT:USDT', 'MANA/USDT:USDT', 'AXS/USDT:USDT', 'THETA/USDT:USDT', 'AAVE/USDT:USDT', 'GRT/USDT:USDT', 'CHZ/USDT:USDT', 'ENJ/USDT:USDT', 'CRV/USDT:USDT', 'COMP/USDT:USDT', 'DASH/USDT:USDT', 'QTUM/USDT:USDT', 'IOTA/USDT:USDT', 'ONT/USDT:USDT', 'BAT/USDT:USDT', 'RVN/USDT:USDT', 'KSM/USDT:USDT', 'EGLD/USDT:USDT', 'GALA/USDT:USDT', 'CELO/USDT:USDT', 'SUSHI/USDT:USDT', 'SNX/USDT:USDT', 'LRC/USDT:USDT', 'STORJ/USDT:USDT', 'ANKR/USDT:USDT', 'SKL/USDT:USDT', 'BAND/USDT:USDT']
+2026-09-26 23:08:20,632 - freqtrade.freqtradebot - INFO - Initial Pairlist refresh took 0.05s
+2026-09-26 23:08:20,633 - freqtrade.strategy.hyper - INFO - No params for buy found, using default values.
+2026-09-26 23:08:20,634 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): adx_floor = 20
+2026-09-26 23:08:20,634 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): breakout_hours = 72
+2026-09-26 23:08:20,634 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_fast = 50
+2026-09-26 23:08:20,634 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): ema_slow = 200
+2026-09-26 23:08:20,634 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_long_max = 78
+2026-09-26 23:08:20,635 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): rsi_short_min = 22
+2026-09-26 23:08:20,635 - freqtrade.strategy.hyper - INFO - No params for sell found, using default values.
+2026-09-26 23:08:20,635 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): initial_stop_atr = 2.0
+2026-09-26 23:08:20,635 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): risk_per_trade = 0.01
+2026-09-26 23:08:20,636 - freqtrade.strategy.hyper - INFO - Strategy Parameter(default): trail_atr = 6.0
+2026-09-26 23:08:20,637 - freqtrade.resolvers.iresolver - INFO - Using resolved protection CooldownPeriod from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/cooldown_period.py'...
+2026-09-26 23:08:20,638 - freqtrade.resolvers.iresolver - INFO - Using resolved protection MaxDrawdown from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/max_drawdown_protection.py'...
+2026-09-26 23:08:20,639 - freqtrade.resolvers.iresolver - INFO - Using resolved protection StoplossGuard from '/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/site-packages/freqtrade/plugins/protections/stoploss_guard.py'...
+2026-09-26 23:08:20,639 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': status, 'status': 'running'}
+2026-09-26 23:08:20,639 - freqtrade.worker - INFO - Changing state to: RUNNING
+2026-09-26 23:08:20,655 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': warning, 'status': 'Dry run is enabled. All trades are simulated.'}
+2026-09-26 23:08:20,655 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "*Exchange:* `gate`\n*Stake per trade:* `unlimited USDT`\n*Minimum ROI:* `{'0': 100.0}`\n*Stoploss:* `-0.6`\n*Position adjustment:* `Off`\n*Timeframe:* `1h`\n*Strategy:* `HourlyTrend`"}
+2026-09-26 23:08:20,656 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': "Searching for USDT pairs to buy and sell based on [{'StaticPairList': 'StaticPairList'}]"}
+2026-09-26 23:08:20,656 - freqtrade.rpc.rpc_manager - INFO - Sending rpc message: {'type': startup, 'status': 'Using Protections: \nCooldownPeriod - Cooldown period for 2 candles.\nMaxDrawdown - Max drawdown protection, stop trading if drawdown is > 0.15 within 168 candles.\nStoplossGuard - Frequent Stoploss Guard, 6 stoplosses with profit < 0.00% within 24 candles.'}
+2026-09-26 23:08:20,659 - freqtrade.persistence.trade_model - INFO - Found open trade: Trade(id=51, pair=MANA/USDT:USDT, amount=79.7, is_short=False, leverage=10, open_rate=0.09099, open_since=2026-09-25 07:00:04)
+2026-09-26 23:08:24,629 - freqtrade.freqtradebot - INFO - Global pairlock active until 2026-09-27 21:00:00. Not creating new trades, reason: 2.5574590656685197 passed 0.15 in 168 candles, locking for 24 candles..
+2026-09-26 23:08:25,943 - freqtrade.worker - INFO - Bot heartbeat. PID=2149, version='2026.7', state='RUNNING'
+2026-09-26 23:09:25,945 - freqtrade.worker - INFO - Bot heartbeat. PID=2149, version='2026.7', state='RUNNING'
