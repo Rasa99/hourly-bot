@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-26 17:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-26 18:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,12 +8,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$20.5174** 🟢 +2.59% |
+| **Equity now** | **$20.3344** 🟢 +1.67% |
 | Settled balance | $20.4136 (+2.07%) |
-| Unrealised (open trades) | 🟢 +0.1037 |
+| Unrealised (open trades) | 🔴 -0.0792 |
 | Started with | $20.0000 |
 | Finished trades | 52 |
-| Open now | 3 |
+| Open now | 4 |
 | Win rate | 37% (19/52) |
 
 ![balance](chart-equity.svg)
@@ -22,12 +22,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | LONG 🔺 | 0.09099 | 0.09263 | +1.80% | 🟢 +0.1197 | +16.5% | 4.49% |
-| **DOT** | LONG 🔺 | 1.285 | 1.291 | +0.47% | 🟢 +0.0188 | +3.7% | 3.72% |
-| **ICP** | LONG 🔺 | 3.334 | 3.319 | -0.45% | 🔴 -0.0348 | -5.5% | 2.74% |
-| | | | | **total** | **+0.1037** | | |
+| **MANA** | LONG 🔺 | 0.09099 | 0.09278 | +1.97% | 🟢 +0.1317 | +18.2% | 4.65% |
+| **DOT** | LONG 🔺 | 1.285 | 1.264 | -1.63% | 🔴 -0.0891 | -17.3% | 1.66% |
+| **ICP** | LONG 🔺 | 3.334 | 3.286 | -1.44% | 🔴 -0.0975 | -15.4% | 1.77% |
+| **SAND** | LONG 🔺 | 0.04623 | 0.04613 | -0.22% | 🔴 -0.0243 | -3.2% | 2.41% |
+| | | | | **total** | **-0.0792** | | |
 
-> ⚠️ **All 3 positions are long.** That is one bet on the same market direction, placed 3 times — these coins move together, so they will win together and lose together. Gross exposure is **92% of equity**.
+> ⚠️ **All 4 positions are long.** That is one bet on the same market direction, placed 4 times — these coins move together, so they will win together and lose together. Gross exposure is **129% of equity**.
 
 ![MANA](pos-MANA.png)
 
@@ -35,10 +36,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ![ICP](pos-ICP.png)
 
+![SAND](pos-SAND.png)
+
 
 ## What it is waiting for
 
-**5 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -46,16 +49,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| DOT | LONG | 0.00% | **READY** |
-| ICP | LONG | 0.00% | **READY** |
-| SAND | LONG | 0.00% | **READY** |
-| IOTA | LONG | 0.00% | volume below average |
-| KSM | LONG | 0.00% | **READY** |
-| GALA | LONG | 0.00% | **READY** |
-| FIL | LONG | 0.18% | needs 0.2% move; RSI already stretched (85/78) |
-| MANA | LONG | 0.18% | needs 0.2% move; trend too weak (ADX 16/20) |
-| COMP | LONG | 0.20% | needs 0.2% move; trend too weak (ADX 16/20) |
-| SKL | LONG | 0.21% | needs 0.2% move; volume below average |
+| SUSHI | LONG | 0.00% | **READY** |
+| DASH | LONG | 0.41% | needs 0.4% move; volume below average |
+| ATOM | LONG | 0.59% | needs 0.6% move |
+| CHZ | LONG | 0.65% | needs 0.6% move; trend too weak (ADX 18/20) |
+| MANA | LONG | 0.81% | needs 0.8% move; trend too weak (ADX 15/20) |
+| AAVE | LONG | 0.95% | needs 0.9% move; volume below average |
+| BAT | LONG | 1.05% | needs 1.0% move; volume below average |
+| BAND | LONG | 1.05% | needs 1.1% move; volume below average |
+| LINK | LONG | 1.08% | needs 1.1% move |
+| APE | LONG | 1.17% | needs 1.2% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
