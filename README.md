@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-27 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-27 09:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,9 +8,9 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.9361** 🔴 -0.32% |
+| **Equity now** | **$19.9146** 🔴 -0.43% |
 | Settled balance | $19.8194 (-0.90%) |
-| Unrealised (open trades) | 🟢 +0.1167 |
+| Unrealised (open trades) | 🟢 +0.0952 |
 | Started with | $20.0000 |
 | Finished trades | 55 |
 | Open now | 1 |
@@ -22,8 +22,8 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | LONG 🔺 | 0.09099 | 0.09261 | +1.78% | 🟢 +0.1167 | +16.1% | 4.47% |
-| | | | | **total** | **+0.1167** | | |
+| **MANA** | LONG 🔺 | 0.09099 | 0.09234 | +1.48% | 🟢 +0.0952 | +13.1% | 4.19% |
+| | | | | **total** | **+0.0952** | | |
 
 > ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **37% of equity**.
 
@@ -32,7 +32,7 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 ## What it is waiting for
 
-**2 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -40,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SOL | LONG | 0.00% | trend too weak (ADX 17/20) |
-| AVAX | LONG | 0.00% | trend too weak (ADX 17/20) |
-| ATOM | LONG | 0.00% | **READY** |
-| KSM | LONG | 0.00% | **READY** |
-| AAVE | LONG | 0.04% | needs 0.0% move; trend too weak (ADX 17/20) |
-| BAND | LONG | 0.13% | needs 0.1% move; trend too weak (ADX 18/20) |
-| BAT | LONG | 0.17% | needs 0.2% move; trend too weak (ADX 19/20) |
-| SUSHI | LONG | 0.26% | needs 0.3% move; trend too weak (ADX 20/20) |
-| LINK | LONG | 0.39% | needs 0.4% move |
-| THETA | LONG | 0.51% | needs 0.5% move; trend too weak (ADX 19/20) |
+| BAT | LONG | 0.23% | needs 0.2% move; volume below average |
+| SOL | LONG | 0.29% | needs 0.3% move; trend too weak (ADX 19/20) |
+| SUSHI | LONG | 0.40% | needs 0.4% move |
+| BTC | LONG | 0.55% | needs 0.6% move; trend too weak (ADX 13/20) |
+| APE | LONG | 0.67% | needs 0.7% move |
+| BAND | LONG | 0.78% | needs 0.8% move; trend too weak (ADX 18/20) |
+| AAVE | LONG | 0.95% | needs 0.9% move; trend too weak (ADX 17/20) |
+| BNB | LONG | 0.99% | needs 1.0% move; trend too weak (ADX 15/20) |
+| AVAX | LONG | 1.01% | needs 1.0% move; trend too weak (ADX 19/20) |
+| MANA | LONG | 1.09% | needs 1.1% move; trend too weak (ADX 17/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
