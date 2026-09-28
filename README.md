@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-28 00:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-28 01:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,13 +8,13 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.6866** 🔴 -1.57% |
-| Settled balance | $19.8194 (-0.90%) |
-| Unrealised (open trades) | 🔴 -0.1328 |
+| **Equity now** | **$19.6025** 🔴 -1.99% |
+| Settled balance | $19.5734 (-2.13%) |
+| Unrealised (open trades) | 🟢 +0.0292 |
 | Started with | $20.0000 |
-| Finished trades | 55 |
-| Open now | 2 |
-| Win rate | 35% (19/55) |
+| Finished trades | 56 |
+| Open now | 1 |
+| Win rate | 34% (19/56) |
 
 ![balance](chart-equity.svg)
 
@@ -22,15 +22,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **MANA** | LONG 🔺 | 0.09099 | 0.09214 | +1.26% | 🟢 +0.0778 | +10.7% | 3.98% |
-| **NEAR** | LONG 🔺 | 5.5518 | 5.3472 | -3.69% | 🔴 -0.2106 | -37.9% | 0.68% |
-| | | | | **total** | **-0.1328** | | |
+| **MANA** | LONG 🔺 | 0.09099 | 0.09153 | +0.59% | 🟢 +0.0292 | +4.0% | 3.34% |
+| | | | | **total** | **+0.0292** | | |
 
-> ⚠️ **All 2 positions are long.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **65% of equity**.
+> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **37% of equity**.
 
 ![MANA](pos-MANA.png)
-
-![NEAR](pos-NEAR.png)
 
 
 ## What it is waiting for
@@ -43,16 +40,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| GRT | LONG | 0.00% | RSI already stretched (82/78) |
-| BAT | LONG | 0.21% | needs 0.2% move; volume below average |
-| STORJ | SHORT | 0.44% | needs 0.4% move; trend too weak (ADX 12/20) |
-| BNB | LONG | 0.85% | needs 0.9% move; trend too weak (ADX 12/20) |
-| HBAR | LONG | 0.87% | needs 0.9% move; trend too weak (ADX 11/20) |
-| BTC | LONG | 0.92% | needs 0.9% move; trend too weak (ADX 13/20) |
-| ETC | LONG | 1.05% | needs 1.1% move; trend too weak (ADX 9/20) |
-| SKL | LONG | 1.27% | needs 1.3% move; trend too weak (ADX 12/20) |
-| MANA | LONG | 1.48% | needs 1.5% move; trend too weak (ADX 13/20) |
-| AAVE | LONG | 1.83% | needs 1.8% move; trend too weak (ADX 16/20) |
+| STORJ | SHORT | 0.35% | needs 0.3% move; trend too weak (ADX 13/20) |
+| HBAR | LONG | 0.43% | needs 0.4% move; trend too weak (ADX 12/20) |
+| BNB | LONG | 0.92% | needs 0.9% move; trend too weak (ADX 12/20) |
+| IOTA | LONG | 1.27% | needs 1.3% move; trend too weak (ADX 12/20) |
+| BTC | LONG | 1.33% | needs 1.3% move; trend too weak (ADX 13/20) |
+| MANA | LONG | 1.64% | needs 1.6% move; trend too weak (ADX 13/20) |
+| SKL | LONG | 1.70% | needs 1.7% move; trend too weak (ADX 12/20) |
+| ETC | LONG | 1.95% | needs 1.9% move; trend too weak (ADX 9/20) |
+| BAT | LONG | 1.97% | needs 2.0% move; volume below average |
+| THETA | LONG | 2.09% | needs 2.1% move; trend too weak (ADX 12/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -66,6 +63,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 
 | Coin | Direction | Result | Why it closed | When |
 |---|---|---|---|---|
+| NEAR | LONG | 🔴 -0.2461 (-44.3%) | stop_loss | 2026-09-28 00:36 |
 | SAND | LONG | 🔴 -0.2134 (-27.8%) | stop_loss | 2026-09-26 20:04 |
 | ICP | LONG | 🔴 -0.2077 (-32.8%) | stop_loss | 2026-09-26 18:45 |
 | DOT | LONG | 🔴 -0.1731 (-33.7%) | stop_loss | 2026-09-26 19:19 |
@@ -80,7 +78,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | HBAR | LONG | 🔴 -0.2020 (-32.9%) | stop_loss | 2026-09-20 19:21 |
 | DASH | LONG | 🔴 -0.1733 (-45.7%) | stop_loss | 2026-09-19 05:58 |
 | CELO | LONG | 🟢 +0.1347 (+11.6%) | force_exit | 2026-09-19 09:28 |
-| ADA | LONG | 🔴 -0.0111 (-1.6%) | force_exit | 2026-09-19 09:28 |
 
 ---
 
