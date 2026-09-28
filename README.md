@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-28 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-28 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,27 +8,18 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.4814** 🔴 -2.59% |
-| Settled balance | $19.5734 (-2.13%) |
-| Unrealised (open trades) | 🔴 -0.0919 |
+| **Equity now** | **$19.3580** 🔴 -3.21% |
+| Settled balance | $19.3580 (-3.21%) |
 | Started with | $20.0000 |
-| Finished trades | 56 |
-| Open now | 1 |
-| Win rate | 34% (19/56) |
+| Finished trades | 57 |
+| Open now | 0 |
+| Win rate | 33% (19/57) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
-|---|---|---|---|---|---|---|---|
-| **MANA** | LONG 🔺 | 0.09099 | 0.09001 | -1.08% | 🔴 -0.0919 | -12.7% | 1.71% |
-| | | | | **total** | **-0.0919** | | |
-
-> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **37% of equity**.
-
-![MANA](pos-MANA.png)
-
+Nothing open.
 
 ## What it is waiting for
 
@@ -40,16 +31,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 0.19% | needs 0.2% move; trend too weak (ADX 15/20) |
-| BNB | LONG | 1.83% | needs 1.8% move; trend too weak (ADX 12/20) |
-| BTC | LONG | 2.19% | needs 2.2% move; trend too weak (ADX 14/20) |
-| EGLD | LONG | 2.21% | needs 2.2% move; trend too weak (ADX 15/20) |
-| LINK | LONG | 2.74% | needs 2.7% move; trend too weak (ADX 18/20) |
-| HBAR | LONG | 2.89% | needs 2.9% move; trend too weak (ADX 12/20) |
-| RVN | LONG | 2.97% | needs 3.0% move; trend too weak (ADX 8/20) |
-| ETH | LONG | 3.44% | needs 3.4% move; trend too weak (ADX 15/20) |
-| SAND | LONG | 3.51% | needs 3.5% move; trend too weak (ADX 12/20) |
-| IOTA | LONG | 3.55% | needs 3.6% move; trend too weak (ADX 17/20) |
+| STORJ | SHORT | 0.00% | trend too weak (ADX 17/20) |
+| BNB | LONG | 1.97% | needs 2.0% move; trend too weak (ADX 13/20) |
+| BTC | LONG | 2.28% | needs 2.3% move; trend too weak (ADX 15/20) |
+| HBAR | LONG | 2.70% | needs 2.7% move; trend too weak (ADX 12/20) |
+| EGLD | LONG | 3.35% | needs 3.3% move; trend too weak (ADX 14/20) |
+| ETH | LONG | 3.48% | needs 3.5% move; trend too weak (ADX 16/20) |
+| MANA | LONG | 4.17% | needs 4.2% move; trend too weak (ADX 15/20) |
+| SOL | LONG | 4.26% | needs 4.3% move; trend too weak (ADX 15/20) |
+| ETC | LONG | 4.33% | needs 4.3% move; trend too weak (ADX 12/20) |
+| LINK | LONG | 4.34% | needs 4.3% move; trend too weak (ADX 17/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
@@ -69,6 +60,7 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | DOT | LONG | 🔴 -0.1731 (-33.7%) | stop_loss | 2026-09-26 19:19 |
 | ALGO | LONG | 🔴 -0.1848 (-31.4%) | trailing_stop_loss | 2026-09-25 14:03 |
 | NEAR | LONG | 🟢 +0.1803 (+29.6%) | force_exit | 2026-09-25 15:27 |
+| MANA | LONG | 🔴 -0.2154 (-29.7%) | stop_loss | 2026-09-28 03:33 |
 | LINK | LONG | 🟢 +0.4337 (+32.3%) | force_exit | 2026-09-25 15:27 |
 | LTC | LONG | 🔴 -0.3727 (-51.2%) | stop_loss | 2026-09-25 13:47 |
 | NEAR | LONG | 🔴 -0.2758 (-51.5%) | stop_loss | 2026-09-23 14:13 |
@@ -77,7 +69,6 @@ A trade needs **all four** of: price breaking its 3-day range, the trend filter 
 | ALGO | LONG | 🔴 -0.1920 (-42.4%) | stop_loss | 2026-09-20 21:11 |
 | HBAR | LONG | 🔴 -0.2020 (-32.9%) | stop_loss | 2026-09-20 19:21 |
 | DASH | LONG | 🔴 -0.1733 (-45.7%) | stop_loss | 2026-09-19 05:58 |
-| CELO | LONG | 🟢 +0.1347 (+11.6%) | force_exit | 2026-09-19 09:28 |
 
 ---
 
