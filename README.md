@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-28 07:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-28 08:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| HBAR | LONG | 0.15% | needs 0.2% move; trend too weak (ADX 13/20) |
-| STORJ | SHORT | 1.43% | needs 1.4% move |
-| BTC | LONG | 2.51% | needs 2.5% move; volume below average |
-| BNB | LONG | 2.90% | needs 2.9% move; trend too weak (ADX 18/20) |
-| ETH | LONG | 3.57% | needs 3.6% move; trend too weak (ADX 19/20) |
-| ALGO | LONG | 4.39% | needs 4.4% move; trend too weak (ADX 13/20) |
-| EGLD | LONG | 4.69% | needs 4.7% move; trend too weak (ADX 13/20) |
-| LINK | LONG | 5.07% | needs 5.1% move; trend too weak (ADX 19/20) |
-| SOL | LONG | 5.25% | needs 5.2% move; trend too weak (ADX 19/20) |
-| AAVE | LONG | 5.63% | needs 5.6% move |
+| CRV | SHORT | 0.00% | **READY** |
+| STORJ | SHORT | 0.39% | needs 0.4% move |
+| HBAR | LONG | 1.82% | needs 1.8% move; trend too weak (ADX 14/20) |
+| BTC | LONG | 2.77% | needs 2.8% move; volume below average |
+| BNB | LONG | 3.36% | needs 3.4% move; trend too weak (ADX 20/20) |
+| ETH | LONG | 3.81% | needs 3.8% move; volume below average |
+| SOL | LONG | 5.86% | needs 5.9% move |
+| LINK | LONG | 6.02% | needs 6.0% move; volume below average |
+| ALGO | LONG | 6.07% | needs 6.1% move; trend too weak (ADX 13/20) |
+| LTC | LONG | 6.72% | needs 6.7% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
