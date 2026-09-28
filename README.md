@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-28 21:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-28 22:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| LINK | LONG | 1.00% | needs 1.0% move; volume below average |
-| STORJ | SHORT | 1.50% | needs 1.5% move; volume below average |
-| ETH | LONG | 1.51% | needs 1.5% move; trend too weak (ADX 18/20) |
-| IOTA | LONG | 1.55% | needs 1.6% move; volume below average |
-| BTC | LONG | 1.94% | needs 1.9% move; volume below average |
-| ALGO | LONG | 2.13% | needs 2.1% move; volume below average |
-| BNB | LONG | 2.53% | needs 2.5% move; volume below average |
-| RVN | SHORT | 2.61% | needs 2.6% move; volume below average |
-| ETC | LONG | 4.20% | needs 4.2% move; volume below average |
-| MANA | LONG | 4.97% | needs 5.0% move; trend too weak (ADX 19/20) |
+| STORJ | SHORT | 0.89% | needs 0.9% move; volume below average |
+| ETH | LONG | 1.83% | needs 1.8% move; trend too weak (ADX 17/20) |
+| RVN | SHORT | 1.92% | needs 1.9% move; volume below average |
+| IOTA | LONG | 2.19% | needs 2.2% move; volume below average |
+| LINK | LONG | 2.23% | needs 2.2% move; volume below average |
+| BTC | LONG | 2.34% | needs 2.3% move; volume below average |
+| ALGO | LONG | 2.43% | needs 2.4% move; volume below average |
+| BNB | LONG | 3.00% | needs 3.0% move; volume below average |
+| MANA | LONG | 4.96% | needs 5.0% move; trend too weak (ADX 18/20) |
+| ETC | LONG | 5.14% | needs 5.1% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
