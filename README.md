@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-29 03:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-29 04:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,18 +8,27 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.3580** 🔴 -3.21% |
+| **Equity now** | **$19.3057** 🔴 -3.47% |
 | Settled balance | $19.3580 (-3.21%) |
+| Unrealised (open trades) | 🔴 -0.0523 |
 | Started with | $20.0000 |
 | Finished trades | 57 |
-| Open now | 0 |
+| Open now | 1 |
 | Win rate | 33% (19/57) |
 
 ![balance](chart-equity.svg)
 
 ## Open right now
 
-Nothing open.
+| Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
+|---|---|---|---|---|---|---|---|
+| **CRV** | LONG 🔺 | 0.3856 | 0.3811 | -1.17% | 🔴 -0.0523 | -12.7% | 3.49% |
+| | | | | **total** | **-0.0523** | | |
+
+> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **21% of equity**.
+
+![CRV](pos-CRV.png)
+
 
 ## What it is waiting for
 
@@ -31,16 +40,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 0.00% | **READY** |
-| BNB | SHORT | 0.34% | needs 0.3% move; volume below average |
-| RVN | SHORT | 0.95% | needs 0.9% move; volume below average |
-| CRV | LONG | 1.27% | needs 1.3% move |
-| ETH | LONG | 2.46% | needs 2.5% move; trend too weak (ADX 15/20) |
-| BTC | LONG | 2.64% | needs 2.6% move; volume below average |
-| CELO | LONG | 4.02% | needs 4.0% move; trend too weak (ADX 17/20) |
-| ALGO | LONG | 4.56% | needs 4.6% move; volume below average |
-| LINK | LONG | 5.04% | needs 5.0% move; volume below average |
-| IOTA | LONG | 6.75% | needs 6.8% move; volume below average |
+| CRV | LONG | 0.00% | **READY** |
+| BNB | SHORT | 0.68% | needs 0.7% move; volume below average |
+| STORJ | SHORT | 0.74% | needs 0.7% move |
+| ETH | LONG | 2.18% | needs 2.2% move; trend too weak (ADX 15/20) |
+| RVN | SHORT | 2.31% | needs 2.3% move |
+| CELO | LONG | 2.37% | needs 2.4% move; trend too weak (ADX 19/20) |
+| BTC | LONG | 2.50% | needs 2.5% move; volume below average |
+| ALGO | LONG | 2.55% | needs 2.6% move; volume below average |
+| ICP | LONG | 3.81% | needs 3.8% move |
+| IOTA | LONG | 5.18% | needs 5.2% move; volume below average |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
