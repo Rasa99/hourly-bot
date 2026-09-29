@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-28 23:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-29 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| STORJ | SHORT | 0.10% | needs 0.1% move; volume below average |
-| BNB | SHORT | 0.86% | needs 0.9% move; volume below average |
-| ETH | LONG | 1.33% | needs 1.3% move; trend too weak (ADX 15/20) |
-| LINK | LONG | 1.38% | needs 1.4% move |
-| BTC | LONG | 1.93% | needs 1.9% move; volume below average |
-| RVN | SHORT | 2.78% | needs 2.8% move; volume below average |
-| IOTA | LONG | 2.82% | needs 2.8% move; volume below average |
-| ALGO | LONG | 3.60% | needs 3.6% move; volume below average |
-| ETC | LONG | 4.45% | needs 4.4% move; volume below average |
-| MANA | LONG | 4.83% | needs 4.8% move; trend too weak (ADX 17/20) |
+| CRV | LONG | 0.00% | **READY** |
+| LINK | LONG | 0.25% | needs 0.3% move |
+| STORJ | SHORT | 0.96% | needs 1.0% move; volume below average |
+| BNB | SHORT | 1.07% | needs 1.1% move; trend too weak (ADX 20/20) |
+| ETH | LONG | 1.29% | needs 1.3% move; trend too weak (ADX 15/20) |
+| BTC | LONG | 1.98% | needs 2.0% move; volume below average |
+| IOTA | LONG | 2.10% | needs 2.1% move; volume below average |
+| ALGO | LONG | 2.29% | needs 2.3% move; volume below average |
+| RVN | SHORT | 3.51% | needs 3.5% move; volume below average |
+| CELO | LONG | 3.73% | needs 3.7% move; trend too weak (ADX 14/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
