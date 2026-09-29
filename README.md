@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-29 00:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-29 01:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -23,7 +23,7 @@ Nothing open.
 
 ## What it is waiting for
 
-**1 coin(s) ready to fire right now.** Scanned 47 coins.
+**0 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -31,16 +31,16 @@ Nothing open.
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| CRV | LONG | 0.00% | **READY** |
-| LINK | LONG | 0.25% | needs 0.3% move |
-| STORJ | SHORT | 0.96% | needs 1.0% move; volume below average |
-| BNB | SHORT | 1.07% | needs 1.1% move; trend too weak (ADX 20/20) |
-| ETH | LONG | 1.29% | needs 1.3% move; trend too weak (ADX 15/20) |
-| BTC | LONG | 1.98% | needs 2.0% move; volume below average |
-| IOTA | LONG | 2.10% | needs 2.1% move; volume below average |
-| ALGO | LONG | 2.29% | needs 2.3% move; volume below average |
-| RVN | SHORT | 3.51% | needs 3.5% move; volume below average |
-| CELO | LONG | 3.73% | needs 3.7% move; trend too weak (ADX 14/20) |
+| BNB | SHORT | 0.63% | needs 0.6% move; trend too weak (ADX 19/20) |
+| LINK | LONG | 0.75% | needs 0.7% move |
+| CELO | LONG | 0.92% | needs 0.9% move; trend too weak (ADX 16/20) |
+| STORJ | SHORT | 1.12% | needs 1.1% move; volume below average |
+| ETH | LONG | 1.74% | needs 1.7% move; trend too weak (ADX 14/20) |
+| BTC | LONG | 2.38% | needs 2.4% move; volume below average |
+| ALGO | LONG | 2.74% | needs 2.7% move; volume below average |
+| RVN | SHORT | 3.00% | needs 3.0% move; volume below average |
+| CRV | LONG | 3.45% | needs 3.4% move |
+| MANA | LONG | 4.23% | needs 4.2% move; trend too weak (ADX 15/20) |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
