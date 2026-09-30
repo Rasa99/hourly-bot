@@ -1,6 +1,6 @@
 # Hourly Trading Bot
 
-**Updated 2026-09-30 12:10 UTC** &nbsp;·&nbsp; refreshes itself every hour
+**Updated 2026-09-30 13:07 UTC** &nbsp;·&nbsp; refreshes itself every hour
 
 Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place a real order.
 
@@ -8,12 +8,12 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | | |
 |---|---|
-| **Equity now** | **$19.3869** 🔴 -3.07% |
+| **Equity now** | **$19.2974** 🔴 -3.51% |
 | Settled balance | $19.1917 (-4.04%) |
-| Unrealised (open trades) | 🟢 +0.1953 |
+| Unrealised (open trades) | 🟢 +0.1057 |
 | Started with | $20.0000 |
 | Finished trades | 58 |
-| Open now | 1 |
+| Open now | 2 |
 | Win rate | 33% (19/58) |
 
 ![balance](chart-equity.svg)
@@ -22,17 +22,20 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Direction | Entry | Price now | Moved | P&L | on margin | Room to stop |
 |---|---|---|---|---|---|---|---|
-| **CRV** | LONG 🔺 | 0.3856 | 0.4044 | +4.88% | 🟢 +0.1953 | +47.3% | 9.05% |
-| | | | | **total** | **+0.1953** | | |
+| **CRV** | LONG 🔺 | 0.3856 | 0.3982 | +3.27% | 🟢 +0.1289 | +31.3% | 7.63% |
+| **SKL** | LONG 🔺 | 0.00481 | 0.0048 | -0.21% | 🔴 -0.0232 | -3.1% | 2.29% |
+| | | | | **total** | **+0.1057** | | |
 
-> ⚠️ **All 1 positions are long.** That is one bet on the same market direction, placed 1 times — these coins move together, so they will win together and lose together. Gross exposure is **22% of equity**.
+> ⚠️ **All 2 positions are long.** That is one bet on the same market direction, placed 2 times — these coins move together, so they will win together and lose together. Gross exposure is **61% of equity**.
 
 ![CRV](pos-CRV.png)
+
+![SKL](pos-SKL.png)
 
 
 ## What it is waiting for
 
-**0 coin(s) ready to fire right now.** Scanned 47 coins.
+**1 coin(s) ready to fire right now.** Scanned 47 coins.
 
 ![closest to entry](chart-closest.svg)
 
@@ -40,16 +43,16 @@ Paper money. $20 simulated, real Gate.io prices, no API keys — it cannot place
 
 | Coin | Would be | Needs | Status |
 |---|---|---|---|
-| SKL | LONG | 0.85% | needs 0.8% move |
-| SAND | LONG | 1.46% | needs 1.5% move; volume below average |
-| BTC | LONG | 1.48% | needs 1.5% move; trend too weak (ADX 14/20) |
-| AXS | LONG | 1.58% | needs 1.6% move; volume below average |
-| CHZ | LONG | 1.75% | needs 1.8% move |
-| ETH | LONG | 1.93% | needs 1.9% move; trend too weak (ADX 13/20) |
-| MANA | LONG | 2.14% | needs 2.1% move; trend too weak (ADX 15/20) |
-| CRV | LONG | 2.24% | needs 2.2% move; volume below average |
-| SUSHI | LONG | 2.37% | needs 2.4% move; volume below average |
-| THETA | LONG | 2.46% | needs 2.5% move |
+| BTC | LONG | 0.00% | trend too weak (ADX 17/20) |
+| SKL | LONG | 0.00% | **READY** |
+| SAND | LONG | 0.44% | needs 0.4% move |
+| MANA | LONG | 0.62% | needs 0.6% move; trend too weak (ADX 16/20) |
+| ETH | LONG | 0.70% | needs 0.7% move; trend too weak (ADX 15/20) |
+| CHZ | LONG | 0.78% | needs 0.8% move |
+| AXS | LONG | 0.79% | needs 0.8% move |
+| THETA | LONG | 0.98% | needs 1.0% move |
+| ICP | LONG | 1.02% | needs 1.0% move |
+| SUSHI | LONG | 1.54% | needs 1.5% move |
 
 A trade needs **all four** of: price breaking its 3-day range, the trend filter agreeing, enough momentum (ADX over 20), and above-average volume. A coin at 0.00% that still has not traded is being held back by one of the other three — the table says which.
 
